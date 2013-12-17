@@ -1,0 +1,44 @@
+.login {
+	background-color: #fff !important;
+}
+.login #login {
+	margin-top:-60px;
+}
+.login h1 {
+	margin-left:115px;
+}
+.login h1 a {
+	background: url('img/logo-eco.jpg') no-repeat !important; 
+	height:160px;
+}
+
+.login #nav, .login #backtoblog {
+    margin: 0 0 0 16px;
+    padding: 16px 16px 0;
+    text-shadow: 0 1px 0 #FFFFFF;
+}
+
+
+.login #backtoblog {
+	background: linear-gradient(to bottom, #D94253 0%, #EE3360 100%) repeat scroll 0 0 #EE3360;
+    border: medium none;
+    margin: 1em 0;
+    padding: 1em 3.5em;
+}
+
+.login #backtoblog:hover {
+ background: #D62B4D;
+}
+
+
+.login #backtoblog a {
+    color: #dedede !important;
+	text-shadow: none;
+	text-decoration: none !important;
+	text-transform: uppercase;
+	 font-size: 1.2em;
+}
+
+.login #backtoblog a:hover {
+    color: #FFF !important;
+ }

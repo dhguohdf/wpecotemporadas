@@ -1,0 +1,15 @@
+
+
+#adminmenuback, #adminmenuwrap, #adminmenu {
+    background-color: #192950;
+}
+
+
+.wrap h2 {
+    font-size: 5em;
+    font-weight: 400;
+    line-height: 29px;
+    padding: 9px 15px 4px 0;
+}
+
+

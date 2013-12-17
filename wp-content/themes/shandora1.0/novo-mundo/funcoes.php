@@ -31,26 +31,24 @@ function conteudo_editor( $content, $post ) {
     return $content;
 }
 
+// Customizing Admin
+
+// add_action( 'admin_enqueue_scripts', 'ecotemporadas_admin_stylesheet' );
+
+// function ecotemporadas_admin_stylesheet() { 
+	// wp_enqueue_style('ecotemporadas_admin_css', get_bloginfo( 'stylesheet_directory' ) . '/novomundo/style-admin.css');
+// }
+
+
 
 // Customizing Login
 
-function mapadosplanos_login_stylesheet() { 
+function ecotemporadas_login_stylesheet() { 
 	?>
     <link rel="stylesheet" id="custom_wp_admin_css"  href="<?php echo get_bloginfo( 'stylesheet_directory' ) . '/style-login.css'; ?>" type="text/css" media="all" />
 	<?php 
 }
-add_action( 'login_enqueue_scripts', 'mapadosplanos_login_stylesheet' );
-
-function mapadosplanos_login_footer() { 
-	?>
-	<script type='text/javascript' src='<?php echo get_bloginfo( 'stylesheet_directory' ) . '/js/wp-login.js'; ?>'></script>
-
-	<?php
-}
-
-	add_filter('login_footer', 'mapadosplanos_login_footer');
-
-
+add_action( 'login_enqueue_scripts', 'ecotemporadas_login_stylesheet' );
 
 
 /**
