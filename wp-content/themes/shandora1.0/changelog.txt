@@ -1,0 +1,42 @@
+==Changelog==
+
+= v1.0 =
+* Original Release.
+
+= v1.0.1 - Septeember 18th, 2013 =
+* Added Integration for dsIDXPress MLS
+* Added Options for search panel
+* Added widget for IDX Search
+* Removed furnished from template meta ( by request )
+* Fix Header Social Icon
+
+= v1.0.2 - Septeember 21st, 2013 =
+* Added Map browse when browse listing
+
+= v1.0.3 - Septeember 31th, 2013 =
+* Fix IDX Listing Bug
+
+= v1.0.4 - October 2nd, 2013 =
+* Added Related Widget Listing
+* Update support for bon toolkit 1.1.0
+* Added sidebar generator to support bon toolkit Page builder widget element
+
+= v1.0.5 - October 3rd, 2013 =
+* Fix search panel issue
+
+= v1.0.6 - October 5th, 2013 =
+* Added Custom Search Field
+* Added Options to remove social Icons
+* Fix several bugs
+
+= v1.0.7 - October 10th, 2013 =
+* New Car Dealership Listing
+* New Custom Search Field For Car Listing
+* Car Listing Page Template
+* Added Sorting feature
+* Added new theme option for column
+
+
+
+
+

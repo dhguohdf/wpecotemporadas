@@ -1,0 +1,73 @@
+/**
+ * CSS Buttons Generator for your pleasure!
+ * http://www.dextronet.com/css-buttons-generator
+ * 
+ * (c) Ondrej Zabojnik <zabojnik@dextronet.com>, released under the MIT license
+ * 
+ * Usage: 
+ *   <a href="" class="shiny-button"><strong>Log In</strong><br></a>
+ * 
+ */
+
+.shiny-button {
+  display: inline-block;
+  text-align: center;
+  border-width: 1px;
+  border-style: solid;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1.1;
+  font-weight: normal;
+  font-family: sans-serif;
+  color: #FFFFFF;
+  font-size: 12px;
+  background-color: #b22234;
+  background-image: -webkit-linear-gradient(top, #b62335 0%, #bb4251 48%, #b22234 49%, #b22234 82%, #ca263b 100%);
+  background-image: -moz-linear-gradient(top, #b62335 0%, #bb4251 48%, #b22234 49%, #b22234 82%, #ca263b 100%);
+  background-image: -o-linear-gradient(top, #b62335 0%, #bb4251 48%, #b22234 49%, #b22234 82%, #ca263b 100%);
+  background-image: linear-gradient(top, #b62335 0%, #bb4251 48%, #b22234 49%, #b22234 82%, #ca263b 100%);
+  border-color: hsl(353, 7%, 42%);
+  -webkit-box-shadow: inset 0 0 1px 1px #dc495c, 0 0 1px 3px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: inset 0 0 1px 1px #dc495c, 0 0 1px 3px rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 0 1px 1px #dc495c, 0 0 1px 3px rgba(0, 0, 0, 0.15);
+  -webkit-text-shadow: 1px 1px 1px #5c121b;
+  -moz-text-shadow: 1px 1px 1px #5c121b;
+  -o-text-shadow: 1px 1px 1px #5c121b;
+  text-shadow: 1px 1px 1px #5c121b;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  padding: 6px 15px 6px 15px;
+}
+
+.shiny-button strong {
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+
+.shiny-button:hover {
+  color: #FFFFFF;
+  background-color: #bf2438;
+  background-image: -webkit-linear-gradient(top, #c32539 0%, #c04b5a 48%, #bf2438 49%, #bf2438 82%, #d7283f 100%);
+  background-image: -moz-linear-gradient(top, #c32539 0%, #c04b5a 48%, #bf2438 49%, #bf2438 82%, #d7283f 100%);
+  background-image: -o-linear-gradient(top, #c32539 0%, #c04b5a 48%, #bf2438 49%, #bf2438 82%, #d7283f 100%);
+  background-image: linear-gradient(top, #c32539 0%, #c04b5a 48%, #bf2438 49%, #bf2438 82%, #d7283f 100%);
+  border-color: hsl(352, 8%, 45%);
+  -webkit-box-shadow: inset 0 0 1px 1px #de5163, 0 0 1px 3px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: inset 0 0 1px 1px #de5163, 0 0 1px 3px rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 0 1px 1px #de5163, 0 0 1px 3px rgba(0, 0, 0, 0.15);
+  -webkit-text-shadow: 1px 1px 1px #69141f;
+  -moz-text-shadow: 1px 1px 1px #69141f;
+  -o-text-shadow: 1px 1px 1px #69141f;
+  text-shadow: 1px 1px 1px #69141f;
+}
+
+.shiny-button:active {
+  color: #FFFFFF;
+  background-color: #a52030;
+  background-image: -webkit-linear-gradient(top, #9c1e2e 0%, #b22234 100%);
+  background-image: -moz-linear-gradient(top, #9c1e2e 0%, #b22234 100%);
+  background-image: -o-linear-gradient(top, #9c1e2e 0%, #b22234 100%);
+  background-image: linear-gradient(top, #9c1e2e 0%, #b22234 100%);
+  padding: 7px 15px 5px 15px;
+}

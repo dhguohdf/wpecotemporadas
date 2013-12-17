@@ -1,0 +1,5034 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Shandora v1.0.7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2013-12-09 04:01-0300\n"
+"Last-Translator: admin <eduardo@eaxdesign.com.br>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.6.1\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ../../../\n"
+"X-Textdomain-Support: yes\n"
+"Language: pt_BR\n"
+"X-Poedit-SearchPath-0: .\n"
+
+# @ bon
+#: comment.php:19
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+# @ bon
+#: comments.php:12 comments.php:16
+msgid "No Responses"
+msgstr ""
+
+# @ bon
+#: comments.php:12 comments.php:16
+msgid "One Response"
+msgstr ""
+
+# @ bon
+#: comments.php:12 comments.php:16
+msgid "% Responses"
+msgstr ""
+
+# @ bon
+#: comments.php:21
+#, php-format
+msgid "Page %1$s of %2$s"
+msgstr ""
+
+# @ bon
+#: comments.php:36
+#, php-format
+msgid ""
+"Comments are closed, but <a href=\"%s\" title=\"Trackback URL for this post"
+"\">trackbacks</a> and pingbacks are open."
+msgstr ""
+
+# @ bon
+#: comments.php:42
+msgid "Comments are closed."
+msgstr ""
+
+# @ bon
+#: comments.php:52 comments.php:57 framework/functions/comments.php:205
+msgid "Leave a Reply"
+msgstr ""
+
+# @ bon
+#: comments.php:52 comments.php:57 framework/functions/comments.php:206
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr ""
+
+# @ bon
+#: comments.php:64
+#, php-format
+msgid "You must be %1$slogged in%2$s to post a comment."
+msgstr ""
+
+# @ bon
+#: comments.php:71
+#, php-format
+msgid "Logged in as %1$s. %2$sLog out &raquo;%3$s"
+msgstr ""
+
+# @ bon
+#: comments.php:71 framework/functions/comments.php:200
+msgid "Log out of this account"
+msgstr ""
+
+# @ bon
+#: comments.php:107
+msgid "Submit Comment"
+msgstr ""
+
+# @ bon
+#: search.php:33
+msgid ""
+"[entry-author] [entry-published format=\"M, d Y\" text=\"Posted\"] [entry-"
+"edit-link]"
+msgstr ""
+"[entry-author] [entry-published format=\"M, d Y\" text=\"Postado\"] [entry-"
+"edit-link]"
+
+# @ bon
+#: search.php:46
+msgid "Permalink to:"
+msgstr ""
+
+# @ bon
+#: framework/options.php:12
+msgid "Admin Settings"
+msgstr ""
+
+# @ bon
+#: framework/options.php:16
+msgid "Super User (username)"
+msgstr ""
+
+# @ bon
+#: framework/options.php:17
+#, php-format
+msgid ""
+"Enter your %s to hide the Framework Settings and Update Framework from other "
+"users."
+msgstr ""
+
+# @ bon
+#: framework/options.php:17
+msgid "username"
+msgstr ""
+
+# @ bon
+#: framework/options.php:23
+msgid "Disable Backup Settings Menu Item"
+msgstr ""
+
+# @ bon
+#: framework/options.php:24
+#, php-format
+msgid "Disable the %s menu item in the theme menu."
+msgstr ""
+
+# @ bon
+#: framework/options.php:24
+msgid "Backup Settings"
+msgstr ""
+
+# @ bon
+#: framework/options.php:29
+msgid "Theme Update Notification"
+msgstr ""
+
+# @ bon
+#: framework/options.php:30
+msgid ""
+"This will enable notices on your theme options page that there is an update "
+"available for your theme."
+msgstr ""
+
+# @ bon
+#: framework/options.php:35
+msgid "Branding"
+msgstr ""
+
+# @ bon
+#: framework/options.php:39
+msgid "Options panel header"
+msgstr ""
+
+# @ bon
+#: framework/options.php:40
+msgid "Change the header image for the Theme Backend."
+msgstr ""
+
+# @ bon
+#: framework/options.php:45
+msgid "Options panel icon"
+msgstr ""
+
+# @ bon
+#: framework/options.php:46
+msgid "Change the icon image for the WordPress backend sidebar."
+msgstr ""
+
+# @ bon
+#: framework/options.php:51
+msgid "WordPress login logo"
+msgstr ""
+
+# @ bon
+#: framework/options.php:52
+msgid "Change the logo image for the WordPress login page."
+msgstr ""
+
+# @ bon
+#: framework/options.php:52
+msgid "Optimal logo size is 274x63px"
+msgstr ""
+
+# @ bon
+#: framework/options.php:57
+msgid "WordPress login URL"
+msgstr ""
+
+# @ bon
+#: framework/options.php:58
+msgid ""
+"Change the URL that the logo image on the WordPress login page links to."
+msgstr ""
+
+# @ bon
+#: framework/options.php:64
+msgid "WordPress login logo Title"
+msgstr ""
+
+# @ bon
+#: framework/options.php:65
+msgid "Change the title of the logo image on the WordPress login page."
+msgstr ""
+
+# @ bon
+#: framework/options.php:71
+msgid "Remove Frontend Admin Bar"
+msgstr ""
+
+# @ bon
+#: framework/options.php:72
+msgid "Remove Admin bar from the frontend."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-admin.php:157
+msgid "Default options restored."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-admin.php:227
+msgid "Options saved."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-admin.php:581
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-admin.php:606
+msgid "View Theme Documentation"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-admin.php:608
+msgid "Visit Support Forum"
+msgstr ""
+
+# @ bon
+# @ options_framework_theme
+#: framework/classes/class-bon-admin.php:652
+#: framework/classes/class-bon-machine.php:783
+msgid "Upload"
+msgstr ""
+
+# @ bon
+# @ options_framework_theme
+#: framework/classes/class-bon-admin.php:653
+#: framework/classes/class-bon-machine.php:785
+msgid "Remove"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-admin.php:669
+#: framework/classes/class-bon-meta-box.php:92
+msgid "Clear"
+msgstr ""
+
+# @ bon
+# @ theme-layouts
+#: framework/classes/class-bon-admin.php:670
+#: framework/classes/class-bon-meta-box.php:93
+#: framework/extensions/theme-layouts.php:341
+msgid "Default"
+msgstr "Padrão"
+
+# @ bon
+#: framework/classes/class-bon-admin.php:671
+#: framework/classes/class-bon-meta-box.php:94
+msgid "Select Color"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-admin.php:744
+#, php-format
+msgid "BonFramework %s"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-backup.php:25
+msgid "Backup Manager"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-backup.php:26
+msgid "Here are a few notes on using this screen."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-backup.php:27
+msgid ""
+"The backup manager allows you to backup or restore your \"Theme Options\" "
+"and other settings to or from a text file."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-backup.php:28
+msgid ""
+"To create a backup, simply select the setting type you'd like to backup (or "
+"\"All Settings\") and hit the \"Download Export File\" button."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-backup.php:29
+msgid ""
+"To restore your settings from a backup, browse your computer for the file "
+"(under the \"Import Settings\" heading) and hit the \"Upload File and Import"
+"\" button. This will restore only the settings that have changed since the "
+"backup."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-backup.php:31
+msgid ""
+"Please note that only valid backup files generated through the Backup "
+"Manager should be imported."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-backup.php:33
+msgid "Looking for assistance?"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-backup.php:34
+#, php-format
+msgid ""
+"Please post your query on the %sBonfirelab Support Desk%s where we will do "
+"our best to assist you further."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-cpt.php:134
+#, php-format
+msgid "Add New %s"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-cpt.php:132
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-cpt.php:129
+#, php-format
+msgid "All %s"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-cpt.php:128
+#, php-format
+msgid "Search %s"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-cpt.php:130
+#: framework/classes/class-bon-cpt.php:131
+#, php-format
+msgid "Parent %s"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-cpt.php:133
+#, php-format
+msgid "Update %s"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-cpt.php:135
+#, php-format
+msgid "New %s Name"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-cpt.php:136
+#: framework/classes/class-tgm-plugin-activation.php:377
+#: framework/classes/class-tgm-plugin-activation.php:505
+#: framework/classes/class-tgm-plugin-activation.php:542
+#: framework/classes/class-tgm-plugin-activation.php:2046
+#: framework/functions/shortcodes.php:400
+#, php-format
+msgid "%s"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-machine.php:210
+msgid ""
+"You are not able to update this option because you lack the "
+"<code>unfiltered_html</code> capability."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-machine.php:596
+msgid "Delete image"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-machine.php:596
+msgid "Delete"
+msgstr ""
+
+# @ options_framework_theme
+#: framework/classes/class-bon-machine.php:780
+msgid "No file chosen"
+msgstr ""
+
+# @ options_framework_theme
+#: framework/classes/class-bon-machine.php:788
+msgid "Upgrade your version of WordPress for full media support."
+msgstr ""
+
+# @ options_framework_theme
+#: framework/classes/class-bon-machine.php:812
+msgid "View File"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-main.php:651 includes/theme-supports-old.php:86
+#: includes/theme-supports.php:86
+msgid "Primary"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-validation.php:40
+#, php-format
+msgid "The %s field is required."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-validation.php:41
+#, php-format
+msgid "The %s field must have a value."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-validation.php:42
+#, php-format
+msgid "The %s field must contain a valid email address."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-validation.php:43
+#, php-format
+msgid "The %s field must contain a valid URL."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-validation.php:44
+#, php-format
+msgid "The %s field must be at least %s characters in length."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-validation.php:45
+#, php-format
+msgid "The %s field can not exceed %s characters in length."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-validation.php:46
+#, php-format
+msgid "The %s field must be exactly %s characters in length."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-validation.php:47
+#, php-format
+msgid "The %s field may only contain alphabetical characters."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-validation.php:48
+#, php-format
+msgid "The %s field may only contain alpha-numeric characters."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-validation.php:49
+#, php-format
+msgid ""
+"The %s field may only contain alpha-numeric characters, underscores, and "
+"dashes."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-validation.php:50
+#, php-format
+msgid "The %s field must contain only numbers."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-validation.php:51
+#, php-format
+msgid "The %s field must contain only numeric characters."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-validation.php:52
+#, php-format
+msgid "The %s field must contain an integer."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-validation.php:53
+#, php-format
+msgid "The %s field is not in the correct format."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-validation.php:54
+#, php-format
+msgid "The %s field does not match the %s field."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-validation.php:55
+#, php-format
+msgid "The %s field must contain only positive numbers."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-validation.php:56
+#, php-format
+msgid "The %s field must contain a number greater than zero."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-validation.php:57
+#, php-format
+msgid "The %s field must contain a decimal number."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-validation.php:58
+#, php-format
+msgid "The %s field must contain a number less than %s."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-validation.php:59
+#, php-format
+msgid "The %s field must contain a number greater than %s."
+msgstr ""
+
+# @ envato
+#: framework/classes/class-envato-protected-api.php:67
+msgid "Please enter your Envato Marketplace Username."
+msgstr ""
+
+# @ envato
+#: framework/classes/class-envato-protected-api.php:71
+msgid "Please enter your Envato Marketplace API Key."
+msgstr ""
+
+# @ envato
+#: framework/classes/class-envato-protected-api.php:96
+msgid "The API \"set\" is a required parameter."
+msgstr ""
+
+# @ envato
+#: framework/classes/class-envato-protected-api.php:167
+msgid "The Envato Marketplace \"item ID\" is a required parameter."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:164
+#: includes/theme-plugins.php:89
+msgid "Install Required Plugins"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:165
+#: includes/theme-plugins.php:90
+msgid "Install Plugins"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:166
+#: includes/theme-plugins.php:91
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:167
+msgid "Something went wrong."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:178
+#: framework/classes/class-tgm-plugin-activation.php:493
+#: includes/theme-plugins.php:103
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:179
+#: framework/classes/class-tgm-plugin-activation.php:1849
+#: includes/theme-plugins.php:104
+msgid "Plugin activated successfully."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:180
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:520
+#: framework/classes/class-tgm-plugin-activation.php:2061
+msgid "Return to the Dashboard"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:548
+#, php-format
+msgid "The following plugin was activated successfully: <strong>%s</strong>."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:707
+msgid "Dismiss this notice"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:1094
+msgid "External Link"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:1099
+msgid "Private Repository"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:1102
+msgid "Pre-Packaged"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:1106
+msgid "WordPress Repository"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:1109
+msgid "Required"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:1109
+msgid "Recommended"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:1112
+msgid "Not Installed"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:1114
+msgid "Installed But Not Activated"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:1284
+#, php-format
+msgid ""
+"No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
+"Dashboard\">Return to the Dashboard</a>"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:1300
+msgid "Plugin"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:1301
+msgid "Source"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:1302
+#: includes/search-fields-new.php:525
+msgid "Type"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:1303
+#: includes/search-fields-new.php:229 includes/search-fields-new.php:750
+#: includes/widgets/widget-related-listing.php:326
+#: page-templates/CAR/page-template-compare-car-listings.php:183
+#: page-templates/page-template-compare-listings.php:206
+#: templates/blocks/CAR/block-carlistingtab.php:90
+msgid "Status"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:1321
+msgid "Install"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:1322
+msgid "Activate"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:1832
+msgid "Install package not available."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:1833
+#, php-format
+msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:1834
+msgid "Unpacking the package&#8230;"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:1835
+msgid "Installing the plugin&#8230;"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:1836
+msgid "Plugin install failed."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:1837
+msgid "Plugin installed successfully."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:1848
+msgid "Plugin activation failed."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:1958
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:1959
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:1959
+#: framework/classes/class-tgm-plugin-activation.php:1968
+msgid "Show Details"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:1959
+#: framework/classes/class-tgm-plugin-activation.php:1968
+msgid "Hide Details"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:1960
+msgid "All installations and activations have been completed."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:1961
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:1965
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:1966
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:1967
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:1968
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:1969
+msgid "All installations have been completed."
+msgstr ""
+
+# @ bon
+#: framework/classes/class-tgm-plugin-activation.php:1970
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+# @ bon
+#: framework/extensions/breadcrumb-trail.php:36
+msgid "Browse:"
+msgstr ""
+
+# @ bon
+#: framework/extensions/breadcrumb-trail.php:39
+#: templates/blocks/block-pageheader.php:12
+msgid "Home"
+msgstr ""
+
+# @ bon
+#: framework/extensions/breadcrumb-trail.php:419
+#: framework/functions/context.php:446
+msgid "g:i a"
+msgstr ""
+
+# @ bon
+#: framework/extensions/breadcrumb-trail.php:422
+#, php-format
+msgid "Minute %1$s"
+msgstr ""
+
+# @ bon
+#: framework/extensions/breadcrumb-trail.php:422
+#: framework/functions/context.php:449
+msgid "i"
+msgstr ""
+
+# @ bon
+#: framework/extensions/breadcrumb-trail.php:425
+#: framework/functions/context.php:452
+msgid "g a"
+msgstr ""
+
+# @ bon
+#: framework/extensions/breadcrumb-trail.php:436
+#: framework/extensions/breadcrumb-trail.php:446
+#: framework/extensions/breadcrumb-trail.php:455
+#: framework/extensions/breadcrumb-trail.php:466
+#: framework/extensions/breadcrumb-trail.php:468
+#: framework/extensions/breadcrumb-trail.php:667
+#: framework/functions/context.php:458 framework/functions/context.php:464
+#: framework/functions/core-seo.php:93 framework/functions/shortcodes.php:74
+msgid "Y"
+msgstr ""
+
+# @ bon
+#: framework/extensions/breadcrumb-trail.php:437
+#: framework/extensions/breadcrumb-trail.php:458
+#: framework/extensions/breadcrumb-trail.php:460
+#: framework/extensions/breadcrumb-trail.php:671
+msgid "F"
+msgstr ""
+
+# @ bon
+#: framework/extensions/breadcrumb-trail.php:440
+#: framework/extensions/breadcrumb-trail.php:442
+#: framework/extensions/breadcrumb-trail.php:675
+msgid "d"
+msgstr ""
+
+# @ bon
+#: framework/extensions/breadcrumb-trail.php:449
+#: framework/extensions/breadcrumb-trail.php:451
+#, php-format
+msgid "Week %1$s"
+msgstr ""
+
+# @ bon
+#: framework/extensions/breadcrumb-trail.php:477
+#: framework/extensions/breadcrumb-trail.php:479
+#: framework/functions/context.php:475
+#, php-format
+msgid "Search results for &quot;%1$s&quot;"
+msgstr ""
+
+# @ bon
+#: framework/extensions/breadcrumb-trail.php:484
+#: framework/functions/context.php:479
+msgid "404 Not Found"
+msgstr ""
+
+# @ bon
+#: framework/extensions/breadcrumb-trail.php:489
+#: framework/extensions/breadcrumb-trail.php:491
+#, php-format
+msgid "Page %d"
+msgstr ""
+
+# @ bon
+#: framework/extensions/breadcrumb-trail.php:535
+#: framework/extensions/breadcrumb-trail.php:568
+#: framework/extensions/breadcrumb-trail.php:583
+#: framework/extensions/breadcrumb-trail.php:611
+#: framework/functions/shortcodes.php:208
+#: framework/functions/shortcodes.php:498
+msgid "Edit"
+msgstr "Editar"
+
+# @ bon
+#: framework/extensions/breadcrumb-trail.php:560
+msgid "Split"
+msgstr ""
+
+# @ bon
+#: framework/extensions/breadcrumb-trail.php:564
+msgid "Merge"
+msgstr ""
+
+# @ bon
+#: framework/extensions/custom-field-series.php:77
+msgid "Articles in this series"
+msgstr ""
+
+# @ bon
+#: framework/extensions/custom-field-series.php:203
+msgid "Series"
+msgstr ""
+
+# @ options_framework_theme
+#: framework/extensions/input-filter.php:391
+msgid "No Repeat"
+msgstr ""
+
+# @ options_framework_theme
+#: framework/extensions/input-filter.php:392
+msgid "Repeat Horizontally"
+msgstr ""
+
+# @ options_framework_theme
+#: framework/extensions/input-filter.php:393
+msgid "Repeat Vertically"
+msgstr ""
+
+# @ options_framework_theme
+#: framework/extensions/input-filter.php:394
+msgid "Repeat All"
+msgstr ""
+
+# @ options_framework_theme
+#: framework/extensions/input-filter.php:407
+msgid "Top Left"
+msgstr ""
+
+# @ options_framework_theme
+#: framework/extensions/input-filter.php:408
+msgid "Top Center"
+msgstr ""
+
+# @ options_framework_theme
+#: framework/extensions/input-filter.php:409
+msgid "Top Right"
+msgstr ""
+
+# @ options_framework_theme
+#: framework/extensions/input-filter.php:410
+msgid "Middle Left"
+msgstr ""
+
+# @ options_framework_theme
+#: framework/extensions/input-filter.php:411
+msgid "Middle Center"
+msgstr ""
+
+# @ options_framework_theme
+#: framework/extensions/input-filter.php:412
+msgid "Middle Right"
+msgstr ""
+
+# @ options_framework_theme
+#: framework/extensions/input-filter.php:413
+msgid "Bottom Left"
+msgstr ""
+
+# @ options_framework_theme
+#: framework/extensions/input-filter.php:414
+msgid "Bottom Center"
+msgstr ""
+
+# @ options_framework_theme
+#: framework/extensions/input-filter.php:415
+msgid "Bottom Right"
+msgstr ""
+
+# @ options_framework_theme
+#: framework/extensions/input-filter.php:428
+msgid "Scroll Normally"
+msgstr ""
+
+# @ options_framework_theme
+#: framework/extensions/input-filter.php:429
+msgid "Fixed in Place"
+msgstr ""
+
+# @ options_framework_theme
+#: framework/extensions/input-filter.php:503
+msgid "Normal"
+msgstr ""
+
+# @ options_framework_theme
+#: framework/extensions/input-filter.php:504
+msgid "Italic"
+msgstr ""
+
+# @ options_framework_theme
+#: framework/extensions/input-filter.php:505
+msgid "Bold"
+msgstr ""
+
+# @ options_framework_theme
+#: framework/extensions/input-filter.php:506
+msgid "Bold Italic"
+msgstr ""
+
+# @ bon
+#: framework/extensions/pagination.php:80
+msgid "First"
+msgstr ""
+
+# @ bon
+#: includes/CAR/idx-includes/templates/results-pagination.php:43
+#: includes/idx-includes/templates/results-pagination.php:43
+msgid "Next"
+msgstr ""
+
+# @ bon
+#: framework/extensions/pagination.php:111
+msgid "Last"
+msgstr ""
+
+# @ bon
+#: framework/extensions/post-stylesheets.php:271
+msgid "Stylesheet"
+msgstr ""
+
+# @ bon
+#: framework/extensions/seo-metabox.php:26
+msgid "SEO"
+msgstr ""
+
+# @ bon
+#: framework/extensions/seo-metabox.php:59
+msgid "Meta Description:"
+msgstr ""
+
+# @ bon
+#: framework/extensions/seo-metabox.php:65
+msgid "Meta Keywords:"
+msgstr ""
+
+# @ theme-layouts
+#: framework/extensions/theme-layouts.php:342
+msgid "One Column"
+msgstr "Uma Coluna"
+
+# @ theme-layouts
+#: framework/extensions/theme-layouts.php:343
+msgid "Two Columns, Left"
+msgstr "Duas Colunas"
+
+# @ theme-layouts
+#: framework/extensions/theme-layouts.php:344
+msgid "Two Columns, Right"
+msgstr "Duas Colunas (direita, padrão)"
+
+# @ theme-layouts
+#: framework/extensions/theme-layouts.php:345
+msgid "Three Columns, Left"
+msgstr "Três Colunas, esquerda"
+
+# @ theme-layouts
+#: framework/extensions/theme-layouts.php:346
+msgid "Three Columns, Right"
+msgstr "Três Colunas, centro"
+
+# @ theme-layouts
+#: framework/extensions/theme-layouts.php:347
+msgid "Three Columns, Center"
+msgstr ""
+
+# @ theme-layouts
+#: framework/extensions/theme-layouts.php:474
+#: framework/extensions/theme-layouts.php:584
+#: framework/extensions/theme-layouts.php:669
+msgid "Layout"
+msgstr ""
+
+# @ theme-layouts
+#: framework/extensions/theme-layouts.php:500
+msgid "Layout is a theme-specific structure for the single view of the post."
+msgstr ""
+
+# @ bon
+#: framework/functions/comments.php:185
+msgid "*"
+msgstr ""
+
+# @ bon
+#: framework/functions/comments.php:190
+msgid "Name"
+msgstr ""
+
+# @ bon
+#: framework/functions/comments.php:191
+#: includes/theme-toolkit-override.php:686
+#: templates/blocks/block-listingfooter.php:78
+msgid "Email"
+msgstr ""
+
+# @ bon
+#: framework/functions/comments.php:192
+msgid "Website"
+msgstr ""
+
+# @ bon
+#: framework/functions/comments.php:198
+msgid "Comment"
+msgstr "Comentário"
+
+# @ bon
+#: framework/functions/comments.php:199
+#, php-format
+msgid ""
+"You must be <a href=\"%1$s\" title=\"Log in\">logged in</a> to post a "
+"comment."
+msgstr ""
+
+# @ bon
+#: framework/functions/comments.php:200
+#, php-format
+msgid "Logged in as <a href=\"%1$s\" title=\"%2$s\">%2$s</a>."
+msgstr ""
+
+# @ bon
+#: framework/functions/comments.php:200
+msgid "Log out &raquo;"
+msgstr ""
+
+# @ bon
+#: framework/functions/comments.php:207
+msgid "Click here to cancel reply."
+msgstr ""
+
+# @ bon
+#: framework/functions/comments.php:208
+msgid "Post Comment"
+msgstr ""
+
+# @ bon
+#: framework/functions/context.php:446 framework/functions/context.php:452
+#: framework/functions/context.php:455 framework/functions/context.php:461
+#: framework/functions/context.php:464
+#, php-format
+msgid "Archive for %1$s"
+msgstr ""
+
+# @ bon
+#: framework/functions/context.php:449
+#, php-format
+msgid "Archive for minute %1$s"
+msgstr ""
+
+# @ bon
+#: framework/functions/context.php:455
+msgid "F jS, Y"
+msgstr ""
+
+# @ bon
+#: framework/functions/context.php:458
+#, php-format
+msgid "Archive for week %1$s of %2$s"
+msgstr ""
+
+# @ bon
+#: framework/extensions/breadcrumb-trail.php:449
+#: framework/extensions/breadcrumb-trail.php:451
+#: framework/functions/context.php:458
+msgid "W"
+msgstr ""
+
+# @ bon
+#: framework/functions/context.php:469
+msgid "Archives"
+msgstr ""
+
+# @ bon
+#: framework/functions/context.php:483
+#, php-format
+msgid "%1$s Page %2$s"
+msgstr ""
+
+# @ bon
+#: framework/functions/post-formats.php:109
+msgid "Asides"
+msgstr ""
+
+# @ bon
+#: framework/functions/post-formats.php:110
+msgid "Audio"
+msgstr ""
+
+# @ bon
+#: framework/functions/post-formats.php:111
+msgid "Chats"
+msgstr ""
+
+# @ bon
+#: framework/functions/post-formats.php:112
+msgid "Images"
+msgstr ""
+
+# @ bon
+#: framework/functions/post-formats.php:113
+msgid "Galleries"
+msgstr ""
+
+# @ bon
+#: framework/functions/post-formats.php:114
+msgid "Links"
+msgstr ""
+
+# @ bon
+#: framework/functions/post-formats.php:115
+msgid "Quotes"
+msgstr ""
+
+# @ bon
+#: framework/functions/post-formats.php:116
+msgid "Status Updates"
+msgstr ""
+
+# @ bon
+#: framework/functions/post-formats.php:117
+msgid "Videos"
+msgstr ""
+
+# @ bon
+#: framework/functions/shortcodes.php:97
+msgid "WordPress"
+msgstr ""
+
+# @ bon
+#: framework/functions/shortcodes.php:138
+msgid "Log out"
+msgstr ""
+
+# @ bon
+#: framework/functions/shortcodes.php:140
+msgid "Log in"
+msgstr ""
+
+# @ bon
+#: framework/functions/shortcodes.php:155
+#, php-format
+msgid "This page loaded in %1$s seconds with %2$s database queries."
+msgstr ""
+
+# @ bon
+#: framework/functions/shortcodes.php:220
+msgid "Posted on:"
+msgstr "Postado em:"
+
+# @ bon
+#: framework/functions/shortcodes.php:238
+msgid "Comment:"
+msgstr "Comentário:"
+
+# @ bon
+#: framework/functions/shortcodes.php:238
+msgid "Comments:"
+msgstr "Comentários:"
+
+# @ bon
+#: framework/functions/shortcodes.php:266
+msgid "Author:"
+msgstr "Autor:"
+
+# @ bon
+#: framework/functions/shortcodes.php:280
+#, php-format
+msgid "About %1s"
+msgstr "Sobre %1s"
+
+# @ bon
+#: framework/functions/shortcodes.php:360
+msgid "(Untitled)"
+msgstr "(Sem título)"
+
+# @ bon
+#: framework/functions/shortcodes.php:376
+msgid "Shortlink"
+msgstr ""
+
+# @ bon
+#: framework/functions/shortcodes.php:400
+#: framework/functions/shortcodes.php:548
+#: includes/theme-toolkit-override.php:494
+#: includes/theme-toolkit-override.php:624
+#: templates/blocks/CAR/block-salesreplisting.php:63
+#: templates/blocks/CAR/block-salesreplisting.php:85
+#: templates/blocks/block-salesreplisting.php:63
+#: templates/blocks/block-salesreplisting.php:85
+#: templates/contents/CAR/content-car-listing.php:92
+#: templates/contents/CAR/content-car-listing.php:114
+#: templates/contents/content-listing.php:88
+#: templates/contents/content-listing.php:110
+msgid "Permalink to "
+msgstr "Link para"
+
+# @ bon
+#: framework/functions/shortcodes.php:428
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s no %2$s"
+
+# @ bon
+#: framework/functions/shortcodes.php:477
+msgid "Permalink"
+msgstr "Link"
+
+# @ bon
+#: framework/functions/shortcodes.php:517
+msgid "Reply"
+msgstr "Resposta"
+
+# @ bon
+#: framework/functions/shortcodes.php:518
+msgid "Log in to reply."
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:12
+#: page-templates/page-template-compare-listings.php:141
+msgid "None"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:13
+msgid "For Rent"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:14
+msgid "For Sale"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:15
+msgid "Reduced"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:16 includes/search-fields-new.php:126
+#: includes/search-fields.php:151
+msgid "New"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:17
+msgid "Sold"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:18
+msgid "On Show"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:26 includes/search-fields-new.php:36
+#: includes/search-fields-new.php:46 includes/search-fields-new.php:56
+#: includes/search-fields-new.php:66 includes/search-fields-new.php:76
+#: includes/search-fields-new.php:84 includes/search-fields-new.php:135
+#: includes/search-fields-new.php:145 includes/search-fields-new.php:155
+#: includes/search-fields-new.php:165 includes/search-fields-new.php:225
+#: includes/search-fields-new.php:285 includes/search-fields-new.php:319
+#: includes/search-fields-new.php:430 includes/search-fields-new.php:456
+#: includes/search-fields-new.php:482 includes/search-fields-new.php:575
+#: includes/search-fields-new.php:601 includes/search-fields-new.php:634
+#: includes/search-fields-new.php:746 includes/search-fields-new.php:844
+#: includes/search-fields-new.php:867 includes/theme-actions.php:399
+#: includes/theme-actions.php:422 includes/theme-actions.php:433
+#: includes/theme-actions.php:445 includes/theme-actions.php:465
+#: includes/theme-actions.php:476
+#: includes/widgets/widget-dsidxpress-search.php:144
+#: includes/widgets/widget-dsidxpress-search.php:160
+#: includes/widgets/widget-dsidxpress-search.php:177
+#: includes/widgets/widget-dsidxpress-search.php:195
+#: includes/widgets/widget-dsidxpress-search.php:236
+#: includes/widgets/widget-dsidxpress-search.php:246
+msgid "Any"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:67
+msgid "Unfurnished"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:68
+msgid "Furnished"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:77 includes/search-fields-new.php:507
+#: includes/search-fields.php:101 includes/search-fields.php:532
+msgid "Mortgage"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:78 includes/search-fields.php:102
+msgid "No Mortgage"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:95
+msgid "Per Month"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:96
+msgid "Per Year"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:97
+msgid "Per Week"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:98
+msgid "Per Day"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:116 includes/search-fields.php:141
+msgid "Automatic"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:117 includes/search-fields.php:142
+msgid "Manual"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:118 includes/search-fields.php:143
+msgid "Semi Auto"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:119 includes/search-fields.php:144
+msgid "Other"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:127 includes/search-fields.php:152
+msgid "Used"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:128 includes/search-fields.php:153
+msgid "Certified Pre-Owned"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:188 includes/search-fields.php:213
+#: includes/theme-actions.php:486
+#: includes/widgets/widget-dsidxpress-search.php:208
+#: page-templates/page-template-compare-listings.php:178
+msgid "MLS #"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:206 includes/search-fields.php:231
+#: page-templates/page-template-compare-listings.php:186
+msgid "Zip Postal"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:247 includes/search-fields.php:272
+msgid "Location"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:351 includes/search-fields-new.php:806
+#: includes/search-fields.php:831
+msgid "Feature"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:373 includes/search-fields.php:398
+#: page-templates/page-template-compare-listings.php:234
+msgid "Lot Size"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:403 includes/search-fields.php:428
+#: page-templates/page-template-compare-listings.php:238
+msgid "Building Size"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:437 includes/search-fields.php:462
+msgid "Floor"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:463 includes/search-fields.php:488
+#: page-templates/page-template-compare-listings.php:218
+msgid "Garage"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:489 includes/search-fields.php:514
+#: page-templates/page-template-compare-listings.php:222
+msgid "Basement"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:548 includes/theme-actions.php:492
+#: includes/widgets/widget-dsidxpress-search.php:212
+msgid "Price Range"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:582
+msgid "Bed Room"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:608 includes/search-fields.php:633
+msgid "Bath Room"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:673 includes/search-fields.php:698
+#: templates/blocks/CAR/block-carlistingtab.php:76
+msgid "Reg. Number #"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:691 includes/search-fields.php:716
+msgid "Ext. Color"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:709 includes/search-fields.php:734
+msgid "Int. Color"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:727 includes/search-fields.php:752
+#: page-templates/CAR/page-template-compare-car-listings.php:182
+#: templates/blocks/CAR/block-carlistingtab.php:89
+msgid "Fuel Type"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:768 includes/search-fields.php:793
+#: includes/theme-toolkit-override.php:209
+#: page-templates/CAR/page-template-compare-car-listings.php:172
+#: templates/blocks/CAR/block-carlistingtab.php:77
+msgid "Dealer Location"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:787 includes/search-fields.php:812
+#: includes/theme-toolkit-override.php:203
+#: page-templates/CAR/page-template-compare-car-listings.php:174
+#: templates/blocks/CAR/block-carlistingtab.php:79
+msgid "Body Type"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:825 includes/search-fields.php:850
+#: includes/theme-toolkit-override.php:221
+#: page-templates/CAR/page-template-compare-car-listings.php:173
+#: page-templates/CAR/page-template-compare-car-listings.php:175
+#: templates/blocks/CAR/block-carlistingtab.php:78
+msgid "Manufacturer"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:848 includes/search-fields.php:873
+#: page-templates/CAR/page-template-compare-car-listings.php:178
+#: templates/blocks/CAR/block-carlistingtab.php:85
+msgid "Transmission"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:872 includes/search-fields.php:897
+msgid "ANCAP / Safety"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:913 includes/search-fields.php:938
+#: page-templates/CAR/page-template-compare-car-listings.php:179
+#: templates/blocks/CAR/block-carlistingtab.php:86
+msgid "Mileage"
+msgstr ""
+
+# @ bon
+#: includes/theme-actions.php:186
+msgid "Please Activate Your IDX Account."
+msgstr ""
+
+# @ bon
+#: includes/theme-actions.php:298 includes/theme-actions.php:506
+msgid "Find Property"
+msgstr ""
+
+# @ bon
+#: includes/theme-actions.php:384 includes/theme-toolkit-override.php:165
+#: includes/widgets/widget-dsidxpress-search.php:124
+#: includes/widgets/widget-related-listing.php:331
+#: page-templates/page-template-compare-listings.php:202
+msgid "Property Type"
+msgstr ""
+
+# @ bon
+#: includes/theme-actions.php:386
+#: includes/widgets/widget-dsidxpress-search.php:126
+msgid "All Property Types"
+msgstr ""
+
+# @ bon
+#: includes/theme-actions.php:397
+#: includes/widgets/widget-dsidxpress-search.php:141
+msgid "City"
+msgstr ""
+
+# @ bon
+#: includes/theme-actions.php:418
+#: includes/widgets/widget-dsidxpress-search.php:233
+msgid "Beds"
+msgstr ""
+
+# @ bon
+#: includes/theme-actions.php:431
+#: includes/widgets/widget-dsidxpress-search.php:174
+msgid "Tract"
+msgstr ""
+
+# @ bon
+#: includes/theme-actions.php:443
+#: includes/widgets/widget-dsidxpress-search.php:191
+msgid "Zip"
+msgstr ""
+
+# @ bon
+#: includes/theme-actions.php:462
+#: includes/widgets/widget-dsidxpress-search.php:243
+msgid "Baths"
+msgstr ""
+
+# @ bon
+#: includes/theme-actions.php:474
+#: includes/widgets/widget-dsidxpress-search.php:157
+msgid "Community"
+msgstr ""
+
+# @ bon
+#: includes/theme-actions.php:546
+msgid "Follow us on Facebook"
+msgstr ""
+
+# @ bon
+#: includes/theme-actions.php:549
+msgid "Follow us on Twitter"
+msgstr ""
+
+# @ bon
+#: includes/theme-actions.php:552
+msgid "Follow us on Google Plus"
+msgstr ""
+
+# @ bon
+#: includes/theme-actions.php:555
+msgid "Follow us on Pinterest"
+msgstr ""
+
+# @ bon
+#: includes/theme-actions.php:558
+msgid "Follow us on Flickr"
+msgstr ""
+
+# @ bon
+#: includes/theme-actions.php:561
+msgid "Find us on Vimeo"
+msgstr ""
+
+# @ bon
+#: includes/theme-actions.php:564
+msgid "Find us on YouTube"
+msgstr ""
+
+# @ bon
+#: includes/theme-actions.php:567
+msgid "Find us on LinkedIn"
+msgstr ""
+
+# @ bon
+#: includes/theme-actions.php:1009
+msgid "Cannot send email to destination. No parameter receive form AJAX call."
+msgstr ""
+
+# @ bon
+#: includes/theme-actions.php:1016
+#: templates/blocks/CAR/block-carlistingfooter.php:74
+#: templates/contents/CAR/content-sales-representative.php:64
+#: templates/contents/content-agent.php:61
+msgid "Please enter your name."
+msgstr ""
+
+# @ bon
+#: includes/theme-actions.php:1023
+msgid "Please enter a valid email address."
+msgstr ""
+
+# @ bon
+#: includes/theme-actions.php:1054
+msgid "Cheatin Huh?!"
+msgstr ""
+
+# @ bon
+#: includes/theme-actions.php:1075
+msgid "Email was sent successfully."
+msgstr ""
+
+# @ bon
+#: includes/theme-actions.php:1078
+msgid "There is an error sending email."
+msgstr ""
+
+# @ bon
+#: templates/blocks/CAR/block-carlistingfooter.php:60
+#: templates/blocks/block-listingfooter.php:120
+#, php-format
+msgid "Permalink to %s"
+msgstr ""
+
+# @ bon
+#: includes/widgets/widget-related-listing.php:329
+#: page-templates/page-template-compare-listings.php:190
+msgid "Price"
+msgstr ""
+
+# @ bon
+#: includes/theme-hooks.php:452
+msgid "Back to Top"
+msgstr ""
+
+# @ framework
+#: includes/theme-hooks.php:482
+msgid "Please activate some Widgets."
+msgstr ""
+
+# @ bon
+#: includes/theme-hooks.php:523
+msgid ""
+"Copyright &copy; [the-year] [site-link]. Powered by [wp-link] and [theme-"
+"link]."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:33 includes/theme-toolkit-override.php:138
+#: includes/theme-toolkit-override.php:259
+#: includes/theme-toolkit-override.php:304
+msgid "Blue"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:34 includes/theme-toolkit-override.php:137
+#: includes/theme-toolkit-override.php:260
+#: includes/theme-toolkit-override.php:305
+msgid "Red"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:35 includes/theme-toolkit-override.php:139
+#: includes/theme-toolkit-override.php:261
+#: includes/theme-toolkit-override.php:306
+msgid "Green"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:36 includes/theme-toolkit-override.php:141
+#: includes/theme-toolkit-override.php:262
+#: includes/theme-toolkit-override.php:307
+msgid "Orange"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:37 includes/theme-toolkit-override.php:140
+msgid "Purple"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:41
+msgid "MLS Text Field"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:42
+msgid "Zip Text Field"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:43
+msgid "Status Dropdown"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:44
+msgid "Location Dropdown"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:45
+msgid "Level 1 Location Only"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:46
+msgid "Level 2 Location Only"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:47
+msgid "Level 3 Location Only"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:48
+msgid "Feature Dropdown"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:49
+msgid "Lot Size Slider"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:50
+msgid "Building Size Slider"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:51
+msgid "Floor Slider"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:52
+msgid "Agent Dropdown"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:53
+msgid "Garage Slider"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:54
+msgid "Basement Slider"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:55
+msgid "Mortgage Availability Dropdown"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:56
+msgid "Property Type Dropdown"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:57
+msgid "Price Range Slider"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:58
+msgid "Beds Slider"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:59
+msgid "Baths Slider"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:63
+msgid "Reg Number Field **Car Listing**"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:64
+msgid "Car Status Dropdown **Car Listing**"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:65
+msgid "Mileage Slider **Car Listing**"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:66
+#: page-templates/CAR/page-template-search-car-listings.php:31
+msgid "Exterior Color Field **Car Listing**"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:67
+#: page-templates/CAR/page-template-search-car-listings.php:32
+msgid "Interior Color Field **Car Listing**"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:68
+#: page-templates/CAR/page-template-search-car-listings.php:33
+msgid "Fuel Type Field **Car Listing**"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:69
+msgid "Transmission Dropdown **Car Listing**"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:70
+msgid "Price Range Slider **Car Listing**"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:71
+msgid "ANCAP or Safety Slider **Car Listing**"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:72
+msgid "Dealer Location Dropdown **Car Listing**"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:73
+msgid "Car Feature Dropdown **Car Listing**"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:74
+msgid "Body Type Dropdown **Car Listing**"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:75
+msgid "Manufacturer Dropdown **Car Listing**"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:142
+msgid "General Settings"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:146
+msgid "Quick Start"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:150
+msgid "Custom Logo"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:151
+msgid ""
+"Upload a logo for your theme, or specify an image URL directly. The best "
+"size is <strong>270x80 px</strong>"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:156
+msgid "Custom Favicon"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:157
+msgid "Upload a Favicon"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:162
+msgid "Slider Posts Limit"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:163
+msgid "How many slideshow to show?"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:168
+msgid "Show BreadCrumb"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:169
+msgid "Show or hide breadcrumb page header"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:173
+msgid "Show"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:174
+msgid "Hide"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:179
+msgid "Tracking Code"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:180
+msgid ""
+"Paste your Google Analytics (or other) tracking code here. This will be "
+"added into the footer template of your theme."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:187
+msgid "Display Options"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:190
+msgid "Custom CSS"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:191
+msgid ""
+"Quickly add some CSS to your theme by adding it to this block. Do not use "
+"&lt;style&gt; tag"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:197
+msgid "Custom JS"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:198
+msgid ""
+"Quickly add some Javascript to your theme by adding it to this block. Do not "
+"use &lt;script&gt; tag "
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:215
+msgid "Header Settings"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:222
+msgid ""
+"This section will handle the columns in the header, the area beside logo. "
+"The \"Phone Number\" Group and the \"Address Group\""
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:226
+msgid "Header Column 1 Title"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:227
+msgid ""
+"The title for header group 1. eq. <strong>Need help from us? Feel free to "
+"call us</strong>"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:233
+msgid "Phone Number"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:234
+msgid "The phone number eq. <strong>123-456-789-01</strong>"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:240
+msgid "Header Column 2 Title"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:241
+msgid ""
+"The title for header group 2. eq. <strong>Want to Meet & Talk Directly? Find "
+"us here</strong>"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:247
+#: page-templates/page-template-compare-listings.php:182
+msgid "Address"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:248
+msgid ""
+"The address eq. <strong>999 Folsom Avenue, Suite 1111 - Los Angeles, CA</"
+"strong>"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:254
+msgid "Opening Hours"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:255
+msgid "The opening hour eq. <strong>Monday - Saturday (9AM - 5PM)</strong>"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:272
+msgid "Color Settings"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:277
+msgid "Main Color Style"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:278 includes/theme-options.php:308
+msgid "Choose colorization stylesheet."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:285
+msgid "Main header color Style"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:286
+msgid "Choose main header style."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:290 includes/theme-options.php:301
+msgid "Dark"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:291 includes/theme-options.php:302
+msgid "Light"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:296
+msgid "Main header navigation color Style"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:297
+msgid "Choose main header navigation style."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:307
+msgid "Search Listing Button Color"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:326
+msgid "Listing Settings"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:331
+msgid "General Options"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:335
+msgid "Enable Car Dealership Listing"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:336
+msgid "If enable there will be new menu in admin"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:340 includes/theme-options.php:376
+#: includes/theme-options.php:454 includes/theme-options.php:648
+#: includes/theme-options.php:658 includes/theme-options.php:890
+#: includes/theme-options.php:899
+msgid "Yes"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:341 includes/theme-options.php:375
+#: includes/theme-options.php:455 includes/theme-options.php:647
+#: includes/theme-options.php:659 includes/theme-options.php:891
+#: includes/theme-options.php:900
+msgid "No"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:346
+msgid "Compare Page"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:347
+msgid "Page where the listing compare result will be."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:354
+msgid "Search Result Page"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:355
+msgid "Page where the listing search result will be."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:362
+msgid "Number of Listings to Show"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:363
+msgid ""
+"How many of listing you want to show for search listing page and browse "
+"listing page."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:370
+msgid "Show Map"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:371
+msgid "Show map browse on listings page."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:381
+msgid "Show Listing Gallery Thumbnail"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:382
+msgid "Show the listing gallery thumbnail"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:387
+msgid "Thumbnail Only"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:388
+msgid "Controller Only"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:389
+msgid "Both Controller and Thumbnail"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:393
+msgid "Size Measurement"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:394
+msgid "The size measurement that will be used in lot size and building size."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:401
+msgid "Length Measurement"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:402
+msgid "The length measurement that will be used in car dimension."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:409
+msgid "Mileage Measurement"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:410
+msgid "The mileage measurement that will be used in car mileage."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:417
+msgid "Price Currency"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:418
+msgid "Input the size currency that will be used in listing price."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:425
+msgid "Currency symbol placement"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:426
+msgid "Choose which format of the currency symbol placement."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:438
+msgid "Price Format"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:439
+msgid "Choose the price format."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:449
+msgid "Show Listing Count in Listing Page"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:450
+msgid "Show the listing count before the listing list"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:460
+msgid "Search Panel Options"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:464
+msgid "Price Slider Minimum Value"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:465
+msgid "Minimum Value for the Price Range slider in the Search Listing Options"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:471
+msgid "Price Slider Maximum Value"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:472
+msgid "Maximum Value for the Price Range slider in the Search Listing Options"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:478
+msgid "Price Slider Step Value"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:479
+msgid "Step Value for the Price Range slider when the Slide Event fired"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:486
+msgid "Maximum Bed Options"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:487
+msgid "The maximum bed available for user to select"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:492
+msgid "Maximum Bath Options"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:493
+msgid "The maximum bath available for user to select"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:498
+msgid "Minimum Lot Size Options"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:499
+msgid "The minimum lot size available for user to select"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:505
+msgid "Maximum Lot Size Options"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:506
+msgid "The maximum lot size available for user to select"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:512
+msgid "Lot Size Slider Step"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:513
+msgid "The step for lot size slider"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:519
+msgid "Minimum Building Size Options"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:520
+msgid "The minimum building size available for user to select"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:526
+msgid "Maximum Building Size Options"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:527
+msgid "The maximum building size available for user to select"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:533
+msgid "Building Size Slider Step"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:534
+msgid "The step for building size slider"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:540
+msgid "Maximum Floor Options"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:541
+msgid "The maximum floor available for user to select"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:547
+msgid "Maximum Garage Options"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:548
+msgid "The maximum garage available for user to select"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:554
+msgid "Maximum Basement Options"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:555
+msgid "The maximum basement available for user to select"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:561
+msgid "Minimum Mileage Options"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:562
+msgid "The minimum mileage available for user to select"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:568
+msgid "Maximum Mileage Options"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:569
+msgid "The maximum mileage available for user to select"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:575
+msgid "Mileage Slider Step"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:576
+msgid "The step for mileage slider"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:582
+msgid "Search Button Label"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:583
+msgid "The search button label"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:589
+msgid "Custom Search Field"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:596
+#, php-format
+msgid "Enable Search Row %s"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:597
+msgid "Enable the search row"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:609
+#, php-format
+msgid "Row %1s Column %2s Field"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:610
+msgid "Choose the field for the search panel"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:620
+msgid "Location Level 1 Label"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:621 includes/theme-options.php:627
+#: includes/theme-options.php:633
+msgid "If you are using multilevel location define the label here."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:626
+msgid "Location Level 2 Label"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:632
+msgid "Location Level 3 Label"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:638
+msgid "IDX Search Options"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:642
+msgid "Use IDX Search Form"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:643
+msgid "If dsIDXpress Plugin is installed, use the searchform instead."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:654
+msgid "Enabled autoload options from IDX"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:655
+msgid ""
+"If you do not want to specify the city please set this to yes. If set to no "
+"you need to specify the city."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:664
+msgid "IDX Search Options Limit"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:665
+msgid ""
+"If auto load options is enabled the idx will automatically query the city, "
+"zip, tract, community options by default. Set the limit for the options. "
+"This is to prevent resource overload since the queried city can be more than "
+"1000. Default is set to 100"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:671
+msgid "Manual IDX City Options (one per line)"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:672
+msgid "The list of idx city for the search options panel."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:677
+msgid "Manual IDX Tract Options (one per line)"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:678
+msgid "The list of idx tract for the search options panel."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:683
+msgid "Manual IDX Zip Options (one per line)"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:684
+msgid "The list of idx zip for the search options panel."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:689
+msgid "Manual IDX Community Options (one per line)"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:690
+msgid "The list of idx community for the search options panel."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:706
+msgid "Layout Settings"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:711
+msgid "How many listing per row in mobile view?"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:712
+msgid "Set the listing per row in mobile view."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:727
+msgid ""
+"This section will handle the layout for categories, archives and post type "
+"taxonomy archives layout. Layout for page and single post can be set in the "
+"post/page edit page."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:731
+msgid "Archive Layout"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:732
+msgid "Layout for archive page."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:740
+msgid "Category Layout"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:741
+msgid "Layout for category archive page."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:749
+msgid "Tags Archive Layout"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:750
+msgid "Layout for tags archive page."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:758
+msgid "Property Type Archive Layout"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:759
+msgid "Layout for property-type listing archive page."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:767
+msgid "Property Location Archive Layout"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:768
+msgid "Layout for property-location listing archive page."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:776
+msgid "Property Feature Archive Layout"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:777
+msgid "Layout for property-feaure listing archive page."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:785
+msgid "Car Feature Archive Layout"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:786
+msgid "Layout for car-feature listing archive page."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:794
+msgid "Dealer Location Archive Layout"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:795
+msgid "Layout for dealer-location listing archive page."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:803
+msgid "Body Type Archive Layout"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:804
+msgid "Layout for body-type listing archive page."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:812
+msgid "Manufactuere Archive Layout"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:813
+msgid "Layout for manufacturer listing archive page."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:821
+msgid "IDX Page Layout"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:822
+msgid "Layout for idx page."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:830
+msgid "IDX Details page Layout"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:831
+msgid "Layout for idx details page."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:852
+msgid "Footer Settings"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:857
+msgid "Custom Copyright Text"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:858
+msgid "Custom HTML and Text that will appear in the footer of your theme."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:882
+msgid "Social Settings"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:886
+msgid "Enable Header Social"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:887
+msgid "Enable Social Icons in Header."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:895
+msgid "Enable Footer Social"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:896
+msgid "Enable Social Icons in Footer."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:904
+msgid "Facebook Username"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:905
+msgid "Your Facebook username."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:910
+msgid "Twitter Username"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:911
+msgid "Your Twitter username."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:916
+msgid "YouTube Username"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:917
+msgid "Your YouTube username."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:922
+msgid "Vimeo Username"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:923
+msgid "Your Vimeo username."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:928
+msgid "Google Plus Username"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:929
+msgid "Your Google Plus username."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:934
+msgid "Flickr Username"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:935
+msgid "Your Flickr username."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:940
+msgid "Pinterest Username"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:941
+msgid "Your Pinterest username."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:946
+msgid "LinkedIn Username"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:947
+msgid "Your LinkedIn username."
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:954
+msgid "Sidebar Generator"
+msgstr ""
+
+# @ bon
+#: includes/theme-options.php:958
+msgid "Custom Sidebar Name"
+msgstr ""
+
+# @ bon
+#: includes/theme-plugins.php:92
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+# @ bon
+#: includes/theme-plugins.php:105
+#, php-format
+msgid "All plugins installed and activated successfully. %s"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:438
+msgid "Property Status"
+msgstr ""
+
+# @ bon
+#: page-templates/page-template-compare-listings.php:230
+msgid "Total Rooms"
+msgstr ""
+
+# @ bon
+#: page-templates/page-template-compare-listings.php:198
+msgid "Furnishing"
+msgstr ""
+
+# @ bon
+#: page-templates/page-template-compare-listings.php:194
+msgid "Mortgage Availability"
+msgstr ""
+
+# @ bon
+#: page-templates/page-template-compare-listings.php:246
+msgid "Year Built"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:274
+msgid "Featured Property"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:275
+msgid "Make the property featured for featured property widget"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:296
+#: templates/blocks/CAR/block-carlistingtab.php:113
+msgid "Features"
+msgstr ""
+
+# @ bon
+#: page-templates/CAR/page-template-compare-car-listings.php:180
+#: templates/blocks/CAR/block-carlistingtab.php:87
+msgid "Exterior Color"
+msgstr ""
+
+# @ bon
+#: page-templates/CAR/page-template-compare-car-listings.php:181
+#: templates/blocks/CAR/block-carlistingtab.php:88
+msgid "Interior Color"
+msgstr ""
+
+# @ bon
+#: page-templates/CAR/page-template-compare-car-listings.php:177
+#: templates/blocks/CAR/block-carlistingtab.php:84
+msgid "Engine Type"
+msgstr ""
+
+# @ bon
+#: page-templates/CAR/page-template-compare-car-listings.php:176
+#: templates/blocks/CAR/block-carlistingtab.php:83
+msgid "Engine Size"
+msgstr ""
+
+# @ bon
+#: page-templates/CAR/page-template-compare-car-listings.php:190
+#: page-templates/CAR/page-template-compare-car-listings.php:201
+#: templates/blocks/CAR/block-carlistingtab.php:100
+msgid "Wheelbase"
+msgstr ""
+
+# @ bon
+#: page-templates/CAR/page-template-compare-car-listings.php:192
+#: page-templates/CAR/page-template-compare-car-listings.php:203
+#: templates/blocks/CAR/block-carlistingtab.php:102
+msgid "Track Front"
+msgstr ""
+
+# @ bon
+#: page-templates/CAR/page-template-compare-car-listings.php:191
+#: page-templates/CAR/page-template-compare-car-listings.php:202
+#: templates/blocks/CAR/block-carlistingtab.php:101
+msgid "Track Rear"
+msgstr ""
+
+# @ bon
+#: page-templates/CAR/page-template-compare-car-listings.php:193
+#: page-templates/CAR/page-template-compare-car-listings.php:204
+#: templates/blocks/CAR/block-carlistingtab.php:103
+msgid "Ground Clearance"
+msgstr ""
+
+# @ bon
+#: page-templates/CAR/page-template-compare-car-listings.php:185
+#: templates/blocks/CAR/block-carlistingtab.php:92
+msgid "Standard Seating"
+msgstr ""
+
+# @ bon
+#: page-templates/CAR/page-template-compare-car-listings.php:186
+#: templates/blocks/CAR/block-carlistingtab.php:93
+msgid "Steering Type"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:369
+msgid "Agent Profile Photo"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:376
+#: templates/blocks/CAR/block-carlistingfooter.php:80
+#: templates/contents/CAR/content-sales-representative.php:70
+#: templates/contents/content-agent.php:67
+msgid "Email Address"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:383
+msgid "Office Phone Number"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:390
+msgid "Mobile Phone Number"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:397
+msgid "Fax Number"
+msgstr ""
+
+# @ bon
+#: includes/theme-supports-old.php:56 includes/theme-supports.php:56
+msgid "Sidebar Primary"
+msgstr ""
+
+# @ bon
+#: includes/theme-supports-old.php:60 includes/theme-supports.php:60
+msgid "Sidebar Listing"
+msgstr ""
+
+# @ bon
+#: includes/theme-supports-old.php:64 includes/theme-supports.php:64
+msgid "Footer 1"
+msgstr ""
+
+# @ bon
+#: includes/theme-supports-old.php:68 includes/theme-supports.php:68
+msgid "Footer 2"
+msgstr ""
+
+# @ bon
+#: includes/theme-supports-old.php:72 includes/theme-supports.php:72
+msgid "Footer 3"
+msgstr ""
+
+# @ bon
+#: includes/theme-supports-old.php:76 includes/theme-supports.php:76
+msgid "Footer 4"
+msgstr ""
+
+# @ bon
+#: includes/theme-supports-old.php:87 includes/theme-supports.php:87
+msgid "Top Bar Menu"
+msgstr ""
+
+# @ example
+#: includes/theme-supports-old.php:302 includes/theme-supports.php:314
+msgid "Primary Font"
+msgstr ""
+
+# @ example
+#: includes/theme-supports-old.php:318 includes/theme-supports.php:330
+msgid "Heading & Menu Font"
+msgstr ""
+
+# @ example
+#: includes/theme-supports-old.php:328 includes/theme-supports.php:340
+msgid "Titilium Web (font stack)"
+msgstr ""
+
+# @ example
+#: includes/theme-supports-old.php:336 includes/theme-supports.php:348
+msgid "Helvetica Neue (font stack)"
+msgstr ""
+
+# @ bon
+#: includes/theme-supports-old.php:344 includes/theme-supports.php:356
+msgid "Muli"
+msgstr ""
+
+# @ bon
+#: includes/theme-toolkit-override.php:79
+msgid "Icon Animation"
+msgstr ""
+
+# @ bon
+#: includes/theme-toolkit-override.php:83
+msgid "Bottom to Top"
+msgstr ""
+
+# @ bon
+#: includes/theme-toolkit-override.php:84
+msgid "Top to Bottom"
+msgstr ""
+
+# @ bon
+#: includes/theme-toolkit-override.php:85
+msgid "Left to Right"
+msgstr ""
+
+# @ bon
+#: includes/theme-toolkit-override.php:86
+msgid "Right to Left"
+msgstr ""
+
+# @ bon
+#: includes/theme-toolkit-override.php:123
+#: includes/theme-toolkit-override.php:242
+#: includes/theme-toolkit-override.php:287
+msgid "Title"
+msgstr ""
+
+# @ bon
+#: includes/theme-toolkit-override.php:128
+#: includes/theme-toolkit-override.php:160
+#: includes/theme-toolkit-override.php:198
+msgid "Number of Posts to Fetch"
+msgstr ""
+
+# @ bon
+#: includes/theme-toolkit-override.php:133
+msgid "Button Color"
+msgstr ""
+
+# @ bon
+#: includes/theme-toolkit-override.php:145
+#: includes/theme-toolkit-override.php:183
+#: includes/theme-toolkit-override.php:227
+#: includes/theme-toolkit-override.php:267
+#: includes/theme-toolkit-override.php:312
+msgid "Bottom Margin"
+msgstr ""
+
+# @ bon
+#: includes/theme-toolkit-override.php:171
+#: includes/widgets/widget-related-listing.php:332
+msgid "Property Location"
+msgstr ""
+
+# @ bon
+#: includes/theme-toolkit-override.php:177
+#: includes/widgets/widget-related-listing.php:333
+msgid "Property Feature"
+msgstr ""
+
+# @ bon
+#: includes/theme-toolkit-override.php:215
+msgid "Car Feature"
+msgstr ""
+
+# @ bon
+#: includes/theme-toolkit-override.php:248
+msgid "Pick Agent"
+msgstr "Escolher Perfil ECO"
+
+# @ bon
+#: includes/theme-toolkit-override.php:255
+#: includes/theme-toolkit-override.php:300
+msgid "Background Color"
+msgstr ""
+
+# @ bon
+#: includes/theme-toolkit-override.php:293
+msgid "Pick Sales Rep"
+msgstr ""
+
+# @ bon
+#: templates/blocks/CAR/block-carlistingmeta.php:30
+#: templates/blocks/CAR/block-carlistingmeta.php:38
+#: templates/blocks/CAR/block-carlistingmeta.php:40
+#: templates/blocks/CAR/block-carlistingmeta.php:47
+#: templates/blocks/CAR/block-carlistingmeta.php:56
+#: templates/blocks/CAR/block-carlistingmeta.php:71
+#: templates/blocks/CAR/block-salesreplisting.php:68
+#: templates/blocks/CAR/block-salesreplisting.php:73
+#: templates/blocks/CAR/block-salesreplisting.php:77
+#: templates/blocks/block-salesreplisting.php:68
+#: templates/blocks/block-salesreplisting.php:73
+#: templates/blocks/block-salesreplisting.php:77
+#: templates/contents/CAR/content-car-listing.php:97
+#: templates/contents/CAR/content-car-listing.php:102
+#: templates/contents/CAR/content-car-listing.php:106
+msgid "Unspecified"
+msgstr ""
+
+# @ bon
+#: includes/theme-toolkit-override.php:649
+msgid "Permalink to"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/theme-toolkit-override.php:665
+msgid ""
+"Failed rendering contact form. Please provide a correct <strong>Email "
+"Address</strong>."
+msgstr ""
+
+# @ bon
+#: templates/blocks/CAR/block-carlistingfooter.php:73
+#: templates/contents/CAR/content-sales-representative.php:63
+#: templates/contents/content-agent.php:60
+msgid "Full Name"
+msgstr "Nome Completo"
+
+# @ bon
+#: templates/blocks/CAR/block-carlistingfooter.php:88
+#: templates/contents/CAR/content-sales-representative.php:79
+#: templates/contents/content-agent.php:76
+msgid "Please enter your messages."
+msgstr ""
+
+# @ bon
+#: includes/CAR/idx-includes/idx-main.php:397
+#: includes/idx-includes/idx-main.php:397
+msgid "No Results"
+msgstr ""
+
+# @ bon
+#: includes/CAR/idx-includes/idx-main.php:398
+#: includes/idx-includes/idx-main.php:398
+msgid "Sorry, we were unable to find any listings that match your request."
+msgstr ""
+
+# @ bon
+#: includes/CAR/idx-includes/idx-main.php:2145
+#: includes/idx-includes/idx-main.php:2145
+msgid "Register"
+msgstr ""
+
+# @ bon
+#: includes/CAR/idx-includes/idx-main.php:2146
+#: includes/CAR/idx-includes/templates/results-sorting-control.php:8
+#: includes/idx-includes/idx-main.php:2146
+#: includes/idx-includes/templates/results-sorting-control.php:8
+msgid "Sorted by"
+msgstr ""
+
+# @ bon
+#: includes/CAR/idx-includes/idx-main.php:2147
+#: includes/idx-includes/idx-main.php:2147
+#, php-format
+msgid "Properties %%start%% - %%end%% of %%total%%"
+msgstr ""
+
+# @ bon
+#: includes/CAR/idx-includes/idx-main.php:2148
+#: includes/idx-includes/idx-main.php:2148
+#, php-format
+msgid "Show these %%count%% properties on a map"
+msgstr ""
+
+# @ bon
+#: includes/CAR/idx-includes/idx-main.php:2149
+#: includes/idx-includes/idx-main.php:2149
+msgid "Hide map"
+msgstr ""
+
+# @ bon
+#: includes/CAR/idx-includes/idx-main.php:2150
+#: includes/idx-includes/idx-main.php:2150
+#, php-format
+msgid ""
+"[if-idx data=\"address\" else=\"MLS #%%mls%%\"]%%address%%[if-idx data=\"city"
+"\"], %%city%%[/if-idx][/if-idx]"
+msgstr ""
+
+# @ bon
+#: includes/CAR/idx-includes/idx-main.php:2151
+#: includes/idx-includes/idx-main.php:2151
+#, php-format
+msgid "%%address%%"
+msgstr ""
+
+# @ bon
+#: includes/CAR/idx-includes/idx-main.php:2153
+#: includes/idx-includes/idx-main.php:2153
+#, php-format
+msgid ""
+"%sSorry, the [idx-if data='mls' else='listing']MLS listing #%%%%mls%%%%[/idx-"
+"if] at [idx-if data='address']%%%%address%%%%[/idx-if] [idx-if "
+"data='city']in %%%%city%%%%[/idx-if] is not available on this site.%s%s"
+"%sShowing real estate near the listing.%s"
+msgstr ""
+
+# @ bon
+#: includes/CAR/idx-includes/templates/results-pagination.php:42
+#: includes/idx-includes/templates/results-pagination.php:42
+msgid "Prev"
+msgstr ""
+
+# @ bon
+#: includes/CAR/idx-includes/templates/results-sorting-control.php:11
+#: includes/idx-includes/templates/results-sorting-control.php:11
+msgid "Time on market, newest first"
+msgstr ""
+
+# @ bon
+#: includes/CAR/idx-includes/templates/results-sorting-control.php:14
+#: includes/idx-includes/templates/results-sorting-control.php:14
+msgid "Time on market, oldest first"
+msgstr ""
+
+# @ bon
+#: includes/CAR/idx-includes/templates/results-sorting-control.php:17
+#: includes/idx-includes/templates/results-sorting-control.php:17
+msgid "Price, highest first"
+msgstr ""
+
+# @ bon
+#: includes/CAR/idx-includes/templates/results-sorting-control.php:20
+#: includes/idx-includes/templates/results-sorting-control.php:20
+msgid "Price, lowest first"
+msgstr ""
+
+# @ bon
+#: includes/CAR/idx-includes/templates/results-sorting-control.php:23
+#: includes/idx-includes/templates/results-sorting-control.php:23
+msgid "Price drop %, largest first"
+msgstr ""
+
+# @ bon
+#: includes/CAR/idx-includes/templates/results-sorting-control.php:26
+#: includes/idx-includes/templates/results-sorting-control.php:26
+msgid "Last Updated, newest first"
+msgstr ""
+
+# @ bon
+#: includes/CAR/idx-includes/templates/results-sorting-control.php:29
+#: includes/idx-includes/templates/results-sorting-control.php:29
+msgid "Walk Score&#0174;, highest first"
+msgstr ""
+
+# @ bon
+#: includes/CAR/idx-includes/templates/results-sorting-control.php:32
+#: includes/idx-includes/templates/results-sorting-control.php:32
+msgid "Improved size, largest first"
+msgstr ""
+
+# @ bon
+#: includes/CAR/idx-includes/templates/results-sorting-control.php:35
+#: includes/idx-includes/templates/results-sorting-control.php:35
+msgid "Lot size, largest first"
+msgstr ""
+
+# @ bon
+#: includes/widgets/widget-dsidxpress-search.php:25
+msgid "Shandora Search IDX"
+msgstr ""
+
+# @ bon
+#: includes/widgets/widget-dsidxpress-search.php:227
+#: includes/widgets/widget-related-listing.php:330
+msgid "Size"
+msgstr ""
+
+# @ bon
+#: includes/widgets/widget-dsidxpress-search.php:255
+msgid "Search for Properties"
+msgstr ""
+
+# @ bon
+#: includes/widgets/widget-dsidxpress-search.php:259
+msgid "try our "
+msgstr ""
+
+# @ bon
+#: includes/widgets/widget-dsidxpress-search.php:259
+msgid "Advanced Search"
+msgstr ""
+
+# @ bon
+#: includes/widgets/widget-dsidxpress-search.php:264
+msgid "By searching, you agree to the"
+msgstr ""
+
+# @ bon
+#: includes/widgets/widget-dsidxpress-search.php:264
+msgid "EULA"
+msgstr ""
+
+# @ bon
+#: includes/widgets/widget-featured-car.php:46
+msgid "Shandora Featured Car Listing"
+msgstr ""
+
+# @ bon
+#: includes/widgets/widget-featured-car.php:140
+#: includes/widgets/widget-featured-listing.php:146
+msgid "No property listing were found"
+msgstr ""
+
+# @ bon
+#: includes/widgets/widget-featured-car.php:187
+#: includes/widgets/widget-featured-listing.php:193
+#: includes/widgets/widget-related-listing.php:315
+msgid "Title:"
+msgstr ""
+
+# @ bon
+#: includes/widgets/widget-featured-car.php:191
+#: includes/widgets/widget-featured-listing.php:197
+#: includes/widgets/widget-related-listing.php:319
+msgid "Number of Posts"
+msgstr ""
+
+# @ bon
+#: includes/widgets/widget-featured-listing.php:46
+msgid "Shandora Featured Listing"
+msgstr ""
+
+# @ bon
+#: includes/widgets/widget-related-listing.php:45
+msgid "Shandora Related Listing"
+msgstr ""
+
+# @ bon
+#: includes/widgets/widget-related-listing.php:266
+msgid "No Related listing were found"
+msgstr ""
+
+# @ bon
+#: includes/widgets/widget-related-listing.php:324
+msgid "Related to"
+msgstr ""
+
+# @ bon
+#: includes/widgets/widget-related-listing.php:327
+msgid "Bed"
+msgstr ""
+
+# @ bon
+#: includes/widgets/widget-related-listing.php:328
+msgid "Bath"
+msgstr ""
+
+# @ bon
+#: includes/widgets/widget-related-listing.php:336
+msgid "Hold CTRL to select more than 1 options"
+msgstr ""
+
+# @ bon
+#: page-templates/CAR/page-template-compare-car-listings.php:151
+msgid "View Listing"
+msgstr ""
+
+# @ bon
+#: page-templates/CAR/page-template-compare-car-listings.php:171
+msgid "Reg. Number"
+msgstr ""
+
+# @ bon
+#: page-templates/CAR/page-template-compare-car-listings.php:184
+#: templates/blocks/CAR/block-carlistingtab.php:91
+msgid "ANCAP / Safety Rating"
+msgstr ""
+
+# @ bon
+#: page-templates/CAR/page-template-compare-car-listings.php:187
+#: page-templates/CAR/page-template-compare-car-listings.php:198
+#: templates/blocks/CAR/block-carlistingtab.php:97
+msgid "Height"
+msgstr ""
+
+# @ bon
+#: page-templates/CAR/page-template-compare-car-listings.php:188
+#: page-templates/CAR/page-template-compare-car-listings.php:199
+#: templates/blocks/CAR/block-carlistingtab.php:98
+msgid "Width"
+msgstr ""
+
+# @ bon
+#: page-templates/CAR/page-template-compare-car-listings.php:189
+#: page-templates/CAR/page-template-compare-car-listings.php:200
+#: templates/blocks/CAR/block-carlistingtab.php:99
+msgid "Length"
+msgstr ""
+
+# @ bon
+#: page-templates/CAR/page-template-compare-car-listings.php:194
+msgid "Sales Rep."
+msgstr ""
+
+# @ bon
+#: page-templates/page-template-compare-listings.php:93
+#: templates/blocks/block-listingtab.php:42
+msgid "N/A"
+msgstr ""
+
+# @ bon
+#: page-templates/page-template-compare-listings.php:93
+#: templates/blocks/block-listingtab.php:44
+msgid "Available"
+msgstr ""
+
+# @ bon
+#: page-templates/page-template-compare-listings.php:101
+msgid "View Property"
+msgstr ""
+
+# @ bon
+#: page-templates/page-template-compare-listings.php:210
+msgid "Bedrooms"
+msgstr ""
+
+# @ bon
+#: page-templates/page-template-compare-listings.php:214
+msgid "Bathrooms"
+msgstr ""
+
+# @ bon
+#: page-templates/page-template-compare-listings.php:226
+msgid "Floors"
+msgstr ""
+
+# @ bon
+#: page-templates/page-template-compare-listings.php:242
+msgid "Date Available"
+msgstr ""
+
+# @ bon
+#: templates/blocks/CAR/block-carlistingfooter.php:23
+msgid "Sales Rep. for this listing"
+msgstr ""
+
+# @ bon
+#: templates/blocks/CAR/block-carlistingfooter.php:26
+#: templates/contents/CAR/content-sales-representative.php:118
+#: templates/contents/content-agent.php:115
+msgid "Mobile:"
+msgstr ""
+
+# @ bon
+#: templates/blocks/CAR/block-carlistingfooter.php:30
+#: templates/contents/CAR/content-sales-representative.php:122
+#: templates/contents/content-agent.php:119
+msgid "Offce:"
+msgstr ""
+
+# @ bon
+#: templates/blocks/CAR/block-carlistingfooter.php:34
+#: templates/contents/CAR/content-sales-representative.php:126
+#: templates/contents/content-agent.php:123
+msgid "Fax:"
+msgstr ""
+
+# @ bon
+#: templates/blocks/CAR/block-carlistingfooter.php:41
+#, php-format
+msgid "Other Listing by %s"
+msgstr ""
+
+# @ bon
+#: templates/blocks/CAR/block-carlistingfooter.php:41
+msgid "More post"
+msgstr ""
+
+# @ bon
+#: templates/blocks/CAR/block-carlistingfooter.php:41
+msgid "more"
+msgstr ""
+
+# @ bon
+#: templates/blocks/CAR/block-carlistingfooter.php:81
+#: templates/contents/CAR/content-sales-representative.php:71
+#: templates/contents/content-agent.php:68
+msgid "Please enter your email."
+msgstr ""
+
+# @ bon
+#: templates/blocks/CAR/block-carlistingfooter.php:87
+#: templates/contents/CAR/content-sales-representative.php:78
+#: templates/contents/content-agent.php:75
+msgid "Message"
+msgstr ""
+
+# @ bon
+#: templates/blocks/CAR/block-carlistingfooter.php:92
+#, php-format
+msgid "Contact For %s Property"
+msgstr ""
+
+# @ bon
+#: templates/blocks/CAR/block-carlistingfooter.php:94
+#: templates/contents/CAR/content-sales-representative.php:85
+#: templates/contents/content-agent.php:82
+msgid "Submit"
+msgstr ""
+
+# @ bon
+#: templates/blocks/CAR/block-carlistingtab.php:110
+msgid "Details"
+msgstr ""
+
+# @ bon
+#: templates/blocks/CAR/block-carlistingtab.php:111
+msgid "Specifications"
+msgstr ""
+
+# @ bon
+#: templates/blocks/CAR/block-carlistingtab.php:112
+msgid "Dimensions"
+msgstr ""
+
+# @ bon
+#: templates/blocks/block-slider.php:37
+msgid "Read More"
+msgstr "Veja mais"
+
+# @ bon
+#: templates/contents/CAR/content-sales-representative.php:37
+msgid "Mobile"
+msgstr ""
+
+# @ bon
+#: templates/contents/CAR/content-sales-representative.php:38
+msgid "Office"
+msgstr ""
+
+# @ bon
+#: templates/contents/CAR/content-sales-representative.php:39
+msgid "Fax"
+msgstr ""
+
+# @ bon
+#: templates/contents/CAR/content-sales-representative.php:43
+msgid "Follow on"
+msgstr ""
+
+# @ bon
+#: templates/blocks/block-listingfooter.php:48
+#: templates/contents/CAR/content-sales-representative.php:44
+#: templates/contents/content-agent.php:41
+msgid "Facebook"
+msgstr ""
+
+# @ bon
+#: templates/blocks/block-listingfooter.php:49
+#: templates/contents/CAR/content-sales-representative.php:45
+#: templates/contents/content-agent.php:42
+msgid "LinkedIn"
+msgstr ""
+
+# @ bon
+#: templates/contents/CAR/content-sales-representative.php:46
+msgid "Twitter"
+msgstr ""
+
+# @ bon
+#: templates/contents/CAR/content-car-listing.php:36
+#: templates/contents/CAR/content-quiz.php:7
+#: templates/contents/CAR/content-quiz.php:19
+#: templates/contents/CAR/content-sales-representative.php:54
+#: templates/contents/content-agent.php:51
+#: templates/contents/content-attachment.php:12
+#: templates/contents/content-attachment.php:25
+#: templates/contents/content-gallery.php:12
+#: templates/contents/content-gallery.php:29
+#: templates/contents/content-image.php:13
+#: templates/contents/content-image.php:30
+#: templates/contents/content-listing.php:30
+#: templates/contents/content-page.php:21
+#: templates/contents/content-page.php:39
+#: templates/contents/content-poll.php:7
+#: templates/contents/content-poll.php:19
+#: templates/contents/content-quiz.php:7
+#: templates/contents/content-quiz.php:19
+#: templates/contents/content-quote.php:12
+#: templates/contents/content-quote.php:29
+#: templates/contents/content-video.php:12
+#: templates/contents/content-video.php:30 templates/contents/content.php:13
+#: templates/contents/content.php:31
+msgid "Pages:"
+msgstr ""
+
+# @ bon
+#: templates/contents/CAR/content-sales-representative.php:83
+#: templates/contents/content-agent.php:80
+#, php-format
+msgid "Send from Agent %s Page"
+msgstr ""
+
+# @ bon
+#: templates/contents/CAR/content-sales-representative.php:95
+#: templates/contents/content-agent.php:92
+#, php-format
+msgid "Latest Listing by %s"
+msgstr ""
+
+# @ bon
+#: templates/contents/content-attachment.php:7
+#: templates/contents/content-gallery.php:7
+#: templates/contents/content-image.php:8
+#: templates/contents/content-video.php:7 templates/contents/content.php:8
+msgid ""
+"[entry-icon class=\"show-for-large\"] [entry-author] [entry-published format="
+"\"M, d Y\" text=\"Posted\"] [entry-comments-link] [entry-terms taxonomy="
+"\"category\"] [entry-edit-link]"
+msgstr ""
+
+# @ bon
+#: templates/contents/content-attachment.php:20
+msgid ""
+"[entry-icon class=\"show-for-large\"] [entry-author] [entry-published format="
+"\"M, d Y\" text=\"Posted\"] [entry-comments-link] [entry-edit-link]"
+msgstr ""
+
+# @ bon
+#: templates/contents/content-gallery.php:17
+#: templates/contents/content-image.php:18
+#: templates/contents/content-link.php:16
+#: templates/contents/content-quote.php:17
+#: templates/contents/content-video.php:17 templates/contents/content.php:18
+msgid "[entry-terms text=\"Tagged in:\"]"
+msgstr ""
+
+# @ bon
+#: templates/contents/content-gallery.php:25
+#: templates/contents/content-image.php:26
+#: templates/contents/content-video.php:25 templates/contents/content.php:26
+msgid ""
+"[entry-icon class=\"show-for-large\"] [entry-author] [entry-published format="
+"\"M, d Y\" text=\"Posted\"] [entry-comments-link] [entry-terms limit=\"1\" "
+"exclude_child=\"true\" taxonomy=\"category\"] [entry-edit-link]"
+msgstr ""
+
+# @ bon
+#: templates/contents/content-link.php:7
+#: templates/contents/content-quote.php:7
+msgid ""
+"[entry-icon class=\"show-for-large\"] [entry-author] [entry-published format="
+"\"M, d Y\" text=\"Posted\"] [entry-terms taxonomy=\"category\"] [entry-edit-"
+"link]"
+msgstr ""
+
+# @ bon
+#: templates/contents/content-link.php:23
+#: templates/contents/content-quote.php:24
+msgid ""
+"[entry-icon class=\"show-for-large\"] [entry-author] [entry-published format="
+"\"M, d Y\" text=\"Posted\"] [entry-edit-link]"
+msgstr ""
+
+# @ bon
+#: templates/contents/content-quote.php:28
+msgid "Read more &rarr;"
+msgstr "Veja mais &rarr;"
+
+# @ bon
+#: templates/loops/loop-error.php:4
+msgid "Nothing found"
+msgstr ""
+
+# @ bon
+#: templates/loops/loop-error.php:8
+msgid "Apologies, but no entries were found."
+msgstr "Desculpe, nenhum imóvel foi encontrado"
+
+# @ bon
+#: templates/loops/loop-nav.php:6
+msgid "<span class=\"meta-nav\">&larr;</span> Return to entry"
+msgstr ""
+
+# @ bon
+#: templates/loops/loop-nav.php:18
+msgid "<span class=\"meta-nav\">&larr;</span> Older Entries"
+msgstr ""
+
+# @ bon
+#: templates/loops/loop-nav.php:18
+msgid "Newer Entries <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+# @ bon
+#: comments.php:20
+msgid "&larr; Anterior"
+msgstr ""
+
+# @ bon
+#: comments.php:22
+msgid "Próximo &rarr;"
+msgstr ""
+
+# @ default
+#: framework/classes/class-bon-cpt.php:62
+msgctxt ""
+msgid "Criar Novo"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-cpt.php:63
+#: framework/classes/class-bon-cpt.php:65
+#, php-format
+msgid "Criar Novo %s"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-cpt.php:64
+#, php-format
+msgid "Editar %s"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-cpt.php:66
+#, php-format
+msgid "Todos os %s"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-cpt.php:67
+#, php-format
+msgid "Ver %s"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-cpt.php:68
+#, php-format
+msgid "Procurar %s"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-cpt.php:69
+#, php-format
+msgid "Sem %s encontrados"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-cpt.php:70
+#, php-format
+msgid "Sem %s encontrados na Lixeira"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-machine.php:444
+msgid "Escolher Um"
+msgstr ""
+
+# @ bon
+#: framework/classes/class-bon-machine.php:605
+msgid "Adicionar imagens, Limite de 20 fotos"
+msgstr ""
+
+# @ shandora1.0
+#: framework/classes/class-tgm-plugin-activation.php:168
+#: includes/theme-plugins.php:93
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+# @ shandora1.0
+#: framework/classes/class-tgm-plugin-activation.php:169
+#: includes/theme-plugins.php:94
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+# @ shandora1.0
+#: framework/classes/class-tgm-plugin-activation.php:170
+#: includes/theme-plugins.php:95
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to install the %s plugin. "
+"Contact the administrator of this site for help on getting the plugin "
+"installed."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to install the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins installed."
+msgstr[0] ""
+msgstr[1] ""
+
+# @ shandora1.0
+#: framework/classes/class-tgm-plugin-activation.php:171
+#: includes/theme-plugins.php:96
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+# @ shandora1.0
+#: framework/classes/class-tgm-plugin-activation.php:172
+#: includes/theme-plugins.php:97
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+# @ shandora1.0
+#: framework/classes/class-tgm-plugin-activation.php:173
+#: includes/theme-plugins.php:98
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to activate the %s "
+"plugin. Contact the administrator of this site for help on getting the "
+"plugin activated."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to activate the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins activated."
+msgstr[0] ""
+msgstr[1] ""
+
+# @ shandora1.0
+#: framework/classes/class-tgm-plugin-activation.php:174
+#: includes/theme-plugins.php:99
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+# @ shandora1.0
+#: framework/classes/class-tgm-plugin-activation.php:175
+#: includes/theme-plugins.php:100
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to update the %s plugin. "
+"Contact the administrator of this site for help on getting the plugin "
+"updated."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to update the %s plugins. "
+"Contact the administrator of this site for help on getting the plugins "
+"updated."
+msgstr[0] ""
+msgstr[1] ""
+
+# @ shandora1.0
+#: framework/classes/class-tgm-plugin-activation.php:176
+#: includes/theme-plugins.php:101
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+# @ shandora1.0
+#: framework/classes/class-tgm-plugin-activation.php:177
+#: includes/theme-plugins.php:102
+msgid "Activate installed plugin"
+msgid_plural "Activate installed plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+# @ bon
+#. gettext fix: identical singular and plural forms found, that may be ambiguous! Please check the code!
+#: framework/classes/class-tgm-plugin-activation.php:1547
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+# @ bon
+#: framework/extensions/breadcrumb-trail.php:671
+#: framework/functions/core-seo.php:89
+msgid "F Y"
+msgstr ""
+
+# @ bon
+#: framework/extensions/breadcrumb-trail.php:675
+msgid "F j, Y"
+msgstr ""
+
+# @ bon
+#: framework/extensions/pagination.php:86
+#: framework/extensions/pagination.php:90
+msgid "Anterior"
+msgstr ""
+
+# @ bon
+#: framework/extensions/pagination.php:103
+#: framework/extensions/pagination.php:107
+msgid "Próximo"
+msgstr ""
+
+# @ shandora1.0
+#: framework/extensions/random-custom-background.php:170
+msgctxt ""
+msgid "position_x"
+msgstr ""
+
+# @ theme-fonts
+#: framework/extensions/theme-fonts.php:401
+msgid "Fonts"
+msgstr ""
+
+# @ theme-layouts
+#: framework/extensions/theme-layouts.php:702
+msgid "Global Layout"
+msgstr ""
+
+# @ bon
+#: framework/functions/core-seo.php:96
+#, php-format
+msgid "Copyright (c) %1$s"
+msgstr ""
+
+# @ bon
+#: framework/functions/core-seo.php:115 framework/functions/shortcodes.php:222
+#: framework/functions/shortcodes.php:428
+msgid "l, F jS, Y, g:i a"
+msgstr ""
+
+# @ bon
+#: framework/functions/shortcodes.php:97
+msgid "State-of-the-art semantic personal publishing platform"
+msgstr ""
+
+# @ bon
+#: framework/functions/shortcodes.php:110
+#, php-format
+msgid "%s WordPress Theme"
+msgstr ""
+
+# @ bon
+#: framework/functions/shortcodes.php:208
+#: framework/functions/shortcodes.php:498
+#, php-format
+msgid "Edit %1$s"
+msgstr ""
+
+# @ bon
+#: framework/functions/shortcodes.php:245
+#: framework/functions/shortcodes.php:247
+#: framework/functions/shortcodes.php:249
+#, php-format
+msgid "Comment on %1$s"
+msgstr ""
+
+# @ bon
+#: framework/functions/shortcodes.php:477
+#, php-format
+msgid "Permalink to comment %1$s"
+msgstr ""
+
+# @ shandora1.0
+#: functions.php:138
+#, php-format
+msgid "Processo de Revisão <span class=\"count\">(%s)</span>"
+msgid_plural "Processos de revisão <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+# @ default
+#: functions.php:352
+msgid ""
+"<span class=\"ab-icon\"></span><span class=\"ab-label\">Crie seu anúncio "
+"agora!</span>"
+msgstr ""
+
+# @ bon
+#: includes/custom-header.php:31
+msgctxt "header image description"
+msgid "Silhouette 1"
+msgstr ""
+
+# @ bon
+#: includes/search-fields-new.php:626 includes/search-fields.php:651
+#: page-templates/page-template-compare-listings.php:250
+msgid "Agent"
+msgstr ""
+
+# @ bon
+#: includes/search-fields.php:12
+msgid "Praia"
+msgstr ""
+
+# @ bon
+#: includes/search-fields.php:13
+msgid "Campo"
+msgstr ""
+
+# @ bon
+#: includes/search-fields.php:14
+msgid "Montanha"
+msgstr ""
+
+# @ bon
+#: includes/search-fields.php:15
+msgid "Cidade"
+msgstr ""
+
+# @ bon
+#: includes/search-fields.php:17
+msgid "Reserva Florestal"
+msgstr ""
+
+# @ bon
+#: includes/search-fields.php:25 includes/search-fields.php:35
+#: includes/search-fields.php:45 includes/search-fields.php:55
+#: includes/search-fields.php:100 includes/search-fields.php:108
+#: includes/search-fields.php:160 includes/search-fields.php:170
+#: includes/search-fields.php:180 includes/search-fields.php:190
+#: includes/search-fields.php:250 includes/search-fields.php:310
+#: includes/search-fields.php:344 includes/search-fields.php:659
+#: includes/search-fields.php:771 includes/search-fields.php:869
+msgid "Todos"
+msgstr ""
+
+# @ bon
+#: includes/search-fields.php:65
+msgid "Não Mobiliado"
+msgstr ""
+
+# @ bon
+#: includes/search-fields.php:66
+msgid "Mobiliado"
+msgstr ""
+
+# @ bon
+#: includes/search-fields.php:74 includes/search-fields.php:82
+#: includes/search-fields.php:91
+msgid "Não Possui"
+msgstr ""
+
+# @ bon
+#: includes/search-fields.php:75 includes/search-fields.php:83
+#: includes/search-fields.php:92
+msgid "Possui"
+msgstr ""
+
+# @ bon
+#: includes/search-fields.php:119
+msgid "Por Diária"
+msgstr ""
+
+# @ bon
+#: includes/search-fields.php:120
+msgid "Per Temporada"
+msgstr ""
+
+# @ bon
+#: includes/search-fields.php:121
+msgid "Pernoite"
+msgstr ""
+
+# @ bon
+#: includes/search-fields.php:122
+msgid "Mensal"
+msgstr ""
+
+# @ bon
+#: includes/search-fields.php:123
+msgid "Trimestral"
+msgstr ""
+
+# @ bon
+#: includes/search-fields.php:254
+msgid "Localização"
+msgstr ""
+
+# @ bon
+#: includes/search-fields.php:376
+msgid "Exclusividade Local"
+msgstr ""
+
+# @ bon
+#: includes/search-fields.php:550
+msgid "Tipo de Local"
+msgstr ""
+
+# @ bon
+#: includes/search-fields.php:573
+msgid "Valores"
+msgstr ""
+
+# @ bon
+#: includes/search-fields.php:607
+msgid "Quartos"
+msgstr ""
+
+# @ bon
+#: includes/search-fields.php:775
+msgid "Propriedade"
+msgstr ""
+
+# @ bon
+#: includes/theme-actions.php:50
+msgid "diária"
+msgstr ""
+
+# @ bon
+#: includes/theme-actions.php:54
+msgid "temporada"
+msgstr ""
+
+# @ bon
+#: includes/theme-actions.php:58
+msgid "pernoite"
+msgstr ""
+
+# @ bon
+#: includes/theme-actions.php:62
+msgid "mês"
+msgstr ""
+
+# @ bon
+#: includes/theme-actions.php:66
+msgid "trimensal"
+msgstr ""
+
+# @ bon
+#: includes/theme-actions.php:526
+msgid "Procurar temporada"
+msgstr ""
+
+# @ bon
+#: includes/theme-actions.php:1118
+#, php-format
+msgid "Clique para ver %s"
+msgstr ""
+
+# @ bon
+#: includes/theme-actions.php:1122
+msgid "Compare Temporadas"
+msgstr ""
+
+# @ bon
+#: includes/theme-hooks.php:217
+msgid "Ordem Crescente"
+msgstr ""
+
+# @ bon
+#: includes/theme-hooks.php:218
+msgid "Ordem Decrescente"
+msgstr ""
+
+# @ bon
+#: includes/theme-hooks.php:223
+msgid "Preço"
+msgstr ""
+
+# @ bon
+#: includes/theme-hooks.php:224
+msgid "Data"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:46 includes/theme-posttypes.php:57
+msgid "Galeria de imagens:"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:47 includes/theme-posttypes.php:58
+msgid "Clique no botão ao lado e dê upload em suas imagens. Máximo de 20."
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:68
+msgid "Código Promocional"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:69
+msgid "Se você possui um código prmocional, digite-o aqui"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:79
+msgid "Escolha aqui o <br> Perfil ECO responsável"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:80
+msgid "Escolha aqui o Perfil ECO responsável"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:91
+msgid "<br>Reciclagem de Lixo:"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:92
+msgid "Sua propriedade possui acesso à coleta seletiva?"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:101
+msgid "Certificado Ambiental:"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:102
+msgid "Descr#1 plz"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:111
+msgid "Proximidade à<br>atividades ecológicas:"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:112
+msgid "Descr#2 plz"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:124 templates/blocks/block-listingtab.php:53
+msgid "Localização:"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:125
+msgid "Descr#3 plz."
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:133
+msgid "Endereço do imóvel:"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:134
+msgid "O endereço da propriedade."
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:141 templates/blocks/block-listingtab.php:52
+msgid "CEP:"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:142
+msgid "CEP do local"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:149
+msgid "Valor Principal:"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:150
+msgid ""
+"Escolha seu valor principal, não esqueça que você pode definir outros "
+"valores no seu calendário do anúncio. Por favor, preencha com apenas "
+"números, ex: 123456"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:157
+msgid "Período Principal:"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:158
+msgid "Escolha o tipo de período que o imóvel será exibido"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:166 templates/blocks/block-listingtab.php:71
+msgid "Quartos:"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:167
+msgid "Quantos quartos? Por favor, preencha com apenas números."
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:175 templates/blocks/block-listingtab.php:72
+msgid "Banheiros:"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:176
+msgid "Quantos banheiros? Por favor, preencha com apenas números."
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:184 templates/blocks/block-listingtab.php:75
+msgid "Garagens:"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:185
+msgid "Quantas garagens?"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:193 templates/blocks/block-listingtab.php:76
+msgid "Andares:"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:194
+msgid "Quantidades de andares o imóvel possui"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:202 templates/blocks/block-listingtab.php:77
+msgid "Total de cômodos:"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:203
+msgid "Total de cômodos. Por favor, preencha com apenas números."
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:211 templates/blocks/block-listingtab.php:73
+msgid "Tamanho do Lote:"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:212
+msgid "Tamanho do Lote"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:220
+msgid "Tamanho da construção:"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:221
+msgid "Tamanho da construção"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:229
+msgid "Mobília:"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:230
+msgid "A propriedade está mobiliada??"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:238
+msgid "Data de disponibilidade"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:239
+msgid "Quando a propriedade estará disponível??"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:247
+msgid "Ano construído"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:248
+msgid ""
+"Quando sua propriedade foi construída, útil em propriedades históricas ou "
+"tombadas pelo governo."
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:256
+msgid "Latitude do local:"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:257
+#, php-format
+msgid ""
+"Latitude do local, utilizada para a localização de seu imóvel no mapa. "
+"Encontre sua longitude no site <a href=\"http://translate.google.com.br/"
+"translate?sl=en&tl=pt&js=n&prev=_t&hl=pt-BR&ie=UTF-8&u=http%3A%2F%2Fwww."
+"latlong.net%2F&act=url\" target=\"_blank\">here</a>. Copie e cole aqui sua "
+"longitude"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:265
+msgid "Longitude do local:"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:266
+#, php-format
+msgid ""
+"Longitude do local, utilizada para a localização de seu imóvel no mapa. "
+"Encontre sua longitude no site <a href=\"http://translate.google.com.br/"
+"translate?sl=en&tl=pt&js=n&prev=_t&hl=pt-BR&ie=UTF-8&u=http%3A%2F%2Fwww."
+"latlong.net%2F&act=url\" target=\"_blank\">here</a>. Copie e cole aqui sua "
+"longitude"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:285
+msgid "Tipo do Local"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:286
+msgid "Tipo"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:288
+msgid "Estado e Cidade"
+msgstr ""
+
+# @ default
+#: includes/theme-posttypes.php:289
+msgid "Escolha o Estado"
+msgstr ""
+
+# @ default
+#: includes/theme-posttypes.php:290
+msgid "Adicionar sua cidade"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:291
+msgid "Local"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:293
+msgid "Diferenciais do Anúncio"
+msgstr ""
+
+# @ default
+#: includes/theme-posttypes.php:294
+msgid "Escreva os diferenciais do anúncio e clique em adicionar!"
+msgstr ""
+
+# @ default
+#: includes/theme-posttypes.php:295
+msgid "Escolha entre os destaques mais utilizados"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:348
+msgid "Facebook Link"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:355
+msgid "Google Plus Link"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:362
+msgid "LinkedIn Link"
+msgstr ""
+
+# @ bon
+#: includes/theme-posttypes.php:433
+msgid "Property Status to Query"
+msgstr ""
+
+# @ bon
+#: includes/theme-toolkit-override.php:499
+#: includes/theme-toolkit-override.php:505
+#: includes/theme-toolkit-override.php:510
+#: includes/theme-toolkit-override.php:516
+msgid "-"
+msgstr ""
+
+# @ bon
+#: includes/theme-toolkit-override.php:499
+#, php-format
+msgid "%s Quarto"
+msgid_plural "%s Quartos"
+msgstr[0] ""
+msgstr[1] ""
+
+# @ bon
+#: includes/theme-toolkit-override.php:505
+#: templates/contents/content-listing.php:98
+#, php-format
+msgid "%s Banheiro"
+msgid_plural "%s Banheiros"
+msgstr[0] ""
+msgstr[1] ""
+
+# @ bon
+#: includes/theme-toolkit-override.php:526
+msgid "Clique para entrar em "
+msgstr ""
+
+# @ bon
+#: includes/theme-toolkit-override.php:629
+#: includes/theme-toolkit-override.php:635
+#: includes/theme-toolkit-override.php:640
+msgid "Não especificado"
+msgstr ""
+
+# @ bon
+#: includes/theme-toolkit-override.php:676
+#: templates/blocks/block-listingfooter.php:71
+msgid "Nome"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/theme-toolkit-override.php:677
+msgid "Por favor, insira seu nome."
+msgstr ""
+
+# @ bon-toolkit
+# @ bon
+#: includes/theme-toolkit-override.php:687
+#: templates/blocks/block-listingfooter.php:79
+msgid "Por favor, inserir seu email."
+msgstr ""
+
+# @ bon
+#: includes/theme-toolkit-override.php:696
+msgid "Assunto"
+msgstr ""
+
+# @ bon
+#: includes/theme-toolkit-override.php:705
+msgid "Mensagem"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/theme-toolkit-override.php:706
+msgid "Por favor, digite a sua mensagem."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/theme-toolkit-override.php:713
+msgid "Enviar mensagem"
+msgstr ""
+
+# @ bon
+#: includes/widgets/widget-dsidxpress-search.php:14
+msgid "Search Listing from MLS dsIDXpress."
+msgstr ""
+
+# @ bon
+#: includes/widgets/widget-featured-car.php:35
+#: includes/widgets/widget-featured-listing.php:35
+msgid "Show featured property listing."
+msgstr ""
+
+# @ bon
+#: includes/widgets/widget-featured-car.php:177
+#: includes/widgets/widget-featured-listing.php:183
+msgid "Featured Listing"
+msgstr ""
+
+# @ bon
+#: includes/widgets/widget-related-listing.php:35
+msgid "Show related property listing."
+msgstr ""
+
+# @ bon
+#: includes/widgets/widget-related-listing.php:304
+msgid "Related Listing"
+msgstr ""
+
+# @ bon
+#: searchform.php:6
+msgid "Enter search terms..."
+msgstr ""
+
+# @ bon
+#: searchform.php:9
+msgid "Search"
+msgstr ""
+
+# @ bon
+#. gettext fix: identical singular and plural forms found, that may be ambiguous! Please check the code!
+#: templates/blocks/CAR/block-carlistingmeta.php:38
+#, php-format
+msgid "1 Mile"
+msgid_plural "%s Miles"
+msgstr[0] ""
+msgstr[1] ""
+
+# @ bon
+#: templates/blocks/block-agentlisting.php:66
+#: templates/blocks/block-listingmeta.php:18
+#: templates/contents/content-listing.php:93
+msgid "Sem Quartos"
+msgstr ""
+
+# @ bon
+#: templates/blocks/block-agentlisting.php:66
+#, php-format
+msgid "um Quarto"
+msgid_plural "%s Quartos"
+msgstr[0] ""
+msgstr[1] ""
+
+# @ bon
+#: templates/blocks/block-agentlisting.php:71
+#: templates/blocks/block-listingmeta.php:28
+#: templates/contents/content-listing.php:98
+msgid "Sem Banheiros"
+msgstr ""
+
+# @ bon
+#: templates/blocks/block-agentlisting.php:71
+#: templates/loops/loop-listing.php:25
+#, php-format
+msgid "Um Banheiro"
+msgid_plural "%s Banheiros"
+msgstr[0] ""
+msgstr[1] ""
+
+# @ bon
+#: templates/blocks/block-agentlisting.php:75
+#: templates/contents/content-listing.php:102
+msgid " - "
+msgstr ""
+
+# @ bon
+#: templates/blocks/block-listingfooter.php:26
+msgid "Responsável pela temporada"
+msgstr ""
+
+# @ bon
+#: templates/blocks/block-listingfooter.php:29
+msgid "Celular:"
+msgstr ""
+
+# @ bon
+#: templates/blocks/block-listingfooter.php:33
+msgid "Telefone 1:"
+msgstr ""
+
+# @ bon
+#: templates/blocks/block-listingfooter.php:37
+msgid "Telefone 2:"
+msgstr ""
+
+# @ bon
+#: templates/blocks/block-listingfooter.php:41
+msgid "Email:"
+msgstr ""
+
+# @ bon
+#: templates/blocks/block-listingfooter.php:46
+msgid "Minhas Redes Sociais"
+msgstr ""
+
+# @ bon
+#: templates/blocks/block-listingfooter.php:47
+#: templates/contents/content-agent.php:43
+msgid "Google Plus"
+msgstr ""
+
+# @ bon
+#: templates/blocks/block-listingfooter.php:72
+msgid "Por favor, inserir seu nome."
+msgstr ""
+
+# @ bon
+#: templates/blocks/block-listingfooter.php:85
+msgid "Insira sua mensagem"
+msgstr ""
+
+# @ bon
+#: templates/blocks/block-listingfooter.php:86
+msgid "Por favor, digite sua mensagem."
+msgstr ""
+
+# @ bon
+#: templates/blocks/block-listingfooter.php:90
+#, php-format
+msgid "Ecotemporadas.com | Mensagem em anuncio %s"
+msgstr ""
+
+# @ bon
+#: templates/blocks/block-listingfooter.php:92
+msgid "Enviar"
+msgstr ""
+
+# @ bon
+#: templates/blocks/block-listingfooter.php:101
+#, php-format
+msgid "Outras temporadas<br> de %s"
+msgstr ""
+
+# @ bon
+#: templates/blocks/block-listingfooter.php:101
+msgid "ver mais"
+msgstr ""
+
+# @ bon
+#: templates/blocks/block-listingmeta.php:18
+#, php-format
+msgid "Quantidade: <br>Um Quarto"
+msgid_plural "Quantidade: <br>%s Quartos"
+msgstr[0] ""
+msgstr[1] ""
+
+# @ bon
+#: templates/blocks/block-listingmeta.php:20
+#: templates/blocks/block-listingmeta.php:30
+msgid "Não<br>possui"
+msgstr ""
+
+# @ bon
+#: templates/blocks/block-listingmeta.php:28
+#, php-format
+msgid "Quantidade: <br>Um Banheiro"
+msgid_plural "Quantidade: <br>%s Banheiros "
+msgstr[0] ""
+msgstr[1] ""
+
+# @ bon
+#: templates/blocks/block-listingmeta.php:37
+msgid "&nbsp<br>-"
+msgstr ""
+
+# @ bon
+#: templates/blocks/block-listingmeta.php:46
+msgid "Reciclagem <br> de Lixo"
+msgstr ""
+
+# @ bon
+#: templates/blocks/block-listingmeta.php:57
+msgid "Certificado<br>Ecológico"
+msgstr ""
+
+# @ bon
+#: templates/blocks/block-listingmeta.php:68
+msgid "Atividades<br>Ecológicas"
+msgstr ""
+
+# @ bon
+#: templates/blocks/block-listingtab.php:34
+msgid "Detalhes"
+msgstr ""
+
+# @ bon
+#: templates/blocks/block-listingtab.php:35
+msgid "Diferenciais"
+msgstr ""
+
+# @ bon
+#: templates/blocks/block-listingtab.php:36
+msgid "Especificações"
+msgstr ""
+
+# @ bon
+#: templates/blocks/block-listingtab.php:50
+msgid "Endereço:"
+msgstr ""
+
+# @ bon
+#: templates/blocks/block-listingtab.php:51
+msgid "Cidade:"
+msgstr ""
+
+# @ bon
+#: templates/blocks/block-listingtab.php:54
+msgid "Tipo:"
+msgstr ""
+
+# @ bon
+#: templates/blocks/block-listingtab.php:55
+msgid "Ano construído:"
+msgstr ""
+
+# @ bon
+#: templates/blocks/block-listingtab.php:74
+msgid "Tamanho do imóvel:"
+msgstr ""
+
+# @ bon
+#: templates/contents/content-agent.php:34
+msgid "Celular"
+msgstr ""
+
+# @ bon
+#: templates/contents/content-agent.php:35
+msgid "Telefone 1"
+msgstr ""
+
+# @ bon
+#: templates/contents/content-agent.php:36
+msgid "Telefone 2"
+msgstr ""
+
+# @ bon
+#: templates/contents/content-agent.php:40
+msgid "Seguir no"
+msgstr ""
+
+# @ bon
+#: templates/contents/content-listing.php:93
+#: templates/loops/loop-listing.php:26
+#, php-format
+msgid "Um Quarto"
+msgid_plural "%s Quartos"
+msgstr[0] ""
+msgstr[1] ""
+
+# @ bon
+#. gettext fix: identical singular and plural forms found, that may be ambiguous! Please check the code!
+#: templates/loops/CAR/loop-car-listing.php:9
+#, php-format
+msgid "%s Car Listed"
+msgid_plural "%s Cars Listed"
+msgstr[0] ""
+msgstr[1] ""
+
+# @ bon
+#: templates/loops/loop-listing.php:25
+msgid "Nenhum Banheiro"
+msgstr ""
+
+# @ bon
+#: templates/loops/loop-listing.php:26
+msgid "Nenhum Quarto"
+msgstr ""
+
+# @ bon
+#: templates/loops/loop-listing.php:44
+#, php-format
+msgid "Um Anúncio Encontrado"
+msgid_plural "%s Anúncios Encontrados"
+msgstr[0] ""
+msgstr[1] ""
+
+# @ bon
+#: templates/loops/loop-nav.php:12
+msgid "<span class=\"meta-nav\">&larr;</span> Anterior"
+msgstr ""
+
+# @ bon
+#: templates/loops/loop-nav.php:13
+msgid "Próximo <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""

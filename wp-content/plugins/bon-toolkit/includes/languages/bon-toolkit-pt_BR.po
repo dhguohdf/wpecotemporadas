@@ -1,0 +1,2196 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Bon Toolkit v1.1.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2013-12-09 03:55-0300\n"
+"Last-Translator: ecotemporadas-admin <contato@ecotemporadas.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.6.1\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ../../\n"
+"X-Textdomain-Support: yes\n"
+"Language: pt_BR\n"
+"X-Poedit-SearchPath-0: .\n"
+
+# @ bon-toolkit
+#: bon-toolkit-core-functions.php:150
+msgid "Cannot send email to destination. No parameter receive form AJAX call."
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit-core-functions.php:157 bon-toolkit-core-functions.php:409
+msgid "Please enter your name."
+msgstr "Por favor, insira seu nome."
+
+# @ bon-toolkit
+#: bon-toolkit-core-functions.php:164
+msgid "Please enter a valid email address."
+msgstr "Por favor, digite um email válido"
+
+# @ bon-toolkit
+#: bon-toolkit-core-functions.php:195
+msgid "Cheatin Huh?!"
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit-core-functions.php:215
+msgid "Email was sent successfully."
+msgstr "Email foi enviado com sucesso."
+
+# @ bon-toolkit
+#: bon-toolkit-core-functions.php:218
+msgid "There is an error sending email."
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit-core-functions.php:331
+msgid "Error Loading Video"
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit-core-functions.php:395
+msgid ""
+"Failed rendering contact form. Please provide a correct <strong>Email "
+"Address</strong>."
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit-core-functions.php:407
+msgid "Your Name"
+msgstr ""
+
+# @ bon
+# @ bon-toolkit
+#: bon-toolkit-core-functions.php:408
+#: includes/widgets/widget-categories.php:183
+#: includes/widgets/widget-posts.php:193 includes/widgets/widget-tags.php:202
+msgid "Name"
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit-core-functions.php:413 includes/builder/builder-options.php:160
+msgid "Email Address"
+msgstr ""
+
+# @ bon
+# @ bon-toolkit
+#: bon-toolkit-core-functions.php:414 includes/widgets/widget-authors.php:151
+msgid "Email"
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit-core-functions.php:415
+msgid "Please enter valid email address."
+msgstr ""
+
+# @ bon-toolkit
+# @ bon
+#: bon-toolkit-core-functions.php:419 bon-toolkit-core-functions.php:420
+msgid "Subject"
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit-core-functions.php:424
+msgid "Your Messages"
+msgstr ""
+
+# @ bon
+#: bon-toolkit-core-functions.php:425
+msgid "Messages"
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit-core-functions.php:426
+msgid "Please enter your messages."
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit-core-functions.php:432
+msgid "Send Message"
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit-core-functions.php:463
+msgid "Background Image"
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit-core-functions.php:464
+msgid ""
+"Upload a custom background image for this post. Once image has been "
+"uploaded, click Insert into Post."
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit-core-functions.php:470
+msgid "Background Repeat"
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit-core-functions.php:471
+msgid "Select the preferred repeat for the uploaded image."
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit-core-functions.php:474
+msgid "No Repeat"
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit-core-functions.php:475
+msgid "Repeat Horizontal"
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit-core-functions.php:476
+msgid "Repeat Vertical"
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit-core-functions.php:477
+msgid "Repeat"
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit-core-functions.php:483
+msgid "Background Position"
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit-core-functions.php:484
+msgid "Select the background position for the uploaded image."
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit-core-functions.php:487 includes/builder/builder-options.php:488
+msgid "Left"
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit-core-functions.php:488 includes/builder/builder-options.php:489
+msgid "Right"
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit-core-functions.php:489
+msgid "Center"
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit-core-functions.php:495
+msgid "Background Cover"
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit-core-functions.php:496
+msgid "If browser supported, the background image should cover the block."
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit-core-functions.php:499 includes/builder/builder-options.php:92
+#: includes/builder/builder-options.php:115
+#: includes/widgets/widget-posts.php:186
+msgid "Yes"
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit-core-functions.php:500 includes/builder/builder-options.php:93
+#: includes/builder/builder-options.php:116
+#: includes/widgets/widget-posts.php:187
+msgid "No"
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit-core-functions.php:506
+msgid "Background Color"
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit-core-functions.php:507
+msgid "Select a custom background color for this post."
+msgstr ""
+
+# @ bon
+#: bon-toolkit-core-functions.php:513
+msgid "Custom Background"
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit-twitter-functions.php:52
+msgid "Access Token not properly configured."
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit-twitter-functions.php:54
+msgid "Access Token Secret not properly configured."
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit-twitter-functions.php:56
+msgid "Consumer Key not properly configured."
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit-twitter-functions.php:58
+msgid "Consumer Key Secret not properly configured."
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit-twitter-functions.php:197
+msgid "There was an error grabbing the Twitter feed"
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit.php:229
+msgid ""
+"BonFramework is not available in your theme or you are currently using the "
+"older version. Some features of the Bon Toolkit are disabled."
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit.php:238
+msgid "Bon Toolkit"
+msgstr ""
+
+# @ bon-toolkit
+#: bon-toolkit.php:340
+msgid "Bon Toolkit Options"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-interface.php:760
+msgid "Please activate some widget"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:21
+#: includes/builder/builder-options.php:219
+#: includes/builder/builder-options.php:641
+msgid "Red"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:22
+#: includes/builder/builder-options.php:220
+#: includes/builder/builder-options.php:643
+msgid "Green"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:23
+#: includes/builder/builder-options.php:221
+#: includes/builder/builder-options.php:639
+msgid "Blue"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:24
+#: includes/builder/builder-options.php:223
+msgid "Orange"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:25
+#: includes/builder/builder-options.php:224
+msgid "Purple"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:26
+#: includes/builder/builder-options.php:222
+#: includes/builder/builder-options.php:642
+msgid "Yellow"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:27
+msgid "Dark"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:55
+#: includes/builder/builder-options.php:125
+#: includes/builder/builder-options.php:250
+#: includes/builder/builder-options.php:287
+#: includes/builder/builder-options.php:349
+#: includes/builder/builder-options.php:392
+#: includes/builder/builder-options.php:428
+#: includes/builder/builder-options.php:477
+#: includes/builder/builder-options.php:545
+#: includes/builder/builder-options.php:743
+#: includes/builder/builder-options.php:793
+#: includes/widgets/widget-pages.php:167 includes/widgets/widget-posts.php:192
+#: includes/widgets/widget-video.php:126
+msgid "Title"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:69
+msgid "Post Size"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:72
+msgid "1 Column"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:73
+msgid "2 Columns"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:74
+msgid "3 Columns"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:75
+msgid "4 Columns"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:78
+msgid "Choose the post column options"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:81
+msgid "Choose Category"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:85
+msgid "Choose the post category you want to fetch for the post."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:88
+msgid "Show Thumbnail"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:97
+msgid "Number of Posts"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:101
+msgid "This is the number of fetched item in one page."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:104
+msgid "Excerpt's Length"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:108
+msgid "This is the number of thumbnail content character."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:111
+msgid "Show Pagination"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:119
+msgid ""
+"Pagination will only appear when the number of blog post is greater than the "
+"number of fetched item in one page."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:122
+msgid "Order By"
+msgstr ""
+
+# @ bon-toolkit
+# @ framework
+#: includes/builder/builder-options.php:124 includes/posttypes/poll.php:135
+#: includes/posttypes/portfolio.php:36 includes/posttypes/quiz.php:142
+#: includes/widgets/widget-pages.php:162 includes/widgets/widget-posts.php:194
+msgid "Date"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:126
+#: includes/widgets/widget-posts.php:195 includes/widgets/widget-tags.php:197
+msgid "Random"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:127
+#: includes/widgets/widget-posts.php:196
+msgid "Comment Count"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:133
+msgid "Order Type"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:135
+#: includes/widgets/widget-archives.php:171
+#: includes/widgets/widget-authors.php:145
+#: includes/widgets/widget-categories.php:176
+#: includes/widgets/widget-pages.php:156 includes/widgets/widget-posts.php:181
+#: includes/widgets/widget-tags.php:195
+msgid "Ascending"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:136
+#: includes/widgets/widget-archives.php:172
+#: includes/widgets/widget-authors.php:146
+#: includes/widgets/widget-categories.php:177
+#: includes/widgets/widget-pages.php:157 includes/widgets/widget-posts.php:182
+#: includes/widgets/widget-tags.php:196
+msgid "Descending"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:143
+#: includes/builder/builder-options.php:166
+#: includes/builder/builder-options.php:228
+#: includes/builder/builder-options.php:261
+#: includes/builder/builder-options.php:303
+#: includes/builder/builder-options.php:359
+#: includes/builder/builder-options.php:398
+#: includes/builder/builder-options.php:455
+#: includes/builder/builder-options.php:518
+#: includes/builder/builder-options.php:568
+#: includes/builder/builder-options.php:601
+#: includes/builder/builder-options.php:649
+#: includes/builder/builder-options.php:718
+#: includes/builder/builder-options.php:767
+#: includes/builder/builder-options.php:811
+#: includes/builder/builder-options.php:846
+msgid "Bottom Margin"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:163
+msgid "Input the email address for the contact form to send the contact email"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:193
+msgid "Location Latitude"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:199
+msgid "Location Longitude"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:204
+msgid "Map Height"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:209
+msgid "Start Zoom"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:215
+#: includes/widgets/widget-social.php:191
+msgid "Color"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:256
+#: includes/builder/builder-options.php:354
+msgid "Content"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:293
+msgid "Image URL"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:298
+msgid "Link Image to"
+msgstr ""
+
+# @ default
+# @ bon-toolkit
+#: includes/builder/builder-options.php:331
+#: includes/builder/builder-options.php:450
+msgid "Icon Class"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:334
+msgid "Class for the icon"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:338
+msgid "Icon Style"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:342
+#: includes/widgets/widget-social.php:202
+msgid "Round"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:343
+#: includes/widgets/widget-social.php:201
+msgid "Square"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:344
+msgid "Round Corner"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:345
+msgid "Hexagon"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:385
+#: includes/builder/builder-options.php:679
+#: includes/builder/builder-options.php:832
+msgid "Description"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:388
+msgid "Use this element to put the content from the WordPress Editor"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:395
+msgid "Leave blank if you don't want a title"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:433
+msgid "Sub Title"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:439
+msgid "Button Text"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:445
+msgid "Link To"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:483
+msgid "Tab Direction"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:487
+msgid "Default"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:494
+msgid "Tab Color"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:507
+msgid "Tab Title"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:513
+msgid "Tab Content"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:557
+msgid "Toggle Title"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:563
+msgid "Toggle Content"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:594
+msgid "Divider Text"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:597
+msgid "Leave blank to use second style divider"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:629
+msgid "Alert Content"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:635
+msgid "Alert Color"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:640
+msgid "White"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:644
+msgid "Grey"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:673
+msgid "Video Title"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:682
+msgid ""
+"To embed you only need to specify the url. For example: http://www.youtube."
+"com/watch?v=abcdeFGHIJ. To use self hosted video leave the embed field empty."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:686
+#: includes/widgets/widget-video.php:131
+msgid "Video Url (Third Party Host)"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:689
+#: includes/widgets/widget-video.php:133
+msgid ""
+"For List of Supported Providers please see <a href=\"http://codex.wordpress."
+"org/Embeds\" target=\"blank\">http://codex.wordpress.org/Embeds</a>"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:693
+msgid "Video Poster Url (Self Hosted)"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:699
+msgid "Video .m4v URL (Self Hosted)"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:706
+msgid "Video .ogv URL (Self Hosted)"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:712
+msgid "Short Video Description"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:749
+#: includes/widgets/widget-twitter.php:124
+msgid "Twitter Username"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:755
+#: includes/builder/builder-options.php:805
+msgid "How many post to fetch?"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:761
+msgid "Follow Me Text"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:799
+msgid "Flickr ID"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:835
+msgid ""
+"Choose the widget slot then go to <strong>Widget</strong> menu and drag "
+"widget into the slot. Custom widget slot can be created through theme "
+"options <strong>Sidebar Generator</strong> if supported."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder-options.php:838
+msgid "Choose Widget Slot"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder.php:46
+msgid "BT Page Builder"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder.php:138
+msgid "loading..."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder.php:145
+msgid ""
+"Choose the builder element from the button bar above. You can drag the "
+"position and resize the block of the generated element"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder.php:234
+#, php-format
+msgid "Edit %s Property"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder.php:307
+msgid "Add Tab"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder.php:375
+msgid "Upload Image"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder.php:447 includes/builder/builder.php:468
+msgid "Add Field"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/builder/builder.php:448 includes/builder/builder.php:469
+msgid "Remove Field"
+msgstr ""
+
+# @ bon
+#: includes/classes/class-likes.php:88
+msgid "Like this"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/classes/class-likes.php:91
+msgid "You already like this"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/classes/class-poll.php:275
+msgid "Vote"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/classes/class-poll.php:315
+#, php-format
+msgid "Total Vote: 1"
+msgid_plural "Total Vote: %d"
+msgstr[0] ""
+msgstr[1] ""
+
+# @ bon-toolkit
+#: includes/classes/class-poll.php:332
+msgid "Invalid Poll ID"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/classes/class-quiz.php:147
+msgid "Invalid Quiz ID"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/classes/class-social-share.php:104
+msgid "Share this on :"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/classes/class-social-share.php:218
+#, php-format
+msgid "Share this on %s"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:9 includes/options.php:204
+msgid "Widget Settings"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:26
+msgid ""
+"Use the default css from the plugin. Disable this if you want to use your "
+"own css"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:27
+msgid "Use Default Widget CSS"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:38
+msgid "Use the plugin FontAwesome icon style"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:39
+msgid "Use FontAwesome from Plugin"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:46
+msgid ""
+"Your FontAwesome Icon prefix might be different from the plugin FontAwesome "
+"prefix specify the prefix in here."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:47
+msgid "FontAwesome Prefix"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:67
+msgid "Post Type Settings"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:81
+msgid "Enable / Disable Portfolio Post Type"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:82
+msgid "Portfolio"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:90
+msgid "Enable / Disable Testimonial Post Type"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:91
+msgid "Testimonial"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:100
+msgid "Enable / Disable Poll Post Type"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:101
+msgid "Poll"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:110
+msgid "Enable / Disable Review Post Type"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:111
+msgid "Review"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:120
+msgid "Enable / Disable Featured Slider Post Type"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:121
+msgid "Featured Slider"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:130
+msgid "Enable / Disable Quiz Post Type"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:131
+msgid "Quiz"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:139
+msgid "Comment for Quiz Score 100"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:147
+msgid "Comment for Quiz Score >= 90"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:155
+msgid "Comment for Quiz Score >= 80"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:163
+msgid "Comment for Quiz Score >= 60"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:171
+msgid "Comment for Quiz Score >= 40"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:179
+msgid "Comment for Quiz Score >= 30"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:187
+msgid "Comment for Quiz Score 0"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:210
+msgid "Enable / Disable Twitter Widget."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:211
+msgid "Twitter Widget"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:217
+msgid "Enable / Disable Dribbble Widget."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:218 includes/widgets/widget-dribbble.php:29
+msgid "Dribbble Widget"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:224
+msgid "Enable / Disable Flickr Widget."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:225 includes/widgets/widget-flickr.php:29
+msgid "Flickr Widget"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:231
+msgid "Enable / Disable Social Icons Widget."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:232
+msgid "Social Icons Widget"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:238
+msgid "Enable / Disable Video Widget."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:239
+msgid "Video Widget"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:245
+msgid "Enable / Disable Posts Widget."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:246 includes/widgets/widget-posts.php:53
+msgid "Posts Widget"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:252
+msgid "Enable / Disable Contact Form Widget."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:253 includes/widgets/widget-contactform.php:45
+msgid "Contact Form Widget"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:262
+msgid "Enable / Disable Advanced Archives Widget."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:263
+msgid "Archives Widget"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:269
+msgid "Enable / Disable Advanced Tags Widget."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:270
+msgid "Tags Widget"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:276
+msgid "Enable / Disable Advanced Search Widget."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:277
+msgid "Search Widget"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:283
+msgid "Enable / Disable Advanced Pages Widget."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:284
+msgid "Pages Widget"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:290
+msgid "Enable / Disable Advanced Navigation Menu Widget."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:291
+msgid "Navigation Menu Widget"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:297
+msgid "Enable / Disable Advanced Categories Widget."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:298
+msgid "Categories Widget"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:304
+msgid "Enable / Disable Advanced Calendar Widget."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:305
+msgid "Calendar Widget"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:311
+msgid "Enable / Disable Advanced Authors Widget."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:312
+msgid "Authors Widget"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:326
+msgid "API Settings"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:331
+msgid "Here is the place to fill the api key needed for some features to work."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:337
+msgid "The twitter access token key generated from your apps."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:338
+msgid "Twitter Acces Token"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:344
+msgid "The twitter access token secret key generated from your apps."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:345
+msgid "Twitter Acces Token Secret"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:351
+msgid "The twitter consumer key generated from your apps."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:352
+msgid "Twitter Consumer Key"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:358
+msgid "The twitter consumer secret key generated from your apps."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:359
+msgid "Twitter Consumer Key Secret"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:373
+msgid "Social Share Settings"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:379
+msgid "Turn on the social share button on posts and pages"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:380
+msgid "Turn on Social Share button"
+msgstr ""
+
+# @ bon
+#: includes/options.php:388
+msgid "After Post Content"
+msgstr ""
+
+# @ bon
+#: includes/options.php:389
+msgid "Before Post Content"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:391
+msgid "Where do you want the share button to be put?"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:392
+msgid "Set Location for Share Button"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:403
+msgid "Toolkit Help"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:413
+msgid "What is this plugin and why do I need it?"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:414
+msgid ""
+"The Bon Toolkit provides extra functionality to the collection of themes "
+"from <a target=\"blank\" href=\"http://bonfirelab.com\" title=\"bonfirelab"
+"\">Bonfirelab</a>. The Toolkit adds various widgets (Twitter, Flickr, "
+"Dribbble and social icons), and a few custom post types. The plugin is not a "
+"requirement to use themes from bonfirelab, but it will extend the themes to "
+"function as you see them in the demos."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:419
+msgid "How to use the Shortcode?"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:420
+msgid ""
+"When editing post there is a small black button with \"B\" in the Editor. "
+"Press it and choose the shortcode you want."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:425
+msgid "Available Shortcode Settings"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:426
+msgid ""
+"<ul> <li> <strong>Used to wrap [bt-tab][/bt-tabs] (~s different)</strong> "
+"<pre><code>[bt-tabs direction=\"top|left|right\" color=\"red|green|blue|"
+"yellow|dark|purple|orange\"] [bt-tab][/bt-tab] [/bt-tabs]</code></pre> </li> "
+"<li> <strong>Use to output each tab content</strong> <pre><code>[bt-"
+"tab]Content[/bt-tab]</code></pre> </li> <li> <strong>Used to output map</"
+"strong> <pre><code>[bt-map latitude=\"123456890\" longitude=\"1234567890\" "
+"zoom=\"14\" color=\"red|green|blue|yellow|dark|purple|orange\" height=\"px|%|"
+"em\" width=\"px|%|em\"]</code></pre> </li> <li> <strong>Used to wrap [bt-"
+"toggle][/bt-toggle]</strong> <pre><code>[bt-toggles] [bt-toggle][/bt-toggle] "
+"[/bt-toggles]</code></pre> </li> <li> <strong>Used to output toggle content</"
+"strong> <pre><code>[bt-toggle]Content[/bt-toggle]</code></pre> </li> <li> "
+"<strong>Used to output Alert</strong> <pre><code>[bt-alert color=\"white|"
+"blue|gray|yellow|red|green\"]Content[/bt-alert]</code></pre> </li> <li> "
+"<strong>Used to output Button</strong> <pre><code>[bt-button url=\"http://\" "
+"target=\"_self|_blank\" color=\"dark|light|pink|red|green|blue|yellow|orange|"
+"purple\" style=\"grad|flat\" size=\"small|medium|large\" type=\"square|round|"
+"round-corner\" ]Content[/bt-button]</code></pre> </li> </ul>"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:431
+msgid ""
+"Why are the some of the Post Type Settings available in one of my Bonfirelab "
+"themes but not the other?"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:432
+msgid ""
+"The Toolkit plugin only shows options / settings for themes that support it. "
+"If your theme does not support either feature, their settings will not be "
+"shown."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:437
+msgid "Can I use this plugin with other themes?"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:438
+msgid ""
+"This toolkit was developed to extend the functionality of Bonfirelab themes, "
+"however you can still use some parts of the plugin features such as widget "
+"in other themes. Advanced features like Custom Post Types will only work "
+"with Bonfirelab Themes due to framework dependant."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:443
+msgid "This plugin is awesome where do I find the developer?"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/options.php:444
+msgid ""
+"You can find me on <a href=\"http://bonfirelab.com\" target=\"blank\" "
+">bonfirelab.com</a>. Or follow me on <a href=\"http://twitter.com/"
+"nackle2k10\" target=\"blank\">Twitter</a>"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/poll.php:28
+msgid "Poll Settings"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/poll.php:29
+msgid "Setup the voting options for user."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/poll.php:39
+msgid "Vote Option"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/poll.php:82 includes/posttypes/quiz.php:90
+msgid "Shortcode"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/poll.php:133
+msgid "Poll Title"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/poll.php:134
+msgid "Poll Shortcode"
+msgstr ""
+
+# @ framework
+#: includes/posttypes/portfolio.php:37
+msgid "When is the project created"
+msgstr ""
+
+# @ framework
+#: includes/posttypes/portfolio.php:43
+msgid "Url"
+msgstr ""
+
+# @ framework
+#: includes/posttypes/portfolio.php:44
+msgid "Url to the implemented final project"
+msgstr ""
+
+# @ framework
+#: includes/posttypes/portfolio.php:50
+msgid "Client"
+msgstr ""
+
+# @ framework
+#: includes/posttypes/portfolio.php:51
+msgid "Who is your client (eq. Jonh doe or Organization Name)"
+msgstr ""
+
+# @ framework
+#: includes/posttypes/portfolio.php:57
+msgid "Gallery"
+msgstr ""
+
+# @ framework
+#: includes/posttypes/portfolio.php:58
+msgid "Project Images Gallery"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/quiz.php:30
+msgid "Quiz Settings"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/quiz.php:41
+msgid "Question"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/quiz.php:47
+msgid "Answer"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/quiz.php:50
+msgid ""
+"Define the correct answer by inputting the index of the options. eq: if your "
+"answer is in the option number 2 then put 2 inside the textbox."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/quiz.php:54
+msgid "Option Set"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/quiz.php:57
+msgid ""
+"Separate each option in square bracket. eq: [Option 1] [Option 2] [Option 3]"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/quiz.php:140
+msgid "Quiz Title"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/quiz.php:141
+msgid "Quiz Shortcode"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/review.php:32
+msgid "Review Settings"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/review.php:33
+msgid "Setup the review criteria."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/review.php:42
+msgid "Review Criteria"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/review.php:48
+msgid "Review Rating"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/review.php:60
+msgid "Review Pros"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/review.php:61
+msgid ""
+"The review pros. Tips: You can wrap the item in list. eq <br />&lt;ul&gt;"
+"<br />&lt;li&gt;Pros 1&lt;/li&gt;<br />&lt;li&gt;Pros 2&lt;/li&gt; <br /> "
+"&lt;/ul&gt;"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/review.php:68
+msgid "Review Cons"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/review.php:69
+msgid ""
+"The review cons.  Tips: You can wrap the item in list. eq <br />&lt;ul&gt;"
+"<br />&lt;li&gt;Pros 1&lt;/li&gt;<br />&lt;li&gt;Pros 2&lt;/li&gt; <br /> "
+"&lt;/ul&gt;"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/slider.php:29
+msgid "Slider Image"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/slider.php:32
+msgid "The Slider Image."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/slider.php:36
+msgid "Sub Title / Secondary Title"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/slider.php:39
+msgid "The Secondary title below the Primary Title."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/slider.php:43
+msgid "Url / Link to"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/slider.php:46
+msgid "Read more target"
+msgstr ""
+
+# @ default
+#: includes/posttypes/slider.php:50
+msgid "Caption Position"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/slider.php:57
+msgid "The position of the titles and the contents"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/testimonial.php:29
+msgid "Author Photo"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/testimonial.php:32
+msgid "The image for the author who give the testimonial."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/testimonial.php:36
+msgid "Author Name"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/testimonial.php:39
+msgid "The testimonial author's name"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/testimonial.php:43
+msgid "Author Url"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/testimonial.php:46
+msgid "Link to Author"
+msgstr ""
+
+# @ default
+#: includes/posttypes/testimonial.php:50
+msgid "Author Position"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/posttypes/testimonial.php:53
+msgid "The author position. eq. CEO"
+msgstr ""
+
+# @ bon
+#: includes/shortcodes.php:281
+msgid "Posted on:"
+msgstr ""
+
+# @ bon
+#: includes/shortcodes.php:283
+msgid "l, F jS, Y, g:i a"
+msgstr ""
+
+# @ bon
+#: includes/shortcodes.php:296
+msgid "Author:"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-archives.php:36
+msgid ""
+"An advanced widget that gives you total control over the output of your "
+"archives."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-archives.php:48
+#: includes/widgets/widget-archives.php:146
+msgid "Archives"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-archives.php:83
+msgid "Select Year"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-archives.php:86
+msgid "Select Month"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-archives.php:89
+msgid "Select Week"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-archives.php:92
+msgid "Select Day"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-archives.php:95
+msgid "Select Post"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-archives.php:161
+msgid "Alphabetical"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-archives.php:162
+msgid "Daily"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-archives.php:163
+msgid "Monthly"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-archives.php:164
+msgid "Post By Post"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-archives.php:165
+msgid "Weekly"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-archives.php:166
+msgid "Yearly"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-archives.php:177
+msgid "Custom"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-archives.php:178
+msgid "HTML"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-archives.php:179
+msgid "Option"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-archives.php:185
+#: includes/widgets/widget-authors.php:164
+#: includes/widgets/widget-calendar.php:112
+#: includes/widgets/widget-categories.php:200
+#: includes/widgets/widget-contactform.php:121
+#: includes/widgets/widget-dribbble.php:92
+#: includes/widgets/widget-flickr.php:67
+#: includes/widgets/widget-nav-menu.php:135
+#: includes/widgets/widget-pages.php:182 includes/widgets/widget-posts.php:213
+#: includes/widgets/widget-search.php:147
+#: includes/widgets/widget-social.php:173 includes/widgets/widget-tags.php:216
+#: includes/widgets/widget-twitter.php:118
+msgid "Title:"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-archives.php:189
+msgid "Posts per page"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-archives.php:193
+msgid "Type"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-archives.php:201
+#: includes/widgets/widget-posts.php:222
+msgid "Order"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-archives.php:212
+msgid "Format"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-archives.php:220
+msgid "Before"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-archives.php:224
+msgid "After"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-archives.php:229
+#: includes/widgets/widget-authors.php:212
+msgid "Show post count?"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-authors.php:36
+msgid ""
+"An advanced widget that gives you total control over the output of your "
+"author lists."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-authors.php:48
+#: includes/widgets/widget-authors.php:127
+msgid "Authors"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-authors.php:150
+msgid "Display Name"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-authors.php:152
+#: includes/widgets/widget-categories.php:182
+#: includes/widgets/widget-pages.php:163 includes/widgets/widget-posts.php:191
+msgid "ID"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-authors.php:153
+msgid "Nice Name"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-authors.php:154
+msgid "Post Count"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-authors.php:155
+msgid "Registered"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-authors.php:156
+msgid "URL"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-authors.php:157
+msgid "Login"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-authors.php:190
+#: includes/widgets/widget-categories.php:171
+#: includes/widgets/widget-tags.php:191
+msgid "List"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-authors.php:190
+#: includes/widgets/widget-categories.php:172
+msgid "None"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-authors.php:208
+msgid "<acronym title=\"Hypertext Markup Language\">HTML</acronym>?"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-authors.php:216
+msgid "Exclude admin?"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-authors.php:220
+msgid "Show full name?"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-authors.php:224
+#: includes/widgets/widget-categories.php:303
+#: includes/widgets/widget-tags.php:327
+msgid "Hide empty?"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-calendar.php:36
+msgid ""
+"An advanced widget that gives you total control over the output of your "
+"calendar."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-calendar.php:48
+#: includes/widgets/widget-calendar.php:103
+msgid "Calendar"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-calendar.php:117
+msgid "One-letter abbreviation?"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-categories.php:37
+msgid ""
+"An advanced widget that gives you total control over the output of your "
+"category links."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-categories.php:49
+#: includes/widgets/widget-categories.php:141
+msgid "Categories"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-categories.php:181
+#: includes/widgets/widget-tags.php:201
+msgid "Count"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-categories.php:184
+#: includes/widgets/widget-pages.php:166
+msgid "Slug"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-categories.php:185
+msgid "Term Group"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-categories.php:190
+msgid "Atom"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-categories.php:191
+msgid "RDF"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-categories.php:192
+msgid "RSS"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-categories.php:193
+msgid "RSS 2.0"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-categories.php:291
+#: includes/widgets/widget-pages.php:281
+msgid "Hierarchical?"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-categories.php:295
+msgid "Use description?"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-categories.php:299
+msgid "Show count?"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-contactform.php:36
+msgid "A Widget to show Contact Form."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-contactform.php:110
+msgid "Contact Us"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-contactform.php:125
+msgid "Receiver Email Address"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-dribbble.php:27
+msgid "Grab your latest Dribbble shots"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-dribbble.php:98
+msgid "Username:"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-dribbble.php:104
+msgid "Number of Shots:"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-flickr.php:27
+msgid "Grab your latest Flickr photos"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-flickr.php:72
+msgid "Your Flickr User ID:"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-flickr.php:78
+msgid "No. of Photos:"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-nav-menu.php:36
+msgid ""
+"An advanced widget that gives you total control over the output of your "
+"menus."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-nav-menu.php:48
+msgid "Navigation Menu"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-nav-menu.php:112
+msgid "Navigation"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-pages.php:36
+msgid ""
+"An advanced widget that gives you total control over the output of your page "
+"links."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-pages.php:48 includes/widgets/widget-pages.php:129
+msgid "Pages"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-pages.php:161
+msgid "Author"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-pages.php:164
+msgid "Menu Order"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-pages.php:165 includes/widgets/widget-pages.php:173
+msgid "Modified"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-pages.php:172
+msgid "Created"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-posts.php:42
+msgid ""
+"An advanced widget that gives you query your latest posts from various post "
+"types and terms."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-posts.php:111
+msgid "Permalink to "
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-posts.php:114
+msgid ""
+"[entry-published format=\"M, d Y\" text=\"Published on\"] [entry-author text="
+"\"by\"]"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-posts.php:123
+msgid "No post found."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-posts.php:169
+msgid "Latest Posts"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-posts.php:209
+msgid ""
+"<strong>Note:</strong> Post type and term value have to match each taxonomy "
+"belong to post type for the query to work."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-posts.php:217
+msgid "Limit"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-posts.php:231
+msgid "Order by"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-posts.php:240
+msgid "Include Published Meta"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-posts.php:249
+msgid "Post Type"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-posts.php:251 includes/widgets/widget-posts.php:280
+msgid "Select One"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-posts.php:278
+msgid "Term"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-search.php:36
+msgid ""
+"An advanced widget that gives you total control over the output of your "
+"search form."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-search.php:48
+#: includes/widgets/widget-search.php:135
+msgid "Search"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-search.php:151
+msgid "Search Label:"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-search.php:155
+msgid "Search Text:"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-search.php:162
+msgid "Search Submit:"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-search.php:167
+msgid "Use theme's <code>searchform.php</code>?"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-social.php:32
+msgid "Show social icon links"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-social.php:34
+msgid " Social Icons Widget"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-social.php:152
+#, php-format
+msgid "%s Link"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-social.php:183
+#: includes/widgets/widget-social.php:199
+msgid "Color Style"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-social.php:185
+msgid "Gradient"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-social.php:186 includes/widgets/widget-tags.php:190
+msgid "Flat"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-social.php:193
+msgid "Social Color"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-social.php:194
+msgid "Black and White"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-social.php:203
+msgid "Square Rounded Corner"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-social.php:208
+msgid "Size"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-social.php:210
+msgid "Medium"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-social.php:211
+msgid "Small"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-social.php:212
+msgid "Large"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-tags.php:41
+msgid ""
+"An advanced widget that gives you total control over the output of your tags."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-tags.php:53 includes/widgets/widget-tags.php:155
+msgid "Tags"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-tags.php:185
+msgid "View"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-tags.php:186
+msgid "Edit"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-tags.php:323
+msgid "Pad counts?"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-twitter.php:32
+msgid "A widget that displays your latest tweet."
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-twitter.php:38
+msgid " Twitter Widget"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-twitter.php:130
+msgid "Number of tweets (max 20)"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-twitter.php:136
+msgid "Follow Text e.g. Follow me on Twitter"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-video.php:36
+msgid "Show Video"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-video.php:38
+msgid " Video Widget"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-video.php:137
+msgid "M4V Video Url (Self Hosted)"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-video.php:142
+msgid "OGV Video Url (Self Hosted)"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-video.php:148
+msgid "Poster Url (Self Hosted)"
+msgstr ""
+
+# @ bon-toolkit
+#: includes/widgets/widget-video.php:153
+msgid "Short Description"
+msgstr ""
