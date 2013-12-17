@@ -38,8 +38,9 @@ function admin_messages($messages) {
 	$singular = $obj->labels->singular_name;
 
 	$messages[$post_type] = array(
-	1 => sprintf( __($print . ' <a href="%s">Ver anúncio.</a>'), esc_url( get_permalink($post_ID) ) ),
-	6 => sprintf( __($print . ' <a href="%s">Ver anúncio.</a>'), esc_url( get_permalink($post_ID) ) ),
+	1 => sprintf( __($print . ' <a href="%s">Ver anúncio.</a>'), esc_url( get_permalink($post_ID) ) ), //Salvar/Atualizar
+	6 => sprintf( __($print . ' <a href="%s">Ver anúncio.</a>'), esc_url( get_permalink($post_ID) ) ), //Publish
+	10 => sprintf( __($print . ' <a href="%s">Ver anúncio.</a>'), esc_url( get_permalink($post_ID) ) ), //Salvar como Rascunho
 	);
 	return $messages;
 }
@@ -50,7 +51,7 @@ add_filter('wp_handle_upload_prefilter', 'limite_upload');
 function limite_upload( $file ) {
 	global $post, $post_ID;
 	$post_type = get_post_type( $post_ID );
-	if ( $post_type == 'listing' ) {
+	if ( $post_type == 'post' ) {
 	
 	  if ($file['type']=='application/octet-stream' && isset($file['tmp_name'])) {
 		$file_size = getimagesize($file['tmp_name']);
