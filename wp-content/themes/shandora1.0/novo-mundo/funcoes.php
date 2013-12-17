@@ -1,5 +1,16 @@
 <?php 
 
+//Modo de manutenção
+function maintenace_mode() {
+  if ( !current_user_can( 'edit_themes' ) || !is_user_logged_in() ) {
+    die('<div style="text-align: center;"><h1>Em manutenção</h1><p>Por favor volte em 30 minutos.</p><p>Enquanto isso, acesse o site da <a href="http://www.eaxdesign.com.br/">Eax Design</a>.</p></div>');
+  }
+}
+// Comente a seguinte linha para sair no "Modo de manutenção"
+//add_action('get_header', 'maintenace_mode');
+
+// Mensagem padrão nos post types
+
 add_filter( 'default_content', 'conteudo_editor', 10, 2 );
 
 function conteudo_editor( $content, $post ) {
@@ -19,6 +30,26 @@ function conteudo_editor( $content, $post ) {
 
     return $content;
 }
+
+
+// Customizing Login
+
+function mapadosplanos_login_stylesheet() { 
+	?>
+    <link rel="stylesheet" id="custom_wp_admin_css"  href="<?php echo get_bloginfo( 'stylesheet_directory' ) . '/style-login.css'; ?>" type="text/css" media="all" />
+	<?php 
+}
+add_action( 'login_enqueue_scripts', 'mapadosplanos_login_stylesheet' );
+
+function mapadosplanos_login_footer() { 
+	?>
+	<script type='text/javascript' src='<?php echo get_bloginfo( 'stylesheet_directory' ) . '/js/wp-login.js'; ?>'></script>
+
+	<?php
+}
+
+	add_filter('login_footer', 'mapadosplanos_login_footer');
+
 
 
 
