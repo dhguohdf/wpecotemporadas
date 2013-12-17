@@ -15,7 +15,6 @@ if( is_singular( get_post_type() ) ) {
 
 
 ?>
-<article class="<?php bon_entry_class($status); ?> large-12">
 <article id="post-<?php the_ID(); ?>" class="<?php bon_entry_class($status); ?> large-8" itemscope itemtype="http://schema.org/RealEstateAgent" style="float:left; clear:both">
 	<header class="entry-header clear">
 		<?php echo apply_atomic_shortcode( 'entry_title', the_title( '<h1 class="entry-title" itemprop="name">', '</h1>', false ) ); ?>
@@ -56,9 +55,12 @@ if( is_singular( get_post_type() ) ) {
 		<div id="detail-tab" class="column <?php echo $detail_class; ?>">
 			<?php bon_get_template_part('block','listingtab'); ?>
 		</div>
-	<?php bon_get_template_part('block', 'listingfooter'); ?>
 </aside>
-</article>
+
+<div class="clear"></div>
+
+<?php bon_get_template_part('block', 'listingfooter'); ?>
+
 <?php } else {
 ?>
 

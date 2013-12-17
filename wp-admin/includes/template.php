@@ -686,7 +686,7 @@ function touch_time( $edit = 1, $for_post = 1, $tab_index = 0, $multi = 0 ) {
 
 <p>
 <a href="#edit_timestamp" class="save-timestamp hide-if-no-js button"><?php _e('OK'); ?></a>
-<a href="#edit_timestamp" class="cancel-timestamp hide-if-no-js"><?php _e('Cancel'); ?></a>
+<a href="#edit_timestamp" class="cancel-timestamp hide-if-no-js button-cancel"><?php _e('Cancel'); ?></a>
 </p>
 <?php
 }
@@ -1483,26 +1483,25 @@ function _post_states($post) {
 	if ( !empty($post->post_password) )
 		$post_states['protected'] = __('Password protected');
 	if ( 'private' == $post->post_status && 'private' != $post_status )
-		$post_states['private'] = __('Aguardando Pagamento');
+		$post_states['private'] = __('Private');
 	if ( 'draft' == $post->post_status && 'draft' != $post_status )
-		$post_states['draft'] = __('Salve para Revisão');
+		$post_states['draft'] = __('Draft');
 	if ( 'pending' == $post->post_status && 'pending' != $post_status )
 		/* translators: post state */
-		$post_states['pending'] = _x('Aguardando Revisão', '');
+		$post_states['pending'] = _x('Pending', 'post state');
 	if ( is_sticky($post->ID) )
 		$post_states['sticky'] = __('Sticky');
-	if ( 'publish' == $post->post_status && 'publish' != $post_status )
-		$post_states['publish'] = __('Aprovado');
 
 	$post_states = apply_filters( 'display_post_states', $post_states, $post );
 
 	if ( ! empty($post_states) ) {
 		$state_count = count($post_states);
 		$i = 0;
+		echo ' - ';
 		foreach ( $post_states as $state ) {
 			++$i;
 			( $i == $state_count ) ? $sep = '' : $sep = ', ';
-			echo "<br><span class='post-state'>$state</span>";
+			echo "<span class='post-state'>$state$sep</span>";
 		}
 	}
 
@@ -1686,7 +1685,13 @@ function get_submit_button( $text = null, $type = 'primary large', $name = 'subm
 }
 
 function _wp_admin_html_begin() {
+	global $is_IE;
+
 	$admin_html_class = ( is_admin_bar_showing() ) ? 'wp-toolbar' : '';
+
+	if ( $is_IE )
+		@header('X-UA-Compatible: IE=edge');
+
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]>
@@ -1960,4 +1965,60 @@ function _local_storage_notice() {
 	</p>
 	</div>
 	<?php
+}
+
+/**
+ * Output a HTML element with a star rating for a given rating.
+ *
+ * Outputs a HTML element with the star rating exposed on a 0..5 scale in
+ * half star increments (ie. 1, 1.5, 2 stars). Optionally, if specified, the
+ * number of ratings may also be displayed by passing the $number parameter.
+ *
+ * @since 3.8.0
+ * @param array $args {
+ *     Optional. Array of star ratings arguments.
+ *
+ *     @type int    $rating The rating to display, expressed in either a 0.5 rating increment,
+ *                          or percentage. Default 0.
+ *     @type string $type   Format that the $rating is in. Valid values are 'rating' (default),
+ *                          or, 'percent'. Default 'rating'.
+ *     @type int    $number The number of ratings that makes up this rating. Default 0.
+ * }
+ */
+function wp_star_rating( $args = array() ) {
+	$defaults = array(
+		'rating' => 0,
+		'type' => 'rating',
+		'number' => 0,
+	);
+	$r = wp_parse_args( $args, $defaults );
+	extract( $r, EXTR_SKIP );
+
+	// Non-english decimal places when the $rating is coming from a string
+	$rating = str_replace( ',', '.', $rating );
+
+	// Convert Percentage to star rating, 0..5 in .5 increments
+	if ( 'percent' == $type ) {
+		$rating = round( $rating / 10, 0 ) / 2;
+	}
+
+	// Calculate the number of each type of star needed
+	$full_stars = floor( $rating );
+	$half_stars = ceil( $rating - $full_stars );
+	$empty_stars = 5 - $full_stars - $half_stars;
+
+	if ( $number ) {
+		/* translators: 1: The rating, 2: The number of ratings */
+		$title = _n( '%1$s rating based on %2$s rating', '%1$s rating based on %2$s ratings', $number );
+		$title = sprintf( $title, number_format_i18n( $rating, 1 ), number_format_i18n( $number ) );
+	} else {
+		/* translators: 1: The rating */
+		$title = sprintf( __( '%s rating' ), number_format_i18n( $rating, 1 ) );
+	}
+
+	echo '<div class="star-rating" title="' . esc_attr( $title ) . '">';
+	echo str_repeat( '<div class="star star-full"></div>', $full_stars );
+	echo str_repeat( '<div class="star star-half"></div>', $half_stars );
+	echo str_repeat( '<div class="star star-empty"></div>', $empty_stars);
+	echo '</div>';
 }

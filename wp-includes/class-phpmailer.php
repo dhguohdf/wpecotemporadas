@@ -324,7 +324,7 @@ class PHPMailer {
    *        it must be used via self::CRLF
    * @var string
    */
-  public $LE              = "\r\n";
+  public $LE              = "\n";
 
    /**
    * Used with DKIM Signing
@@ -1192,7 +1192,11 @@ class PHPMailer {
    * @return string
    */
   public function AddrFormat($addr) {
-    return $this->SecureHeader($addr[0]);
+    if (empty($addr[1])) {
+      return $this->SecureHeader($addr[0]);
+    } else {
+      return $this->EncodeHeader($this->SecureHeader($addr[1]), 'phrase') . " <" . $this->SecureHeader($addr[0]) . ">";
+    }
   }
 
   /**

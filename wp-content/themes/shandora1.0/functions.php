@@ -3,6 +3,9 @@ load_theme_textdomain('bon');
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
+// Novo Mundo ini
+require_once ( get_template_directory() . '/novo-mundo/funcoes.php' );
+
 /*-----------------------------------------------------------------------------------*/
 /* Start BonThemes Functions - Please refrain from editing this section */
 /*-----------------------------------------------------------------------------------*/
