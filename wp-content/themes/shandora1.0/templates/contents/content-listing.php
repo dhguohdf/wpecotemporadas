@@ -54,12 +54,11 @@ if( is_singular( get_post_type() ) ) {
 	<div class="row entry-specification">
 		<div id="detail-tab" class="column <?php echo $detail_class; ?>">
 			<?php bon_get_template_part('block','listingtab'); ?>
+			<?php bon_get_template_part('block','listingfooter'); ?>
 		</div>
 </aside>
 
 <div class="clear"></div>
-
-<?php bon_get_template_part('block', 'listingfooter'); ?>
 
 <?php } else {
 ?>
