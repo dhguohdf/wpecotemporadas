@@ -743,7 +743,7 @@ function shandora_render_builder_element_car_listing($value) {
 					
 					$price = shandora_get_meta(get_the_ID(), 'listing_price', true); 
 
-				$o .= '<div class="property-price"><a href="'.get_permalink(get_the_ID()).'" title="'.the_title_attribute( array('before' => __('Permalink to', 'bon'), 'echo' => false) ).'">'. shandora_get_listing_price(false) .'</a></div></footer><!-- .entry-footer -->';
+				$o .= '<div class="property-price"><a href="'.get_permalink($post_id).'" title="'.the_title_attribute( array('before' => __('Permalink to', 'bon'), 'echo' => false) ).'">'. shandora_get_listing_price(false) .'</a></div></footer><!-- .entry-footer -->';
 
 			$o .= '</article></li>';
 
