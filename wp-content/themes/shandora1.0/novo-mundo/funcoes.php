@@ -67,14 +67,14 @@ function limite_upload($file) {
   list($category,$type) = explode('/',$file['type']);
 
   if ('image'!=$category || !in_array($type,array('jpg','jpeg','gif','png')) && $post_type == "listing" ) {
-    $file['error'] = "Sorry, you can only upload a .GIF, a .JPG, or a .PNG image file.";
+    $file['error'] = "Desculpe você só pode fazer upload de arquivos .GIF, .JP ou .PNG.";
   } else if ($post_id = (isset($_REQUEST['post_id']) ? $_REQUEST['post_id'] : false)) {
 
-		if ( count( get_posts( "post_type=attachment&post_parent={$post_id}" ) ) > 2 )
-			$file['error'] = "Você atingiu seu limite de imagens (3).";
+		if ( count( get_posts( "post_type=attachment&post_parent={$post_id}" ) ) > 19 )
+			$file['error'] = "Você atingiu seu limite de imagens (20).";
 		}
   return $file;
 }
 
-add_filter('wp_handle_upload_prefilter', 'limite_upload(');
+add_filter('wp_handle_upload_prefilter', 'limite_upload');
 ?>
