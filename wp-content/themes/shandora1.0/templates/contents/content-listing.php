@@ -15,6 +15,7 @@ if( is_singular( get_post_type() ) ) {
 
 
 ?>
+<article class="<?php bon_entry_class($status); ?> large-12">
 <article id="post-<?php the_ID(); ?>" class="<?php bon_entry_class($status); ?> large-8" itemscope itemtype="http://schema.org/RealEstateAgent" style="float:left; clear:both">
 	<header class="entry-header clear">
 		<?php echo apply_atomic_shortcode( 'entry_title', the_title( '<h1 class="entry-title" itemprop="name">', '</h1>', false ) ); ?>
@@ -38,32 +39,31 @@ if( is_singular( get_post_type() ) ) {
 	<div class="entry-meta" itemprop="description">
 		<?php bon_get_template_part('block', 'listingmeta'); ?>
 	</div>
-
 	<div class="listing-map">
-		<?php 
-		$latitude = shandora_get_meta($post->ID, 'listing_maplatitude');
-		$longitude = shandora_get_meta($post->ID, 'listing_maplongitude');
+	                <?php 
+	                $latitude = shandora_get_meta($post->ID, 'listing_maplatitude');
+	                $longitude = shandora_get_meta($post->ID, 'listing_maplongitude');
 
-		echo apply_atomic_shortcode('listing_map','[bt-map color="blue" latitude="'.$latitude.'" longitude="'.$longitude.'" zoom="16" width="100%" height="400px"]'); ?>
-	</div>
+	                echo apply_atomic_shortcode('listing_map','[bt-map color="blue" latitude="'.$latitude.'" longitude="'.$longitude.'" zoom="16" width="100%" height="400px"]'); ?>
+	        </div>
 
-	
+	        
 
-</article>
-<aside id="sidebar-secondary" class="sidebar <?php echo shandora_column_class('large-4'); ?>">
-	<div class="row entry-specification">
-		<div id="detail-tab" class="column <?php echo $detail_class; ?>">
-			<?php bon_get_template_part('block','listingtab'); ?>
-			<?php bon_get_template_part('block','listingfooter'); ?>
-		</div>
-</aside>
+	</article>
+	<aside id="sidebar-secondary" class="sidebar <?php echo shandora_column_class('large-4'); ?>">
+	        <div class="row entry-specification">
+	                <div id="detail-tab" class="column <?php echo $detail_class; ?>">
+	                        <?php bon_get_template_part('block','listingtab'); ?>
+	                        <?php bon_get_template_part('block','listingfooter'); ?>
+	                </div>
+	</aside>
 
-<div class="clear"></div>
+	<div class="clear"></div>
 
-<?php } else {
-?>
+	<?php } else {
+	?>
 
-<li>
+	<li>
 <article id="post-<?php the_ID(); ?>" class="<?php bon_entry_class($status); ?>" itemscope itemtype="http://schema.org/RealEstateAgent">
 
 		<header class="entry-header">
@@ -118,8 +118,7 @@ if( is_singular( get_post_type() ) ) {
 
 		<footer class="entry-footer">
 			<div class="property-price">
-
-				<a href="<?php post_permalink($ID); ?>" title="<?php the_title_attribute( array('before' => __('Clique para ver o anúncio ','bon') ) ); ?>"><?php echo $loca; ?></a>
+				<a href="<?php the_permalink(); ?>" style="cursor: pointer;" title="<?php the_title_attribute( array('before' => __('Clique para ver o anúncio ','bon') ) ); ?>"><?php echo $loca; ?></a>
 			</div>
 		</footer><!-- .entry-footer -->
 

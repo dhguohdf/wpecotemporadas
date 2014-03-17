@@ -1,9 +1,10 @@
 === Post Expirator ===
 Contributors: axelseaa
+Donate link: http://aaron.axelsen.us/donate
 Tags: expire, posts, pages, schedule
-Requires at least: 3.2
-Tested up to: 3.5.1
-Stable tag: 2.1.1
+Requires at least: 3.7
+Tested up to: 3.8.1
+Stable tag: 2.1.3
 
 Allows you to add an expiration date to posts which you can configure to either delete the post, change it to a draft, or update the 
 post categories.
@@ -47,10 +48,21 @@ This section describes how to install the plugin and get it working.
 
 == Changelog ==
 
+**Version 2.1.3**
+
+* Fix: Default category selection now saves correctly on default settings screen
+
+**Version 2.1.2**
+
+* Security: Added form nonce for protect agaisnt possible CSRF
+* Security: Fixed XSS issue on settings pages
+* New: Added check to show if WP_CRON is enabled on diagnostics page
+* Fix: Minor Code Cleanup
+
 **Version 2.1.1**
 
-* FIX: Fixed php warning issue cause when post type defaults are not set
-* NEW: Added the option to disable post expirator for certain post types if desired
+* New: Added the option to disable post expirator for certain post types if desired
+* Fix: Fixed php warning issue cause when post type defaults are not set
 
 **Version 2.1.0**
 
@@ -187,6 +199,12 @@ NOTE: After upgrading, you may need to reset the cron schedules.  Following onsc
 * Initial Release
 
 == Upgrade Notice ==
+
+= 2.1.3 =
+Default category selection now saves correctly on default settings screen
+
+= 2.1.2 =
+Important Update - Security Fixes - See Changelog
 
 = 2.0.1 =
 Removes old scheduled hook - this was not done completely in the 2.0.0 upgrade

@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "Language: pt_BR\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.6.4\n"
 
 #: wp-members-admin.php:35 wp-members-admin.php:715
 msgid "Settings"
@@ -27,7 +27,7 @@ msgstr "Ativar usuário?"
 
 #: wp-members-admin.php:115
 msgid "Reactivate this user?"
-msgstr "Reativar usuário?"
+msgstr "Reativar este usuário?"
 
 #: wp-members-admin.php:120
 msgid "Deactivate this user?"
@@ -35,7 +35,7 @@ msgstr "Desativar usuário?"
 
 #: wp-members-admin.php:141
 msgid "IP @ registration"
-msgstr "IP de registro"
+msgstr "IP @ registro"
 
 #: wp-members-admin.php:194
 msgid "Manage Options"
@@ -152,14 +152,12 @@ msgid "Register Page URL:"
 msgstr ""
 
 #: wp-members-admin.php:240
-#, fuzzy
 msgid "Custom CSS:"
-msgstr "Customizado"
+msgstr "CSS Customizado"
 
 #: wp-members-admin.php:246
-#, fuzzy
 msgid "Update Settings"
-msgstr "Atualizar Configuração do reCAPTCHA"
+msgstr "Atuliazar Configurações"
 
 #: wp-members-admin.php:264
 msgid "Manage Fields"
@@ -187,9 +185,8 @@ msgid "Field Label"
 msgstr "Campo"
 
 #: wp-members-admin.php:273
-#, fuzzy
 msgid "Option Name"
-msgstr "Sobrenome"
+msgstr "Opção Nome"
 
 #: wp-members-admin.php:274
 msgid "Field Type"
@@ -216,7 +213,6 @@ msgid "Delete"
 msgstr ""
 
 #: wp-members-admin.php:299
-#, fuzzy
 msgid "(Email cannot be removed)"
 msgstr "(O campo de email é obrigatório e não pode ser removido)"
 
@@ -308,7 +304,6 @@ msgid "Dialogs and Error Messages"
 msgstr "Notificações e Mensagens de Erro"
 
 #: wp-members-admin.php:373
-#, fuzzy
 msgid ""
 "You can customize the text for dialogs and error messages. Simple HTML is "
 "allowed %s etc."
@@ -316,7 +311,7 @@ msgstr "Você pode customizar os textos a seguir. HTML simples é permitido."
 
 #: wp-members-admin.php:386
 msgid "Terms of Service (TOS)"
-msgstr ""
+msgstr "Termo de Serviço"
 
 #: wp-members-admin.php:393
 msgid "Update Dialogs"
@@ -335,14 +330,12 @@ msgid "Option Name is required for adding a new field. Nothing was updated."
 msgstr ""
 
 #: wp-members-admin.php:594
-#, fuzzy
 msgid "WP-Members fields were updated"
-msgstr "WP-Members possui direitos autorais"
+msgstr "Campos do WP-Members foram atualizados"
 
 #: wp-members-admin.php:620
-#, fuzzy
 msgid "WP-Members dialogs were updated"
-msgstr "Campos Adicionais do WP-Members"
+msgstr "Campos Adicionais do WP-Members foram atualizados"
 
 #: wp-members-admin.php:639
 msgid "reCAPTCHA was updated for WP-Members"
@@ -353,9 +346,8 @@ msgid "WP-Members expiration periods were updated"
 msgstr ""
 
 #: wp-members-admin.php:704
-#, fuzzy
 msgid "WP-Members emails were updated"
-msgstr "WP-Members possui direitos autorais"
+msgstr "Campos de email do WP-Members foram atualizados"
 
 #: wp-members-admin.php:721
 #, fuzzy
@@ -397,6 +389,7 @@ msgid "Options"
 msgstr "Opções de Gerenciamento"
 
 #: wp-members-admin.php:806
+#, fuzzy
 msgid "Fields"
 msgstr "Gerenciar Campos"
 
@@ -406,6 +399,7 @@ msgid "Dialogs"
 msgstr "Notificações de Atualização"
 
 #: wp-members-admin.php:808
+#, fuzzy
 msgid "Emails"
 msgstr "Email"
 
@@ -485,7 +479,6 @@ msgstr "Chave Privada"
 msgid "Choose Theme"
 msgstr "Selecione o Tema"
 
-#. #-#-#-#-#  plugin.pot (WP-Members 2.7.5)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: wp-members-admin.php:905
 msgid "WP-Members"
@@ -530,7 +523,7 @@ msgstr "WP-Members"
 
 #: wp-members-admin.php:1006
 msgid "Add New"
-msgstr "Adicionar Novo"
+msgstr ""
 
 #: wp-members-admin.php:1188 wp-members-export-full.php:98
 #: wp-members-export.php:84
@@ -546,8 +539,9 @@ msgid "Bulk Actions"
 msgstr ""
 
 #: wp-members-admin.php:1293
+#, fuzzy
 msgid "Activate"
-msgstr "Ativar"
+msgstr "Estado"
 
 #: wp-members-admin.php:1295
 msgid "Export"
@@ -578,7 +572,7 @@ msgstr "Aviso de confirmação de reinicialização de senha:"
 
 #: wp-members-admin.php:1455
 msgid "Admin Notification"
-msgstr "Notificação do ecotemporadas.com"
+msgstr ""
 
 #: wp-members-admin.php:1460
 #, fuzzy
@@ -612,27 +606,30 @@ msgstr ""
 
 #: wp-members-admin.php:1489
 msgid "Subject"
-msgstr "Assunto"
+msgstr ""
 
 #: wp-members-admin.php:1493
 msgid "Body"
-msgstr "Corpo da mensagem"
+msgstr ""
 
 #: wp-members-admin.php:1510
+#, fuzzy
 msgid "Update Emails"
-msgstr "Atualizar Emails"
+msgstr "Atualizar Campos"
 
 #: wp-members-core.php:110
+#, fuzzy
 msgid "There was an error with the CAPTCHA form."
-msgstr "Existe um erro na palavra escrita. Tente novamente."
+msgstr "existe um erro no formulário da CAPTCHA."
 
 #: wp-members-core.php:258
 msgid "Edit Your Information"
 msgstr "Edite suas Informações"
 
 #: wp-members-core.php:289
+#, fuzzy
 msgid "Password fields cannot be empty"
-msgstr "O campo de senha não pode estar vazio!"
+msgstr "Aviso de diferença nas senhas digitadas:"
 
 #: wp-members-core.php:465
 msgid "<strong>ERROR</strong>: User has not been activated."
@@ -643,6 +640,7 @@ msgid "Additional Info"
 msgstr ""
 
 #: wp-members-core.php:1017
+#, fuzzy
 msgid "Indicates a required field"
 msgstr "é um campo obrigatório"
 
@@ -764,6 +762,7 @@ msgid ""
 msgstr ""
 
 #: wp-members-dialogs.php:53
+#, fuzzy
 msgid "Existing Users Login"
 msgstr "Login de Usuários"
 
@@ -823,6 +822,7 @@ msgid "Click here to continue."
 msgstr "Clique aqui para continuar."
 
 #: wp-members-dialogs.php:154
+#, fuzzy
 msgid "Edit My Information"
 msgstr "Edite suas Informações"
 
@@ -834,20 +834,20 @@ msgstr "Você esta logado como %s"
 
 #: wp-members-dialogs.php:164
 msgid "Click here to logout."
-msgstr "Clique aqui para fazer logout"
+msgstr "Você está logado. Clique aqui para sair!"
 
 #: wp-members-dialogs.php:165
 msgid "Begin using the site."
-msgstr "Voltar para página principal"
+msgstr "Voltar para Home"
 
 #: wp-members-dialogs.php:174 wp-members-dialogs.php:182
 #: wp-members-sidebar.php:38 wp-members-sidebar.php:168
 msgid "click here to logout"
-msgstr "Clique aqui para fazer logout"
+msgstr "Clique aqui para sair"
 
 #: wp-members-dialogs.php:339 wp-members-dialogs.php:712
 msgid "New Users Registration"
-msgstr "Registro de Novo usuário"
+msgstr "Registro de novos usuários"
 
 #: wp-members-dialogs.php:358 wp-members-dialogs.php:730
 msgid "Choose a Username"
@@ -856,16 +856,16 @@ msgstr "Nome de Usuário"
 #: wp-members-dialogs.php:451 wp-members-dialogs.php:824
 msgid "Please indicate that you agree to the %s TOS %s"
 msgstr ""
-"Por favor leia %s nossos termos de contrato %s. Ao checar a caixa, você "
-"indica que concorda com nossas políticas."
+"Por favor, leia o %s termo de condição %s e cheque este campo se você "
+"concorda."
 
 #: wp-members-dialogs.php:498 wp-members-dialogs.php:878
 msgid "Clear Form"
-msgstr ""
+msgstr "Limpar Campos"
 
 #: wp-members-dialogs.php:499 wp-members-dialogs.php:876
 msgid "Submit"
-msgstr "Registrar!"
+msgstr "Enviar"
 
 #: wp-members-dialogs.php:503 wp-members-dialogs.php:883
 msgid "Required field"
@@ -889,13 +889,14 @@ msgstr "Novo usuário?"
 
 #: wp-members-dialogs.php:587 wp-members-dialogs.php:959
 msgid "Click here to register"
-msgstr "Clique aqui para regsitrar"
+msgstr "Clique aqui para se cadastrar!"
 
 #: wp-members-export-full.php:29 wp-members-export.php:26
 msgid "Cheatin&#8217; uh?"
 msgstr ""
 
 #: wp-members-export-full.php:62 wp-members-export.php:52
+#, fuzzy
 msgid "Activated?"
 msgstr "Ativar usuário?"
 
@@ -908,6 +909,7 @@ msgid "Expires"
 msgstr ""
 
 #: wp-members-export-full.php:68 wp-members-export.php:58
+#, fuzzy
 msgid "Registered"
 msgstr "Requerido?"
 
@@ -1032,6 +1034,7 @@ msgstr ""
 "O nome de usuário ou o endereço de email não existe em nossos registros."
 
 #: wp-members-install.php:104
+#, fuzzy
 msgid ""
 "Password successfully reset!<br /><br />An email containing a new password "
 "has been sent to the email address on file for your account. You may change "
@@ -1042,24 +1045,28 @@ msgstr ""
 "senha aleatória quando logar-se novamente com ela. "
 
 #: wp-members-register.php:72
+#, fuzzy
 msgid "Sorry, %s is a required field."
 msgstr "é um campo obrigatório"
 
 #: wp-members-register.php:80
+#, fuzzy
 msgid "Sorry, username is a required field"
-msgstr "Nome de usuário é um campo requerido"
+msgstr "nome de usuário é um campo requerido"
 
 #: wp-members-register.php:81
 msgid "The username cannot include non-alphanumeric characters."
 msgstr ""
 
 #: wp-members-register.php:82
+#, fuzzy
 msgid "You must enter a valid email address."
 msgstr "Você inseriu um nome de usuário ou senha inválidos."
 
 #: wp-members-register.php:92
+#, fuzzy
 msgid "You must complete the CAPTCHA form."
-msgstr "Você precisa completar o formulário CAPTCHA"
+msgstr "você precisa completar o formulário da CAPTCHA"
 
 #: wp-members-register.php:276
 msgid "We were unable to validate the public key."
@@ -1098,19 +1105,21 @@ msgstr "Login falhou!<br />Você inseriu um nome de usuário ou senha inválida.
 
 #: wp-members-sidebar.php:97 wp-members-sidebar.php:129
 msgid "You are not currently logged in."
-msgstr "Você está não está logado."
+msgstr "Você não está logado."
 
 #: wp-members-sidebar.php:107 wp-members-sidebar.php:141
+#, fuzzy
 msgid "login"
 msgstr "Login"
 
 #: wp-members-sidebar.php:111 wp-members-sidebar.php:145
+#, fuzzy
 msgid "Forgot?"
 msgstr "Esqueceu a senha?"
 
 #: wp-members-sidebar.php:114 wp-members-sidebar.php:149
 msgid "Register"
-msgstr "Registro"
+msgstr "Registrar-se"
 
 #: wp-members-sidebar.php:208 wp-members-sidebar.php:250
 msgid "Login Status"
@@ -1122,7 +1131,7 @@ msgstr "Tratamento:"
 
 #: wp-members-tos.php:24
 msgid "Terms of Service"
-msgstr "Termos de Serviço"
+msgstr "Termo de Serviço"
 
 #: wp-members-tos.php:36
 msgid "%sclose%s"

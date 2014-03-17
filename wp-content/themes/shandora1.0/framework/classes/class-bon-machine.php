@@ -3,7 +3,7 @@
 /**
  * Bon Framework Option Machine Class
  * This class handle the output form for Options page and meta box options
- *
+ * THIS ARCHIVE HAS BEEN MODIFIED!!!!!!!!!11111111111
  *
  * @author		Hermanto Lim
  * @copyright	Copyright (c) Hermanto Lim
@@ -338,21 +338,28 @@ if(! class_exists('BON_Machine') ) {
 				case 'tel':
 				case 'email':
 				default:
-					$output .= '<input type="' . $type . '" name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" value="' . esc_attr( $meta ) . '" class="regular-text bon-input" size="30" />
-							<br />' . $desc;
+					$output .= '<div id="input_' . esc_attr( $id ) . '"><input type="' . $type . '" name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" value="' . esc_attr( $meta ) . '" class="regular-text bon-input" size="30" /></div>
+							' . $desc;
+				break;
+				case 'iframe':
+					$output .= '
+					<iframe width="450" height="350" src="http://www.latlong.net/" frameborder="no" scrolling="no" 
+					style="body > header {display: none;}">
+				<p>Your browser does not support iframes.</p>
+				</iframe>';
 				break;
 				case 'url':
-					$output .= '<input type="' . $type . '" name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" value="' . esc_url( $meta ) . '" class="regular-text bon-input" size="30" />
-							<br />' . $desc;
+					$output .= '<div id="input_' . esc_attr( $id ) . '"><input type="' . $type . '" name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" value="' . esc_url( $meta ) . '" class="regular-text bon-input" size="30" /></div>
+							' . $desc;
 				break;
 				case 'number':
-					$output .= '<input type="' . $type . '" name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" value="' . intval( $meta ) . '" class="regular-text bon-input" size="30" />
-							<br />' . $desc;
+					$output .= '<div id="input_' . esc_attr( $id ) . '"><input type="' . $type . '" name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" value="' . intval( $meta ) . '" class="regular-text bon-input" size="30" /></div>
+							' . $desc;
 				break;
 				// textarea
 				case 'textarea':
-					$output .= '<textarea name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" cols="60" rows="4">' . esc_textarea( $meta ) . '</textarea>
-							<br />' . $desc;
+					$output .= '<div id="input_' . esc_attr( $id ) . '"><textarea name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" cols="60" rows="4">' . esc_textarea( $meta ) . '</textarea></div>
+							' . $desc;
 				break;
 				// editor
 				case 'editor':
@@ -438,6 +445,7 @@ if(! class_exists('BON_Machine') ) {
 				break;
 				// post_select, post_chosen
 				case 'post_select':
+					$output = '</select><br/>';
 				case 'post_list':
 				case 'post_chosen': 
                     $output .= '<select data-placeholder="Escolha Um" name="' . esc_attr( $name ) . '[]" id="' . esc_attr( $id ) . '"' . ( $type == 'post_chosen' ? ' class="chosen"' : '' ) . ( isset( $multiple ) && $multiple == true ? ' multiple="multiple"' : '' ) . '> 
@@ -449,7 +457,7 @@ if(! class_exists('BON_Machine') ) {
                         'order' => 'ASC', 
                     ); 
   
-                    if( isset($field['filter_author']) && $field['filter_author'] === true ) { 
+                    if( isset($field['filter_author']) && $field['filter_author'] === true || current_user_can( 'manage_options' )) { 
                         $user_ID = get_current_user_id(); 
   
                         if($user_ID > 0 ) { 
@@ -462,7 +470,7 @@ if(! class_exists('BON_Machine') ) {
                     foreach ( $posts as $item ) 
                         $output .= '<option value="' . $item->ID . '"' . selected( is_array( $meta ) && in_array( $item->ID, $meta ), true, false ) . '>' . $item->post_title . '</option>'; 
                       
-                    $output .= '</select><br />' . $desc; 
+                    $output .= '</select><br />' . $desc . '<div class="add-peco"><a href="'.admin_url('/post-new.php?post_type=' . $post_type ) .'" class="button button-primary primary">'.__('Criar Perfil ECO','bon').'</a></div>'; 
                 break;
 				// post_checkboxes
 				case 'post_checkboxes':

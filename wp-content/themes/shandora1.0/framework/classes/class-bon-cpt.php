@@ -59,7 +59,7 @@ class BON_Cpt
 				array(
 					'name' 					=> _x( $plural, 'post type general name' ),
 					'singular_name' 		=> _x( $name, 'post type singular name' ),
-					'add_new' 				=> sprintf(__( 'Criar Novo %s', 'bon' ), $name2 ),
+					'add_new' 				=> _x( 'Criar Novo', $name2 ),
 					'add_new_item' 			=> sprintf(__( 'Criar Novo %s', 'bon' ), $name2 ),
 					'edit_item' 			=> sprintf(__( 'Editar %s', 'bon' ), $name2 ),
 					'new_item' 				=> sprintf(__( 'Criar Novo %s', 'bon' ), $name2 ),

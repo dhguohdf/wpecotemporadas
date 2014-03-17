@@ -35,8 +35,8 @@ function wpmem_inc_status()
 	global $user_login;
 	$logout = apply_filters( 'wpmem_logout_link', $url . '/?a=logout' );
 
-	$status = '<p>' . sprintf( __( 'You are logged in as %s', 'wp-members' ), $user_login )
-		. ' | <a href="' . $logout . '">' . __( 'click here to logout', 'wp-members' ) . '</a></p>';
+	$status = '<p>' . sprintf( __( 'Você está logado no sistema como %s', 'wp-members' ), $user_login )
+		. ' | <a href="' . $logout . '">' . __( 'Clique aqui para sair', 'wp-members' ) . '</a></p>';
 
 	return $status;
 }
@@ -124,11 +124,11 @@ function wpmem_do_sidebar()
 					<input type="hidden" name="redirect_to" value="' . $post_to . '" />
 					<input type="hidden" name="a" value="login" />
 					<input type="hidden" name="slog" value="true" />
-					<div class="button_div"><input type="submit" name="Submit" class="buttons" value="' . __( 'login', 'wp-members' ) . '" />';
+					<div class="button_div"><input type="submit" name="Submit" class="button" value="' . __( 'Entrar', 'wp-members' ) . '" />';
 			 		
 			if( WPMEM_MSURL != null ) { 
 				$link = apply_filters( 'wpmem_forgot_link', wpmem_chk_qstr( WPMEM_MSURL ) . 'a=pwdreset' );	
-				$str.= ' <a href="' . $link . '">' . __( 'Forgot?', 'wp-members' ) . '</a>&nbsp;';
+				$str.= ' <a href="' . $link . '">' . __( ' Esqueceu sua senha?', 'wp-members' ) . '</a>&nbsp;';
 			} 			
 			
 			if( WPMEM_REGURL != null ) {

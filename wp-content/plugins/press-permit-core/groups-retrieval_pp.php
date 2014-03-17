@@ -343,8 +343,10 @@ class PP_GroupRetrieval {
 		$except = array();
 		
 		$operations = (array) $operations;
-		
-		if ( ! $operations )
+
+		if ( $operations )
+			$operations = array_intersect( $operations, pp_get_operations() );  // avoid application of exceptions which are disabled due to plugin deactivation
+		else
 			$operations = pp_get_operations();
 
 		if ( ! is_array($post_types) )

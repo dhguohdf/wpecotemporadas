@@ -38,6 +38,16 @@ if( !function_exists('shandora_setup_listing_post_type') ) {
 
 		$cpt = $bon->cpt();
 
+		//$cpt->create('listing', array( 'rewrite' => array(
+		//		'slug'       => _x('anuncio', 'URL Slug', 'bon'),
+		//		'with_front' => false,
+		//		'pages'      => true,
+		//		'feeds'      => true,
+		//		'ep_mask'    => EP_PERMALINK,
+		//	), 'labels' => array(
+		//		'name' => __( 'Anúncios' ),
+		//		'singular_name' => __( 'Anúncio' )
+		//	), 'supports' => array('editor','title', 'thumbnail','comments'), 'menu_position' => 6 ));
 		$cpt->create('listing', 'Anúncio', array('supports' => array('editor','title', 'excerpt', 'thumbnail','comments' ), 'menu_position' => 6));
 
 		$gallery_opts = array(
@@ -66,7 +76,7 @@ if( !function_exists('shandora_setup_listing_post_type') ) {
 			array( 
 
 				'label'	=> __('Código Promocional', 'bon'),
-				'desc'	=> __('Se você possui um código prmocional, digite-o aqui', 'bon'), 
+				'desc'	=> __('Se você possui um código promocional, digite-o aqui', 'bon'), 
 				'id'	=> $prefix . $suffix .'promo',
 				'type'	=> 'text',
 				
@@ -77,7 +87,7 @@ if( !function_exists('shandora_setup_listing_post_type') ) {
 			array( 
 
 				'label'	=> __('Escolha aqui o <br> Perfil ECO responsável', 'bon'),
-				'desc'	=> __('Escolha aqui o Perfil ECO responsável', 'bon'), 
+				'desc'	=> __('', 'bon'), 
 				'id'	=> $prefix . $suffix .'agentpointed',
 				'type'	=> 'post_select',
 				'filter_author' => true, 
@@ -99,7 +109,7 @@ if( !function_exists('shandora_setup_listing_post_type') ) {
 			array( 
 
 				'label'	=> __('Certificado Ambiental:', 'bon'),
-				'desc'	=> __('Descr#1 plz', 'bon'), 
+				'desc'	=> __('', 'bon'), 
 				'id'	=> $prefix . $suffix .'eco2',
 				'type'	=> 'select',
 				'options' => shandora_get_search_option('eco2')
@@ -109,7 +119,7 @@ if( !function_exists('shandora_setup_listing_post_type') ) {
 			array( 
 
 				'label'	=> __('Proximidade à<br>atividades ecológicas:', 'bon'),
-				'desc'	=> __('Descr#2 plz', 'bon'), 
+				'desc'	=> __('', 'bon'), 
 				'id'	=> $prefix . $suffix .'eco3',
 				'type'	=> 'select',
 				'options' => shandora_get_search_option('eco3')
@@ -122,7 +132,7 @@ if( !function_exists('shandora_setup_listing_post_type') ) {
 
 			array( 
 				'label'	=> __('Localização:', 'bon'),
-				'desc'	=> __('Descr#3 plz.', 'bon'), 
+				'desc'	=> __('', 'bon'), 
 				'id'	=> $prefix . $suffix . 'status',
 				'type'	=> 'select',
 				'options' => shandora_get_search_option()
@@ -131,15 +141,13 @@ if( !function_exists('shandora_setup_listing_post_type') ) {
 			array(
 
 				'label'	=> __('Endereço do imóvel:', 'bon'),
-				'desc'	=> __('O endereço da propriedade.', 'bon'), 
 				'id'	=> $prefix . $suffix .'address',
 				'type'	=> 'text',
 
 			),
 
 			array(
-				'label'	=> __('CEP:', 'bon'),
-				'desc'	=> __('CEP do local', 'bon'), 
+				'label'	=> __('CEP:', 'bon'), 
 				'id'	=> $prefix . $suffix .'zip',
 				'type'	=> 'text',
 			),
@@ -149,6 +157,7 @@ if( !function_exists('shandora_setup_listing_post_type') ) {
 				'label'	=> __('Valor Principal:', 'bon'),
 				'desc'	=> __('Escolha seu valor principal, não esqueça que você pode definir outros valores no seu calendário do anúncio. Por favor, preencha com apenas números, ex: 123456', 'bon'), 
 				'id'	=> $prefix . $suffix .'price',
+				'class'	=> $prefix . $suffix .'price',
 				'type'	=> 'text',
 
 			),
@@ -157,6 +166,7 @@ if( !function_exists('shandora_setup_listing_post_type') ) {
 				'label'	=> __('Período Principal:', 'bon'),
 				'desc'	=> __('Escolha o tipo de período que o imóvel será exibido', 'bon'), 
 				'id'	=> $prefix . $suffix . 'period',
+				'class'	=> $prefix . $suffix . 'period',
 				'type'	=> 'select',
 				'options' => shandora_get_search_option('period'),
 			),
@@ -164,70 +174,62 @@ if( !function_exists('shandora_setup_listing_post_type') ) {
 			array( 
 
 				'label'	=> __('Quartos:', 'bon'),
-				'desc'	=> __('Quantos quartos? Por favor, preencha com apenas números.', 'bon'), 
 				'id'	=> $prefix . $suffix .'bed',
-				'type'	=> 'number',
+				'type'	=> 'text',
 				
 			),
 
 			array( 
 
 				'label'	=> __('Banheiros:', 'bon'),
-				'desc'	=> __('Quantos banheiros? Por favor, preencha com apenas números.', 'bon'), 
 				'id'	=> $prefix . $suffix .'bath',
-				'type'	=> 'number',
+				'type'	=> 'text',
 				
 			),
 
 			array( 
 
 				'label'	=> __('Garagens:', 'bon'),
-				'desc'	=> __('Quantas garagens?', 'bon'), 
 				'id'	=> $prefix . $suffix .'basement',
-				'type'	=> 'number',
+				'type'	=> 'text',
 				
 			),
 
 			array( 
 
-				'label'	=> __('Andares:', 'bon'),
-				'desc'	=> __('Quantidades de andares o imóvel possui', 'bon'), 
+				'label'	=> __('Andares:', 'bon'), 
 				'id'	=> $prefix . $suffix .'floor',
-				'type'	=> 'number',
+				'type'	=> 'text',
 				
 			),
 
 			array( 
 
 				'label'	=> __('Total de cômodos:', 'bon'),
-				'desc'	=> __('Total de cômodos. Por favor, preencha com apenas números.', 'bon'), 
 				'id'	=> $prefix . $suffix .'totalroom',
-				'type'	=> 'number',
+				'type'	=> 'text',
 				
 			),
 
 			array( 
 
 				'label'	=> __('Tamanho do Lote:', 'bon'),
-				'desc'	=> __('Expecifique a metragem total do Lote em metros quadrados (m²)', 'bon'), 
 				'id'	=> $prefix . $suffix .'lotsize',
-				'type'	=> 'number',
+				'type'	=> 'text',
 				
 			),
 
 			array( 
 
 				'label'	=> __('Tamanho da área construída:', 'bon'),
-				'desc'	=> __('Expecifique apenas a metragem do imóvel', 'bon'), 
 				'id'	=> $prefix . $suffix .'buildingsize',
-				'type'	=> 'number',
+				'type'	=> 'text',
 				
 			),
 
 			array( 
 
 				'label'	=> __('Mobília:', 'bon'),
-				'desc'	=> __('A propriedade está mobiliada??', 'bon'), 
 				'id'	=> $prefix . $suffix .'furnishing',
 				'type'	=> 'select',
 				'options' => shandora_get_search_option('furnishing')
@@ -236,7 +238,7 @@ if( !function_exists('shandora_setup_listing_post_type') ) {
 			array( 
 
 				'label'	=> __('Data de disponibilidade', 'bon'),
-				'desc'	=> __('Quando a propriedade estará disponível??', 'bon'), 
+				'desc'	=> __('Quando a propriedade estará disponível?', 'bon'), 
 				'id'	=> $prefix . $suffix .'dateavail',
 				'type'	=> 'date',
 				
@@ -247,7 +249,16 @@ if( !function_exists('shandora_setup_listing_post_type') ) {
 				'label'	=> __('Ano construído', 'bon'),
 				'desc'	=> __('Quando sua propriedade foi construída, útil em propriedades históricas ou tombadas pelo governo.', 'bon'), 
 				'id'	=> $prefix . $suffix .'yearbuild',
-				'type'	=> 'number',
+				'type'	=> 'text',
+				
+			),
+			
+			array( 
+
+				'label'	=> __('Ferramenta', 'bon'),
+				'desc'	=> __('Funciona plz', 'bon'), 
+				'id'	=> $prefix . $suffix .'iframe',
+				'type'	=> 'iframe',
 				
 			),
 
@@ -256,7 +267,7 @@ if( !function_exists('shandora_setup_listing_post_type') ) {
 				'label'	=> __('Latitude do local:', 'bon'),
 				'desc'	=> __('Latitude do local, utilizada para a localização de seu imóvel no mapa. Encontre sua longitude no site <a href="http://translate.google.com.br/translate?sl=en&tl=pt&js=n&prev=_t&hl=pt-BR&ie=UTF-8&u=http%3A%2F%2Fwww.latlong.net%2F&act=url" target="_blank">aqui</a>. Copie e cole aqui sua longitude', 'bon'), 
 				'id'	=> $prefix . $suffix .'maplatitude',
-				'type'	=> 'number',
+				'type'	=> 'text',
 				
 			),
 
@@ -271,11 +282,10 @@ if( !function_exists('shandora_setup_listing_post_type') ) {
 
 			array( 
 
-				'label'	=> __('Featured Property', 'bon'),
-				'desc'	=> __('Make the property featured for featured property widget', 'bon'), 
+				'label'	=> __('Imóvel em Destaque', 'bon'),
 				'class' => $prefix . $suffix .'featured',
 				'id'	=> $prefix . $suffix .'featured',
-				'type'	=> 'text',
+				'type'	=> 'checkbox',
 				
 			),
 			
@@ -303,7 +313,7 @@ if( !function_exists('shandora_setup_listing_post_type') ) {
 
 		$cpt->add_meta_box(   
 		    'promo',
-		    'Código Promocional',
+		    'Promoção ecotemporadas.com',
 		    $promo,
 		    'normal',
 		    'low'
@@ -344,8 +354,18 @@ if( !function_exists('shandora_setup_agent_post_type') ) {
 
 		$cpt = $bon->cpt();
 
-		$cpt->create('agent', 'Perfil ECO', array('supports' => array('editor', 'title', 'comments', ) , 'menu_position' => 7 ));
+		//$cpt->create('agent', array( 'rewrite' => array(
+		//		'slug'       => _x('perfileco', 'URL Slug', 'bon'),
+		//		'with_front' => false,
+		//		'pages'      => true,
+		///		'feeds'      => true,
+			//	'ep_mask'    => EP_PERMALINK,
+		//	), 'labels' => array(
+		//		'name' => __( 'Perfis ECO' ),
+		//		'singular_name' => __( 'Perfil ECO' )
+		//	), 'supports' => array('editor', 'title', 'comments'), 'menu_position' => 7 ));
 
+		$cpt->create('agent', 'Perfil ECO', array('supports' => array('editor', 'title', 'comments', ) , 'menu_position' => 7 ));
 
 		$agent_opt1 = array(
 

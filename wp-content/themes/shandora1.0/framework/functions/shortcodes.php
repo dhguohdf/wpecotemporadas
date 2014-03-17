@@ -395,7 +395,7 @@ function bon_entry_shortlink_shortcode( $attr ) {
  */
 function bon_entry_permalink_shortcode( $attr ) {
 
-	$attr = shortcode_atts( array( 'before' => '', 'after' => '', 'text' => 'Read More', 'class' => '' ), $attr );
+	$attr = shortcode_atts( array( 'before' => '', 'after' => '', 'text' => 'Veja Mais!', 'class' => '' ), $attr );
 
 	return $attr['before'] . '<a href="' . esc_url( get_permalink() ) . '" class="permalink '.$attr['class'].'" title="'. the_title_attribute(array( 'before' => __('Link para ', 'bon'), 'echo' => 0)) .'">' . sprintf(__( '%s', 'bon' ), $attr['text'] ) . '</a>' . $attr['after'];
 }

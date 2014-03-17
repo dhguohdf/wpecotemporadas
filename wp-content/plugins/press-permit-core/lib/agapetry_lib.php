@@ -50,11 +50,13 @@ function pp_implode( $delim, $arr, $wrap_open = ' ( ', $wrap_close = ' ) ' ) {
 		}
 		*/
 		
+		/*
 		if ( constant( 'PP_DEBUG' ) ) {
 			$test = reset( $arr );
 			if ( is_array($test) )
 				agp_bt_die();
 		}
+		*/
 		
 		return $wrap_open . implode($delim, $arr) . $wrap_close;
 	} else {
@@ -130,7 +132,7 @@ function pp_get_type_object( $src_name, $object_type ) {
 }
 
 function pp_sanitize_key( $key ) {
-	return preg_replace( '/[^a-z0-9_\-]/', '', strtolower($key) );
+	return ( is_string($key) ) ? preg_replace( '/[^a-z0-9_\-]/', '', strtolower($key) ) : $key;
 }
 
 function pp_sanitize_word( $key ) {

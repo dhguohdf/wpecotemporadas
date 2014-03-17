@@ -3,11 +3,6 @@ load_theme_textdomain('bon');
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-// Novo Mundo init
-
-require_once ( get_template_directory() . '/novo-mundo/funcoes.php' );
-
-
 /*-----------------------------------------------------------------------------------*/
 /* Start BonThemes Functions - Please refrain from editing this section */
 /*-----------------------------------------------------------------------------------*/
@@ -300,40 +295,8 @@ add_filter( 'manage_posts_custom_column', 'test_modify_post_table_row', 10, 2 );
                 if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE){ return $post->ID; }
                 update_post_meta($post->ID, "_status", $_POST["status"]);
         }
-        add_action( 'admin_head', 'status_css' );
-        function status_css() {
-                echo '<style type="text/css">
-                .expirationdate{
-			    background: none repeat scroll 0 0 #E78229;
-			    color: white !important;
-			}
 
-			.date {
-				font-style: oblique;
-				font-size: 12px;
-			}
-                .default{font-weight:bold;}
-                .custom{border-top:solid 1px #e5e5e5;}
-                .custom_state{
-                        font-size:12px;
-                        color:#666;
-                        background:#e5e5e5;
-                        padding:3px 6px 3px 6px;
-                        -moz-border-radius:3px;
-                        }
-                        /* ----------------------------------- */
-                        /*   change color of messages bellow            */
-                        /* ----------------------------------- */
-                        .revisado{background:#4BC8EB;color:#fff;}
-                        .recusado{background:#C90016;color:#fff;}
-                        .trimestral{background:#03C03C;color:#fff;font-style:oblique;}
-                        .semestral{background:#03C03C;color:#fff;font-style:oblique;}
-                        .anual{background:#03C03C;color:#fff;font-style:oblique;}
-                        .final{background:#DE9414;color:#333;}
-                        </style>';
-        }
-
-        //removes quick edit from custom post type list
+//removes quick edit from custom post type list
 function remove_quick_edit( $actions ) {
 	global $post;
     if( $post->post_type == 'listing' || 'agent' ) {
@@ -362,18 +325,18 @@ function load_custom_wp_admin_js() {
         wp_register_script( 'my_custom_script', get_template_directory_uri() . '/custom.js');
         wp_enqueue_script( 'my_custom_script' );
 }
-add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_js' );
+//add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_js' );
 
-add_filter( 'get_user_option_admin_color', function( $color_scheme ) {
-global $_wp_admin_css_colors;
-
-if ( ! isset( $_wp_admin_css_colors[ $color_scheme ] ) ) {
-    $color_scheme = 'seaweed';
+function set_default_admin_color($user_id) {
+	$args = array(
+		'ID' => $user_id,
+		'admin_color' => 'flat'
+	);
+	wp_update_user( $args );
 }
+add_action('user_register', 'set_default_admin_color');
 
-return $color_scheme;
 
-}, 5 );
 
 function my_plugin_get_comment_list_by_user($clauses) {
 if (is_admin()) {
@@ -404,9 +367,9 @@ $messages[$post_type] = array(
 5 => isset($_GET['revision']) ? sprintf( __($singular.' restored to revision from %s'), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
 6 => sprintf( __($singular.' criado. <a href="%s">Visualizar '.strtolower($singular).'</a>'), esc_url( get_permalink($post_ID) ) ),
 7 => __('Page saved.'),
-8 => sprintf( __($singular.' enviado para revisão. <a target="_blank" href="%s">Ver '.strtolower($singular).'</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+8 => sprintf( __($singular.' enviado para revisão. <a target="_blank" href="%s">Verifique como seria publicado clicando aqui. '.strtolower($singular).'</a> Aguarde no máximo 24 horas para revisão de seu anúncio e liberação para pagamento/pubblicação!'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
 9 => sprintf( __($singular.' scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview '.strtolower($singular).'</a>'), date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post_ID) ) ),
-10 => sprintf( __($singular.' draft updated. <a target="_blank" href="%s">Preview '.strtolower($singular).'</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+10 => sprintf( __($singular.' rascunho atualizado. <a target="_blank" href="%s"> Verifique como seria publicado clicando aqui. '.strtolower($singular).'</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
 );
 return $messages;
 }
@@ -414,33 +377,119 @@ return $messages;
 add_filter('post_updated_messages', 'set_messages' );
 
 
-
-// TIPS
-add_action( 'admin_enqueue_scripts', 'my_admin_enqueue_scripts' );
-function my_admin_enqueue_scripts() {
-    wp_enqueue_style( 'wp-pointer' );
-    wp_enqueue_script( 'wp-pointer' );
-    add_action( 'admin_print_footer_scripts', 'my_admin_print_footer_scripts' );
+// example custom dashboard widget
+function custom_dashboard_widget() {
+	include("custom-dashboard.php");
 }
-function my_admin_print_footer_scripts() {
-    $pointer_content = '<h3>TESTE</h3>';
-    $pointer_content .= '<p>Added new functions to Edit Post section and few more options for users (authors and subscribers only).</p>';
-?>
-   <script type="text/javascript">
-   //<![CDATA[
-   jQuery(document).ready( function($) {
-    $('#eco-options).pointer({
-        content: '<?php echo $pointer_content; ?>',
-        position: 'top',
-        close: function() {
-            // Once the close button is hit
-        }
-      }).pointer('open');
-   });
-   //]]>
-   </script>
-<?php
+function add_custom_dashboard_widget() {
+	wp_add_dashboard_widget('custom_dashboard_widget', '<h1>Bem vindo ao painel de suas temporadas!</h1>', 'custom_dashboard_widget');
+}
+add_action('wp_dashboard_setup', 'add_custom_dashboard_widget');
 
+function so_screen_layout_columns( $columns ) {
+    $columns['dashboard'] = 1;
+    return $columns;
+}
+add_filter( 'screen_layout_columns', 'so_screen_layout_columns' );
 
+function so_screen_layout_dashboard() {
+    return 1;
+}
+add_filter( 'get_user_option_screen_layout_dashboard', 'so_screen_layout_dashboard' );
+
+/**
+ * Adicionando limite de uploads no post type listing
+ */
+function limite_upload($file) {
+        global $post, $post_ID;
+        $post_type = get_post_type( $post_ID );
+        
+  if ($file['type']=='application/octet-stream' && isset($file['tmp_name'])) {
+    $file_size = getimagesize($file['tmp_name']);
+    if (isset($file_size['error']) && $file_size['error']!=0) {
+      $file['error'] = "Unexpected Error: {$file_size['error']}";
+      return $file;
+    } else {
+      $file['type'] = $file_size['mime'];
+    }
+  }
+  list($category,$type) = explode('/',$file['type']);
+
+  if ('image'!=$category || !in_array($type,array('jpg','jpeg','gif','png')) && $post_type == "listing" ) {
+    $file['error'] = "Desculpe você só pode fazer upload de arquivos .GIF, .JP ou .PNG.";
+  } else if ($post_id = (isset($_REQUEST['post_id']) ? $_REQUEST['post_id'] : false)) {
+
+                if ( count( get_posts( "post_type=attachment&post_parent={$post_id}" ) ) > 19 )
+                        $file['error'] = "Você atingiu seu limite de imagens (20).";
+                }
+  return $file;
 }
 
+add_filter('wp_handle_upload_prefilter', 'limite_upload');
+
+// Mensagem padrão nos post types
+
+add_filter( 'default_content', 'conteudo_editor', 10, 2 );
+
+function conteudo_editor( $content, $post ) {
+
+    switch( $post->post_type ) {
+        case 'listing':
+            $content = '<h1>Título de Mensagem</h1><br /> Mensagem default para anúncio!';
+        break;
+        case 'agent':
+            $content = 'Mensagem default para Perfil Eco';
+        break;
+
+        default:
+            $content = 'Esse e o conteudo default para todos os contents que não forem Perfis Ecos e nem Anúncios';
+        break;
+    }
+
+    return $content;
+}
+
+// Customizing Admin
+
+add_action( 'admin_enqueue_scripts', 'ecotemporadas_admin_stylesheet' );
+
+function ecotemporadas_admin_stylesheet() { 
+        wp_enqueue_style('ecotemporadas_admin_css', get_bloginfo( 'stylesheet_directory' ) . '/style-admin.css');
+}
+
+// Customizing Login
+
+function ecotemporadas_login_stylesheet() { 
+        ?>
+    <link rel="stylesheet" id="custom_wp_admin_css"  href="<?php echo get_bloginfo( 'stylesheet_directory' ) . '/style-login.css'; ?>" type="text/css" media="all" />
+        <?php 
+}
+add_action( 'login_enqueue_scripts', 'ecotemporadas_login_stylesheet' );
+
+
+add_action( 'in_admin_header', 'insert_header_wpse_51023' );
+
+function insert_header_wpse_51023()
+{
+    echo '<div style="width:100%"><img src="https://trello-attachments.s3.amazonaws.com/525813762c0bfe3c1300254f/52e11e1c74fbf8652458b47c/47768b956006948401b2cff079902b8c/BARRA_DO_CLIENTE.png" width="100%" /></div>';
+}
+
+
+add_filter( 'wpmem_register_form', 'my_submit_button_filter' );
+function my_submit_button_filter( $string ) {
+
+	// the parameter $string is the 
+	// generated html of the form
+
+	// use str_replace like:
+	// $new_string = str_replace( $needle, $replacement, $haystack );
+	
+	global $wpmem_a;
+	
+	$new_text = ( $wpmem_a == 'edit' ) ? 'Update Profile' : 'Registrar!';
+	
+	$string = str_replace( 'Submit', $new_text, $string );
+	
+	return $string;
+
+}

@@ -14,12 +14,8 @@
 				?>
 			</h3>
 		</div>
-	
 		<div class="column large-8">
-			<?php if ( function_exists('yoast_breadcrumb') ) {
-yoast_breadcrumb('<p id="breadcrumbs" class="breadcrumb-trail breadcrumbs">','</p>');
-} ?>
+			<?php if ( current_theme_supports( 'bon-breadcrumb-trail' ) ) bon_breadcrumb_trail( array( 'show_browse'=> false, 'container' => 'nav', 'separator' => '&rsaquo;', 'before' => '' ) ); ?>
 		</div>
-		
 	</div>
 </div>

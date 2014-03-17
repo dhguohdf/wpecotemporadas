@@ -25,7 +25,10 @@ if( is_singular( get_post_type() ) ) {
 
 	<div class="entry-content clear" itemprop="description">
 		<div class="row">
-		<?php 
+		<?php
+		if ($agent_pic == "0") {
+    	$agent_pic = "1429";
+    	}
 		echo '<div class="column large-4 small-4">' . wp_get_attachment_image( $agent_pic, 'listing_small_box' ) . '</div>';
 		?>
 			<div class="column large-8 small-8">
@@ -81,7 +84,7 @@ if( is_singular( get_post_type() ) ) {
 				<div>
 					<input type="hidden" name="subject" value="<?php printf(__('Enviado do Perfil ECO de %s','bon'), get_the_title()); ?>" />
 					<input type="hidden" name="receiver" value="<?php echo $agent_email; ?>" />
-					<input class="flat button red radius" name="submit" type="submit" id="submit" tabindex="5" value="<?php _e('Enviar mensagem particular', 'bon') ?>" />
+					<input class="button" name="submit" type="submit" id="submit" tabindex="5" value="<?php _e('Enviar mensagem particular', 'bon') ?>" />
 					<span class="contact-loader"><img src="<?php echo trailingslashit(BON_THEME_URI); ?>assets/images/loader.gif" alt="loading..." />
 				</div>
 				<div class="sending-result"><div class="green bon-toolkit-alert"></div></div>

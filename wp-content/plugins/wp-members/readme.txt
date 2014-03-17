@@ -2,8 +2,8 @@
 Contributors: cbutlerjr
 Tags: authentication, captcha, community, content, login, password, register, registration, restriction, security, user, users, membership, access, block, permissions, members
 Requires at least: 3.1
-Tested up to: 3.7.1
-Stable tag: 2.8.8
+Tested up to: 3.8
+Stable tag: 2.8.10
 License: GPLv2
 
 WP-Members&trade; is a free membership management framework for WordPress&reg; that restricts content to registered users.
@@ -98,21 +98,54 @@ The FAQs are maintained at http://rocketgeek.com/plugins/wp-members/users-guide/
 
 WP-Members&trade; is a trademark of butlerblog.com.
 
-There are a number of commercial vendors offering products called WP-Members&trade; or a derivative thereof.  These products are neither free, nor open source.  The original plugin hosted here has been publicly available since 2006 and in no way associated with any of these vendors.  Tagging your support request in the wordpress.org forums attaches it to this plugin.  If you are seeking support for one of these commercial products, you should seek support from the vendor.  If you got it from a site other than http://wordpress.org/extend/plugins/wp-members or http://butlerblog.com/ , then it isn't WP-Members&trade;.
+There are a number of commercial vendors offering products called WP-Members&trade; or a derivative thereof.  Most of these products are neither free, nor are all of them open source.  The original plugin hosted here has been publicly available since 2006 and in no way associated with any of these vendors.  Tagging your support request in the wordpress.org forums attaches it to this plugin.  If you are seeking support for one of these commercial products, you should seek support from the vendor.  If you got it from a site other than [here](http://wordpress.org/extend/plugins/wp-members) then it isn't WP-Members&trade;.
 
 An [official statement is available here](http://butlerblog.com/regarding-wp-members).
+
+= Regarding RocketGeek.com =
+
+Premium priority support is available at the plugin's site [RocketGeek.com](http://rocketgeek.com).  A site membership includes priority support, members-only forum access, plugin extensions, and a custom code snippet library.  [RocketGeek.com](http://rocketgeek.com) is the only site officially managed for this plugin's support.
 
 
 == Upgrade Notice ==
 
-WP-Members 2.8.8 is a release with mostly minor fixes. See release notes for specific information.
+WP-Members 2.8.10 is a security update.  This closes a recently reported vulnerability.
 
 == Screenshots ==
 
-Rather than bloat your plugin download with screenshots, we will be offering screenshots and videos at the plugin's homepage: http://rocketgeek.com
+1. The default when viewing a blocked post - the plugin will deliver a login screen and registration form in place of blocked content (this default can be changed to other options).
+
+2. Admin Panel - Options Tab - the various option settings for the plugin.
+
+3. Admin Panel - Fields Tab - the plugin field manager allows you to manage (or delete) the installed extra fields and field order, and also add your own custom fields.
+
+4. Admin Panel - Dialogs Tab - the major dialogs that the plugin uses for error and other messages can be edited in the plugin's admin panel.
+
+5. Admin Panel - Emails Tab - all of the emails that are sent by the plugin can be edited in the admin panel.
+
+6. Posts > All Posts - The plugin adds a column to the list of posts and pages to display if a post or page is unblocked or blocked (the opposite of whatver you have set for the plugin's default in the options tab).
+
+7. Posts > Edit Post - The plugin adds a meta box to the post/page editor allowing you to set an individual post to be blocked or unblocked (the opposite of whatver your default setting is).
 
 
 == Changelog ==
+
+= 2.8.10 = 
+
+This is a security update the closes 2 reported XSS vulnerabilities.  This update also includes a fix for using SSL with reCAPTCHA.
+
+= 2.8.9 =
+
+This is an interim update with some changes that need to get done prior to the 2.9 release.  Note: This is the last version that will be compatible with WordPress 3.1.  Also, this will be the last version to contain the legacy table based forms.  These have been deprecated since version 2.8.0.
+
+* Added a Twenty Fourteen stylesheet based on the new WP default theme.
+* Twenty Fourteen installs as the default stylesheet with a new install
+* User export fix - the new user export functions from 2.8.7 were inadvertenly incompatible with PHP 5.2.4 (WP minimum requirements)
+* Admin options tab style/layout updates to work better with new WP (3.8) admin theme
+* Moved the plugin's texurize process into wpmem_securify rather than in the form functions. This is going to happen in 2.9, and doing it as an interim update will allow users to test 2.9 with pluggable functions.
+* Added the texturize process to the shortcode function for the same reason as above, plus this runs on the User List extension as well.
+* Made the shortcode function pluggable
+* Improved the auto excerpt function
 
 = 2.8.8 =
 

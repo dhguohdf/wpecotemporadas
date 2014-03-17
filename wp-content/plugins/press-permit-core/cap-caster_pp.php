@@ -19,8 +19,9 @@ class PP_Cap_Caster {
 
 	function is_valid_pattern_role( $wp_role_name, $role_caps = false ) {
 		if ( 'subscriber' != $wp_role_name ) {
+			global $wp_roles;
+		
 			if ( false === $role_caps ) {
-				global $wp_roles;
 				$role_caps = ( isset($wp_roles->role_objects[$wp_role_name]) ) ? $wp_roles->role_objects[$wp_role_name]->capabilities : array();
 			}
 

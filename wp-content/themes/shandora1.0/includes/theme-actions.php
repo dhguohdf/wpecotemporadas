@@ -63,7 +63,7 @@ function shandora_get_rent_period($price) {
 			break;
 
 			case 'per-tres':
-				$price .= ' <span class="rent-period">/'.__('trimensal','bon').'</span>';
+				$price .= ' <span class="rent-period">/'.__('trimestral','bon').'</span>';
 			break;
 
 			default:
@@ -299,7 +299,7 @@ function shandora_get_search_listing_form() {
 
 	$output .= '<div class="column large-2 small-11 large-uncentered small-centered" id="submit-button">';
 	$output .= wp_nonce_field( 'search-panel-submit','search_nonce', true, false );
-	$output .= $form->form_submit('', $search_label, 'class="button expand small flat '.$button_color.' radius"');
+	$output .= $form->form_submit('', $search_label, 'class="button expand small"');
 
 
 	$output .= $cc . $rc;
@@ -521,25 +521,17 @@ function shandora_get_searchform($location = "", $button = false) {
 		$output = "";
 	} else {
 		$output = '
-		<div class="searchform">
-		<form role="search" method="get" class="search hidden-phone" id="searchform" action="' . home_url( '/' ) . '" >
-		<i class="icon sha-zoom"></i><input class="input-medium" type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="'.esc_attr(__('Procurar temporada','bon')).'" />
-		</form></div>';
+		<div class="searchform">' . do_action('icl_language_selector') . '</div>';
 	}
 
 	echo $output;
 }
 
 function shandora_get_social_icons($header = true) {
-	if($header) {
+	
 		$id = 'top-social-icons';
 		$class = 'right social-icons';
 		$navclass = 'large-6 column';
-	} else {
-		$id = 'footer-social-icons';
-		$class = 'social-icons';
-		$navclass = '';
-	}
 	$output = '<nav class="'.$navclass.'">
 	    <ul class="'.$class.'" id="'.$id.'">';
 	    if(bon_get_option('social_facebook')) {

@@ -34,7 +34,7 @@
     <?php } ?>
     
     <?php if($url) { ?>
-    <a class="flex-readmore <?php if(empty($subtitle)) { echo "no-sub"; } ?>" href="<?php echo esc_url($url); ?>" title="<?php _e('Read More','bon'); ?>"><i class="<?php echo $icon; ?> icon-anim-bottom-top"></i></a>
+    <a class="flex-readmore <?php if(empty($subtitle)) { echo "no-sub"; } ?>" href="<?php echo esc_url($url); ?>" title="<?php _e('Veja Mais!','bon'); ?>"><i class="<?php echo $icon; ?> icon-anim-bottom-top"></i></a>
     <?php } ?>
 
     <?php if($post->post_content != "") { ?>

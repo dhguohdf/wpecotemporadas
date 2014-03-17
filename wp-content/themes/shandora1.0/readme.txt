@@ -5,3 +5,6 @@ Documentation can be found in http://support.bonfirelab.com/docs/shandora-real-e
 Support through forum
 support.bonfirelab.com/forums/forum/shandora-real-estate-wordpress-theme
 
+Some files modified by ecotempo
+
+class-bon-machine

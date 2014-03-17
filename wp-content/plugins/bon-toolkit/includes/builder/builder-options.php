@@ -445,7 +445,7 @@ function bon_toolkit_get_builder_options()
                 'title' => __('Button Text', 'bon-toolkit'),
                 'name' => $prefix . $suffix['call_to_action'] . 'button_text',
                 'type' => 'text',
-                'std' => 'Read More'
+                'std' => 'Veja Mais!'
             ),
             'button_link' => array(
                 'title' => __('Link To', 'bon-toolkit'),

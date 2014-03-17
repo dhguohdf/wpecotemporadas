@@ -5,6 +5,11 @@
 get_header(); 
         
 ?>
+<style>
+ .page-title {
+    display: none;
+ }
+</style>
 <div id="inner-wrap" class="slide ">
 
     <div id="body-container" class="container">

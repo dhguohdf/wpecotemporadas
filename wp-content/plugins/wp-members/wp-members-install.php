@@ -6,13 +6,13 @@
  * 
  * This file is part of the WP-Members plugin by Chad Butler
  * You can find out more about this plugin at http://rocketgeek.com
- * Copyright (c) 2006-2013  Chad Butler (email : plugins@butlerblog.com)
+ * Copyright (c) 2006-2014  Chad Butler
  * WP-Members(tm) is a trademark of butlerblog.com
  *
  * @package WordPress
  * @subpackage WP-Members
  * @author Chad Butler
- * @copyright 2006-2013
+ * @copyright 2006-2014
  */
 
  
@@ -55,7 +55,7 @@ function wpmem_do_install()
 			array( 7,  __( 'Zip', 'wp-members' ),                'zip',        'text',     'y', 'y', 'n' ),
 			array( 8,  __( 'Country', 'wp-members' ),            'country',    'text',     'y', 'y', 'n' ),
 			array( 9,  __( 'Day Phone', 'wp-members' ),          'phone1',     'text',     'y', 'y', 'n' ),
-			array( 10, __( 'E-mail', 'wp-members' ),              'user_email', 'text',     'y', 'y', 'y' ),
+			array( 10, __( 'Email', 'wp-members' ),              'user_email', 'text',     'y', 'y', 'y' ),
 			array( 11, __( 'Website', 'wp-members' ),            'user_url',   'text',     'n', 'n', 'y' ),
 			array( 12, __( 'AIM', 'wp-members' ),                'aim',        'text',     'n', 'n', 'y' ),
 			array( 13, __( 'Yahoo IM', 'wp-members' ),           'yim',        'text',     'n', 'n', 'y' ),
@@ -111,7 +111,7 @@ function wpmem_do_install()
 		append_email();
 		
 		// if it's a new install, use the Twenty Twelve stylesheet
-		update_option( 'wpmembers_style', WPMEM_DIR . 'css/wp-members-2012.css', '', 'yes' );
+		update_option( 'wpmembers_style', WPMEM_DIR . 'css/wp-members-2014.css', '', 'yes' );
 		
 	} else {
 	

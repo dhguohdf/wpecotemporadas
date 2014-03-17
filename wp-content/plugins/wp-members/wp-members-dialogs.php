@@ -153,7 +153,7 @@ function wpmem_inc_memberlinks( $page = 'members' )
 	switch( $page ) {
 	
 	case 'members':
-		$str  = '<ul><li><a href="'  .$link . 'a=edit">' . __( 'Edit My Information', 'wp-members' ) . '</a></li>
+		$str  = '<ul><li><a href="'  .$link . 'a=edit">' . __( 'Alterar meus dados', 'wp-members' ) . '</a></li>
 				<li><a href="' . $link . 'a=pwdchange">' . __( 'Change Password', 'wp-members' ) . '</a></li>';
 		if( WPMEM_USE_EXP == 1 && function_exists( 'wpmem_user_page_detail' ) ) { $str .= wpmem_user_page_detail(); }
 		$str.= '</ul>';
@@ -343,13 +343,13 @@ function wpmem_inc_registration_NEW( $toggle = 'new', $heading = '' )
 
 	if( $toggle == 'edit' ) {
 
-		$form = $form . '<label for="username" class="text">' . __( 'Username', 'wp-members' ) . '</label>
+		$form = $form . '<label for="username" class="text right">' . __( 'Username', 'wp-members' ) . '</label>
 			<div class="div_text"><p class="noinput">' . $userdata->user_login . '</p></div>';
 
 	} else { 
 
 		$val  = ( $_POST ) ? stripslashes( $_POST['log'] ) : '';
-		$form = $form . '<label for="username" class="text">' . __( 'Choose a Username', 'wp-members' ) . '<font class="req">*</font></label>
+		$form = $form . '<label for="username" class="text right">' . __( 'Choose a Username', 'wp-members' ) . '<font class="req">*</font></label>
 			<div class="div_text">
 				<input name="log" type="text" value="' . $val . '" class="username" id="username" />
 			</div>';
@@ -482,12 +482,7 @@ function wpmem_inc_registration_NEW( $toggle = 'new', $heading = '' )
 
 	$form = $form . '<input name="redirect_to" type="hidden" value="' . get_permalink() . '" />
 		<div class="button_div">
-		<script>
-		jQuery(function($){
-		       $("#phone1").mask("(99) 99999-9999");
-		});
-		</script>
-			<input name="submit" type="submit" value="' . __( 'Submit', 'wp-members' ) . '" class="bon-toolkit-button grad green" />
+			<input name="submit" type="submit" value="' . __( 'Submit', 'wp-members' ) . '" class="button" />
 		</div>';
 
 	$form = $form . '<div class="req-text"><font class="req">*</font>' . __( 'Required field', 'wp-members' ) . '</div>			
@@ -608,12 +603,13 @@ if ( ! function_exists( 'wpmem_inc_recaptcha' ) ):
  */
 function wpmem_inc_recaptcha( $key, $theme )
 {
-	$str = '<script type="text/javascript">
+	$http = ( is_ssl() ) ? 'https://' : 'http://';
+	$str  = '<script type="text/javascript">
 			var RecaptchaOptions = { theme : \''. $theme . '\' };
 		</script>
-		<script type="text/javascript" src="http://www.google.com/recaptcha/api/challenge?k=' . $key . '"></script>
+		<script type="text/javascript" src="' . $http . 'www.google.com/recaptcha/api/challenge?k=' . $key . '"></script>
 		<noscript>
-			<iframe src="http://www.google.com/recaptcha/api/noscript?k=' . $key . '" height="300" width="500" frameborder="0"></iframe><br/>
+			<iframe src="' . $http . 'www.google.com/recaptcha/api/noscript?k=' . $key . '" height="300" width="500" frameborder="0"></iframe><br/>
 			<textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
 			<input type="hidden" name="recaptcha_response_field" value="manual_challenge"/>
 		</noscript>';

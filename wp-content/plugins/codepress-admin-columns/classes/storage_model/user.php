@@ -16,17 +16,14 @@ class CPAC_Storage_Model_User extends CPAC_Storage_Model {
 
 		$this->set_columns_filepath();
 
-		// Populate columns variable.
-		// This is used for manage_value. By storing these columns we greatly improve performance.
+		// populate columns variable
 		add_action( 'admin_init', array( $this, 'set_columns' ) );
 
 		// headings
-		add_filter( "manage_{$this->page}_columns",  array( $this, 'add_headings' ) );
+		add_filter( "manage_{$this->page}_columns",  array( $this, 'add_headings' ), 100 );
 
 		// values
-		add_filter( 'manage_users_custom_column', array( $this, 'manage_value_callback' ), 10, 3 );
-
-		//@todo: remove parent::__construct();
+		add_filter( 'manage_users_custom_column', array( $this, 'manage_value_callback' ), 100, 3 );
 	}
 
 	/**

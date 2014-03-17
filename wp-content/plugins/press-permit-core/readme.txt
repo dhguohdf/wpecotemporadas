@@ -4,8 +4,8 @@ Donate Link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=JWZVF
 Tags: restrict, access, permissions, cms, user, private, category, pages, privacy, capabilities, role, scoper
 License: GPLv3
 Requires at least: 3.4
-Tested up to: 3.7.1
-Stable tag: 2.1.36
+Tested up to: 3.8.1
+Stable tag: 2.1.44
 
 Advanced yet accessible content permissions. Give users or groups type-specific roles. Enable or block access for specific posts or terms.
 
@@ -48,6 +48,50 @@ Pro [extensions](http://presspermit.com/extensions) are [available](http://press
 Initial production release
 
 == Changelog ==
+
+= 2.1.44 - 26 Feb 2014 =
+* Fixed : With PP Compatibility extension enabled on Multisite and network-wide groups enabled, fatal error when clicking "Add New" link at top of Groups screen
+* Change : Allow "Also These" / "Enabled" exceptions to be assigned to {All} and {Anonymous} groups if constant PP_ALL_ANON_FULL_EXCEPTIONS is defined
+* Fixed : PHP warning when third party plugin causes an object to be passed into pp_sanitize_key() 
+
+= 2.1.43 - 4 Feb 2014 =
+* Fixed : Posts inappropriately hidden from anonymous users on some installations
+* Compat : The Events Calendar Pro - Ajax calendar refresh returned no entries
+
+= 2.1.42 - 24 Jan 2014 =
+* Compat : PP Content Teaser - Teaser was not applied for posts listing when universal category exceptions are active
+* Compat : PP Content Teaser - Teaser was not applied for single post display under some configurations
+
+= 2.1.41 - 23 Jan 2014 =
+* Fixed : Read access to Media was blocked unexpectedly under some configurations
+
+= 2.1.40 - 17 Jan 2014 =
+* Compat : Slidedeck - Slides made by a direct media upload were not displayed correctly
+* Compat : Slidedeck - Iframe and RESS decks conflict with Press Permit; temporary workaround overrides those options
+* Compat : CMS Tree Page View - Pages editable based on exceptions were not displayed if they have an uneditable parent (also requires PP Compatibility Pack 2.1.11)
+
+= 2.1.39 - 9 Jan 2014 =
+* Fixed : Editing permissions were not propagated to newly created pages under some configurations on WP 3.8 (also requires PP Collaborative Editing 2.1.18)
+* Fixed : User search ajax submission with blank search box returned users by creation date with oldest first (should be newest first)
+* Fixed : Work around PHP Bug #52339 - SPL autoloader breaks class_exists()
+* Fixed : PHP Notices on when updating extension plugins with strict error reporting
+
+= 2.1.38 - 18 Dec 2013 =
+* Compat : WP 3.8 - styling corrections on Edit Permissions, Settings screens
+* Fixed : Post access blocked per-Role by a Universal Taxonomy Exception could not be enabled per-user or per-group by another Universal Taxonomy Exception
+* Fixed : When a page is re-saved to a different parent, exceptions propagated to subpages from the previous parent were not cleared
+* Fixed : When a page is re-saved to a different parent, exceptions from the new parent were not assigned to subpages
+* Fixed : Pro - Customization of role capabilities for stock WP roles was not reflected in supplemental role assignment (since 2.1.33)
+* Fixed : Pro - Editing exceptions remained partially active even if corresponding pro extensions disabled
+* Feature : Pro - Support list_all_posts, list_all_pages, etc. capabilities (also requires PP Collaborative Editing 2.1.16)
+* Change : Additional explanatory captions on Edit Permissions screen
+* Change : Link on Edit Permissions screen to reload with propagated exceptions displayed
+* Fixed : PHP Notices for non-static function definitions
+
+= 2.1.37 - 14 Dec 2013 =
+* Fixed : Pro - Assignment of Tags and other hierarchical taxonomies was not filtered based on "Only these" or "Not these" exceptions (also requires PP Collaborative Editing 2.1.15)
+* Fixed : PHP warning when uploading configuration data from a network installation
+* Doc : Corrected code comment for exceptions array in pp-user.php
 
 = 2.1.36 - 11 Dec 2013 =
 * Fixed : After saving changes to Universal Category Exceptions, redirect was back to Edit Category (Post Exceptions)

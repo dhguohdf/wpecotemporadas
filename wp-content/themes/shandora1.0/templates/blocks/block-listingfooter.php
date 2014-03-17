@@ -11,14 +11,55 @@
 if( !empty($agent_id) ) {
 	$agent_email = shandora_get_meta($agent_id, 'agentemail');
 ?>
-<footer class="listing-contact row">
-	<div class="column large-12">
-		<div class="agent-detail row">
+<footer class="listing-contact">
+	<div class="">
+		<div class="">
+			<div class="">
+				<div class="form-contact">
+
+					<form action="" method="post" id="agent-contactform">
+						<h4>Entre em contato direto <br>com o proprietário!</h4>
+						<div class="row collapse input-container">
+							<div class="column large-2 small-1"><span class="attached-label prefix"><i class="sha-user"></i></span></div>
+							<div class='column large-10 small-11'>
+								<input class="attached-input required" type="text" placeholder="<?php _e('Nome','bon'); ?>"  name="name" id="name" value="" size="22" tabindex="1" />
+								<div class="contact-form-error" ><?php _e('Por favor, inserir seu nome.','bon'); ?></div>
+							</div>
+						</div>
+						<div class="row collapse input-container">
+							<div class="column large-2 small-1"><span class="attached-label prefix"><i class="sha-mail-2"></i></span></div>
+							<div class='column large-10 small-11'>
+								<input class="attached-input required email" type="email" placeholder="<?php _e('Email','bon'); ?>"  name="email" id="email" value="" size="22" tabindex="2" />
+								<div class="contact-form-error" ><?php _e('Por favor, inserir seu email.','bon'); ?></div>
+							</div>
+						</div>
+						<div class="row collapse textarea-container input-container" data-match-height>
+							<div data-height-watch class="column large-2 small-1"><span class="attached-label prefix"><i class="sha-pencil"></i></span></div>
+							<div data-height-watch class='column large-10 small-11'>
+								<textarea name="messages" class="attached-input required" id="messages" cols="58" rows="10" placeholder="<?php _e('Insira sua mensagem','bon'); ?>"  tabindex="4"></textarea>
+								<div class="contact-form-error" ><?php _e('Por favor, digite sua mensagem.','bon'); ?></div>
+							</div>
+						</div>
+						<div>
+							<input type="hidden" name="subject" value="<?php printf(__('Ecotemporadas.com | Mensagem em anuncio %s','bon'), get_the_title()); ?>" />
+							<input type="hidden" name="receiver" value="<?php echo $agent_email; ?>" />
+							<input class="button" name="submit" type="submit" id="submit" tabindex="5" value="<?php _e('Enviar', 'bon') ?>" />
+							<span class="contact-loader"><img src="<?php echo trailingslashit(BON_THEME_URI); ?>assets/images/loader.gif" alt="loading..." />
+						</div>
+						<div class="sending-result"><div class="green bon-toolkit-alert"></div></div>
+					</form>
+				</div>
+			</div>
 			
 
             <figure class="column large-12">
+
 				<?php
+				
 					$img_id = shandora_get_meta($agent_id, 'agentpic');
+					if ($img_id == "0") {
+					$img_id = "1429";
+				}
 					echo wp_get_attachment_image( $img_id, 'listing_small_box' );
 				?>
 			</figure>
@@ -60,44 +101,7 @@ if( !empty($agent_id) ) {
 	</div>
 	<div class="column large-12">
 
-		<div class="row">
-			<div class="column large-12">
-
-				<form action="" method="post" id="agent-contactform">
-					<h4>Entre em contato direto <br>com o proprietário!</h4>
-					<div class="row collapse input-container">
-						<div class="column large-2 small-1"><span class="attached-label prefix"><i class="sha-user"></i></span></div>
-						<div class='column large-10 small-11'>
-							<input class="attached-input required" type="text" placeholder="<?php _e('Nome','bon'); ?>"  name="name" id="name" value="" size="22" tabindex="1" />
-							<div class="contact-form-error" ><?php _e('Por favor, inserir seu nome.','bon'); ?></div>
-						</div>
-					</div>
-					<div class="row collapse input-container">
-						<div class="column large-2 small-1"><span class="attached-label prefix"><i class="sha-mail-2"></i></span></div>
-						<div class='column large-10 small-11'>
-							<input class="attached-input required email" type="email" placeholder="<?php _e('Email','bon'); ?>"  name="email" id="email" value="" size="22" tabindex="2" />
-							<div class="contact-form-error" ><?php _e('Por favor, inserir seu email.','bon'); ?></div>
-						</div>
-					</div>
-					<div class="row collapse textarea-container input-container" data-match-height>
-						<div data-height-watch class="column large-2 small-1"><span class="attached-label prefix"><i class="sha-pencil"></i></span></div>
-						<div data-height-watch class='column large-10 small-11'>
-							<textarea name="messages" class="attached-input required" id="messages" cols="58" rows="10" placeholder="<?php _e('Insira sua mensagem','bon'); ?>"  tabindex="4"></textarea>
-							<div class="contact-form-error" ><?php _e('Por favor, digite sua mensagem.','bon'); ?></div>
-						</div>
-					</div>
-					<div>
-						<input type="hidden" name="subject" value="<?php printf(__('Ecotemporadas.com | Mensagem em anuncio %s','bon'), get_the_title()); ?>" />
-						<input type="hidden" name="receiver" value="<?php echo $agent_email; ?>" />
-						<input class="flat button red radius" name="submit" type="submit" id="submit" tabindex="5" value="<?php _e('Enviar', 'bon') ?>" />
-						<span class="contact-loader"><img src="<?php echo trailingslashit(BON_THEME_URI); ?>assets/images/loader.gif" alt="loading..." />
-					</div>
-					<div class="sending-result"><div class="green bon-toolkit-alert"></div></div>
-				</form>
-			</div>
-		</div>
-
-				<div class="related-post">
+		<div class="related-post">
 			<div class="related-header"><strong><a href="<?php echo get_permalink($agent_id); ?>"?><?php printf(__('Outras temporadas<br> de %s','bon'), get_the_title($agent_id)); ?></a></strong><a class="more-related" href="<?php echo get_permalink($agent_id); ?>" title="<?php _e('ver mais','bon'); ?>"><?php _e('ver mais','bon'); ?></a></div>
 			<ul>
 			<?php 

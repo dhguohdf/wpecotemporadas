@@ -429,7 +429,7 @@ if( !function_exists('bon_toolkit_get_contact_form') ) {
         $o .= '<input type="hidden" name="receiver" value="'.$email.'" />';
 
         $o .= '<div class="contact-form-input">';
-        $o .= '<button type="submit" class="contact-form-submit bon-toolkit-button round-corner blue flat" name="submit">'.__('Enviar mensagem','bon-toolkit').'</button>';
+        $o .= '<button type="submit" class="button" name="submit">'.__('Enviar mensagem','bon-toolkit').'</button>';
         $o .= '<span class="contact-form-ajax-loader"><img src="'.trailingslashit( BON_TOOLKIT_IMAGES ).'loader.gif" alt="loading..." /></span>';
         $o .= '</div>';
 

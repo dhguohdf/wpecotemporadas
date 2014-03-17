@@ -123,7 +123,7 @@ if( !function_exists('shandora_search_get_listing') ) {
 if( !function_exists('shandora_open_main_content_row') ) {
 
 
-	function shandora_open_main_content_row() {
+	function shandora_open_main_content_row() {	
 
 		echo '<div id="main-content" class="row">';
 	}
@@ -183,18 +183,15 @@ if( !function_exists('shandora_listing_open_ul') ) {
 		$compare_page = bon_get_option('compare_page');
 		
 		
-		if( ( is_page_template('page-templates/page-template-property-status.php') || get_post_type() == 'listing' || get_post_type() == 'car-listing' || is_page_template('page-templates/page-template-all-listings.php') ||
+		if( ( is_page_template('page-templates/page-template-property-status.php') ||  is_page_template('page-templates/page-template-car-status.php') || get_post_type() == 'listing' || get_post_type() == 'car-listing' || is_page_template('page-templates/page-template-all-listings.php') ||
 			is_page_template('page-templates/page-template-all-car-listings.php') || is_page_template('page-templates/page-template-search-listings.php')
-			|| is_page_template('page-templates/page-template-search-car-listings.php')) && !is_singular('listing') && !is_singular( 'car-listing' )) {
+			|| is_page_template('page-templates/page-template-search-car-listings.php')) && !is_singular('listing') && !is_singular( 'car-listing' ) && !is_search() ) {
 			
 			$show_map = 'no';
-			
-
 			$show_listing_count = bon_get_option('show_listing_count', 'no');
 
 			if( ( is_page_template('page-templates/page-template-property-status.php') || get_post_type() == 'listing' || is_page_template('page-templates/page-template-all-listings.php')
-			|| is_page_template('page-templates/page-template-search-listings.php')) && !is_singular('listing') && 
-				!is_singular( 'car-listing' )) {
+			|| is_page_template('page-templates/page-template-search-listings.php')) && !is_singular('listing') &&  !is_singular( 'car-listing' )) {
 				$show_map = bon_get_option('show_listings_map');
 			}
 		?>
@@ -214,14 +211,14 @@ if( !function_exists('shandora_listing_open_ul') ) {
 		            <div class="row">
 		                <div class="column large-6 search-order">
 		                    <select class="no-mbot" name="search_order" onChange="document.forms['orderform'].submit()">
-		                        <option value="ASC" <?php selected( $search_order, 'ASC' );?> ><?php _e('Ordem Crescente','bon'); ?></option>
-		                        <option value="DESC" <?php selected( $search_order, 'DESC' );?> ><?php _e('Ordem Decrescente','bon'); ?></option>
+		                        <option value="ASC" <?php selected( $search_order, 'ASC' );?> ><?php _e('Ascending','bon'); ?></option>
+		                        <option value="DESC" <?php selected( $search_order, 'DESC' );?> ><?php _e('Descending','bon'); ?></option>
 		                    </select>
 		                </div>
 		                <div class="column large-6 search-order">
 		                    <select class="no-mbot" name="search_orderby" onChange="document.forms['orderform'].submit()">
-		                        <option value="price" <?php selected( $search_orderby, 'price' );?> ><?php _e('Preço','bon'); ?></option>
-		                        <option value="date" <?php selected( $search_orderby, 'date' );?> ><?php _e('Data','bon'); ?></option>
+		                        <option value="price" <?php selected( $search_orderby, 'price' );?> ><?php _e('Price','bon'); ?></option>
+		                        <option value="date" <?php selected( $search_orderby, 'date' );?> ><?php _e('Date','bon'); ?></option>
 		                    </select>
 		                </div>
 			                <?php 
@@ -241,7 +238,7 @@ if( !function_exists('shandora_listing_open_ul') ) {
     	</div>
 		<?php	
 		if($show_map == 'show') {
-	        echo '<div id="listings-map" class="bon-toolkit-map"></div>';
+	        echo '<div id="listings-map"></div>';
 	    }
 	    ?>
 		<ul class="listings <?php shandora_block_grid_column_class(); ?>" data-compareurl="<?php echo get_permalink($compare_page); ?>">
@@ -324,14 +321,12 @@ if( !function_exists('shandora_get_topbar_navigation') ) {
 		<hgroup id="topbar-navigation" class="hide-for-small">
 			<div class="row">
 				<?php bon_get_template_part( 'menu', 'topbar' ); // Loads the menu-primary.php template. ?>
-				<?php 
-					$enable_header_social = bon_get_option('enable_header_social', 'yes');
-
-					if($enable_header_social == 'yes') {
-						shandora_get_social_icons();
-					}
-					 
-				?>
+				<nav class="large-6 column">
+	    			<ul class="right social-icon-header" id="top-social-icons">
+						<li class="eco-fb"><a href="http://facebook.com/ecotemporadas" title="Siga-nos no Facebook">&nbsp;</a></li>
+						<li class="eco-gplus"><a href="http://plus.google.com/115932106905072490499" title="Siga-nos no Google Plus">&nbsp;</a></li>
+					</ul>
+	    		</nav>
 			</div>
 		</hgroup>
 
@@ -497,18 +492,13 @@ if( !function_exists('shandora_get_footer_copyright') ) {
 			<div class="row">
 				<div class="column large-12 footer-column"><div class="row">
 					<div id="social-icon-footer" class="large-4 column large-uncentered small-11 small-centered">
-						<?php 
-
-							$enable_footer_social = bon_get_option('enable_footer_social', 'yes');
-							
-							if($enable_footer_social == 'yes') {
-								shandora_get_social_icons(false);
-							} else {
-								echo "&nbsp;";
-							}
-
-						?>
-					</div>
+						<nav class="eco-social-nav">
+	    					<ul class="eco-social-ul" id="footer-social-icons">
+	    						<li class="eco-fb"><a href="http://facebook.com/ecotemporadas" title="Siga-nos no Facebook">&nbsp;</a></li>
+	    						<li class="eco-gplus"><a href="http://plus.google.com/115932106905072490499" title="Siga-nos no Google Plus">&nbsp;</a></li>
+	    					</ul>
+	    				</nav>
+	    			</div>
 
 					<div id="copyright-text" class="large-8 column large-uncentered small-11 small-centered">
 						<div><?php echo bon_get_option('footer_copyright', apply_atomic_shortcode( 'footer_content', '<div class="credit">' . __( 'Copyright &copy; [the-year] [site-link]. Powered by [wp-link] and [theme-link].', 'bon' ) . '</div>') ); ?></div>

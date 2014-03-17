@@ -39,7 +39,7 @@
 		</span></div>
 	</li>
 	<li class="garage"><div class="meta-wrap">
-		<i class="awe-eco1-img"></i>
+		<i class="awe-ruler awe-eco1-img"></i>
 		<span class="meta-value">
 			<?php if($eco1 == 'naopossui') { 
 				printf('Não<br>possui','bon'); 
@@ -50,7 +50,7 @@
 		</div>
 	</li>
 	<li class="garage"><div class="meta-wrap">
-		<i class="awe-eco2-img"></i>
+		<i class="awe-ruler awe-eco2-img"></i>
 		<span class="meta-value">
 			<?php if($eco2 == 'naopossui') { 
 				printf('Não<br>possui','bon'); 
@@ -61,7 +61,7 @@
 		</div>
 	</li>
 	<li class="garage"><div class="meta-wrap">
-		<i class="awe-eco3-img"></i>
+		<i class="awe-ruler awe-eco3-img"></i>
 		<span class="meta-value">
 			<?php if($eco3 == 'naopossui') { 
 				printf('Não<br>possui','bon'); 

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Bon Toolkit v1.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-12-09 03:55-0300\n"
+"PO-Revision-Date: 2014-01-28 16:05:50+0000\n"
 "Last-Translator: ecotemporadas-admin <contato@ecotemporadas.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -11,310 +11,304 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Poedit 1.6.1\n"
+"X-Poedit-Language: \n"
+"X-Poedit-Country: \n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
-"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
 "X-Poedit-Basepath: ../../\n"
-"X-Textdomain-Support: yes\n"
-"Language: pt_BR\n"
+"X-Poedit-Bookmarks: \n"
 "X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
 
-# @ bon-toolkit
 #: bon-toolkit-core-functions.php:150
+#@ bon-toolkit
 msgid "Cannot send email to destination. No parameter receive form AJAX call."
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit-core-functions.php:157 bon-toolkit-core-functions.php:409
+#@ bon-toolkit
 msgid "Please enter your name."
 msgstr "Por favor, insira seu nome."
 
-# @ bon-toolkit
 #: bon-toolkit-core-functions.php:164
+#@ bon-toolkit
 msgid "Please enter a valid email address."
 msgstr "Por favor, digite um email válido"
 
-# @ bon-toolkit
 #: bon-toolkit-core-functions.php:195
+#@ bon-toolkit
 msgid "Cheatin Huh?!"
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit-core-functions.php:215
+#@ bon-toolkit
 msgid "Email was sent successfully."
 msgstr "Email foi enviado com sucesso."
 
-# @ bon-toolkit
 #: bon-toolkit-core-functions.php:218
+#@ bon-toolkit
 msgid "There is an error sending email."
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit-core-functions.php:331
+#@ bon-toolkit
 msgid "Error Loading Video"
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit-core-functions.php:395
-msgid ""
-"Failed rendering contact form. Please provide a correct <strong>Email "
-"Address</strong>."
+#@ bon-toolkit
+msgid "Failed rendering contact form. Please provide a correct <strong>Email Address</strong>."
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit-core-functions.php:407
+#@ bon-toolkit
 msgid "Your Name"
 msgstr ""
 
-# @ bon
-# @ bon-toolkit
 #: bon-toolkit-core-functions.php:408
 #: includes/widgets/widget-categories.php:183
 #: includes/widgets/widget-posts.php:193 includes/widgets/widget-tags.php:202
+#@ bon
+#@ bon-toolkit
 msgid "Name"
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit-core-functions.php:413 includes/builder/builder-options.php:160
+#@ bon-toolkit
 msgid "Email Address"
 msgstr ""
 
-# @ bon
-# @ bon-toolkit
 #: bon-toolkit-core-functions.php:414 includes/widgets/widget-authors.php:151
+#@ bon
+#@ bon-toolkit
 msgid "Email"
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit-core-functions.php:415
+#@ bon-toolkit
 msgid "Please enter valid email address."
 msgstr ""
 
-# @ bon-toolkit
-# @ bon
 #: bon-toolkit-core-functions.php:419 bon-toolkit-core-functions.php:420
+#@ bon-toolkit
+#@ bon
 msgid "Subject"
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit-core-functions.php:424
+#@ bon-toolkit
 msgid "Your Messages"
 msgstr ""
 
-# @ bon
 #: bon-toolkit-core-functions.php:425
+#@ bon
 msgid "Messages"
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit-core-functions.php:426
+#@ bon-toolkit
 msgid "Please enter your messages."
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit-core-functions.php:432
+#@ bon-toolkit
 msgid "Send Message"
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit-core-functions.php:463
+#@ bon-toolkit
 msgid "Background Image"
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit-core-functions.php:464
-msgid ""
-"Upload a custom background image for this post. Once image has been "
-"uploaded, click Insert into Post."
+#@ bon-toolkit
+msgid "Upload a custom background image for this post. Once image has been uploaded, click Insert into Post."
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit-core-functions.php:470
+#@ bon-toolkit
 msgid "Background Repeat"
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit-core-functions.php:471
+#@ bon-toolkit
 msgid "Select the preferred repeat for the uploaded image."
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit-core-functions.php:474
+#@ bon-toolkit
 msgid "No Repeat"
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit-core-functions.php:475
+#@ bon-toolkit
 msgid "Repeat Horizontal"
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit-core-functions.php:476
+#@ bon-toolkit
 msgid "Repeat Vertical"
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit-core-functions.php:477
+#@ bon-toolkit
 msgid "Repeat"
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit-core-functions.php:483
+#@ bon-toolkit
 msgid "Background Position"
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit-core-functions.php:484
+#@ bon-toolkit
 msgid "Select the background position for the uploaded image."
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit-core-functions.php:487 includes/builder/builder-options.php:488
+#@ bon-toolkit
 msgid "Left"
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit-core-functions.php:488 includes/builder/builder-options.php:489
+#@ bon-toolkit
 msgid "Right"
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit-core-functions.php:489
+#@ bon-toolkit
 msgid "Center"
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit-core-functions.php:495
+#@ bon-toolkit
 msgid "Background Cover"
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit-core-functions.php:496
+#@ bon-toolkit
 msgid "If browser supported, the background image should cover the block."
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit-core-functions.php:499 includes/builder/builder-options.php:92
 #: includes/builder/builder-options.php:115
 #: includes/widgets/widget-posts.php:186
+#@ bon-toolkit
 msgid "Yes"
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit-core-functions.php:500 includes/builder/builder-options.php:93
 #: includes/builder/builder-options.php:116
 #: includes/widgets/widget-posts.php:187
+#@ bon-toolkit
 msgid "No"
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit-core-functions.php:506
+#@ bon-toolkit
 msgid "Background Color"
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit-core-functions.php:507
+#@ bon-toolkit
 msgid "Select a custom background color for this post."
 msgstr ""
 
-# @ bon
 #: bon-toolkit-core-functions.php:513
+#@ bon
 msgid "Custom Background"
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit-twitter-functions.php:52
+#@ bon-toolkit
 msgid "Access Token not properly configured."
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit-twitter-functions.php:54
+#@ bon-toolkit
 msgid "Access Token Secret not properly configured."
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit-twitter-functions.php:56
+#@ bon-toolkit
 msgid "Consumer Key not properly configured."
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit-twitter-functions.php:58
+#@ bon-toolkit
 msgid "Consumer Key Secret not properly configured."
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit-twitter-functions.php:197
+#@ bon-toolkit
 msgid "There was an error grabbing the Twitter feed"
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit.php:229
-msgid ""
-"BonFramework is not available in your theme or you are currently using the "
-"older version. Some features of the Bon Toolkit are disabled."
+#@ bon-toolkit
+msgid "BonFramework is not available in your theme or you are currently using the older version. Some features of the Bon Toolkit are disabled."
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit.php:238
+#@ bon-toolkit
 msgid "Bon Toolkit"
 msgstr ""
 
-# @ bon-toolkit
 #: bon-toolkit.php:340
+#@ bon-toolkit
 msgid "Bon Toolkit Options"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-interface.php:760
+#@ bon-toolkit
 msgid "Please activate some widget"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:21
 #: includes/builder/builder-options.php:219
 #: includes/builder/builder-options.php:641
+#@ bon-toolkit
 msgid "Red"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:22
 #: includes/builder/builder-options.php:220
 #: includes/builder/builder-options.php:643
+#@ bon-toolkit
 msgid "Green"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:23
 #: includes/builder/builder-options.php:221
 #: includes/builder/builder-options.php:639
+#@ bon-toolkit
 msgid "Blue"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:24
 #: includes/builder/builder-options.php:223
+#@ bon-toolkit
 msgid "Orange"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:25
 #: includes/builder/builder-options.php:224
+#@ bon-toolkit
 msgid "Purple"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:26
 #: includes/builder/builder-options.php:222
 #: includes/builder/builder-options.php:642
+#@ bon-toolkit
 msgid "Yellow"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:27
+#@ bon-toolkit
 msgid "Dark"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:55
 #: includes/builder/builder-options.php:125
 #: includes/builder/builder-options.php:250
@@ -328,137 +322,135 @@ msgstr ""
 #: includes/builder/builder-options.php:793
 #: includes/widgets/widget-pages.php:167 includes/widgets/widget-posts.php:192
 #: includes/widgets/widget-video.php:126
+#@ bon-toolkit
 msgid "Title"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:69
+#@ bon-toolkit
 msgid "Post Size"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:72
+#@ bon-toolkit
 msgid "1 Column"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:73
+#@ bon-toolkit
 msgid "2 Columns"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:74
+#@ bon-toolkit
 msgid "3 Columns"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:75
+#@ bon-toolkit
 msgid "4 Columns"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:78
+#@ bon-toolkit
 msgid "Choose the post column options"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:81
+#@ bon-toolkit
 msgid "Choose Category"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:85
+#@ bon-toolkit
 msgid "Choose the post category you want to fetch for the post."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:88
+#@ bon-toolkit
 msgid "Show Thumbnail"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:97
+#@ bon-toolkit
 msgid "Number of Posts"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:101
+#@ bon-toolkit
 msgid "This is the number of fetched item in one page."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:104
+#@ bon-toolkit
 msgid "Excerpt's Length"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:108
+#@ bon-toolkit
 msgid "This is the number of thumbnail content character."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:111
+#@ bon-toolkit
 msgid "Show Pagination"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:119
-msgid ""
-"Pagination will only appear when the number of blog post is greater than the "
-"number of fetched item in one page."
+#@ bon-toolkit
+msgid "Pagination will only appear when the number of blog post is greater than the number of fetched item in one page."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:122
+#@ bon-toolkit
 msgid "Order By"
 msgstr ""
 
-# @ bon-toolkit
-# @ framework
 #: includes/builder/builder-options.php:124 includes/posttypes/poll.php:135
 #: includes/posttypes/portfolio.php:36 includes/posttypes/quiz.php:142
 #: includes/widgets/widget-pages.php:162 includes/widgets/widget-posts.php:194
+#@ bon-toolkit
+#@ framework
 msgid "Date"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:126
 #: includes/widgets/widget-posts.php:195 includes/widgets/widget-tags.php:197
+#@ bon-toolkit
 msgid "Random"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:127
 #: includes/widgets/widget-posts.php:196
+#@ bon-toolkit
 msgid "Comment Count"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:133
+#@ bon-toolkit
 msgid "Order Type"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:135
 #: includes/widgets/widget-archives.php:171
 #: includes/widgets/widget-authors.php:145
 #: includes/widgets/widget-categories.php:176
 #: includes/widgets/widget-pages.php:156 includes/widgets/widget-posts.php:181
 #: includes/widgets/widget-tags.php:195
+#@ bon-toolkit
 msgid "Ascending"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:136
 #: includes/widgets/widget-archives.php:172
 #: includes/widgets/widget-authors.php:146
 #: includes/widgets/widget-categories.php:177
 #: includes/widgets/widget-pages.php:157 includes/widgets/widget-posts.php:182
 #: includes/widgets/widget-tags.php:196
+#@ bon-toolkit
 msgid "Descending"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:143
 #: includes/builder/builder-options.php:166
 #: includes/builder/builder-options.php:228
@@ -475,1169 +467,1108 @@ msgstr ""
 #: includes/builder/builder-options.php:767
 #: includes/builder/builder-options.php:811
 #: includes/builder/builder-options.php:846
+#@ bon-toolkit
 msgid "Bottom Margin"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:163
+#@ bon-toolkit
 msgid "Input the email address for the contact form to send the contact email"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:193
+#@ bon-toolkit
 msgid "Location Latitude"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:199
+#@ bon-toolkit
 msgid "Location Longitude"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:204
+#@ bon-toolkit
 msgid "Map Height"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:209
+#@ bon-toolkit
 msgid "Start Zoom"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:215
 #: includes/widgets/widget-social.php:191
+#@ bon-toolkit
 msgid "Color"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:256
 #: includes/builder/builder-options.php:354
+#@ bon-toolkit
 msgid "Content"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:293
+#@ bon-toolkit
 msgid "Image URL"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:298
+#@ bon-toolkit
 msgid "Link Image to"
 msgstr ""
 
-# @ default
-# @ bon-toolkit
 #: includes/builder/builder-options.php:331
 #: includes/builder/builder-options.php:450
+#@ default
+#@ bon-toolkit
 msgid "Icon Class"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:334
+#@ bon-toolkit
 msgid "Class for the icon"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:338
+#@ bon-toolkit
 msgid "Icon Style"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:342
 #: includes/widgets/widget-social.php:202
+#@ bon-toolkit
 msgid "Round"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:343
 #: includes/widgets/widget-social.php:201
+#@ bon-toolkit
 msgid "Square"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:344
+#@ bon-toolkit
 msgid "Round Corner"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:345
+#@ bon-toolkit
 msgid "Hexagon"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:385
 #: includes/builder/builder-options.php:679
 #: includes/builder/builder-options.php:832
+#@ bon-toolkit
 msgid "Description"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:388
+#@ bon-toolkit
 msgid "Use this element to put the content from the WordPress Editor"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:395
+#@ bon-toolkit
 msgid "Leave blank if you don't want a title"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:433
+#@ bon-toolkit
 msgid "Sub Title"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:439
+#@ bon-toolkit
 msgid "Button Text"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:445
+#@ bon-toolkit
 msgid "Link To"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:483
+#@ bon-toolkit
 msgid "Tab Direction"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:487
+#@ bon-toolkit
 msgid "Default"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:494
+#@ bon-toolkit
 msgid "Tab Color"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:507
+#@ bon-toolkit
 msgid "Tab Title"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:513
+#@ bon-toolkit
 msgid "Tab Content"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:557
+#@ bon-toolkit
 msgid "Toggle Title"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:563
+#@ bon-toolkit
 msgid "Toggle Content"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:594
+#@ bon-toolkit
 msgid "Divider Text"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:597
+#@ bon-toolkit
 msgid "Leave blank to use second style divider"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:629
+#@ bon-toolkit
 msgid "Alert Content"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:635
+#@ bon-toolkit
 msgid "Alert Color"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:640
+#@ bon-toolkit
 msgid "White"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:644
+#@ bon-toolkit
 msgid "Grey"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:673
+#@ bon-toolkit
 msgid "Video Title"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:682
-msgid ""
-"To embed you only need to specify the url. For example: http://www.youtube."
-"com/watch?v=abcdeFGHIJ. To use self hosted video leave the embed field empty."
+#@ bon-toolkit
+msgid "To embed you only need to specify the url. For example: http://www.youtube.com/watch?v=abcdeFGHIJ. To use self hosted video leave the embed field empty."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:686
 #: includes/widgets/widget-video.php:131
+#@ bon-toolkit
 msgid "Video Url (Third Party Host)"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:689
 #: includes/widgets/widget-video.php:133
-msgid ""
-"For List of Supported Providers please see <a href=\"http://codex.wordpress."
-"org/Embeds\" target=\"blank\">http://codex.wordpress.org/Embeds</a>"
+#@ bon-toolkit
+msgid "For List of Supported Providers please see <a href=\"http://codex.wordpress.org/Embeds\" target=\"blank\">http://codex.wordpress.org/Embeds</a>"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:693
+#@ bon-toolkit
 msgid "Video Poster Url (Self Hosted)"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:699
+#@ bon-toolkit
 msgid "Video .m4v URL (Self Hosted)"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:706
+#@ bon-toolkit
 msgid "Video .ogv URL (Self Hosted)"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:712
+#@ bon-toolkit
 msgid "Short Video Description"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:749
 #: includes/widgets/widget-twitter.php:124
+#@ bon-toolkit
 msgid "Twitter Username"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:755
 #: includes/builder/builder-options.php:805
+#@ bon-toolkit
 msgid "How many post to fetch?"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:761
+#@ bon-toolkit
 msgid "Follow Me Text"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:799
+#@ bon-toolkit
 msgid "Flickr ID"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:835
-msgid ""
-"Choose the widget slot then go to <strong>Widget</strong> menu and drag "
-"widget into the slot. Custom widget slot can be created through theme "
-"options <strong>Sidebar Generator</strong> if supported."
+#@ bon-toolkit
+msgid "Choose the widget slot then go to <strong>Widget</strong> menu and drag widget into the slot. Custom widget slot can be created through theme options <strong>Sidebar Generator</strong> if supported."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder-options.php:838
+#@ bon-toolkit
 msgid "Choose Widget Slot"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder.php:46
+#@ bon-toolkit
 msgid "BT Page Builder"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder.php:138
+#@ bon-toolkit
 msgid "loading..."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder.php:145
-msgid ""
-"Choose the builder element from the button bar above. You can drag the "
-"position and resize the block of the generated element"
+#@ bon-toolkit
+msgid "Choose the builder element from the button bar above. You can drag the position and resize the block of the generated element"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder.php:234
 #, php-format
+#@ bon-toolkit
 msgid "Edit %s Property"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder.php:307
+#@ bon-toolkit
 msgid "Add Tab"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder.php:375
+#@ bon-toolkit
 msgid "Upload Image"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder.php:447 includes/builder/builder.php:468
+#@ bon-toolkit
 msgid "Add Field"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/builder/builder.php:448 includes/builder/builder.php:469
+#@ bon-toolkit
 msgid "Remove Field"
 msgstr ""
 
-# @ bon
 #: includes/classes/class-likes.php:88
+#@ bon
 msgid "Like this"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/classes/class-likes.php:91
+#@ bon-toolkit
 msgid "You already like this"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/classes/class-poll.php:275
+#@ bon-toolkit
 msgid "Vote"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/classes/class-poll.php:315
 #, php-format
+#@ bon-toolkit
 msgid "Total Vote: 1"
 msgid_plural "Total Vote: %d"
 msgstr[0] ""
 msgstr[1] ""
 
-# @ bon-toolkit
 #: includes/classes/class-poll.php:332
+#@ bon-toolkit
 msgid "Invalid Poll ID"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/classes/class-quiz.php:147
+#@ bon-toolkit
 msgid "Invalid Quiz ID"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/classes/class-social-share.php:104
+#@ bon-toolkit
 msgid "Share this on :"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/classes/class-social-share.php:218
 #, php-format
+#@ bon-toolkit
 msgid "Share this on %s"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:9 includes/options.php:204
+#@ bon-toolkit
 msgid "Widget Settings"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:26
-msgid ""
-"Use the default css from the plugin. Disable this if you want to use your "
-"own css"
+#@ bon-toolkit
+msgid "Use the default css from the plugin. Disable this if you want to use your own css"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:27
+#@ bon-toolkit
 msgid "Use Default Widget CSS"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:38
+#@ bon-toolkit
 msgid "Use the plugin FontAwesome icon style"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:39
+#@ bon-toolkit
 msgid "Use FontAwesome from Plugin"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:46
-msgid ""
-"Your FontAwesome Icon prefix might be different from the plugin FontAwesome "
-"prefix specify the prefix in here."
+#@ bon-toolkit
+msgid "Your FontAwesome Icon prefix might be different from the plugin FontAwesome prefix specify the prefix in here."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:47
+#@ bon-toolkit
 msgid "FontAwesome Prefix"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:67
+#@ bon-toolkit
 msgid "Post Type Settings"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:81
+#@ bon-toolkit
 msgid "Enable / Disable Portfolio Post Type"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:82
+#@ bon-toolkit
 msgid "Portfolio"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:90
+#@ bon-toolkit
 msgid "Enable / Disable Testimonial Post Type"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:91
+#@ bon-toolkit
 msgid "Testimonial"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:100
+#@ bon-toolkit
 msgid "Enable / Disable Poll Post Type"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:101
+#@ bon-toolkit
 msgid "Poll"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:110
+#@ bon-toolkit
 msgid "Enable / Disable Review Post Type"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:111
+#@ bon-toolkit
 msgid "Review"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:120
+#@ bon-toolkit
 msgid "Enable / Disable Featured Slider Post Type"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:121
+#@ bon-toolkit
 msgid "Featured Slider"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:130
+#@ bon-toolkit
 msgid "Enable / Disable Quiz Post Type"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:131
+#@ bon-toolkit
 msgid "Quiz"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:139
+#@ bon-toolkit
 msgid "Comment for Quiz Score 100"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:147
+#@ bon-toolkit
 msgid "Comment for Quiz Score >= 90"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:155
+#@ bon-toolkit
 msgid "Comment for Quiz Score >= 80"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:163
+#@ bon-toolkit
 msgid "Comment for Quiz Score >= 60"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:171
+#@ bon-toolkit
 msgid "Comment for Quiz Score >= 40"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:179
+#@ bon-toolkit
 msgid "Comment for Quiz Score >= 30"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:187
+#@ bon-toolkit
 msgid "Comment for Quiz Score 0"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:210
+#@ bon-toolkit
 msgid "Enable / Disable Twitter Widget."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:211
+#@ bon-toolkit
 msgid "Twitter Widget"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:217
+#@ bon-toolkit
 msgid "Enable / Disable Dribbble Widget."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:218 includes/widgets/widget-dribbble.php:29
+#@ bon-toolkit
 msgid "Dribbble Widget"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:224
+#@ bon-toolkit
 msgid "Enable / Disable Flickr Widget."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:225 includes/widgets/widget-flickr.php:29
+#@ bon-toolkit
 msgid "Flickr Widget"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:231
+#@ bon-toolkit
 msgid "Enable / Disable Social Icons Widget."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:232
+#@ bon-toolkit
 msgid "Social Icons Widget"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:238
+#@ bon-toolkit
 msgid "Enable / Disable Video Widget."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:239
+#@ bon-toolkit
 msgid "Video Widget"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:245
+#@ bon-toolkit
 msgid "Enable / Disable Posts Widget."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:246 includes/widgets/widget-posts.php:53
+#@ bon-toolkit
 msgid "Posts Widget"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:252
+#@ bon-toolkit
 msgid "Enable / Disable Contact Form Widget."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:253 includes/widgets/widget-contactform.php:45
+#@ bon-toolkit
 msgid "Contact Form Widget"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:262
+#@ bon-toolkit
 msgid "Enable / Disable Advanced Archives Widget."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:263
+#@ bon-toolkit
 msgid "Archives Widget"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:269
+#@ bon-toolkit
 msgid "Enable / Disable Advanced Tags Widget."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:270
+#@ bon-toolkit
 msgid "Tags Widget"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:276
+#@ bon-toolkit
 msgid "Enable / Disable Advanced Search Widget."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:277
+#@ bon-toolkit
 msgid "Search Widget"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:283
+#@ bon-toolkit
 msgid "Enable / Disable Advanced Pages Widget."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:284
+#@ bon-toolkit
 msgid "Pages Widget"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:290
+#@ bon-toolkit
 msgid "Enable / Disable Advanced Navigation Menu Widget."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:291
+#@ bon-toolkit
 msgid "Navigation Menu Widget"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:297
+#@ bon-toolkit
 msgid "Enable / Disable Advanced Categories Widget."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:298
+#@ bon-toolkit
 msgid "Categories Widget"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:304
+#@ bon-toolkit
 msgid "Enable / Disable Advanced Calendar Widget."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:305
+#@ bon-toolkit
 msgid "Calendar Widget"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:311
+#@ bon-toolkit
 msgid "Enable / Disable Advanced Authors Widget."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:312
+#@ bon-toolkit
 msgid "Authors Widget"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:326
+#@ bon-toolkit
 msgid "API Settings"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:331
+#@ bon-toolkit
 msgid "Here is the place to fill the api key needed for some features to work."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:337
+#@ bon-toolkit
 msgid "The twitter access token key generated from your apps."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:338
+#@ bon-toolkit
 msgid "Twitter Acces Token"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:344
+#@ bon-toolkit
 msgid "The twitter access token secret key generated from your apps."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:345
+#@ bon-toolkit
 msgid "Twitter Acces Token Secret"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:351
+#@ bon-toolkit
 msgid "The twitter consumer key generated from your apps."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:352
+#@ bon-toolkit
 msgid "Twitter Consumer Key"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:358
+#@ bon-toolkit
 msgid "The twitter consumer secret key generated from your apps."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:359
+#@ bon-toolkit
 msgid "Twitter Consumer Key Secret"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:373
+#@ bon-toolkit
 msgid "Social Share Settings"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:379
+#@ bon-toolkit
 msgid "Turn on the social share button on posts and pages"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:380
+#@ bon-toolkit
 msgid "Turn on Social Share button"
 msgstr ""
 
-# @ bon
 #: includes/options.php:388
+#@ bon
 msgid "After Post Content"
 msgstr ""
 
-# @ bon
 #: includes/options.php:389
+#@ bon
 msgid "Before Post Content"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:391
+#@ bon-toolkit
 msgid "Where do you want the share button to be put?"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:392
+#@ bon-toolkit
 msgid "Set Location for Share Button"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:403
+#@ bon-toolkit
 msgid "Toolkit Help"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:413
+#@ bon-toolkit
 msgid "What is this plugin and why do I need it?"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:414
-msgid ""
-"The Bon Toolkit provides extra functionality to the collection of themes "
-"from <a target=\"blank\" href=\"http://bonfirelab.com\" title=\"bonfirelab"
-"\">Bonfirelab</a>. The Toolkit adds various widgets (Twitter, Flickr, "
-"Dribbble and social icons), and a few custom post types. The plugin is not a "
-"requirement to use themes from bonfirelab, but it will extend the themes to "
-"function as you see them in the demos."
+#@ bon-toolkit
+msgid "The Bon Toolkit provides extra functionality to the collection of themes from <a target=\"blank\" href=\"http://bonfirelab.com\" title=\"bonfirelab\">Bonfirelab</a>. The Toolkit adds various widgets (Twitter, Flickr, Dribbble and social icons), and a few custom post types. The plugin is not a requirement to use themes from bonfirelab, but it will extend the themes to function as you see them in the demos."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:419
+#@ bon-toolkit
 msgid "How to use the Shortcode?"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:420
-msgid ""
-"When editing post there is a small black button with \"B\" in the Editor. "
-"Press it and choose the shortcode you want."
+#@ bon-toolkit
+msgid "When editing post there is a small black button with \"B\" in the Editor. Press it and choose the shortcode you want."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:425
+#@ bon-toolkit
 msgid "Available Shortcode Settings"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:426
-msgid ""
-"<ul> <li> <strong>Used to wrap [bt-tab][/bt-tabs] (~s different)</strong> "
-"<pre><code>[bt-tabs direction=\"top|left|right\" color=\"red|green|blue|"
-"yellow|dark|purple|orange\"] [bt-tab][/bt-tab] [/bt-tabs]</code></pre> </li> "
-"<li> <strong>Use to output each tab content</strong> <pre><code>[bt-"
-"tab]Content[/bt-tab]</code></pre> </li> <li> <strong>Used to output map</"
-"strong> <pre><code>[bt-map latitude=\"123456890\" longitude=\"1234567890\" "
-"zoom=\"14\" color=\"red|green|blue|yellow|dark|purple|orange\" height=\"px|%|"
-"em\" width=\"px|%|em\"]</code></pre> </li> <li> <strong>Used to wrap [bt-"
-"toggle][/bt-toggle]</strong> <pre><code>[bt-toggles] [bt-toggle][/bt-toggle] "
-"[/bt-toggles]</code></pre> </li> <li> <strong>Used to output toggle content</"
-"strong> <pre><code>[bt-toggle]Content[/bt-toggle]</code></pre> </li> <li> "
-"<strong>Used to output Alert</strong> <pre><code>[bt-alert color=\"white|"
-"blue|gray|yellow|red|green\"]Content[/bt-alert]</code></pre> </li> <li> "
-"<strong>Used to output Button</strong> <pre><code>[bt-button url=\"http://\" "
-"target=\"_self|_blank\" color=\"dark|light|pink|red|green|blue|yellow|orange|"
-"purple\" style=\"grad|flat\" size=\"small|medium|large\" type=\"square|round|"
-"round-corner\" ]Content[/bt-button]</code></pre> </li> </ul>"
+#@ bon-toolkit
+msgid "<ul> <li> <strong>Used to wrap [bt-tab][/bt-tabs] (~s different)</strong> <pre><code>[bt-tabs direction=\"top|left|right\" color=\"red|green|blue|yellow|dark|purple|orange\"] [bt-tab][/bt-tab] [/bt-tabs]</code></pre> </li> <li> <strong>Use to output each tab content</strong> <pre><code>[bt-tab]Content[/bt-tab]</code></pre> </li> <li> <strong>Used to output map</strong> <pre><code>[bt-map latitude=\"123456890\" longitude=\"1234567890\" zoom=\"14\" color=\"red|green|blue|yellow|dark|purple|orange\" height=\"px|%|em\" width=\"px|%|em\"]</code></pre> </li> <li> <strong>Used to wrap [bt-toggle][/bt-toggle]</strong> <pre><code>[bt-toggles] [bt-toggle][/bt-toggle] [/bt-toggles]</code></pre> </li> <li> <strong>Used to output toggle content</strong> <pre><code>[bt-toggle]Content[/bt-toggle]</code></pre> </li> <li> <strong>Used to output Alert</strong> <pre><code>[bt-alert color=\"white|blue|gray|yellow|red|green\"]Content[/bt-alert]</code></pre> </li> <li> <strong>Used to output Button</strong> <pre><code>[bt-button url=\"http://\" target=\"_self|_blank\" color=\"dark|light|pink|red|green|blue|yellow|orange|purple\" style=\"grad|flat\" size=\"small|medium|large\" type=\"square|round|round-corner\" ]Content[/bt-button]</code></pre> </li> </ul>"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:431
-msgid ""
-"Why are the some of the Post Type Settings available in one of my Bonfirelab "
-"themes but not the other?"
+#@ bon-toolkit
+msgid "Why are the some of the Post Type Settings available in one of my Bonfirelab themes but not the other?"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:432
-msgid ""
-"The Toolkit plugin only shows options / settings for themes that support it. "
-"If your theme does not support either feature, their settings will not be "
-"shown."
+#@ bon-toolkit
+msgid "The Toolkit plugin only shows options / settings for themes that support it. If your theme does not support either feature, their settings will not be shown."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:437
+#@ bon-toolkit
 msgid "Can I use this plugin with other themes?"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:438
-msgid ""
-"This toolkit was developed to extend the functionality of Bonfirelab themes, "
-"however you can still use some parts of the plugin features such as widget "
-"in other themes. Advanced features like Custom Post Types will only work "
-"with Bonfirelab Themes due to framework dependant."
+#@ bon-toolkit
+msgid "This toolkit was developed to extend the functionality of Bonfirelab themes, however you can still use some parts of the plugin features such as widget in other themes. Advanced features like Custom Post Types will only work with Bonfirelab Themes due to framework dependant."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:443
+#@ bon-toolkit
 msgid "This plugin is awesome where do I find the developer?"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/options.php:444
-msgid ""
-"You can find me on <a href=\"http://bonfirelab.com\" target=\"blank\" "
-">bonfirelab.com</a>. Or follow me on <a href=\"http://twitter.com/"
-"nackle2k10\" target=\"blank\">Twitter</a>"
+#@ bon-toolkit
+msgid "You can find me on <a href=\"http://bonfirelab.com\" target=\"blank\" >bonfirelab.com</a>. Or follow me on <a href=\"http://twitter.com/nackle2k10\" target=\"blank\">Twitter</a>"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/poll.php:28
+#@ bon-toolkit
 msgid "Poll Settings"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/poll.php:29
+#@ bon-toolkit
 msgid "Setup the voting options for user."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/poll.php:39
+#@ bon-toolkit
 msgid "Vote Option"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/poll.php:82 includes/posttypes/quiz.php:90
+#@ bon-toolkit
 msgid "Shortcode"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/poll.php:133
+#@ bon-toolkit
 msgid "Poll Title"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/poll.php:134
+#@ bon-toolkit
 msgid "Poll Shortcode"
 msgstr ""
 
-# @ framework
 #: includes/posttypes/portfolio.php:37
+#@ framework
 msgid "When is the project created"
 msgstr ""
 
-# @ framework
 #: includes/posttypes/portfolio.php:43
+#@ framework
 msgid "Url"
 msgstr ""
 
-# @ framework
 #: includes/posttypes/portfolio.php:44
+#@ framework
 msgid "Url to the implemented final project"
 msgstr ""
 
-# @ framework
 #: includes/posttypes/portfolio.php:50
+#@ framework
 msgid "Client"
 msgstr ""
 
-# @ framework
 #: includes/posttypes/portfolio.php:51
+#@ framework
 msgid "Who is your client (eq. Jonh doe or Organization Name)"
 msgstr ""
 
-# @ framework
 #: includes/posttypes/portfolio.php:57
+#@ framework
 msgid "Gallery"
 msgstr ""
 
-# @ framework
 #: includes/posttypes/portfolio.php:58
+#@ framework
 msgid "Project Images Gallery"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/quiz.php:30
+#@ bon-toolkit
 msgid "Quiz Settings"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/quiz.php:41
+#@ bon-toolkit
 msgid "Question"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/quiz.php:47
+#@ bon-toolkit
 msgid "Answer"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/quiz.php:50
-msgid ""
-"Define the correct answer by inputting the index of the options. eq: if your "
-"answer is in the option number 2 then put 2 inside the textbox."
+#@ bon-toolkit
+msgid "Define the correct answer by inputting the index of the options. eq: if your answer is in the option number 2 then put 2 inside the textbox."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/quiz.php:54
+#@ bon-toolkit
 msgid "Option Set"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/quiz.php:57
-msgid ""
-"Separate each option in square bracket. eq: [Option 1] [Option 2] [Option 3]"
+#@ bon-toolkit
+msgid "Separate each option in square bracket. eq: [Option 1] [Option 2] [Option 3]"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/quiz.php:140
+#@ bon-toolkit
 msgid "Quiz Title"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/quiz.php:141
+#@ bon-toolkit
 msgid "Quiz Shortcode"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/review.php:32
+#@ bon-toolkit
 msgid "Review Settings"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/review.php:33
+#@ bon-toolkit
 msgid "Setup the review criteria."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/review.php:42
+#@ bon-toolkit
 msgid "Review Criteria"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/review.php:48
+#@ bon-toolkit
 msgid "Review Rating"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/review.php:60
+#@ bon-toolkit
 msgid "Review Pros"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/review.php:61
-msgid ""
-"The review pros. Tips: You can wrap the item in list. eq <br />&lt;ul&gt;"
-"<br />&lt;li&gt;Pros 1&lt;/li&gt;<br />&lt;li&gt;Pros 2&lt;/li&gt; <br /> "
-"&lt;/ul&gt;"
+#@ bon-toolkit
+msgid "The review pros. Tips: You can wrap the item in list. eq <br />&lt;ul&gt;<br />&lt;li&gt;Pros 1&lt;/li&gt;<br />&lt;li&gt;Pros 2&lt;/li&gt; <br /> &lt;/ul&gt;"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/review.php:68
+#@ bon-toolkit
 msgid "Review Cons"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/review.php:69
-msgid ""
-"The review cons.  Tips: You can wrap the item in list. eq <br />&lt;ul&gt;"
-"<br />&lt;li&gt;Pros 1&lt;/li&gt;<br />&lt;li&gt;Pros 2&lt;/li&gt; <br /> "
-"&lt;/ul&gt;"
+#@ bon-toolkit
+msgid "The review cons.  Tips: You can wrap the item in list. eq <br />&lt;ul&gt;<br />&lt;li&gt;Pros 1&lt;/li&gt;<br />&lt;li&gt;Pros 2&lt;/li&gt; <br /> &lt;/ul&gt;"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/slider.php:29
+#@ bon-toolkit
 msgid "Slider Image"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/slider.php:32
+#@ bon-toolkit
 msgid "The Slider Image."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/slider.php:36
+#@ bon-toolkit
 msgid "Sub Title / Secondary Title"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/slider.php:39
+#@ bon-toolkit
 msgid "The Secondary title below the Primary Title."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/slider.php:43
+#@ bon-toolkit
 msgid "Url / Link to"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/slider.php:46
+#@ bon-toolkit
 msgid "Read more target"
-msgstr ""
+msgstr "Veja- mais"
 
-# @ default
 #: includes/posttypes/slider.php:50
+#@ default
 msgid "Caption Position"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/slider.php:57
+#@ bon-toolkit
 msgid "The position of the titles and the contents"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/testimonial.php:29
+#@ bon-toolkit
 msgid "Author Photo"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/testimonial.php:32
+#@ bon-toolkit
 msgid "The image for the author who give the testimonial."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/testimonial.php:36
+#@ bon-toolkit
 msgid "Author Name"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/testimonial.php:39
+#@ bon-toolkit
 msgid "The testimonial author's name"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/testimonial.php:43
+#@ bon-toolkit
 msgid "Author Url"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/testimonial.php:46
+#@ bon-toolkit
 msgid "Link to Author"
 msgstr ""
 
-# @ default
 #: includes/posttypes/testimonial.php:50
+#@ default
 msgid "Author Position"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/posttypes/testimonial.php:53
+#@ bon-toolkit
 msgid "The author position. eq. CEO"
 msgstr ""
 
-# @ bon
 #: includes/shortcodes.php:281
+#@ bon
 msgid "Posted on:"
 msgstr ""
 
-# @ bon
 #: includes/shortcodes.php:283
+#@ bon
 msgid "l, F jS, Y, g:i a"
 msgstr ""
 
-# @ bon
 #: includes/shortcodes.php:296
+#@ bon
 msgid "Author:"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-archives.php:36
-msgid ""
-"An advanced widget that gives you total control over the output of your "
-"archives."
+#@ bon-toolkit
+msgid "An advanced widget that gives you total control over the output of your archives."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-archives.php:48
 #: includes/widgets/widget-archives.php:146
+#@ bon-toolkit
 msgid "Archives"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-archives.php:83
+#@ bon-toolkit
 msgid "Select Year"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-archives.php:86
+#@ bon-toolkit
 msgid "Select Month"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-archives.php:89
+#@ bon-toolkit
 msgid "Select Week"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-archives.php:92
+#@ bon-toolkit
 msgid "Select Day"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-archives.php:95
+#@ bon-toolkit
 msgid "Select Post"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-archives.php:161
+#@ bon-toolkit
 msgid "Alphabetical"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-archives.php:162
+#@ bon-toolkit
 msgid "Daily"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-archives.php:163
+#@ bon-toolkit
 msgid "Monthly"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-archives.php:164
+#@ bon-toolkit
 msgid "Post By Post"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-archives.php:165
+#@ bon-toolkit
 msgid "Weekly"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-archives.php:166
+#@ bon-toolkit
 msgid "Yearly"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-archives.php:177
+#@ bon-toolkit
 msgid "Custom"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-archives.php:178
+#@ bon-toolkit
 msgid "HTML"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-archives.php:179
+#@ bon-toolkit
 msgid "Option"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-archives.php:185
 #: includes/widgets/widget-authors.php:164
 #: includes/widgets/widget-calendar.php:112
@@ -1650,547 +1581,530 @@ msgstr ""
 #: includes/widgets/widget-search.php:147
 #: includes/widgets/widget-social.php:173 includes/widgets/widget-tags.php:216
 #: includes/widgets/widget-twitter.php:118
+#@ bon-toolkit
 msgid "Title:"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-archives.php:189
+#@ bon-toolkit
 msgid "Posts per page"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-archives.php:193
+#@ bon-toolkit
 msgid "Type"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-archives.php:201
 #: includes/widgets/widget-posts.php:222
+#@ bon-toolkit
 msgid "Order"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-archives.php:212
+#@ bon-toolkit
 msgid "Format"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-archives.php:220
+#@ bon-toolkit
 msgid "Before"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-archives.php:224
+#@ bon-toolkit
 msgid "After"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-archives.php:229
 #: includes/widgets/widget-authors.php:212
+#@ bon-toolkit
 msgid "Show post count?"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-authors.php:36
-msgid ""
-"An advanced widget that gives you total control over the output of your "
-"author lists."
+#@ bon-toolkit
+msgid "An advanced widget that gives you total control over the output of your author lists."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-authors.php:48
 #: includes/widgets/widget-authors.php:127
+#@ bon-toolkit
 msgid "Authors"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-authors.php:150
+#@ bon-toolkit
 msgid "Display Name"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-authors.php:152
 #: includes/widgets/widget-categories.php:182
 #: includes/widgets/widget-pages.php:163 includes/widgets/widget-posts.php:191
+#@ bon-toolkit
 msgid "ID"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-authors.php:153
+#@ bon-toolkit
 msgid "Nice Name"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-authors.php:154
+#@ bon-toolkit
 msgid "Post Count"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-authors.php:155
+#@ bon-toolkit
 msgid "Registered"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-authors.php:156
+#@ bon-toolkit
 msgid "URL"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-authors.php:157
+#@ bon-toolkit
 msgid "Login"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-authors.php:190
 #: includes/widgets/widget-categories.php:171
 #: includes/widgets/widget-tags.php:191
+#@ bon-toolkit
 msgid "List"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-authors.php:190
 #: includes/widgets/widget-categories.php:172
+#@ bon-toolkit
 msgid "None"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-authors.php:208
+#@ bon-toolkit
 msgid "<acronym title=\"Hypertext Markup Language\">HTML</acronym>?"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-authors.php:216
+#@ bon-toolkit
 msgid "Exclude admin?"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-authors.php:220
+#@ bon-toolkit
 msgid "Show full name?"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-authors.php:224
 #: includes/widgets/widget-categories.php:303
 #: includes/widgets/widget-tags.php:327
+#@ bon-toolkit
 msgid "Hide empty?"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-calendar.php:36
-msgid ""
-"An advanced widget that gives you total control over the output of your "
-"calendar."
+#@ bon-toolkit
+msgid "An advanced widget that gives you total control over the output of your calendar."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-calendar.php:48
 #: includes/widgets/widget-calendar.php:103
+#@ bon-toolkit
 msgid "Calendar"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-calendar.php:117
+#@ bon-toolkit
 msgid "One-letter abbreviation?"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-categories.php:37
-msgid ""
-"An advanced widget that gives you total control over the output of your "
-"category links."
+#@ bon-toolkit
+msgid "An advanced widget that gives you total control over the output of your category links."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-categories.php:49
 #: includes/widgets/widget-categories.php:141
+#@ bon-toolkit
 msgid "Categories"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-categories.php:181
 #: includes/widgets/widget-tags.php:201
+#@ bon-toolkit
 msgid "Count"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-categories.php:184
 #: includes/widgets/widget-pages.php:166
+#@ bon-toolkit
 msgid "Slug"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-categories.php:185
+#@ bon-toolkit
 msgid "Term Group"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-categories.php:190
+#@ bon-toolkit
 msgid "Atom"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-categories.php:191
+#@ bon-toolkit
 msgid "RDF"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-categories.php:192
+#@ bon-toolkit
 msgid "RSS"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-categories.php:193
+#@ bon-toolkit
 msgid "RSS 2.0"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-categories.php:291
 #: includes/widgets/widget-pages.php:281
+#@ bon-toolkit
 msgid "Hierarchical?"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-categories.php:295
+#@ bon-toolkit
 msgid "Use description?"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-categories.php:299
+#@ bon-toolkit
 msgid "Show count?"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-contactform.php:36
+#@ bon-toolkit
 msgid "A Widget to show Contact Form."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-contactform.php:110
+#@ bon-toolkit
 msgid "Contact Us"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-contactform.php:125
+#@ bon-toolkit
 msgid "Receiver Email Address"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-dribbble.php:27
+#@ bon-toolkit
 msgid "Grab your latest Dribbble shots"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-dribbble.php:98
+#@ bon-toolkit
 msgid "Username:"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-dribbble.php:104
+#@ bon-toolkit
 msgid "Number of Shots:"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-flickr.php:27
+#@ bon-toolkit
 msgid "Grab your latest Flickr photos"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-flickr.php:72
+#@ bon-toolkit
 msgid "Your Flickr User ID:"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-flickr.php:78
+#@ bon-toolkit
 msgid "No. of Photos:"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-nav-menu.php:36
-msgid ""
-"An advanced widget that gives you total control over the output of your "
-"menus."
+#@ bon-toolkit
+msgid "An advanced widget that gives you total control over the output of your menus."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-nav-menu.php:48
+#@ bon-toolkit
 msgid "Navigation Menu"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-nav-menu.php:112
+#@ bon-toolkit
 msgid "Navigation"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-pages.php:36
-msgid ""
-"An advanced widget that gives you total control over the output of your page "
-"links."
+#@ bon-toolkit
+msgid "An advanced widget that gives you total control over the output of your page links."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-pages.php:48 includes/widgets/widget-pages.php:129
+#@ bon-toolkit
 msgid "Pages"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-pages.php:161
+#@ bon-toolkit
 msgid "Author"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-pages.php:164
+#@ bon-toolkit
 msgid "Menu Order"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-pages.php:165 includes/widgets/widget-pages.php:173
+#@ bon-toolkit
 msgid "Modified"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-pages.php:172
+#@ bon-toolkit
 msgid "Created"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-posts.php:42
-msgid ""
-"An advanced widget that gives you query your latest posts from various post "
-"types and terms."
+#@ bon-toolkit
+msgid "An advanced widget that gives you query your latest posts from various post types and terms."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-posts.php:111
+#@ bon-toolkit
 msgid "Permalink to "
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-posts.php:114
-msgid ""
-"[entry-published format=\"M, d Y\" text=\"Published on\"] [entry-author text="
-"\"by\"]"
+#@ bon-toolkit
+msgid "[entry-published format=\"M, d Y\" text=\"Published on\"] [entry-author text=\"by\"]"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-posts.php:123
+#@ bon-toolkit
 msgid "No post found."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-posts.php:169
+#@ bon-toolkit
 msgid "Latest Posts"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-posts.php:209
-msgid ""
-"<strong>Note:</strong> Post type and term value have to match each taxonomy "
-"belong to post type for the query to work."
+#@ bon-toolkit
+msgid "<strong>Note:</strong> Post type and term value have to match each taxonomy belong to post type for the query to work."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-posts.php:217
+#@ bon-toolkit
 msgid "Limit"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-posts.php:231
+#@ bon-toolkit
 msgid "Order by"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-posts.php:240
+#@ bon-toolkit
 msgid "Include Published Meta"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-posts.php:249
+#@ bon-toolkit
 msgid "Post Type"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-posts.php:251 includes/widgets/widget-posts.php:280
+#@ bon-toolkit
 msgid "Select One"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-posts.php:278
+#@ bon-toolkit
 msgid "Term"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-search.php:36
-msgid ""
-"An advanced widget that gives you total control over the output of your "
-"search form."
+#@ bon-toolkit
+msgid "An advanced widget that gives you total control over the output of your search form."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-search.php:48
 #: includes/widgets/widget-search.php:135
+#@ bon-toolkit
 msgid "Search"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-search.php:151
+#@ bon-toolkit
 msgid "Search Label:"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-search.php:155
+#@ bon-toolkit
 msgid "Search Text:"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-search.php:162
+#@ bon-toolkit
 msgid "Search Submit:"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-search.php:167
+#@ bon-toolkit
 msgid "Use theme's <code>searchform.php</code>?"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-social.php:32
+#@ bon-toolkit
 msgid "Show social icon links"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-social.php:34
+#@ bon-toolkit
 msgid " Social Icons Widget"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-social.php:152
 #, php-format
+#@ bon-toolkit
 msgid "%s Link"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-social.php:183
 #: includes/widgets/widget-social.php:199
+#@ bon-toolkit
 msgid "Color Style"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-social.php:185
+#@ bon-toolkit
 msgid "Gradient"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-social.php:186 includes/widgets/widget-tags.php:190
+#@ bon-toolkit
 msgid "Flat"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-social.php:193
+#@ bon-toolkit
 msgid "Social Color"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-social.php:194
+#@ bon-toolkit
 msgid "Black and White"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-social.php:203
+#@ bon-toolkit
 msgid "Square Rounded Corner"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-social.php:208
+#@ bon-toolkit
 msgid "Size"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-social.php:210
+#@ bon-toolkit
 msgid "Medium"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-social.php:211
+#@ bon-toolkit
 msgid "Small"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-social.php:212
+#@ bon-toolkit
 msgid "Large"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-tags.php:41
-msgid ""
-"An advanced widget that gives you total control over the output of your tags."
+#@ bon-toolkit
+msgid "An advanced widget that gives you total control over the output of your tags."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-tags.php:53 includes/widgets/widget-tags.php:155
+#@ bon-toolkit
 msgid "Tags"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-tags.php:185
+#@ bon-toolkit
 msgid "View"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-tags.php:186
+#@ bon-toolkit
 msgid "Edit"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-tags.php:323
+#@ bon-toolkit
 msgid "Pad counts?"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-twitter.php:32
+#@ bon-toolkit
 msgid "A widget that displays your latest tweet."
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-twitter.php:38
+#@ bon-toolkit
 msgid " Twitter Widget"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-twitter.php:130
+#@ bon-toolkit
 msgid "Number of tweets (max 20)"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-twitter.php:136
+#@ bon-toolkit
 msgid "Follow Text e.g. Follow me on Twitter"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-video.php:36
+#@ bon-toolkit
 msgid "Show Video"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-video.php:38
+#@ bon-toolkit
 msgid " Video Widget"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-video.php:137
+#@ bon-toolkit
 msgid "M4V Video Url (Self Hosted)"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-video.php:142
+#@ bon-toolkit
 msgid "OGV Video Url (Self Hosted)"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-video.php:148
+#@ bon-toolkit
 msgid "Poster Url (Self Hosted)"
 msgstr ""
 
-# @ bon-toolkit
 #: includes/widgets/widget-video.php:153
+#@ bon-toolkit
 msgid "Short Description"
 msgstr ""
+

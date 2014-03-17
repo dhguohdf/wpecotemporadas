@@ -132,7 +132,7 @@ function bon_login_title() {
 
 // Custom Backend Footer
 function bon_custom_admin_footer() {
-  echo '<span id="footer-thankyou">Developed by <a href="http://bonfirelab.com" target="_blank">Bonfirelab</a> Powered by <a href="http://wordpress.org" target="_blank">wordpress</a></span>.';
+  echo '<span id="footer-thankyou">Desenvolvido por <a href="http://eaxdesign.com.br" target="_blank">eaxdesign.com.br</a> Powered by <a href="http://wordpress.org" target="_blank">wordpress</a></span>.';
 }
 
 // adding it to the admin area

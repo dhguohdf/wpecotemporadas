@@ -22,4 +22,3 @@ function _ppc_item_ui_hints( $for_item_type ) {
 		echo "<div class='pp-ext-promo' style='padding:0.5em;margin-top:0'>$msg</div>";
 	}
 }
-?>

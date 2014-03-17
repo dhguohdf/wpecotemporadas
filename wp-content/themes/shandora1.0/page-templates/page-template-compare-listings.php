@@ -96,16 +96,18 @@ get_header();
                             $year = shandora_get_meta($post->ID,'listing_yearbuild');
                             $floor = shandora_get_meta($post->ID,'listing_floor');
                             $agent_ids = get_post_meta($post->ID,'shandora_listing_agentpointed', true);
-                            $link = '<a class="button red flat radius" href="'. get_permalink( $post->ID ) .'" title="'. get_the_title($post->ID ) . '">'.__('Ver Anúncio','bon'). '</a>';
+                            $link = '<a class="button" href="'. get_permalink( $post->ID ) .'" title="'. get_the_title($post->ID ) . '">'.__('Ver Anúncio','bon'). '</a>';
                             $agent = '';
                             if(is_array($agent_ids)) {
                               $len = count($agent_ids);
                               $i = 1;
                               foreach($agent_ids as $agent_id ) {
                                 if($len > 1 && $i < $len) {
-                                  $agent .= get_the_title($agent_id) . ', ';
+                                  $agent .= '<a class="" href="'. get_permalink( $agent_id ) .'" title="'. get_the_title($agent_id) . '">'.get_the_title($agent_id). '</a>' . ', ';
+                                  //$agent .= get_the_title($agent_id) . ', ';
                                 } else {
-                                  $agent .= get_the_title($agent_id);
+                                  $agent .= '<a class="" href="'. get_permalink( $agent_id ) .'" title="'. get_the_title($agent_id) . '">'.get_the_title($agent_id). '</a>';
+                                  //$agent .= get_the_title($agent_id);
                                 }
                                 $i++;
                               }
@@ -121,7 +123,7 @@ get_header();
                             if ( $terms && ! is_wp_error( $terms ) ) 
                             {                                                                                                                  
                                    foreach ( $terms as $term )
-                                   {                                                               
+                                   {    
                                         $type .= '<a class="property-type" href="' . get_term_link($term->slug, "property-type" ) .'">'.$term->name.'</a>';
                                         break; // to display only one property type
                                    }                                                                                                                                                                       

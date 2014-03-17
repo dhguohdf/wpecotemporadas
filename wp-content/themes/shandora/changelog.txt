@@ -1,0 +1,110 @@
+==Changelog==
+
+= v1.0 =
+* Original Release.
+
+= v1.0.1 - Septeember 18th, 2013 =
+* Added Integration for dsIDXPress MLS
+* Added Options for search panel
+* Added widget for IDX Search
+* Removed furnished from template meta ( by request )
+* Fix Header Social Icon
+
+= v1.0.2 - Septeember 21st, 2013 =
+* Added Map browse when browse listing
+
+= v1.0.3 - Septeember 31th, 2013 =
+* Fix IDX Listing Bug
+
+= v1.0.4 - October 2nd, 2013 =
+* Added Related Widget Listing
+* Update support for bon toolkit 1.1.0
+* Added sidebar generator to support bon toolkit Page builder widget element
+
+= v1.0.5 - October 3rd, 2013 =
+* Fix search panel issue
+
+= v1.0.6 - October 5th, 2013 =
+* Added Custom Search Field
+* Added Options to remove social Icons
+* Fix several bugs
+
+= v1.0.7 - October 10th, 2013 =
+* New Car Dealership Listing
+* New Custom Search Field For Car Listing
+* Car Listing Page Template
+* Added Sorting feature
+* Added new theme option for column
+
+= v1.0.8 - October 25th, 2013 =
+* Fix Translation Issue
+* Added Related Properties in Listing Detail
+
+= v1.0.9 - October 30th, 2013 =
+* Update for WordPress 3.7
+* Update Import Export extensions
+
+= v1.1.0 - November 12th, 2013 =
+* Fix Taxonomy Archive Bug
+* Added New Widget
+* Added Affix Feature
+
+= v1.1.1 - November 16th, 2013 =
+* Fix Related Post
+* Fix Translation
+
+= v1.2 - November 23th, 2013 =
+* Fix Android Issue
+* Added IDX Pro Search
+* Added Widget Calculator
+
+= v1.2.1 - December 2nd, 2013 =
+* Patch for the accidentally removed map
+
+= v1.2.2 - December 13rd, 2013 =
+* Add New Options in Theme Options
+* Update Languange Files
+* Fix Bug for IDX Sold Property
+
+= v1.2.3 - December 14th, 2013 =
+* Fixed Accidentally removed variable
+* Added Dummy data for Car Listings
+
+= v1.2.4 - December 16th, 2013 =
+* Add Icon Lists to Documentation
+* Add Options to enable / disable search panel
+* Add Manufacturer Level Search
+* Fix Media Query Bug
+* Update Translation
+
+= v1.2.5 - Decmber 19th, 2013 =
+* Fix Thumbnail size on full width layout
+* Add Options for Price as Text
+* Fix WordPress Admin Bar bug due to Foundation Tooltip
+
+= v1.3.0 - January 2nd, 2013 =
+* Updated Admin Interface to suit WP3.8 New Look
+* Fix Mistypo in theme options
+* Tidy up blocking javascript into one file
+* Tidy up blocking CSS into one file
+* Update FontAwesome Font Icon to v4.0
+
+= v1.3.1 - January 3rd, 2013 =
+* Fix Map
+
+= v1.3.2 - January 10th, 2013 =
+* Added Map Zoom Button on all listings map ( Feature Request )
+* Fix IDX results page
+
+= v1.3.3 - January 10th, 2013 =
+* Fixed Price as Text
+
+
+
+
+
+
+
+
+
+
