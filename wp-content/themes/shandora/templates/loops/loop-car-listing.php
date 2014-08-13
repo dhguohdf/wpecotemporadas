@@ -2,7 +2,8 @@
 
     <?php while ( have_posts() ) : the_post(); ?>
 
-        <?php bon_get_template_part( 'content', get_post_type() ); ?>
+        <?php 
+        bon_get_template_part( 'content', get_post_type() ); ?>
 
     <?php endwhile; 
         $count = $wp_query->found_posts;

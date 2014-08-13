@@ -12,18 +12,19 @@
     $agent_office = shandora_get_meta( $post->ID, 'agentofficephone');
     $agent_fax = shandora_get_meta($post->ID,'agentfax');
     $agent_email = shandora_get_meta($post->ID, 'agentemail');
+    $agent_job = shandora_get_meta($post->ID, 'agentjob');
 if( is_singular( get_post_type() ) ) { 
 
 
 ?>
-<article id="post-<?php the_ID(); ?>" class="<?php bon_entry_class($status); ?>" itemscope itemtype="http://schema.org/RealEstateAgent">
+<article id="post-<?php the_ID(); ?>" <?php post_class( $status ); ?> itemscope itemtype="http://schema.org/RealEstateAgent">
 	<header class="entry-header clear">
-		<?php echo apply_atomic_shortcode( 'entry_title', the_title( '<h1 class="entry-title" itemprop="name">', '</h1>', false ) ); ?>
-		<?php echo apply_atomic_shortcode('listing_published', '[entry-published text="'.__('Published on ','bon').'"]'); ?>
-
+		<h1 class="entry-title" itemprop="name"><?php the_title(); ?>
+			<?php if( !empty($agent_job) ) { ?> 
+			<span class="agent-job"><?php echo isset( $agent_job ) ? $agent_job : ''; ?></span>
+			<?php } ?>
+		</h1>
 	</header><!-- .entry-header -->
-
-	<?php bon_get_template_part('block','listinggallery'); ?>
 
 	<div class="entry-content clear" itemprop="description">
 		<div class="row">
@@ -34,16 +35,28 @@ if( is_singular( get_post_type() ) ) {
 				
 				<div class="row">
 					<div class="contact-info column large-6">
+						<?php if(!empty($agent_mobile)) : ?>
 						<strong><?php _e('Mobile','bon'); ?>: </strong><?php echo $agent_mobile; ?><br/>
+						<?php endif; ?>
+						<?php if(!empty($agent_office)) : ?>
 						<strong><?php _e('Office','bon'); ?>: </strong><?php echo $agent_office; ?><br/>
+						<?php endif; ?>
+						<?php if(!empty($agent_fax)) : ?>
 						<strong><?php _e('Fax','bon'); ?>: </strong><?php echo $agent_fax; ?><br/>
+						<?php endif; ?>
 					</div>
 
 					<div class="social-media column large-6">
 						<strong><?php _e('Follow on','bon'); ?>: </strong>
+						<?php if(!empty($agent_fb)) : ?>
 						<a title="<?php _e('Facebook','bon'); ?>" href="<?php echo $agent_fb; ?>" class="flat round button small"><i class="awe-facebook"></i></a>
+						<?php endif; ?>
+						<?php if(!empty($agent_li)) : ?>
 						<a title="<?php _e('LinkedIn','bon'); ?>" href="<?php echo $agent_li; ?>" class="flat round button small"><i class="awe-linkedin"></i></a>
+						<?php endif; ?>
+						<?php if(!empty($agent_tw)) : ?>
 						<a title="<?php _e('Twitter','bon'); ?>"href="<?php echo $agent_tw; ?>" class="flat round button small"><i class="awe-twitter"></i></a>
+						<?php endif; ?>
 					</div>
 				</div>
 				<hr />
@@ -80,7 +93,8 @@ if( is_singular( get_post_type() ) ) {
 					</div>
 				</div>
 				<div>
-					<input type="hidden" name="subject" value="<?php printf(__('Send from Agent %s Page','bon'), get_the_title()); ?>" />
+					<input type="hidden" name="subject" value="<?php printf(__('Send from Agent %s Page','bon'), get_the_title( $post->ID )); ?>" />
+					<input type="hidden" name="listing_id" value="<?php echo $post->ID; ?>" />
 					<input type="hidden" name="receiver" value="<?php echo $agent_email; ?>" />
 					<input class="flat button red radius" name="submit" type="submit" id="submit" tabindex="5" value="<?php _e('Submit', 'bon') ?>" />
 					<span class="contact-loader"><img src="<?php echo trailingslashit(BON_THEME_URI); ?>assets/images/loader.gif" alt="loading..." />
@@ -100,7 +114,7 @@ if( is_singular( get_post_type() ) ) {
 ?>
 
 <li>
-<article id="post-<?php the_ID(); ?>" class="<?php bon_entry_class($status); ?>" itemscope itemtype="http://schema.org/RealEstateAgent">
+<article id="post-<?php the_ID(); ?>" <?php post_class( $status ); ?> itemscope itemtype="http://schema.org/RealEstateAgent">
 
 		<header class="entry-header">
 			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
@@ -112,20 +126,26 @@ if( is_singular( get_post_type() ) ) {
 
 		<div class="entry-summary">
 
-			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php echo apply_atomic_shortcode( 'entry_title', the_title( '<h1 class="entry-title" itemprop="name">', '</h1>', false ) ); ?></a>
+			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php echo apply_atomic_shortcode( 'entry_title', the_title( '<h3 class="entry-title" itemprop="name">', '</h3>', false ) ); ?></a>
 			<div class="entry-meta">
+				<?php if ( $agent_mobile ) { ?>
 				<div>
 					<strong><?php _e('Mobile:','bon'); ?></strong>
 					<span><?php echo $agent_mobile; ?></span>
 				</div>
+				<?php } ?>
+				<?php if( $agent_office ) { ?>
 				<div>	
-					<strong><?php _e('Offce:','bon'); ?></strong>
+					<strong><?php _e('Office:','bon'); ?></strong>
 					<span><?php echo $agent_office; ?></span>
 				</div>
+				<?php } ?>
+				<?php if( $agent_fax ) { ?> 
 				<div>			
 					<strong><?php _e('Fax:','bon'); ?></strong>
 					<span><?php echo $agent_fax; ?></span>
 				</div>
+				<?php } ?>
 			</div>
 		</div><!-- .entry-summary -->
 

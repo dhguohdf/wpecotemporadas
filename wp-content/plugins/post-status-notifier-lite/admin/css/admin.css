@@ -1,0 +1,78 @@
+@CHARSET "UTF-8";
+#icon-psn {
+    background: url("../img/icon-32-grey.png") no-repeat scroll 1px 1px transparent;
+}
+.psn_form_container, #rules_form {
+    border: 1px solid #C0C0C0;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    padding: 15px 15px 20px 15px;
+    margin-top: 10px;
+}
+form#psn_form_rule #submit {
+    display: block;
+    margin: 20px 0 0 200px;
+}
+
+form#psn_form_rule input[type="text"] {
+    width: 500px;
+}
+form#psn_form_rule #mail_tpl {
+    max-width: 500px;
+}
+form#psn_form_rule textarea {
+    width: 500px;
+}
+form#psn_form_rule .premium_notice {
+    font-weight: normal;
+    font-size: 11px;
+}
+form#psn_form_rule .cat_inc_ex_header {
+    font-weight: bold;
+    font-size: 14px;
+}
+form#psn_form_rule #recipient, form#psn_form_rule #cc_select, form#psn_form_rule #bcc_select, form#psn_form_rule #editor_restriction {
+    width: 500px;
+    overflow-y: scroll;
+}
+#psn_option_placeholders_filters {
+    width: 95%;
+    height: 200px;
+}
+#placeholders_filters_editor {
+    width: 90%;
+    height: 200px;
+    border: 1px solid #ddd;
+}
+#psn_option_psn_default_from, #psn_option_license_code {
+    width: 400px;
+}
+.import_items_container_toggle {
+    margin-left: 15px;
+}
+#import_items_container {
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: white;
+}
+#import_items_container h3 {
+    margin-top: 0;
+}
+#import_rules_form label {
+    font-weight: bold;
+}
+#import_rules_form input[type="file"] {
+    width: 400px;
+}
+form#psn_form_rule #category_container select {
+    width: 100%;
+    height: auto !important;
+}
+#ifw_server_env {
+    width: 100%;
+    height: 400px;
+}
+#premium_ads img {
+    margin: 10px 10px 0 0;
+}

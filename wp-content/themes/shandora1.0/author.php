@@ -1,41 +1,77 @@
 <?php get_header(); ?>
 
-<div id="content" class="narrowcolumn">
+<div id="inner-wrap" class="slide ">
 
-<!-- This sets the $curauth variable -->
+    <div id="body-container" class="container">
 
-    <?php
-    $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
-    ?>
 
-    <h2>Sobre: <?php echo $curauth->nickname; ?></h2>
-    <dl>
-        <dt>ecotemporadas.com</dt>
-        <dd><a href="<?php echo $curauth->user_url; ?>"><?php echo $curauth->user_url; ?></a></dd>
-        <dt>Perfil</dt>
-        <dd><?php echo $curauth->user_description; ?></dd>
-    </dl>
+        <?php 
 
-    <h2>Posts de <?php echo $curauth->nickname; ?>:</h2>
+        /**
+         * Shandora Before Loop Hook
+         *
+         * @hooked shandora_get_page_header - 1
+         * @hooked shandora_search_get_listing - 2
+         * @hooked shandora_open_main_content_row - 5
+         * @hooked shandora_get_left_sidebar - 10
+         * @hooked shandora_open_main_content_column - 15
+         *
+         */
 
-    <ul>
-<!-- The Loop -->
+        do_atomic('before_loop'); ?>
+             <?php
+            $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
+            ?>
 
-    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-        <li>
-            <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>">
-            <?php the_title(); ?></a>,
-            <?php the_time('d M Y'); ?> em <?php the_category('&');?>
-        </li>
+            <h2>Sobre <?php echo $curauth->nickname; ?></h2>
+            <dl>
+                <dt>ecotemporadas.com</dt>
+                <dd><a href="<?php echo $curauth->user_url; ?>"><?php echo $curauth->user_url; ?></a></dd>
+                <dt>Perfil</dt>
+                <dd><?php echo $curauth->user_description; ?></dd>
+            </dl>
 
-    <?php endwhile; else: ?>
-        <p><?php _e('Nenhum post deste autor.'); ?></p>
+            <h2>Posts de <?php echo $curauth->nickname; ?>:</h2>
+   
+             <?php $wp_query = new WP_Query(array(
+                    'post_type' => 'post',
+                    'posts_per_page' => get_option('posts_per_page')
+                ));
 
-    <?php endif; ?>
+                ?>
 
-<!-- End Loop -->
+            <?php if ( have_posts() ) : ?>
 
-    </ul>
-</div>
-<?php get_sidebar(); ?>
+                <?php while ( have_posts() ) : the_post(); ?>
+
+                    <?php bon_get_template_part( 'content', ( post_type_supports( get_post_type(), 'post-formats' ) ? get_post_format() : get_post_type() ) ); ?>
+
+                    <?php if ( is_singular() && post_type_supports( get_post_type(), 'comments') ) { comments_template(); } // Loads the comments.php template. ?>
+
+                <?php endwhile; ?>
+
+            <?php else : ?>
+
+                <?php bon_get_template_part( 'loop', 'error' ); // Loads the loop-error.php template. ?>
+
+            <?php endif; ?>
+
+
+                <?php wp_reset_query(); ?>
+        <?php 
+
+        /**
+         * Shandora After Loop Hook
+         *
+         * @hooked shandora_close_main_content_column - 1
+         * @hooked shandora_get_right_sidebar - 5
+         * @hooked shandora_close_main_content_row - 10
+         *
+         */
+
+        do_atomic('after_loop'); ?>
+
+    </div>
+
+
 <?php get_footer(); ?>

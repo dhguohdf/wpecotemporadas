@@ -1,4 +1,4 @@
-	<article id="post-0" class="<?php bon_entry_class(); ?>">
+	<article id="post-0" <?php post_class(); ?>>
 
 		<header class="entry-header">
 			<h1 class="entry-title"><?php __( 'Nothing found', 'bon' ); ?></h1>

@@ -400,7 +400,7 @@ if( ! class_exists( 'BON_Admin' ) )
 						continue;
 					}
 
-					$of_page = add_submenu_page (	$level,									
+					$this->of_page = $of_page = add_submenu_page (	$level,									
 													$data_set['title'],
 													$data_set['title'],
 													'manage_options',
@@ -452,9 +452,8 @@ if( ! class_exists( 'BON_Admin' ) )
 		 * @access public
 		 * @return string
 		 */
-		public function render_page()
-		{
-		
+		public function render_page( $screen )
+		{	
 			$current_slug = $_GET['page'];
 
 			if($current_slug != $this->backup_token && $current_slug != $this->framework_token ) {
@@ -465,7 +464,8 @@ if( ! class_exists( 'BON_Admin' ) )
 			/*else if($current_slug == $this->backup_token) {
 
 					$backup = new BON_Backup();
-					$backup->render_page();
+					$backup->init( $this->of_page );
+					$backup->admin_screen();
 				
 			}*/
 			else if($current_slug == $this->framework_token) {

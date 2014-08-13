@@ -5,20 +5,17 @@ class CPAC_Storage_Model_Media extends CPAC_Storage_Model {
 	/**
 	 * Constructor
 	 *
-	 * @since 2.0.0
+	 * @since 2.0
 	 */
 	function __construct() {
 
 		$this->key 		 = 'wp-media';
 		$this->label 	 = __( 'Media Library' );
 		$this->type 	 = 'media';
+		$this->meta_type = 'post';
 		$this->page 	 = 'upload';
 		$this->post_type = 'attachment';
-
-		$this->set_columns_filepath();
-
-		// populate columns variable
-		add_action( 'admin_init', array( $this, 'set_columns' ) );
+		$this->menu_type = 'other';
 
 		// headings
         // Increased the priority to overrule 3th party plugins such as Media Tags
@@ -26,18 +23,22 @@ class CPAC_Storage_Model_Media extends CPAC_Storage_Model {
 
 		// values
 		add_action( 'manage_media_custom_column', array( $this, 'manage_value' ), 100, 2 );
+
+		parent::__construct();
 	}
 
 	/**
 	 * Get WP default supported admin columns per post type.
 	 *
-	 * @since 1.0.0
+	 * @since 1.0
 	 *
 	 * @return array
 	 */
 	public function get_default_columns() {
 
-		if ( ! function_exists('_get_list_table') ) return array();
+		if ( ! function_exists('_get_list_table') ) {
+			return array();
+		}
 
 		// You can use this filter to add thirdparty columns by hooking into this.
 		// See classes/third_party.php for an example.
@@ -45,7 +46,7 @@ class CPAC_Storage_Model_Media extends CPAC_Storage_Model {
 
 		// get columns
 		$table   = _get_list_table ( 'WP_Media_List_Table', array( 'screen' => 'upload' ) );
-        $columns = $table->get_columns();
+        $columns = (array) $table->get_columns();
 
 		if ( $this->is_settings_page() )
 			$columns = array_merge( get_column_headers( 'upload' ), $columns );
@@ -56,7 +57,7 @@ class CPAC_Storage_Model_Media extends CPAC_Storage_Model {
 	/**
      * Get Meta
      *
-	 * @since 2.0.0
+	 * @since 2.0
 	 *
 	 * @return array
      */
@@ -69,7 +70,7 @@ class CPAC_Storage_Model_Media extends CPAC_Storage_Model {
 	/**
 	 * Manage value
 	 *
-	 * @since 2.0.0
+	 * @since 2.0
 	 *
 	 * @param string $column_name
 	 * @param int $post_id

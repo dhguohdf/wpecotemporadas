@@ -720,9 +720,16 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				}
 			}
 
+			$check_page = array(
+				'options-general',
+				'bon_options',
+				'bon_framework',
+				'bon_backup'
+			);
 			/** Admin options pages already output settings_errors, so this is to avoid duplication */
-			if ( 'options-general' !== $current_screen->parent_base )
+			if (  !in_array( $current_screen->parent_base, $check_page ) )
 				settings_errors( 'tgmpa' );
+			
 
 		}
 

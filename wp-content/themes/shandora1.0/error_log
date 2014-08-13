@@ -1,1 +1,5 @@
 [05-Feb-2014 03:17:25 Europe/London] PHP Fatal error:  Call to undefined function get_header() in /home/ecotempo/public_html/wp-content/themes/shandora1.0/index.php on line 1
+[09-Jun-2014 01:06:17 Europe/London] PHP Fatal error:  Call to undefined function get_header() in /home/ecotempo/public_html/wp-content/themes/shandora1.0/index.php on line 1
+[09-Jun-2014 01:06:22 Europe/London] PHP Fatal error:  Call to undefined function get_header() in /home/ecotempo/public_html/wp-content/themes/shandora1.0/index.php on line 1
+[24-Jul-2014 00:45:59 Europe/London] PHP Fatal error:  Call to undefined function get_header() in /home/ecotempo/public_html/wp-content/themes/shandora1.0/index.php on line 1
+[24-Jul-2014 00:51:01 Europe/London] PHP Fatal error:  Call to undefined function get_header() in /home/ecotempo/public_html/wp-content/themes/shandora1.0/index.php on line 1

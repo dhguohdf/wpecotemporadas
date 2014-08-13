@@ -9,7 +9,7 @@
  *
  * @since 1.4.6
  */
-function pre_load_wordpress_seo_class_metabox() {
+function cpac_pre_load_wordpress_seo_class_metabox() {
 	global $pagenow;
 
 	if ( defined('WPSEO_PATH') && file_exists(WPSEO_PATH.'admin/class-metabox.php') ) {
@@ -20,15 +20,18 @@ function pre_load_wordpress_seo_class_metabox() {
 		( defined('DOING_AJAX') && DOING_AJAX && ! empty( $_POST['type'] ) )
 		) {
 			require_once WPSEO_PATH.'admin/class-metabox.php';
+			if ( class_exists( 'WPSEO_Metabox' ) ) {
+				new WPSEO_Metabox;
+			}
 		}
 	}
 }
-add_action( 'plugins_loaded', 'pre_load_wordpress_seo_class_metabox', 0 );
+add_action( 'plugins_loaded', 'cpac_pre_load_wordpress_seo_class_metabox', 0 );
 
 /**
  * WPML compatibility
  *
- * @since 2.0.0
+ * @since 2.0
  */
 function cac_add_wpml_columns( $storage_model ) {
 
@@ -60,23 +63,24 @@ add_action( 'cac/get_columns', 'cac_add_wpml_columns' );
 /**
  * Fix which remove the Advanced Custom Fields Type (acf) from the admin columns settings page
  *
- * @since 2.0.0
+ * @since 2.0
  *
  * @return array Posttypes
  */
-function remove_acf_from_cpac_post_types( $post_types ) {
+function cpac_remove_acf_from_cpac_post_types( $post_types ) {
 	if ( class_exists('Acf') ) {
 		unset( $post_types['acf'] );
+		unset( $post_types['acf-field-group'] );
 	}
 
 	return $post_types;
 }
-add_filter( 'cac/post_types', 'remove_acf_from_cpac_post_types' );
+add_filter( 'cac/post_types', 'cpac_remove_acf_from_cpac_post_types' );
 
 /**
  * bbPress - remove posttypes: forum, reply and topic
  *
-* @since 2.0.0
+* @since 2.0
  *
  * @return array Posttypes
  */
@@ -94,7 +98,7 @@ add_filter( 'cac/post_types', 'cpac_posttypes_remove_bbpress' );
 /**
  * Add support for All in SEO columns
  *
-* @since 2.0.0
+* @since 2.0
  */
 function cpac_load_aioseop_addmycolumns() {
 	if ( function_exists('aioseop_addmycolumns') ) {
@@ -108,7 +112,7 @@ add_action( 'cac/columns/default/posts', 'cpac_load_aioseop_addmycolumns' );
  *
  * To enable the translation of the column labels
  *
- * @since 2.0.0
+ * @since 2.0
  */
 function cpac_wpml_register_column_labels() {
 	global $cpac;
@@ -127,7 +131,7 @@ add_action( 'wp_loaded', 'cpac_wpml_register_column_labels', 99 );
 /**
  * WPML Display translated label
  *
- * @since 2.0.0
+ * @since 2.0
  */
 function cpac_wpml_set_translated_label( $label, $column_name, $column_options, $storage_model ) {
 
@@ -141,4 +145,18 @@ function cpac_wpml_set_translated_label( $label, $column_name, $column_options, 
 }
 add_filter( 'cac/headings/label', 'cpac_wpml_set_translated_label', 10, 4 );
 
+/**
+ * Set WPML to be a columns screen for translation so that storage models are loaded
+ *
+ * @since 2.2
+ */
+function cpac_wpml_is_cac_screen( $is_columns_screen ) {
 
+	if ( isset( $_GET['page'] ) && $_GET['page'] == 'wpml-string-translation/menu/string-translation.php' ) {
+		return true;
+	}
+
+	return $is_columns_screen;
+}
+
+add_filter( 'cac/is_cac_screen', 'cpac_wpml_is_cac_screen' );

@@ -1,9 +1,13 @@
 jQuery(document).ready(function($){
 
 	if($('select#page_template').val() == 'page-templates/page-template-compare-listings.php' || 
+		$('select#page_template').val() == 'page-templates/page-template-compare-car-listings.php' ||
 		$('select#page_template').val() == 'page-templates/page-template-home.php' ) {
 			$('#theme-layouts-post-meta-box').hide();
 		}
+	else {
+		$('#theme-layouts-post-meta-box').show();
+	}
 
 	$('select#page_template').change(function(){
 		if($(this).val() == 'page-templates/page-template-compare-listings.php' || 
@@ -40,6 +44,20 @@ jQuery(document).ready(function($){
 			$('#car-status-opt').show();
 		} else {
 			$('#car-status-opt').hide();
+		}
+	});
+
+	if($('select#page_template').val() == 'page-templates/page-template-home.php') {
+		$('#slider-opt').show();
+	} else {
+		$('#slider-opt').hide();
+	}
+
+	$('select#page_template').change(function(){
+		if($('select#page_template').val() == 'page-templates/page-template-home.php') {
+			$('#slider-opt').show();
+		} else {
+			$('#slider-opt').hide();
 		}
 	});
 

@@ -223,7 +223,8 @@
 
 			clone.find('.datepicker').each(function(){
 				$(this).datepicker({
-					dateFormat: 'yy-mm-dd'
+					//dateFormat: 'yy-mm-dd'
+					dateFormat: 'dd-mm-yy'
 				});
 			});
 

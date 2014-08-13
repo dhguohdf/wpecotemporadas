@@ -559,6 +559,8 @@ function shandora_render_builder_element_listing($value) {
 			$lotsize = shandora_get_meta(get_the_ID(), 'listing_lotsize');
 			$sizemeasurement = bon_get_option('measurement');
 			$currency = bon_get_option('currency');
+			$terms = get_the_terms( get_the_ID(),"property-type" );
+			$status_opt = shandora_get_search_option('status');
 			
 			$o .= '<li>';
 			$o .= '<article id="post-'.get_the_ID().'" class="'.bon_entry_class($status, null, false).'" itemscope itemtype="http://schema.org/RealEstateAgent">';
@@ -567,7 +569,7 @@ function shandora_render_builder_element_listing($value) {
 				$o .= shandora_get_listing_hover_action(get_the_ID());	
 				$o .= '</div>';
 					
-						$terms = get_the_terms( get_the_ID(),"property-type" );
+						
 						
 						if ( $terms && ! is_wp_error( $terms ) ) 
 						{														   														   
@@ -580,7 +582,7 @@ function shandora_render_builder_element_listing($value) {
 									
 					if ( current_theme_supports( 'get-the-image' ) ) $o .= get_the_image( array( 'size' => 'listing_small', 'echo' => false ) );
 					$o .= '<div class="badge '.$status.'"><span>';
-					$status_opt = shandora_get_search_option('status');
+					
 					if($status != 'none') { if(array_key_exists($status, $status_opt)) { $o .= $status_opt[$status]; } }
 					$o .= '</span></div>';
 

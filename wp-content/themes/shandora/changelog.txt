@@ -99,9 +99,46 @@
 = v1.3.3 - January 10th, 2013 =
 * Fixed Price as Text
 
+= v1.3.4 - January 25th, 2013 =
+* Minor Framework Update
+* fix deprecated calls
+* Allow Text Logo
 
+= v1.3.5 - February 8th, 2013 =
+* Fix Print CSS
+* Fix Mobile Nav Issue
+* New Action Hook for Content Listing
 
+= v1.3.6 - February 14th, 2013 =
+* Update Listing Tab for Filter Ready in block-listingtab.php and block-carlistingtab.php
+* Update theme-options.php to include URL Rewrite Feature
+* Update theme-options.php to include slider interval option
+* Update loop-slider.php
+* Update theme-posttypes.php to for URL Rewrite Feature
+* Update theme-posttypes.php to include Job Title for agent and sales representative
+* Update search-fields.php, adding "Rented" Feature
+* Update all css files in assets/css/colors/ directory for rented badge
+* Update content-agent.php and content-sales-representative.php to output Job Title
+* Added New loop.php in loops/ directory for global loop
+* Update index.php for case use loop template part
+* update wpml-config.xml for URL Rewrite String
 
+= v1.4.0 - March 18th, 2013 =
+* Improve overall javascript efficiency on custom.js
+* Added several new style on each css file on assets/css/colors/
+* Added several new style on style.css
+* Added new list view
+* Fix WPML compatibility with multi language search field on theme-actions.php
+* several code change on new features theme-hooks.php, theme-actions.php, theme-supports.php, content-listing.php, content-car-listing.php
+* Added new block-listing-footer.php and  block-listing-header.php
+* Added Default sort order on page-template-search-listings.php, page-template-search-car-listing.php, theme-options.php, theme-actions.php, page-template-all-listings.php, page-template-all-car-listings.php
+* Improve SEO compatibility by removing and adding conditional to h1 tag usage on several page title and logo
+
+= v1.4.1 - March 30th, 2013 =
+* Fixed map images on loop-listing.php
+* Fixed car listing badge on block-listing-header.php
+* Fixed Mistypo on content-agent.php and content-sales-repesentative.php
+* Added new options to filter by post title in custom search fields on theme-options.php and search-fields.php
 
 
 

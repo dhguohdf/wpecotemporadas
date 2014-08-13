@@ -1,287 +1,570 @@
 .login {
+
 	background-color: #fff !important;
-}
-.login h1 a {
-	background: url('../login/login-header.png') no-repeat !important; 
-	height:160px;
+
 }
 
-.login #nav, .login #backtoblog {
-    margin: 0 0 0 16px;
-    padding: 16px 16px 0;
-    text-shadow: 0 1px 0 #FFFFFF;
+.login h1 a {
+
+	background: url('../login/login-header.png') no-repeat !important; 
+
+	height:160px;
+
 }
+
+
+
+.login #nav, .login #backtoblog {
+
+    margin: 0 0 0 16px;
+
+    padding: 16px 16px 0;
+
+    text-shadow: 0 1px 0 #FFFFFF;
+
+}
+
+
+
 
 
 .login #backtoblog {
+
 	background: linear-gradient(to bottom, #D94253 0%, #EE3360 100%) repeat scroll 0 0 #EE3360;
+
     border: medium none;
+
     margin: 1em 0;
+
     padding: 1em 3.5em;
+
 }
 
+
+
 .login #backtoblog:hover {
+
  background: #D62B4D;
+
 }
+
+
+
 
 
 .login #backtoblog a {
+
     color: #dedede !important;
+
 	text-shadow: none;
+
 	text-decoration: none !important;
+
 	text-transform: uppercase;
+
 	 font-size: 1.2em;
+
 }
+
+
 
 .login #backtoblog a:hover {
+
     color: #FFF !important;
+
  }
 
+
+
  html, body.login, #backstretch {
+
 	background:transparent;
+
 }
+
+
 
 .login form {
+
 	margin:0;
+
 }
+
+
 
 div#login {
+
 	width: 340px;
+
 	height:365px;
+
 	margin: auto;
+
 }
 
+
+
 p.ver {
+
 	color: #bbb;
+
 	position: relative;
+
 	top:0;
+
 	bottom: 0;
+
 	left: 0;
+
 	padding: 0;
+
 	font-size: 8px;
+
 	margin- top: 20px;
+
 	text-transform: uppercase;
+
 	display: none;	
+
 }
+
+
 
 p#activation-p { display:none; }
 
+
+
 .login #pass-strength-result { width: 278px; }
 
+
+
 #login_error, .login .message {
+
 	margin: 0 0 16px 0;
+
 }
+
+
 
 form#registerform p.submit { margin-top: -3px;}
+
 form#loginform p.submit, form#lostpasswordform p.submit  { margin-top: 13px;}
 
+
+
 .login h1 a {
+
 	overflow:hidden;
+
 	font:0/0 a;
+
 	margin:auto;
+
 	width: 340px;
+
 	height:87px;
+
 }
+
+
 
 .login #nav, .login #backtoblog {
+
 	float:right;
+
 }
+
+
 
 .login #nav {
+
 	padding-bottom: 20px;
+
 }
 
+
+
 p.capsOn {
+
 	display: none;
+
 	color: #bbb;
+
 	position: relative;
+
 	top:0;
+
 	bottom: 0;
+
 	left: 0;
+
 	padding: 0;
+
 	font-size: 8px;
+
 	margin-top: 15px;
+
 	text-transform: uppercase;
+
 }
+
+
+
 
 
 .login label, .forgetmenot label, .login form .forgetmenot label {color:#fff;font-size:9px;text-transform:uppercase;letter-spacing:0px;}
+
 input[type="checkbox"] {vertical-align:-3px;}
+
+
 
 p.forgetmenot, p.confirmationemail { margin: 10px 0 0 0; }
 
+
+
 .login #nav a, .login #backtoblog a{
+
 	color:#fff!important;
+
 	background-color:rgba(178,34,52,0.75) !important; /* #b22234 - old glory red */
+
 	text-decoration:none;text-shadow:none;
+
 	border: medium none !important;
+
 	border-radius: 3px 3px 3px 3px !important;
+
 	box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.15) inset !important;
+
 }
 
+
+
 .login #nav a:hover, .login #backtoblog a:hover{
+
 	color:#fff!important;
+
 	background-color:rgba(0,0,0,0.75) !important;
+
 	text-decoration:none;
+
 } /* #d54e21 */
+
+
 
 .login label, .forgetmenot label, .login form .forgetmenot label {font-size:9px;text-transform:uppercase;letter- spacing:1px;}
 
+
+
 #nav, #backtoblog {font-size:.917em;text-align:right;text-shadow:none;margin:4em 0 2em 0;padding:0;color:#fff;float:right;}
+
+
 
 #nav a, #backtoblog a {padding:4px 12px 4px 12px;}
 
+
+
 p.message, p.register, p#reg_passmail { display:none; }
+
 #backtoblog { display:none; }
+
 .hideme { display:none; }
+
 .showme { display:block; }
 
+
+
 .backtologin { 
+
 	text-align:center; 
+
 	margin: 0; 
+
 	font-weight:bold; 
+
 	font-size:16px;
+
 	background-color:rgba(178,34,52,0.75) !important; /* #b22234 - old glory red */
+
 	padding: 10px 0px 10px 0px;
+
 	}
+
+
 
 p.backtologin a { color:#c00; }
 
+
+
 p.backtologin a:hover { color:#f00; }
+
+
 
 p.description { color: white; }
 
+
+
 form p, form h2 {color:#fff;}
+
+
 
 .login form .input, .login input[type="text"] { margin-bottom: 8px!important; }
 
+
+
 .login form { padding: 26px 24px 20px; }
 
+
+
 #loginform,#registerform,#lostpasswordform,#resetpassform{
+
 	-moz-box-shadow:none;
+
 	-webkit-box-shadow:none;
+
 	-khtml-box-shadow:none;
+
 	box-shadow:none;
+
 	background-color:rgba(0,0,0,0.75) !important;
+
 	position:relative;
+
 	overflow:hidden;
+
 	border:1px solid #333;
+
 	}
 
+
+
 .error p{background:#8A1F11;color:#fff;padding:1em;}
+
 .error, .message, .login #login_error{
+
 	color:#fff;
+
 	background-color:transparent;
+
 	background-color:rgba(204,34,52,0.90)!important; 
+
 	border:1px solid #011923;
+
 }
+
+
 
 #login #login_error a{color:#fff!important;border- bottom:1px solid #fff;}
 
+
+
 .status_big { font-size:18px; font-weight:bold; }
 
+
+
 .shiny-button {
+
   float:right;
+
   text-transform: none;
+
 }
+
+
+
 
 
 @media all and (max-width: 360px), (max-height: 465px){
 
+
+
 	.login h1 a { width: 260px; height: 87px !important;}
+
 	
+
 	/* align form top-center */  
+
 	div#login { 
+
 	right: 0; 
+
 	bottom: auto;
+
 	left: 0; 
+
 	padding: 0; 
+
 	width: 260px;
+
 	height:365px;
+
 	margin: auto;
+
 	}
 
+
+
 	div#login {height:265px;}
+
 	.login #pass-strength-result { width: 200px; }
+
 }
+
+
 
 @media all and (max-width: 480px) and (min-width: 361px) {
 
+
+
 	/* align form top-center for smaller screens */  
+
 	div#login { 
+
 	right: 0; 
+
 	bottom: auto;
+
 	left: 0; 
+
 	padding: 0; 
+
 	margin: auto;
+
 	}
+
+
 
 	.login #pass-strength-result { width: 200px; }
+
 }
+
+
 
 @media only all and (max-width: 640px) and (max-height: 426px) {
+
 	body {		
+
 		background-size:		640px 426px;
+
 		-moz-background-size:		640px 426px;
+
 		-webkit-background-size:	640px 426px;
+
 	}
+
 }
+
+
 
 /*
+
 	The next 2 definitions are for support in iOS devices.
+
  	Since they don't recoginze the 'cover' keyword for background-size
+
  	we need to simulate it with percentages and orientation
+
 */
 
+
+
 @media only screen and (orientation: portrait) and (device-width: 320px), (device-width: 768px) {
+
 	body.login {
+
 		-webkit-background-size: auto 100%;
+
 	}
+
 }
+
+
 
 @media only screen and (orientation: landscape) and (device-width: 320px), (device-width: 768px) {
+
 	body.login {
+
 		-webkit-background-size: 100% auto;
+
 	}
+
 }
+
 /* All of the following styles only get used when background-size isn't supported */
 
+
+
 img#expando { 
+
 	display:	none;
+
 	position:	absolute; 
+
 	z-index:	1;
+
 	 
+
 	-ms-interpolation-mode: bicubic; 
+
 } 
+
+
 
 .wide img#expando, 
+
 .tall img#expando { 
+
 	display: 	block; 
+
 } 
+
+
 
 .wide img#expando { 
+
 	height: 	auto;
+
 	width: 		100%; 
+
 } 
 
+
+
 .tall img#expando { 
+
 	height:		100%;
+
 	width:		auto; 
+
 }
 
 
 body.login {
-	background: #fbfbfb url('../login/login-background.jpg') no-repeat fixed center;
+
+	background: #fbfbfb url('../shandora1.0/assets/theme/eco-background_admin_eax1.png') no-repeat fixed center;
+
 	-webkit-background-size: cover;
+
   -moz-background-size: cover;
+
   -o-background-size: cover;
+
   background-size: cover;
+
 }
 
 
+
+
+
 #wp-submit {
+
 	background-color: #2C7128;
+
 	border-color: #2C7128;
+
 	border-radius: 0;
+
 	box-shadow: none;
+
 }

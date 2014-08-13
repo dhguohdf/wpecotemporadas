@@ -6,7 +6,8 @@
 			<h3 class="page-title">
 				<?php
 					if(!is_home()) {
-						bon_document_title();
+						//bon_document_title();
+						echo bon_wp_title();
 					} else {
 						_e('Home', 'bon'); 
 					}

@@ -35,29 +35,9 @@
     	$status = $status_opt[$status];
     }
     
-	$terms = get_the_terms( $post->ID, 'body-type' );
+	$bodytype = get_the_term_list( $post->ID, 'body-type', '', ', ', '' );
 
-	$bodytype = array();		
-	if ( $terms && ! is_wp_error( $terms ) ) 
-	{														   														   
-		   foreach ( $terms as $term )
-		   {															   
-				$bodytype[] = $term->name;
-		   }														   													   														   
-	}
-	$bodytype = implode(', ', $bodytype);
-
-	$terms = get_the_terms( $post->ID, 'dealer-location' );
-	
-	$location = array();		
-	if ( $terms && ! is_wp_error( $terms ) ) 
-	{														   														   
-		   foreach ( $terms as $term )
-		   {															   
-				$location[] = $term->name;
-		   }														   													   														   
-	}
-	$location = implode(', ', $location);
+	$location = get_the_term_list( $post->ID, 'dealer-location', '', ', ', '' );
 
 	$terms = get_the_terms( $post->ID, 'manufacturer' );
 	
@@ -65,21 +45,23 @@
 	if ( $terms && ! is_wp_error( $terms ) ) 
 	{														   														   
 		   foreach ( $terms as $term )
-		   {															   
-				$manufacturer[] = $term->name;
+		   {					
+		   		if( $term->parent == '0' ) {										   
+					$manufacturer[] = '<a href="'.get_term_link( $term->term_id, 'manufacturer' ).'" title="'.$term->name.'">' . $term->name . '</a>';
+				}
 		   }														   													   														   
 	}
 	$manufacturer = implode(', ', $manufacturer);
 
 
-	$details = array(
+	$details = apply_atomic( 'car_details_tab_content', array(
 		'reg' => __('Reg. Number #', 'bon'),
 		'location' => __('Dealer Location','bon'),
 		'manufacturer' => __('Manufacturer','bon'),
 		'bodytype' => __('Body Type','bon'),
-	);
+	));
 
-	$specs = array(
+	$specs = apply_atomic( 'car_specifications_tab_content', array(
 		'engine' => __('Engine Size', 'bon'),
 		'enginetype' => __('Engine Type', 'bon'),
 		'transmission' => __('Transmission','bon'),
@@ -91,9 +73,9 @@
 		'ancap' => __('ANCAP / Safety Rating', 'bon'),
 		'seating' => __('Standard Seating', 'bon'),
 		'steering' => __('Steering Type', 'bon'),
-	);
+	));
 
-	$dimension = array(
+	$dimension = apply_atomic( 'car_dimensions_tab_content', array(
 		'height' => __('Height','bon'),
 		'width' => __('Width','bon'),
 		'length' => __('Length', 'bon'),
@@ -101,23 +83,33 @@
 		'trackrear' => __('Track Rear', 'bon'),
 		'trackfront' => __('Track Front', 'bon'),
 		'ground' => __('Ground Clearance', 'bon'),
-	);
+	));
 
     
 ?>
 <section>
 	<nav class="tab-nav">
+		<?php if( !empty( $details ) && is_array( $details ) ) { ?> 
 		<a class="active" href="#tab-target-details"><?php _e('Details','bon'); ?></a>
+		<?php } ?>
+		<?php if( !empty( $specs ) && is_array( $specs ) ) { ?> 
 		<a href="#tab-target-spec"><?php _e('Specifications','bon'); ?></a>
+		<?php } ?>
+		<?php if( !empty( $dimension ) && is_array( $dimension ) ) { ?> 
 		<a href="#tab-target-dimension"><?php _e('Dimensions','bon'); ?></a>
-		<a href="#tab-target-features"><?php _e('Features','bon'); ?></a>
+		<?php } ?>
+
+		<a href="#tab-target-features" class="<?php if( empty( $details ) || !is_array( $details ) ) { echo 'active' ; } ?>"><?php _e('Features','bon'); ?></a>
 	</nav>
 	<div class="tab-contents">
+
+		<?php if( !empty( $details ) && is_array( $details) ) { ?> 
 		<div id="tab-target-details" class="tab-content active">
 			
 			<ul class="car-detail property-details">
 				<?php
 					foreach($details as $key => $value) { ?>
+						<?php if ( !empty( $$key ) ) { ?> 
 						<li>
 							<strong><?php echo $value; ?>: </strong>
 							<span>
@@ -129,15 +121,20 @@
 								 } ?>
 							</span>
 						</li>
+						<?php } ?>
 				<?php }
 				?>
             </ul>
 		</div>
+		<?php } ?>
+
+		<?php if( !empty( $specs ) && is_array( $specs) ) { ?> 
 		<div id="tab-target-spec" class="tab-content">
 			
 			<ul class="car-spec property-details">
 				<?php
 					foreach($specs as $key => $value) { ?>
+						<?php if( !empty( $$key ) ) { ?>
 						<li>
 							<strong><?php echo $value; ?>: </strong>
 							<span>
@@ -160,23 +157,29 @@
 
 							 } ?></span>
 						</li>
+						<?php } ?>
 				<?php }
 				?>
             </ul>
 		</div>
-		
+		<?php } ?>
+
+		<?php if( !empty( $dimension ) && is_array( $dimension) ) { ?> 
 		<div id="tab-target-dimension" class="tab-content">
 			<ul class="car-dimension property-details">
 				<?php
 					foreach($dimension as $key => $value) { ?>
+						<?php if( !empty( $$key ) ) { ?>
 						<li>
 							<strong><?php echo $value; ?>: </strong>
 							<span><?php if(($$key) && !empty($$key)) { echo $$key . ' ' . $length_measure; } else { echo '-'; } ?></span>
 						</li>
+						<?php } ?>
 				<?php }
 				?>
 			</ul>
 		</div>
+		<?php } ?>
 		<div id="tab-target-features" class="tab-content">
 
 			<?php

@@ -5,14 +5,14 @@
     	<?php
             $show_map = bon_get_option('show_listings_map');
             $sizemeasurement = bon_get_option('measurement');
-            if(get_post_type() == 'listing' && !is_singular( 'listing' ) && $show_map == 'show') {
 
+            if( get_post_type() == 'listing' && !is_singular( 'listing' ) && $show_map == 'show' ) {
                $lat = shandora_get_meta($post->ID, 'listing_maplatitude');
                $long = shandora_get_meta($post->ID, 'listing_maplongitude');
 
                if(!empty($lat) && !empty($long)) {
 
-					if ( !has_post_thumbnail( $post->ID ) ) :
+					if ( has_post_thumbnail( $post->ID ) ) :
 						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumbnail' );
 						$image = $image[0];
 
@@ -58,7 +58,7 @@
 
         ?>
 
-        <?php bon_get_template_part( 'content', get_post_type() ); ?>
+        <?php bon_get_template_part( 'content', 'listing' ); ?>
 
     <?php endwhile; 
         $count = $wp_query->found_posts;

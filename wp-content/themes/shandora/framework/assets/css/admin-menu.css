@@ -1,0 +1,241 @@
+.bon-nav-menu-edit {
+	margin-right: 10px;
+	margin-top: 10px;
+}
+.bon-nav-menu-handle {
+	border: 1px solid #DFDFDF;
+	line-height: 20px;
+	overflow: hidden;
+	padding: 10px 15px;
+	position: relative;
+	display: block;
+	word-wrap: break-word;
+	cursor: pointer;
+	background-color: #fafafa;
+}
+.bon-nav-menu-handle:hover {
+	border-color: #999;
+}
+.bon-nav-menu-action:after {
+	content: '\f140';
+	font: 400 20px/1 dashicons;
+	speak: none;
+	float: right;
+	padding: 0;
+	text-indent: 0;
+	text-align: center;
+	position :relative;
+	webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: #aaa;
+	text-decoration: none;
+}
+.bon-nav-menu-edit.active .bon-nav-menu-action:after {
+	content:'\f142';
+}
+.bon-nav-menu-action:before {
+	line-height: 2.1;
+}
+.bon-nav-menu-inside {
+	width: auto;
+	padding: 10px;
+	display:block;
+	position:relative;
+	z-index:10;
+	border:1px solid #e5e5e5;
+	border-top:0;
+	-webkit-box-shadow:0 1px 1px rgba(0,0,0,.04);
+	box-shadow:0 1px 1px rgba(0,0,0,.04)
+}
+.bon-nav-menu-inside:after {
+	clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.bon-nav-menu-inside.hide {
+	display: none;
+}
+.bon-nav-menu-title {
+	vertical-align: middle;
+}
+.bon-nav-menu-desc-content {
+	display: none;
+}
+.bon-nav-menu-desc {
+	margin-left: 5px;
+	position: relative;
+}
+.bon-nav-menu-desc-icon {
+	background-color: #aaa;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	border-radius: 100px;
+	color: #fff;
+	width: 14px;
+	height: 14px;
+	line-height: 14px;
+	display: inline-block;
+	text-align: center;
+	font-style: normal;
+	font-size: 11px;
+	font-weight: bold;
+}
+.bon-nav-menu-desc:hover .bon-nav-menu-desc-content {
+	display: block;
+}
+.bon-nav-menu-desc-content {
+	position: absolute;
+	top: -12px;
+	left: 120%;
+	width: 300px;
+	padding: 10px;
+	background-color: rgba(0,0,0,.9);
+	color: #fff;
+	z-index: 10;
+	font-size: 11px;
+	font-style: normal;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	margin-left: 4px;
+}
+.bon-nav-menu-desc-content:before {
+	content:"";
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 8px;
+	border-color: transparent rgba(0,0,0,.9) transparent transparent;
+	position: absolute;
+	top: 14px;
+	left: -16px;
+}
+.bon-nav-menu-field {
+	margin-bottom: .6em;
+	margin-top: .3em;
+	font-style: italic;
+	color: #666;
+}
+.bon-nav-menu-field.description-wide {
+	margin-right: 1.8em;
+	width: 100%;
+}
+.bon-nav-menu-field input[type="checkbox"] {
+	margin-top: 0 !important;
+}
+
+.menu-item-depth-0 .bon-nav-menu-field {
+	display:none;
+}
+
+.bon-nav-menu-field.level-0,
+.bon-nav-menu-field.level-0-plus,
+.bon-nav-menu-field.level-1,
+.bon-nav-menu-field.level-1-plus,
+.bon-nav-menu-field.level-2,
+.bon-nav-menu-field.level-2-plus,
+.bon-nav-menu-field.level-3,
+.bon-nav-menu-field.level-3-plus,
+.bon-nav-menu-field.level-4,
+.bon-nav-menu-field.level-4-plus {
+	display: none;
+}
+.menu-item-depth-0 > .menu-item-settings .bon-nav-menu-field.level-0,
+.menu-item-depth-0 > .menu-item-settings .bon-nav-menu-field.level-0-plus,
+.menu-item-depth-1 > .menu-item-settings .bon-nav-menu-field.level-1,
+.menu-item-depth-1 > .menu-item-settings .bon-nav-menu-field.level-1-plus,
+.menu-item-depth-1 > .menu-item-settings .bon-nav-menu-field.level-0-plus,
+.menu-item-depth-2 > .menu-item-settings .bon-nav-menu-field.level-2,
+.menu-item-depth-2 > .menu-item-settings .bon-nav-menu-field.level-2-plus,
+.menu-item-depth-2 > .menu-item-settings .bon-nav-menu-field.level-1-plus,
+.menu-item-depth-2 > .menu-item-settings .bon-nav-menu-field.level-0-plus,
+.menu-item-depth-3 > .menu-item-settings .bon-nav-menu-field.level-3,
+.menu-item-depth-3 > .menu-item-settings .bon-nav-menu-field.level-3-plus,
+.menu-item-depth-3 > .menu-item-settings .bon-nav-menu-field.level-2-plus,
+.menu-item-depth-3 > .menu-item-settings .bon-nav-menu-field.level-1-plus,
+.menu-item-depth-3 > .menu-item-settings .bon-nav-menu-field.level-0-plus,
+.menu-item-depth-4 > .menu-item-settings .bon-nav-menu-field.level-4,
+.menu-item-depth-4 > .menu-item-settings .bon-nav-menu-field.level-4-plus,
+.menu-item-depth-4 > .menu-item-settings .bon-nav-menu-field.level-3-plus,
+.menu-item-depth-4 > .menu-item-settings .bon-nav-menu-field.level-2-plus,
+.menu-item-depth-4 > .menu-item-settings .bon-nav-menu-field.level-1-plus,
+.menu-item-depth-4 > .menu-item-settings .bon-nav-menu-field.level-0-plus {
+	display:block;
+}
+.bon-edit-menu-fieldset {
+	display: block;
+}
+.bon-edit-menu-upload, .bon-edit-menu-icon {
+	margin-right: 5px;
+}
+.bon-edit-menu-screenshot {
+	position: relative;
+	display: block;
+	margin-right: 12px;
+	margin-top: 10px;
+}
+.bon-edit-menu-screenshot .remove-image, .bon-edit-menu-screenshot .remove-image:focus, .bon-edit-menu-screenshot .remove-image:hover  {
+	border: none;
+    bottom: -6px;
+    display: block;
+    float: left;
+    height: 24px;
+    padding: 0;
+    position: absolute;
+    left: -6px;
+    width: 24px;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #e9594d;
+    -webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+    text-align: center;
+    line-height: 24px;
+}
+.bon-edit-menu-screenshot .dashicons {
+	height: 24px;
+	width: 24px;
+	line-height: 1.2;
+	text-align: center;
+	display: block;
+}
+.bon-nav-menu-field textarea {
+	max-width: 100%;
+	min-width: 100%;
+}
+.bon-edit-menu-screenshot img {
+	background: none repeat scroll 0 0 #FAFAFA;
+    border-color: #CCCCCC #EEEEEE #EEEEEE #CCCCCC;
+    border-style: solid;
+    border-width: 1px;
+    display: block;
+    margin-left: 1px;
+    max-width: 100%;
+    padding: 4px;
+}
+.bon-edit-menu-screenshot .remove-image.no-image, .bon-edit-menu-screenshot img.no-image, .bon-nav-menu-field .no-icon {
+	display: none;
+}
+.bon-edit-menu-item {
+	font-size: 13px;
+}
+.bon-textarea-editor {
+	display: none;
+}
+.button.bon-menu-open-editor {
+	margin-left: 10px;
+}
+.bon-advanced-menu-checkbox {
+	line-height: 22px;
+}
+.bon-advanced-menu-info {
+	margin-top: 0;
+	font-style: italic;
+}
+.mce-ico.mce-i-bon-menu-shortcode-icon {
+	background: url('../images/icon.png') no-repeat 0 0;
+}

@@ -6,8 +6,14 @@
  *
  */
 	do_atomic('head');
+
+	$class = '';
+
+	if( is_singular('car-listing') ) {
+		$class = 'singular-listing';
+	}
 ?>
-<body data-spy="scroll" data-target=".affix-nav-container"  id="totop" class="<?php bon_body_class(); ?>">
+<body data-spy="scroll" data-target=".affix-nav-container"  id="totop" <?php body_class( $class ); ?>>
 	<div id="outer-wrap">
 	<!-- BEGIN Header -->
 

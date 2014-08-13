@@ -9,12 +9,12 @@ function shandora_get_search_option($option = 'status') {
 		case 'status':
 
 			$val = array(
-					'sold' => __('Cidade', 'bon'),
-					'for-rent' => __('Montanha', 'bon'),
-					'for-sale' => __('Campo', 'bon'),
-					//'reduced' => __('Montanha', 'bon'),
-					'new' => __('Praia', 'bon'),
-					'on-show' => __('Área Florestal', 'bon')
+					'sold' => __('Grandes Cidades', 'bon'),
+					'new' => __('Praias', 'bon'),
+					'for-rent' => __('Áreas Montanhosas', 'bon'),
+					'for-sale' => __('Centros Históricos', 'bon'),
+					'on-show' => __('Áreas Verdes', 'bon'),
+					'reduced' => __('Montanha', 'bon'),
 					//'loca1' => __('Localização1', 'bon'),
 					//'loca2' => __('Localização1', 'bon'),
 					//'loca3' => __('Localização3', 'bon'),

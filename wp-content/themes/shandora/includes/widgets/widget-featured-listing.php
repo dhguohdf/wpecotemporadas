@@ -75,12 +75,13 @@ class Shandora_Featured_Listing_Widget extends WP_Widget {
 		<div class="row">
 			<div class="column large-12 featured-listing-carousel">
 				<?php
+					$prefix = bon_get_prefix();
 					$query = array(
 						'post_type' => 'listing',
 						'posts_per_page' => $args['limit'],
 						'meta_query' => array(
 								array(
-									'key' => 'shandora_listing_featured',
+									'key' => $prefix . 'listing_featured',
 									'value' => true,
 									'compare' => '=',
 								)

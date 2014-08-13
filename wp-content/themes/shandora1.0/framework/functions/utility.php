@@ -254,7 +254,7 @@ if( !function_exists('bon_get_categories') ) {
 			$category_list['all'] = 'All';
 			if( !empty($get_category) ){
 				foreach( $get_category as $category ){
-					$category_list[$category->slug] = $category->name;
+				//	$category_list[$category->slug] = $category->name;
 				}
 			}
 				

@@ -6,7 +6,7 @@
  * Contains the main functions for BonFramework, stores variables, and handles error messages
  *
  * @class BON_Main
- * @version	1.1
+ * @version	1.2
  * @since 1.0
  * @package	BonFramework
  * @author Hermanto Lim
@@ -19,7 +19,7 @@ class BON_Main {
 	/**
 	 * @var string
 	 */
-	public $version = '1.1';
+	public $version = '1.2';
 
 	/**
 	 * @var string
@@ -376,6 +376,16 @@ class BON_Main {
 		/* Load the utility functions. */
 		require_once( trailingslashit( BON_FUNCTIONS ) . 'utility.php' );
 
+		/* Load the head functions. */
+		require_once( trailingslashit( BON_FUNCTIONS ) . 'head.php' );
+
+		/* Load the head functions. */
+		require_once( trailingslashit( BON_FUNCTIONS ) . 'template.php' );
+
+		/* Load the head functions. */
+		require_once( trailingslashit( BON_FUNCTIONS ) . 'attr.php' );
+
+
 
 		/* Load the menus functions if supported. */
 		require_if_theme_supports( 'bon-core-menus', trailingslashit( BON_FUNCTIONS ) . 'menus.php' );
@@ -403,6 +413,9 @@ class BON_Main {
 		}
 		
 		require_if_theme_supports( 'post-formats', trailingslashit( BON_FUNCTIONS ) . 'post-formats.php' );
+
+		/* load deprecated function */
+		require_once( trailingslashit( BON_FUNCTIONS ) . 'deprecated.php' );
 
 	}
 
@@ -475,12 +488,12 @@ class BON_Main {
 		add_action( 'wp_head', 'wp_generator', 1 );
 
 		/* Add the theme info to the header (lets theme developers give better support). */
-		add_action( 'wp_head', 'bon_meta_template', 1 );
+		//add_action( 'wp_head', 'bon_meta_template', 1 );
 
 		/* Filter the textdomain mofile to allow child themes to load the parent theme translation. */
 		add_filter( 'load_textdomain_mofile', 'bon_load_textdomain_mofile', 10, 2 );
 
-		/* Filter text strings for Hybrid Core and extensions so themes can serve up translations. */
+		/* Filter text strings so themes can serve up translations. */
 		add_filter( 'gettext', 'bon_gettext', 1, 3 );
 		add_filter( 'gettext', 'bon_extensions_gettext', 1, 3 );
 

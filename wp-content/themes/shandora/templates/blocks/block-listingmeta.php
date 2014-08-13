@@ -2,7 +2,7 @@
 	$status = shandora_get_meta($post->ID, 'listing_status'); 
     $bed = shandora_get_meta($post->ID, 'listing_bed');
     $bath = shandora_get_meta($post->ID, 'listing_bath');
-    $lotsize = shandora_get_meta($post->ID, 'listing_lotsize');
+    $lotsize = shandora_get_meta($post->ID, 'listing_buildingsize');
     $sizemeasurement = bon_get_option('measurement');
 	$furnish = shandora_get_meta($post->ID, 'listing_furnishing');
 	$garage = shandora_get_meta($post->ID, 'listing_garage');

@@ -122,15 +122,3 @@ function bon_admin_bar_fix() {
 		echo $output;
 	}
 }
-add_filter('bon_toolkit_render_social_counter_filter','my_filter_function');
-
-function my_filter_function(){
-  $myarray = array(
-  	'social_buttons' => array(
-						    'facebook',
-						    'twitter', 
-						    )
-  	);
-
-	return $myarray;
-}

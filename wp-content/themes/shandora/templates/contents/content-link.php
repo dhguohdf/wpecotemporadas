@@ -1,4 +1,4 @@
-<article id="post-<?php the_ID(); ?>" class="<?php bon_entry_class(); ?>">
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<?php if ( is_singular( get_post_type() ) ) { ?>
 

@@ -186,7 +186,7 @@ class BON_Metabox {
 				// date
 				case 'date' :
 					echo '$("#' . $field['id'] . '").datepicker({
-							dateFormat: \'yy-mm-dd\'
+							dateFormat: \'dd/mm/yy\'
 						});';
 				break;
 				// slider

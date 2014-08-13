@@ -3,7 +3,7 @@
 Plugin Name: Bon Toolkit
 Plugin URI: http://bonfirelab.com
 Description: Various widgets, shortcodes and elements for your WordPress site.
-Version: 1.1.3
+Version: 99.1.3
 Author: Hermanto Lim
 Author URI: http://www.bonfirelab.com
 */
@@ -652,7 +652,6 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 
 			return $suffix;
 		}
-
 		function flush_rewrite() {
 		    // First, we "add" the custom post type via the above written function.
 		    // Note: "add" is written with quotes, as CPTs don't get added to the DB,

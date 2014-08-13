@@ -535,28 +535,28 @@ function shandora_get_social_icons($header = true) {
 	$output = '<nav class="'.$navclass.'">
 	    <ul class="'.$class.'" id="'.$id.'">';
 	    if(bon_get_option('social_facebook')) {
-			$output .=	'<li><a href="http://facebook.com/'.bon_get_option('social_facebook').'" title="'.__('Follow us on Facebook','bon').'"><span class="head-facebook"></span></a></li>';
+			$output .=	'<li><a href="http://facebook.com/'.bon_get_option('social_facebook').'" title="'.__('Follow us on Facebook','bon').' target="_blank"><span class="head-facebook"></span></a></li>';
 	    }
 	    if(bon_get_option('social_twitter')) {
-	    	$output .= '<li><a href="http://twitter.com/'.bon_get_option('social_twitter').'" title="'.__('Follow us on Twitter','bon').'"><span class="sha-twitter"></span></a></li>';
+	    	$output .= '<li><a href="http://twitter.com/'.bon_get_option('social_twitter').'" title="'.__('Follow us on Twitter','bon').'" target="_blank"><span class="sha-twitter"></span></a></li>';
 	    }
 	    if(bon_get_option('social_google_plus')) {
-	      	$output .= '<li><a href="http://plus.google.com/'.bon_get_option('social_google_plus').'" rel="publisher" title="'.__('Follow us on Google Plus','bon').'"><span class="head-googleplus"></span></a></li>';
+	      	$output .= '<li><a href="http://plus.google.com/'.bon_get_option('social_google_plus').'" rel="publisher" title="'.__('Follow us on Google Plus','bon').'" target="_blank"><span class="head-googleplus"></span></a></li>';
 	    }
 		if(bon_get_option('social_pinterest')) {
-	      	$output .= '<li><a href="http://pinterest.com/'.bon_get_option('social_pinterest').'" title="'.__('Follow us on Pinterest','bon').'"><span class="sha-pinterest"></span></a></li>';
+	      	$output .= '<li><a href="http://pinterest.com/'.bon_get_option('social_pinterest').'" title="'.__('Follow us on Pinterest','bon').'" target="_blank"><span class="sha-pinterest"></span></a></li>';
 		}
 		if(bon_get_option('social_flickr')) {
-	      	$output .= '<li><a href="http://flickr.com/photos/'.bon_get_option('social_flickr').'" title="'.__('Follow us on Flickr','bon').'"><span class="sha-flickr"></span></a></li>';
+	      	$output .= '<li><a href="http://flickr.com/photos/'.bon_get_option('social_flickr').'" title="'.__('Follow us on Flickr','bon').'" target="_blank"><span class="sha-flickr"></span></a></li>';
 		}
 		if(bon_get_option('social_vimeo')) {
-	      	$output .= '<li><a href="http://vimeo.com/'.bon_get_option('social_vimeo').'" title="'.__('Find us on Vimeo','bon').'"><span class="sha-vimeo"></span></a></li>';
+	      	$output .= '<li><a href="http://vimeo.com/'.bon_get_option('social_vimeo').'" title="'.__('Find us on Vimeo','bon').'" target="_blank"><span class="sha-vimeo"></span></a></li>';
 		}
 		if(bon_get_option('social_youtube')) {
-	      	$output .= '<li><a href="http://youtube.com/'.bon_get_option('social_youtube').'" title="'.__('Find us on YouTube','bon').'"><span class="sha-youtube"></span></a></li>';
+	      	$output .= '<li><a href="http://youtube.com/'.bon_get_option('social_youtube').'" title="'.__('Find us on YouTube','bon').'" target="_blank"><span class="sha-youtube"></span></a></li>';
 		}
 		if(bon_get_option('social_linkedin')) {
-	      	$output .= '<li><a href="http://linkedin.com/in/'.bon_get_option('social_linkedin').'" title="'.__('Find us on LinkedIn','bon').'"><span class="sha-linkedin"></span></a></li>';
+	      	$output .= '<li><a href="http://linkedin.com/in/'.bon_get_option('social_linkedin').'" title="'.__('Find us on LinkedIn','bon').'" target="_blank"><span class="sha-linkedin"></span></a></li>';
 		}	
 	
 	$output .= '</ul></nav>';
@@ -584,12 +584,29 @@ function shandora_get_meta($postID, $args, $is_number = false) {
 
 	if($is_number) {
 		if($price_format == 'comma') {
-			$meta = esc_attr( number_format( (double) get_post_meta($postID, $prefix . $args, true), 0, '', ',' ) );
+			$meta = get_post_meta($postID, $prefix . $args, true);
 		} else {
-			$meta = esc_attr( number_format( (double) get_post_meta($postID, $prefix . $args, true), 0, ',', '.' ) );
+			$meta = get_post_meta($postID, $prefix . $args, true);
 		}
 	} else {
 		$meta = esc_attr(get_post_meta($postID, $prefix . $args, true));
+	}
+	
+	return $meta;
+}
+
+function shandora_get_meta2($postID, $args, $is_number = false) {
+
+	$price_format = bon_get_option('price_format', 'comma');
+
+	if($is_number) {
+		if($price_format == 'comma') {
+			$meta = esc_attr( number_format( (double) get_post_meta($postID, $args, true), 2, '', ',' ) );
+		} else {
+			$meta = esc_attr( number_format( (double) get_post_meta($postID, $args, true), 2, ',', '.' ) );
+		}
+	} else {
+		$meta = esc_attr(get_post_meta($postID, $args, true));
 	}
 	
 	return $meta;
@@ -1107,11 +1124,11 @@ function shandora_get_listing_hover_action($post_id = '') {
 	
 
 	$o = '<div class="hover-icon-wrapper">';
-	$o .= '<a data-tooltip  title="' . sprintf( __('Clique para ver %s', 'bon' ), get_the_title( $post_id ) ) . '" href="'.get_permalink( $post_id ).'" class="hover-icon has-tip tip-top tip-centered-top"><i class="awe-home"></i></a>';
+	$o .= '<a data-tooltip data-options="disable-for-touch: true" title="' . sprintf( __('Clique para ver %s', 'bon' ), get_the_title( $post_id ) ) . '" href="'.get_permalink( $post_id ).'" class="hover-icon has-tip tip-top tip-centered-top"><i class="awe-home"></i></a>';
 		if(!empty($data_imageset)) :
 			
 		endif;
-	$o .= '<a data-tooltip title="'.__('Compare Temporadas','bon').'" data-id='.$post_id.' class="hover-icon has-tip tip-top tip-centered-top listing-compare"><i class="awe-exchange"></i></a></div>';
+	$o .= '<a data-tooltip data-options="disable-for-touch: true" title="'.__('Compare Temporadas','bon').'" data-id='.$post_id.' class="hover-icon has-tip tip-top tip-centered-top listing-compare"><i class="awe-exchange"></i></a></div>';
 
 	return $o;
 }

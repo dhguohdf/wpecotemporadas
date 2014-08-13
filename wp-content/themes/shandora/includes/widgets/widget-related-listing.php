@@ -86,13 +86,16 @@ class Shandora_Related_Listing_Widget extends WP_Widget {
 					
 
 					foreach($instance['related_to'] as $related_key) {
+
+						$prefix = bon_get_prefix();
+
 						switch ($related_key) {
 
 							case 'bed':
 								$beds = shandora_get_meta($post->ID,'listing_bed');
 								if(!empty($beds)) {
 									$meta_query[] = array(
-										'key' => 'shandora_listing_bed',
+										'key' =>  $prefix . 'listing_bed',
 		                                'value' => $beds,
 		                                'compare' => '<=',
 		                                'type'=> 'NUMERIC'
@@ -104,7 +107,7 @@ class Shandora_Related_Listing_Widget extends WP_Widget {
 								$baths = shandora_get_meta($post->ID,'listing_bath');
 								if(!empty($baths)) {
 									$meta_query[] = array(
-										'key' => 'shandora_listing_bath',
+										'key' =>  $prefix . 'listing_bath',
 		                                'value' => $baths,
 		                                'compare' => '<=',
 		                                'type'=> 'NUMERIC'
@@ -116,7 +119,7 @@ class Shandora_Related_Listing_Widget extends WP_Widget {
 								$lotsize = shandora_get_meta($post->ID, 'listing_lotsize');
 								if(!empty($lotsize)) {
 									$meta_query[] = array(
-										'key' => 'shandora_listing_lotsize',
+										'key' => $prefix . 'listing_lotsize',
 		                                'value' => $lotsize,
 		                                'compare' => '<=',
 		                                'type'=> 'NUMERIC'
@@ -128,7 +131,7 @@ class Shandora_Related_Listing_Widget extends WP_Widget {
 								$status = shandora_get_meta($post->ID,'listing_status');
 								if(!empty($status)) {
 									$meta_query[] = array(
-		                                'key' => 'shandora_listing_status',
+		                                'key' => $prefix . 'listing_status',
 		                                'value' => $status,
 		                                'compare' => '=',
 		                            );
@@ -144,7 +147,7 @@ class Shandora_Related_Listing_Widget extends WP_Widget {
 									}
 									$status = shandora_get_meta($post->ID,'listing_price');
 									$meta_query[] = array(
-		                                'key' => 'shandora_listing_price',
+		                                'key' => $prefix . 'listing_price',
 		                                'value' => array($min_price, $price),
 		                                'compare' => 'BETWEEN',
 		                                'type'=> 'NUMERIC'

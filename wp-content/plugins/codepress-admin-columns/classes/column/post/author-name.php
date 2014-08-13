@@ -2,21 +2,26 @@
 /**
  * CPAC_Column_Post_Author_Name
  *
- * @since 2.0.0
+ * @since 2.0
  */
 class CPAC_Column_Post_Author_Name extends CPAC_Column {
 
-	function __construct( $storage_model ) {
+	/**
+	 * @see CPAC_Column::init()
+	 * @since 2.2.1
+	 */
+	public function init() {
 
+		parent::init();
+
+		// Properties
 		$this->properties['type']	 			= 'column-author_name';
 		$this->properties['label']	 			= __( 'Display Author As', 'cpac' );
 		$this->properties['is_cloneable']		= true;
 		$this->properties['object_property']	= 'post_author';
 
-		// define additional options
+		// Options
 		$this->options['display_author_as'] = '';
-
-		parent::__construct( $storage_model );
 	}
 
 	/**
@@ -24,7 +29,7 @@ class CPAC_Column_Post_Author_Name extends CPAC_Column {
 	 *
 	 * Used by posts and sortable
 	 *
-	 * @since 2.0.0
+	 * @since 2.0
 	 *
 	 * @return array Authortypes
 	 */
@@ -49,35 +54,38 @@ class CPAC_Column_Post_Author_Name extends CPAC_Column {
 	 *
 	 * Can also be used by addons.
 	 *
-	 * @since 2.0.0
+	 * @since 2.0
 	 */
 	public function get_display_name( $user_id ) {
-
-		$name = '';
 
 		if ( ! $userdata = get_userdata( $user_id ) )
 			return false;
 
+		$name = '';
+
 		$display_as = $this->options->display_author_as;
 
-		// first check variables in userdata
-		if ( ! empty( $userdata->{$display_as} ) ) {
+		if ( 'first_last_name' == $display_as ) {
+			$first 	= ! empty( $userdata->first_name ) ? $userdata->first_name : '';
+			$last 	= ! empty( $userdata->last_name ) ? " {$userdata->last_name}" : '';
+			$name 	= $first.$last;
+		}
+
+		elseif ( ! empty( $userdata->{$display_as} ) ) {
 			$name = $userdata->{$display_as};
 		}
 
-		elseif ( 'first_last_name' == $display_as ) {
-			$first 	= !empty($userdata->first_name) ? $userdata->first_name : '';
-			$last 	= !empty($userdata->last_name) ? " {$userdata->last_name}" : '';
-			$name 	= $first.$last;
+		// default to display_name
+		if ( ! $name ) {
+			$name = $userdata->display_name;
 		}
 
 		return $name;
 	}
 
-
 	/**
 	 * @see CPAC_Column::get_value()
-	 * @since 2.0.0
+	 * @since 2.0
 	 */
 	function get_value( $post_id ) {
 
@@ -106,10 +114,9 @@ class CPAC_Column_Post_Author_Name extends CPAC_Column {
 	 * Display Settings
 	 *
 	 * @see CPAC_Column::display_settings()
-	 * @since 2.0.0
+	 * @since 2.0
 	 */
 	function display_settings() {
-
 		?>
 
 		<tr class="column-author-name">

@@ -4,7 +4,7 @@ Plugin Name: Post Expirator
 Plugin URI: http://wordpress.org/extend/plugins/post-expirator/
 Description: Allows you to add an expiration date (minute) to posts which you can configure to either delete the post, change it to a draft, or update the post categories at expiration time.
 Author: Aaron Axelsen
-Version: 2.1.3
+Version: 99.1.3
 Author URI: http://postexpirator.tuxdocs.net/
 Translation: Thierry (http://palijn.info)
 Text Domain: post-expirator
@@ -62,7 +62,7 @@ add_filter ('manage_posts_columns', 'expirationdate_add_column', 10, 2);
 function expirationdate_add_column_page ($columns) {
 	$defaults = get_option('expirationdateDefaultsPage');
 	if (!isset($defaults['activeMetaBox']) || $defaults['activeMetaBox'] == 'active') {
-	  	$columns['expirationdate'] = __('Expires','post-expirator');
+	  	$columns['expirationdate'] = __('Vencimento','post-expirator');
 	}
   	return $columns;
 }
@@ -76,7 +76,30 @@ function expirationdate_show_value ($column_name) {
 	$id = $post->ID;
 	if ($column_name === 'expirationdate') {
 		$ed = get_post_meta($id,'_expiration-date',true);
-    		echo ($ed ? postexpirator_get_date_from_gmt(gmdate('Y-m-d H:i:s',$ed),get_option('date_format').' '.get_option('time_format')) : __("Never",'post-expirator'));
+		if($post->post_status == 'private'){
+               echo '<div class="status-post"><h3>Aguardando a opção:</h3>';
+               echo '<span class="span-black80">Salvar / Revisão / <span class="span-white">Pagamento</span></span></div>';
+	      }
+	      if($post->post_status == 'draft'){
+	           echo '<div class="status-post"><h3>Aguardando a opção:</h3>';
+               echo '<span class="span-black80"><span class="span-white">Salvar</span> / Revisão / Pagamento</span></div>';
+	      }
+	      if($post->post_status == 'expirando'){
+	           echo '<div class="status-post"><h3>Anuncio próximo de expirar</h3></div>';
+	      }
+	      if($post->post_status == 'pending'){
+	           echo '<div class="status-post"><h3>Aguardando a opção:</h3>';
+               echo '<span class="span-black80">Salvar / <span class="span-white">Revisão</span> / Pagamento</span></div>';
+	      }
+        if ($ed) {
+            echo '<h1 class="h1-exp">Anúncio Publicado</h1>';
+            echo '<span class="span-black">Data inicial:</span><br>';
+            echo '<b>'. get_the_date($d, $the_post->post_parent) . '</b><br>';
+            echo '<span class="span-black">Expira em:</span><br>';
+            echo '<b>' . ( postexpirator_get_date_from_gmt(gmdate('Y-m-d H:i:s',$ed),get_option('date_format'))) . '</b>';
+            
+        }
+    		
   	}
 }
 add_action ('manage_posts_custom_column', 'expirationdate_show_value');

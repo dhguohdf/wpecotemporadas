@@ -50,7 +50,7 @@ jQuery(document).ready(function($){
         }
     }
 
-            if($('#listings-map').length > 0 ) {
+            if($('#listings-map').length > 0 && typeof dsidx.dataSets.results !== "undefined") {
                 //var mapContainer = document.getElementById('listings-map');
                 var mapOptions = {
                     mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -141,6 +141,7 @@ jQuery(document).ready(function($){
             }
         
 });
+
 
 </script>
  </div>

@@ -29,6 +29,128 @@ function shandora_add_car_listing(){
 
 if( !function_exists('shandora_setup_listing_post_type') ) {
 
+if( !function_exists('shandora_setup_agent_post_type') ) {
+
+	function shandora_setup_agent_post_type() {
+		global $bon;
+
+		$prefix = bon_get_prefix();
+
+		$cpt = $bon->cpt();
+
+		//$cpt->create('agent', array( 'rewrite' => array(
+		//		'slug'       => _x('perfileco', 'URL Slug', 'bon'),
+		//		'with_front' => false,
+		//		'pages'      => true,
+		///		'feeds'      => true,
+			//	'ep_mask'    => EP_PERMALINK,
+		//	), 'labels' => array(
+		//		'name' => __( 'Perfis ECO' ),
+		//		'singular_name' => __( 'Perfil ECO' )
+		//	), 'supports' => array('editor', 'title', 'comments'), 'menu_position' => 7 ));
+
+		$cpt->create('agent', 'Perfil ECO', array('supports' => array('editor', 'title', 'comments', ) , 'menu_position' => 6 ));
+
+		$agent_opt1 = array(
+
+
+			array( 
+				'label'	=> __('Foto do Perfil', 'bon'),
+				'desc'	=> '', 
+				'id'	=> $prefix.'agentpic',
+				'type'	=> 'image',
+			),
+
+			array( 
+				'label'	=> __('Email que o seu cliente irá contatá-lo', 'bon'),
+				'desc'	=> '', 
+				'id'	=> $prefix.'agentemail',
+				'type'	=> 'text',
+			),
+
+			//array( 
+			//	'label'	=> __('Seu LinkedIn para contato', 'bon'),
+			//	'desc'	=> '', 
+			//	'id'	=> $prefix.'agentlinkedin',
+			//	'type'	=> 'text',
+			//),
+
+			
+			//array( 
+			//	'label'	=> __('Celular', 'bon'),
+			//	'desc'	=> '', 
+			//	'id'	=> $prefix.'agentmobilephone',
+			//	'type'	=> 'text',
+			//),
+
+
+			array( 
+				'label'	=> __('Telefone para contato 1', 'bon'),
+				'desc'	=> '', 
+				'id'	=> $prefix.'agentofficephone',
+				'type'	=> 'text',
+			),
+
+			array( 
+				'label'	=> __('Telefone para contato 2', 'bon'),
+				'desc'	=> '', 
+				'id'	=> $prefix.'agentfax',
+				'type'	=> 'text',
+			),
+
+			array( 
+				'label'	=> __('Seu Facebook para contato', 'bon'),
+				'desc'	=> '', 
+				'id'	=> $prefix.'agentfb',
+				'type'	=> 'text',
+			),
+
+			array( 
+				'label'	=> __('Seu Google Plus para contato', 'bon'),
+				'desc'	=> '', 
+				'id'	=> $prefix.'agentgplus',
+				'type'	=> 'text',
+			),
+
+			//array( 
+			//	'label'	=> __('Website', 'bon'),
+			//	'desc'	=> '', 
+			//	'id'	=> $prefix.'agentesite',
+			//	'type'	=> 'text',
+			//),
+
+			
+			
+		);
+		$atencao = array(
+			array( 
+				'class'	=> $prefix . $suffix . 'atencao',
+				'type'	=> 'atencao',
+			),
+		);
+
+
+		$cpt->add_meta_box(   
+		    'agent-options',
+		    'Opções do Perfil ECO',
+		    $agent_opt1,
+		    'normal',
+		    'low'
+		);
+		$cpt->add_meta_box(   
+		    'atencao',
+		    'Atenção!',
+		    $atencao,
+		    'side',
+		    'low'
+		);
+
+	
+	}
+
+}
+
+
 	function shandora_setup_listing_post_type() {
 		global $bon;
 
@@ -48,7 +170,7 @@ if( !function_exists('shandora_setup_listing_post_type') ) {
 		//		'name' => __( 'Anúncios' ),
 		//		'singular_name' => __( 'Anúncio' )
 		//	), 'supports' => array('editor','title', 'thumbnail','comments'), 'menu_position' => 6 ));
-		$cpt->create('listing', 'Anúncio', array('supports' => array('editor','title', 'excerpt', 'thumbnail','comments' ), 'menu_position' => 6));
+		$cpt->create('listing', 'Anúncio', array('supports' => array('editor','title', 'excerpt', 'thumbnail','comments' ), 'menu_position' => 7));
 
 		$gallery_opts = array(
 			array( 
@@ -74,23 +196,17 @@ if( !function_exists('shandora_setup_listing_post_type') ) {
 
 		$promo = array(
 			array( 
-
-				'label'	=> __('Código Promocional', 'bon'),
-				'desc'	=> __('Se você possui um código promocional, digite-o aqui', 'bon'), 
 				'id'	=> $prefix . $suffix .'promo',
-				'type'	=> 'text',
+				'type'	=> 'nodropdown',
 				
 			),
 		);
 
 		$eco_options = array(
 			array( 
-
-				'label'	=> __('Escolha aqui o <br> Perfil ECO responsável', 'bon'),
 				'desc'	=> __('', 'bon'), 
 				'id'	=> $prefix . $suffix .'agentpointed',
 				'type'	=> 'post_select',
-				'filter_author' => true, 
 				'post_type' => 'agent',				
 			),
 		);
@@ -98,18 +214,30 @@ if( !function_exists('shandora_setup_listing_post_type') ) {
 		$ecoseals_opt = array(
 			array( 
 
-				'label'	=> __('<br>Reciclagem de Lixo:', 'bon'),
-				'desc'	=> __('Sua propriedade possui acesso à coleta seletiva?', 'bon'), 
+				'label'	=> __('Reciclagem de Lixo:', 'bon'),
+				'desc'	=> __('<table class="ecoseals-description">
+								    <tbody>
+								  <tr><td>Quando seu imóvel incentiva a reciclagem e possui um sistema de coleta seletiva separando o lixo reciclável do lixo orgânico. </td>
+								      <td class="eco-descricao2">No seu anúncio, informe os postos de coleta seletiva nas proximidades do seu imóvel, ou se a coleta é feita no próprio local. </td>
+								      </tr>
+								    </tbody>
+								</table>', 'bon'), 
 				'id'	=> $prefix . $suffix .'eco1',
 				'type'	=> 'select',
 				'options' => shandora_get_search_option('eco1')
-				
+						
 			),
 
 			array( 
 
 				'label'	=> __('Certificado Ambiental:', 'bon'),
-				'desc'	=> __('', 'bon'), 
+				'desc'	=> __('<table class="ecoseals-description">
+								    <tbody>
+								  <tr><td>Quando seu imóvel possui uma qualidade ecológica ou evita danificar o meio ambiente reaproveitando materiais ou recursos. </td>
+								      <td class="eco-descricao2">Exemplo: Arquitetura ecológica, energias alternativas, estruturas e mobílias de materiais reciclados….etc. </td>
+								      </tr>
+								    </tbody>
+								</table>', 'bon'),
 				'id'	=> $prefix . $suffix .'eco2',
 				'type'	=> 'select',
 				'options' => shandora_get_search_option('eco2')
@@ -119,7 +247,13 @@ if( !function_exists('shandora_setup_listing_post_type') ) {
 			array( 
 
 				'label'	=> __('Proximidade à<br>atividades ecológicas:', 'bon'),
-				'desc'	=> __('', 'bon'), 
+				'desc'	=> __('<table class="ecoseals-description">
+								    <tbody>
+								  <tr><td>Quando o imóvel está dentro ou nas proximidades da natureza: reservas ecológicas, parques, área de proteção ambiental…etc. </td>
+								      <td class="eco-descricao2">Informe no seu anúncio as oportunidades de ecoturismo nas proximidades. </td>
+								      </tr>
+								    </tbody>
+								</table>', 'bon'),
 				'id'	=> $prefix . $suffix .'eco3',
 				'type'	=> 'select',
 				'options' => shandora_get_search_option('eco3')
@@ -141,7 +275,8 @@ if( !function_exists('shandora_setup_listing_post_type') ) {
 			array(
 
 				'label'	=> __('Endereço do imóvel:', 'bon'),
-				'id'	=> $prefix . $suffix .'address',
+				'id'	=> $prefix . $suffix .'route',
+				'class'	=> $prefix . $suffix .'route',
 				'type'	=> 'text',
 
 			),
@@ -155,7 +290,7 @@ if( !function_exists('shandora_setup_listing_post_type') ) {
 			array(
 
 				'label'	=> __('Valor Principal:', 'bon'),
-				'desc'	=> __('Escolha seu valor principal, não esqueça que você pode definir outros valores no seu calendário do anúncio. Por favor, preencha com apenas números, ex: 123456', 'bon'), 
+				'desc'	=> __('Quanto cobrar por temporada? Analise seus custos  e quanto gostaria de ganhar, veja outros exemplos de anúncios em nosso site, procure referências no local do seu imóvel, seja justo com seu cliente, ele vai gastar e retornar! :)', 'bon'), 
 				'id'	=> $prefix . $suffix .'price',
 				'class'	=> $prefix . $suffix .'price',
 				'type'	=> 'text',
@@ -164,7 +299,7 @@ if( !function_exists('shandora_setup_listing_post_type') ) {
 
 			array( 
 				'label'	=> __('Período Principal:', 'bon'),
-				'desc'	=> __('Escolha o tipo de período que o imóvel será exibido', 'bon'), 
+				'desc'	=> __('Escolha o período principal que seu cliente pode hospedar com você ao fechar negócio, negocie o período desejado para não ficar dúvidas. ', 'bon'), 
 				'id'	=> $prefix . $suffix . 'period',
 				'class'	=> $prefix . $suffix . 'period',
 				'type'	=> 'select',
@@ -238,7 +373,7 @@ if( !function_exists('shandora_setup_listing_post_type') ) {
 			array( 
 
 				'label'	=> __('Data de disponibilidade', 'bon'),
-				'desc'	=> __('Quando a propriedade estará disponível?', 'bon'), 
+				'desc'	=> __('Seu anúncio estará disponível a partir de quando?', 'bon'), 
 				'id'	=> $prefix . $suffix .'dateavail',
 				'type'	=> 'date',
 				
@@ -252,20 +387,11 @@ if( !function_exists('shandora_setup_listing_post_type') ) {
 				'type'	=> 'text',
 				
 			),
-			
-			array( 
-
-				'label'	=> __('Ferramenta', 'bon'),
-				'desc'	=> __('Funciona plz', 'bon'), 
-				'id'	=> $prefix . $suffix .'iframe',
-				'type'	=> 'iframe',
-				
-			),
 
 			array( 
 
 				'label'	=> __('Latitude do local:', 'bon'),
-				'desc'	=> __('Latitude do local, utilizada para a localização de seu imóvel no mapa. Encontre sua longitude no site <a href="http://translate.google.com.br/translate?sl=en&tl=pt&js=n&prev=_t&hl=pt-BR&ie=UTF-8&u=http%3A%2F%2Fwww.latlong.net%2F&act=url" target="_blank">aqui</a>. Copie e cole aqui sua longitude', 'bon'), 
+				'class' => $prefix . $suffix .'maplatitude',
 				'id'	=> $prefix . $suffix .'maplatitude',
 				'type'	=> 'text',
 				
@@ -274,7 +400,7 @@ if( !function_exists('shandora_setup_listing_post_type') ) {
 			array( 
 
 				'label'	=> __('Longitude do local:', 'bon'),
-				'desc'	=> __('Longitude do local, utilizada para a localização de seu imóvel no mapa. Encontre sua longitude no site <a href="http://translate.google.com.br/translate?sl=en&tl=pt&js=n&prev=_t&hl=pt-BR&ie=UTF-8&u=http%3A%2F%2Fwww.latlong.net%2F&act=url" target="_blank">aqui</a>. Copie e cole aqui sua longitude', 'bon'), 
+				'class' => $prefix . $suffix .'maplongitude',
 				'id'	=> $prefix . $suffix .'maplongitude',
 				'type'	=> 'text',
 				
@@ -308,147 +434,48 @@ if( !function_exists('shandora_setup_listing_post_type') ) {
 		$cpt->add_meta_box(   
 		    'gallery-options',
 		    'Suas fotos do Anúncio',
-		    $gallery_opts
+		    $gallery_opts,
+		    'normal',
+		    'high'
 		);
 
 		$cpt->add_meta_box(   
 		    'promo',
-		    'Promoção ecotemporadas.com',
+		    'Cupom Promocional',
 		    $promo,
-		    'normal',
+		    'side',
 		    'low'
 		);
 
 		$cpt->add_meta_box(   
 		    'eco-options',
-		    'Perfil ECO',
+		    'Escolha seu Perfil ECO',
 		    $eco_options,
 		    'side',
-		    'high',
-		    '0'
+		    'high'
+		);
+		$cpt->add_meta_box(   
+		    'property-options',
+		    'Detalhes do seu Anúncio',
+		    $prop_options,
+		    'normal',
+		    'high'
 		);
 
 		$cpt->add_meta_box(   
 		    'ecoseals_opt',
 		    'Certificados Ecológicos',
-		    $ecoseals_opt
+		    $ecoseals_opt,
+		    'normal',
+		    'low'
 		);
 
-		$cpt->add_meta_box(   
-		    'property-options',
-		    'Detalhes do seu Anúncio',
-		    $prop_options  
-		);
-
+		
 	}
 
 }
 
 
-if( !function_exists('shandora_setup_agent_post_type') ) {
-
-	function shandora_setup_agent_post_type() {
-		global $bon;
-
-		$prefix = bon_get_prefix();
-
-		$cpt = $bon->cpt();
-
-		//$cpt->create('agent', array( 'rewrite' => array(
-		//		'slug'       => _x('perfileco', 'URL Slug', 'bon'),
-		//		'with_front' => false,
-		//		'pages'      => true,
-		///		'feeds'      => true,
-			//	'ep_mask'    => EP_PERMALINK,
-		//	), 'labels' => array(
-		//		'name' => __( 'Perfis ECO' ),
-		//		'singular_name' => __( 'Perfil ECO' )
-		//	), 'supports' => array('editor', 'title', 'comments'), 'menu_position' => 7 ));
-
-		$cpt->create('agent', 'Perfil ECO', array('supports' => array('editor', 'title', 'comments', ) , 'menu_position' => 7 ));
-
-		$agent_opt1 = array(
-
-
-			array( 
-				'label'	=> __('Foto do Perfil', 'bon'),
-				'desc'	=> '', 
-				'id'	=> $prefix.'agentpic',
-				'type'	=> 'image',
-			),
-
-			array( 
-				'label'	=> __('Link do Facebook', 'bon'),
-				'desc'	=> '', 
-				'id'	=> $prefix.'agentfb',
-				'type'	=> 'text',
-			),
-
-			array( 
-				'label'	=> __('Link do Google Plus', 'bon'),
-				'desc'	=> '', 
-				'id'	=> $prefix.'agentgplus',
-				'type'	=> 'text',
-			),
-
-			array( 
-				'label'	=> __('Link do LinkedIn', 'bon'),
-				'desc'	=> '', 
-				'id'	=> $prefix.'agentlinkedin',
-				'type'	=> 'text',
-			),
-
-			array( 
-				'label'	=> __('Endereço de email', 'bon'),
-				'desc'	=> '', 
-				'id'	=> $prefix.'agentemail',
-				'type'	=> 'text',
-			),
-
-			array( 
-				'label'	=> __('Celular', 'bon'),
-				'desc'	=> '', 
-				'id'	=> $prefix.'agentmobilephone',
-				'type'	=> 'text',
-			),
-
-
-			array( 
-				'label'	=> __('Telefone 1', 'bon'),
-				'desc'	=> '', 
-				'id'	=> $prefix.'agentofficephone',
-				'type'	=> 'text',
-			),
-
-			array( 
-				'label'	=> __('Telefone 2', 'bon'),
-				'desc'	=> '', 
-				'id'	=> $prefix.'agentfax',
-				'type'	=> 'text',
-			),
-
-			array( 
-				'label'	=> __('Website', 'bon'),
-				'desc'	=> '', 
-				'id'	=> $prefix.'agentsite',
-				'type'	=> 'text',
-			),
-
-			
-			
-		);
-
-
-		$cpt->add_meta_box(   
-		    'agent-options',
-		    'Opções do Perfil ECO',
-		    $agent_opt1  
-		);
-
-	
-	}
-
-}
 
 
 add_action( 'init', 'shandora_page_meta');

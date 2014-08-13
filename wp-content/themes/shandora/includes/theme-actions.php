@@ -10,7 +10,6 @@ function shandora_get_listing_price($echo = true ) {
 		$currency = bon_get_option('currency');
 		$placement = bon_get_option('currency_placement');
 		$price = shandora_get_meta($post->ID, 'listing_price', true); 
-
 		$price = '<span itemprop="offers" itemscope itemtype="http://schema.org/Offer"><span itemprop="price">' . $price . '</span>';
 		$price .= '<meta itemprop="priceCurrency" content="'.$currency.'" /></span>';
 		$o = '';
@@ -225,16 +224,64 @@ function shandora_search_listing_form() {
 	
 }
 
+function shandora_get_search_page_url() {
+
+	$search_page = bon_get_option('search_listing_page');
+	$permalink_active = get_option( 'permalink_structure' );
+
+	if($permalink_active != '') {
+
+		if(function_exists('icl_get_languages')):
+
+			$languages = icl_get_languages('skip_missing=0&orderby=custom');
+
+			if( count($languages) >= 1 ):
+
+				foreach( (array)$languages as $language ):
+
+					if( $language['active'] == 1) :
+
+						$id = icl_object_id( $search_page, 'post', false, ICL_LANGUAGE_CODE );
+						$page = get_post( $id );
+						$slug = $page->post_name;
+
+						$search_permalink = trailingslashit( home_url() ) . $language['code'] . $slug;
+
+					endif;
+
+				endforeach;
+
+			endif;
+
+		else :
+
+			$search_permalink = get_permalink( $search_page );
+
+		endif;
+
+	} else {
+
+		return;
+
+	}
+
+	return $search_permalink;
+
+}
 function shandora_get_search_listing_form( $is_widget = false ) {
 
 	global $bon;
 
 	$values = array();
 	$values['property_type'] = isset($_COOKIE['property_type']) ? $_COOKIE['property_type'] : '';
+	$values['title'] = isset($_COOKIE['title']) ? $_COOKIE['title'] : '';
 	$values['property_location'] = isset($_COOKIE['property_location']) ? $_COOKIE['property_location'] : '';
 	$values['property_location_level1'] = isset($_COOKIE['property_location_level1']) ? $_COOKIE['property_location_level1'] : '';
 	$values['property_location_level2'] = isset($_COOKIE['property_location_level2']) ? $_COOKIE['property_location_level2'] : '';
 	$values['property_location_level3'] = isset($_COOKIE['property_location_level3']) ? $_COOKIE['property_location_level3'] : '';
+	$values['dealer_location_level1'] = isset($_COOKIE['dealer_location_level1']) ? $_COOKIE['dealer_location_level1'] : '';
+	$values['dealer_location_level2'] = isset($_COOKIE['dealer_location_level2']) ? $_COOKIE['dealer_location_level2'] : '';
+	$values['dealer_location_level3'] = isset($_COOKIE['dealer_location_level3']) ? $_COOKIE['dealer_location_level3'] : '';
 	$values['property_status'] = isset($_COOKIE['property_status']) ? $_COOKIE['property_status'] : '';
 	$values['property_bath'] = isset($_COOKIE['property_bath']) ? $_COOKIE['property_bath'] : '';
 	$values['property_bed'] = isset($_COOKIE['property_bed']) ? $_COOKIE['property_bed'] : '';
@@ -270,6 +317,7 @@ function shandora_get_search_listing_form( $is_widget = false ) {
 	$values['max_mileage'] = isset($_COOKIE['max_mileage']) ? $_COOKIE['max_mileage'] : '';
 	$values['exterior_color'] = isset($_COOKIE['exterior_color']) ? $_COOKIE['exterior_color'] : '';
 	$values['interior_color'] = isset($_COOKIE['interior_color']) ? $_COOKIE['interior_color'] : '';
+	$values['yearbuilt'] = isset($_COOKIE['yearbuilt']) ? $_COOKIE['yearbuilt'] : '';
 
 	$button_color = bon_get_option('search_button_color', 'red');
 	$form = $bon->form();
@@ -289,18 +337,10 @@ function shandora_get_search_listing_form( $is_widget = false ) {
 	$row_3 = bon_get_option('search_row_3');
 	$row_count = 3;
 
-	$search_page = bon_get_option('search_listing_page');
 
-	$permalink_active = get_option( 'permalink_structure' );
-
-	if($permalink_active != '') {
-		$search_permalink = get_permalink($search_page);
-	} else {
-		$search_permalink = esc_url( home_url( '/?page_id=' . $search_page ) );
-	}
+	$search_permalink = shandora_get_search_page_url();
 
 	$output = $form->form_open( $search_permalink, 'method="get" class="custom" id="search-listing-form"' );
-
 
 	$output .= $ro;
 
@@ -332,6 +372,9 @@ function shandora_get_search_listing_form( $is_widget = false ) {
 					'location_level1',
 					'location_level2',
 					'location_level3',
+					'dealer_location_level1',
+					'dealer_location_level2',
+					'dealer_location_level3',
 					'feature',
 					'mortgage',
 					'type',
@@ -392,6 +435,17 @@ function shandora_get_search_listing_form( $is_widget = false ) {
 		$output .= $form->form_submit('', $search_label, 'class="button small flat '.$button_color.' radius"');
 	}
 
+	if( defined( 'ICL_LANGUAGE_CODE' ) ) {
+		$output .= '<input type="hidden" name="lang" value="'.ICL_LANGUAGE_CODE.'"/>';
+	}
+
+	$permalink_active = get_option( 'permalink_structure' );
+
+	if( $permalink_active == '' ) {
+		$search_page = bon_get_option('search_listing_page');
+		$output .= '<input type="hidden" name="page_id" value="'. $search_page .'"/>';
+	}
+	
 	$output .= $cc . $rc;
 
 	$output .= $form->form_close();
@@ -624,7 +678,7 @@ function shandora_get_social_icons($header = true) {
 	if($header) {
 		$id = 'top-social-icons';
 		$class = 'right social-icons';
-		$navclass = 'large-6 column';
+		$navclass = 'large-6 column right';
 	} else {
 		$id = 'footer-social-icons';
 		$class = 'social-icons';
@@ -678,12 +732,25 @@ function shandora_get_meta($postID, $args, $is_number = false) {
 	
 	$price_format = bon_get_option('price_format', 'comma');
 
+
 	if($is_number) {
-		if($price_format == 'comma') {
-			$meta = esc_attr( number_format( (double) get_post_meta($postID, $prefix . $args, true), 0, '', ',' ) );
+
+		$m = get_post_meta( $postID, $prefix . $args, true ) + 0;
+
+		if( is_float( $m ) ) {
+			if($price_format == 'comma') {
+				$meta = esc_attr( number_format( (double) $m, 2, '.', ',' ) );
+			} else {
+				$meta = esc_attr( number_format( (double) $m, 2, ',', '.' ) );
+			}
 		} else {
-			$meta = esc_attr( number_format( (double) get_post_meta($postID, $prefix . $args, true), 0, ',', '.' ) );
+			if($price_format == 'comma') {
+				$meta = esc_attr( number_format( (double) $m, 0, '.', ',' ) );
+			} else {
+				$meta = esc_attr( number_format( (double) $m, 0, ',', '.' ) );
+			}
 		}
+
 	} else {
 		$meta = esc_attr(get_post_meta($postID, $prefix . $args, true));
 	}
@@ -1051,33 +1118,57 @@ function shandora_listing_post_per_page( $query ) {
 
 	    	 $numberposts = (bon_get_option('listing_per_page')) ? bon_get_option('listing_per_page') : 8;
 
-	    	$orderby = '';
-            $key = '';
+	    	$orderby = bon_get_option('listing_orderby');
+	    	$order = bon_get_option('listing_order', 'DESC');
+	    	$key = '';
+
+	    	switch ( $orderby ) {
+	    		case 'price':
+	    			$orderby = 'meta_value_num';
+	    			$key = bon_get_prefix() . 'listing_price';
+	    			break;
+	    		
+	    		case 'title':
+	    			$orderby = 'title';
+
+	    			break;
+
+	    		case 'size':
+	    			$orderby = 'meta_value_num';
+
+	    			if( $query->is_tax('property-type') || $query->is_tax('property-location') || $query->is_tax('property-feature') ) {
+	    				$key = bon_get_prefix() . 'listing_buildingsize';
+	    			} else {
+	    				$key = bon_get_prefix() . 'listing_mileage';
+	    			}
+
+	    			break;
+
+	    		default:
+	    			$orderby = 'date';
+	    			break;
+	    	}
+            
             if(isset($_GET['search_orderby'])) {
                 $orderby = $_GET['search_orderby'];
             }
-            $order = 'DESC';
+            
             if(isset($_GET['search_order'])) {
                 $order = $_GET['search_order'];
             }
-            if($orderby == 'price') {
-                $key = 'shandora_listing_price';
-                $orderby = 'meta_value_num';
-            }
 
-
-	         if( $query->is_tax('property-name')  || $query->is_tax('metro-station')  || $query->is_tax('property-type') || $query->is_tax('property-location') || $query->is_tax('property-feature') ) {
-	         	$query->set('post_type', 'listing');
-	         } else if ( $query->is_tax('dealer-location') || $query->is_tax('body-type') || $query->is_tax('manufacturer') || $query->is_tax('car-feature') ) {
-	         	$query->set('post_type', 'car-listing');
-	         }
+			if( $query->is_tax('property-name')  || $query->is_tax('metro-station')  || $query->is_tax('property-type') || $query->is_tax('property-location') || $query->is_tax('property-feature') ) {
+				$query->set('post_type', 'listing');
+			} else if ( $query->is_tax('dealer-location') || $query->is_tax('body-type') || $query->is_tax('manufacturer') || $query->is_tax('car-feature') ) {
+				$query->set('post_type', 'car-listing');
+			}
 	         
-	         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-	         $query->set('meta_key', $key);
-	         $query->set('orderby', $orderby);
-	         $query->set('order', $order);
-	         $query->set('paged', $paged);
-	         $query->set( 'posts_per_page', $numberposts );
+			$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+			$query->set( 'meta_key', $key );
+			$query->set( 'orderby', $orderby );
+			$query->set( 'order', $order );
+			$query->set( 'paged', $paged );
+			$query->set( 'posts_per_page', $numberposts );
 	    }
     }
 }
@@ -1130,6 +1221,7 @@ function shandora_process_agent_contact() {
 
 
 	$subject = esc_html( $_POST['subject'] );
+	$listing_id = absint( $_POST['listing_id'] );
 
 	$messages = esc_textarea( $_POST['messages'] );
 
@@ -1163,10 +1255,12 @@ function shandora_process_agent_contact() {
 
 	$receiver = $_POST['receiver'];
 
-	$body = "You have received a new contact form message via ".get_bloginfo('name')." \n";
+	//$body = "You have received a new contact form message via ".get_bloginfo('name')." \n";
+	$body = sprintf( __("You have received a new contact form message via %s \n", 'bon'), get_bloginfo('name') );
 	$body .= 'Name : ' . $name . " \n";
 	$body .= 'Email : ' . $email . " \n";
 	$body .= 'Subject : ' . $subject . " \n";
+	$body .= 'Email Send From: ' . get_permalink( $listing_id ) . " \n";
 	$body .= 'Message : ' . $messages;
 
 	$header = "From: " . $name . " <" . $email . "> \r\n";
@@ -1220,9 +1314,6 @@ function shandora_get_listing_hover_action($post_id = '') {
 
 	$o = '<div class="hover-icon-wrapper">';
 	$o .= '<a data-tooltip data-options="disable-for-touch: true" title="' . sprintf( __('Permalink to %s', 'bon' ), get_the_title( $post_id ) ) . '" href="'.get_permalink( $post_id ).'" class="hover-icon has-tip tip-top tip-centered-top"><i class="sha-link"></i></a>';
-		if(!empty($data_imageset)) :
-			$o .= '<a data-tooltip data-options="disable-for-touch: true" data-imageset=\''. $imageset . '\' title="'. __('View Image','bon'). '" class="has-tip tip-top top-centered-top hover-icon listing-gallery"><i class="sha-zoom"></i></a>';
-		endif;
 	$o .= '<a data-tooltip data-options="disable-for-touch: true" title="'.__('Compare Listing','bon').'" data-id='.$post_id.' class="hover-icon has-tip tip-top tip-centered-top listing-compare"><i class="sha-paperclip"></i></a></div>';
 
 	return $o;

@@ -9,21 +9,26 @@
  * @since 1.0
  * @return void
  *
+ * 321: agent > perfil-eco
  * ======================================================================================================
  */
 
 
-add_action('init', 'shandora_setup_listing_post_type', 1);
-add_action('init', 'shandora_setup_agent_post_type', 1);
 
+add_action( 'after_setup_theme', 'shandora_add_post_type', 2 );
 
-add_action( 'after_setup_theme', 'shandora_add_car_listing',2 );
+function shandora_add_post_type(){
 
-function shandora_add_car_listing(){
+	if(bon_get_option('enable_property_listing', 'yes') == 'yes') {
+		add_action('init', 'shandora_setup_listing_post_type', 1);
+		add_action('init', 'shandora_setup_agent_post_type', 1);
+	}
+
 	if(bon_get_option('enable_car_listing') == 'yes') {
 		add_action('init', 'shandora_setup_car_dealer_post_type', 1);
 		add_action('init', 'shandora_setup_sales_rep_post_type', 1);
 	}
+	
 }
 
 if( !function_exists('shandora_setup_listing_post_type') ) {
@@ -37,8 +42,49 @@ if( !function_exists('shandora_setup_listing_post_type') ) {
 
 		$cpt = $bon->cpt();
 
-		$name = __('Listing', 'bon');
-		$plural = __('Listings', 'bon');
+		$use_rewrite = bon_get_option( 'use_rewrite', 'no' );
+
+		$settings = array();
+		$slug = '';
+
+		$settings['rewrite_root'] = bon_get_option( 'rewrite_root' );
+		$settings['realestate_root'] = bon_get_option( 'realestate_root', 'real-estate' );
+
+
+		$settings['realestate_property_type_root'] = bon_get_option( 'realestate_property_type_root', 'manufacturer' );
+		$settings['realestate_property_location_root'] = bon_get_option( 'realestate_property_location_root', 'body-type' );
+		$settings['realestate_property_feature_root'] = bon_get_option( 'realestate_property_feature_root', 'dealer-location' );
+
+
+		
+
+
+		if( !empty( $settings['rewrite_root'] ) ) {
+			$slug = "{$settings['rewrite_root']}/{$settings['realestate_root']}";
+		} else {
+			$slug = "{$settings['realestate_root']}";
+		}
+
+		$property_type_slug = "{$settings['realestate_root']}/{$settings['realestate_property_type_root']}";
+		$property_location_slug = "{$settings['realestate_root']}/{$settings['realestate_property_location_root']}";
+		$property_feature_slug = "{$settings['realestate_root']}/{$settings['realestate_property_feature_root']}";
+
+		$has_archive = ( $use_rewrite == 'no' ) ? false : $slug;
+
+		$rewrite_var = array(
+				'slug'       => $slug,
+				'with_front' => false,
+				'pages'      => true,
+				'feeds'      => true,
+				'ep_mask'    => EP_PERMALINK,
+			);
+		
+		$rewrite = ( $use_rewrite == 'no' ) ? true : $rewrite_var;
+
+
+
+		$name = __('Anuncio', 'bon');
+		$plural = __('Anuncios', 'bon');
 		$labels = array(
 			'name' 					=> _x( $plural, 'post type general name' ),
 			'singular_name' 		=> _x( $name, 'post type singular name' ),
@@ -55,7 +101,7 @@ if( !function_exists('shandora_setup_listing_post_type') ) {
 			'menu_name' 			=> $plural
 		);
 
-		$cpt->create('Listing', array( 'labels' => $labels, 'supports' => array('editor','title', 'excerpt', 'thumbnail'), 'menu_position' => 6));
+		$cpt->create('Listing', array( 'has_archive' => $has_archive, 'rewrite' => $rewrite, 'labels' => $labels, 'supports' => array('editor','title', 'excerpt', 'thumbnail'), 'menu_position' => 6));
 
 		$gallery_opts = array(
 
@@ -273,7 +319,7 @@ if( !function_exists('shandora_setup_listing_post_type') ) {
 				'desc'	=> __('The agent pointed for this property listing', 'bon'), 
 				'id'	=> $prefix . $suffix .'agentpointed',
 				'type'	=> 'post_select',
-				'post_type' => 'agent', 
+				'post_type' => 'perfil-eco', 
 				
 			),
 
@@ -326,13 +372,52 @@ if( !function_exists('shandora_setup_listing_post_type') ) {
 			),
 			
 		);
+		
 
+		/* The rewrite handles the URL structure. */
+		$property_type_rewrite_var = array(
+			'slug'         => $property_type_slug,
+			'with_front'   => false,
+			'hierarchical' => false,
+			'ep_mask'      => EP_NONE
+		);
 
-		$cpt->add_taxonomy("Property Type", array('hierarchical' => true, 'label' => __('Property Types','bon'), 'labels' => array('menu_name' => __('Types','bon') ) ) );
+		
+		/* The rewrite handles the URL structure. */
+		$property_location_rewrite_var = array(
+			'slug'         => $property_location_slug,
+			'with_front'   => false,
+			'hierarchical' => true,
+			'ep_mask'      => EP_NONE
+		);
 
-		$cpt->add_taxonomy("Property Location", array('hierarchical' => true, 'label' => __('Property Locations','bon'), 'labels' => array('menu_name' => __('Locations','bon') ) ) );
+		/* The rewrite handles the URL structure. */
+		$property_feature_rewrite_var = array(
+			'slug'         => $property_feature_slug,
+			'with_front'   => false,
+			'hierarchical' => false,
+			'ep_mask'      => EP_NONE
+		);
 
-		$cpt->add_taxonomy("Property Feature", array( 'label' => __('Property Features','bon'), 'labels' => array('menu_name' => __('Features','bon') ) ) );
+		if( $use_rewrite == 'no' ) {
+
+			$property_feature_rewrite = true;
+			$property_location_rewrite = true;
+			$property_type_rewrite = true;
+
+		} else {
+
+			$property_feature_rewrite = $property_feature_rewrite_var;
+			$property_location_rewrite = $property_location_rewrite_var;
+			$property_type_rewrite = $property_type_rewrite_var;
+
+		}
+
+		$cpt->add_taxonomy("Property Type", array( 'rewrite' => $property_type_rewrite, 'hierarchical' => true, 'label' => __('Property Types','bon'), 'labels' => array('menu_name' => __('Types','bon') ) ) );
+
+		$cpt->add_taxonomy("Property Location", array( 'rewrite' => $property_location_rewrite, 'hierarchical' => true, 'label' => __('Property Locations','bon'), 'labels' => array('menu_name' => __('Locations','bon') ) ) );
+
+		$cpt->add_taxonomy("Property Feature", array( 'rewrite' => $property_feature_rewrite, 'label' => __('Property Features','bon'), 'labels' => array('menu_name' => __('Features','bon') ) ) );
 
 		$cpt->add_meta_box(   
 		    'gallery-options',
@@ -367,19 +452,44 @@ if( !function_exists('shandora_setup_car_dealer_post_type') ) {
 
 		$cpt = $bon->cpt();
 
-		/* for rewire slug / url add this
-			'rewrite' => array(
-				'slug'       => _x('motorcycle', 'URL Slug', 'bon'),
-				'with_front' => false,
-				'pages'      => true,
-				'feeds'      => true,
-				'ep_mask'    => EP_PERMALINK,
-			),
-			'labels' => array(
-				'name' => __( 'Bike Listings' ),
-				'singular_name' => __( 'Bike Listing' )
-			),
-		*/
+
+		$use_rewrite = bon_get_option( 'use_rewrite', 'no' );
+
+		$settings = array();
+		$slug = '';
+
+		$settings['rewrite_root'] = bon_get_option( 'rewrite_root' );
+		$settings['car_root'] = bon_get_option( 'car_root', 'car' );
+
+		$settings['car_manufacturer_root'] = bon_get_option( 'car_manufacturer_root', 'manufacturer' );
+		$settings['car_body_type_root'] = bon_get_option( 'car_body_type_root', 'body-type' );
+		$settings['car_dealer_location_root'] = bon_get_option( 'car_dealer_location_root', 'dealer-location' );
+		$settings['car_feature_root'] = bon_get_option( 'car_feature_root', 'feature' );
+
+
+		if( !empty( $settings['rewrite_root'] ) ) {
+			$slug = "{$settings['rewrite_root']}/{$settings['car_root']}";
+		} else {
+			$slug = "{$settings['car_root']}";
+		}
+
+		$manufacturer_slug = "{$settings['car_root']}/{$settings['car_manufacturer_root']}";
+		$body_type_slug = "{$settings['car_root']}/{$settings['car_body_type_root']}";
+		$dealer_location_slug = "{$settings['car_root']}/{$settings['car_dealer_location_root']}";
+		$feature_slug = "{$settings['car_root']}/{$settings['car_feature_root']}";
+
+		$has_archive = ( $use_rewrite == 'no' ) ? false : $slug;
+
+		$rewrite_var = array(
+			'slug'       => $slug,
+			'with_front' => false,
+			'pages'      => true,
+			'feeds'      => true,
+			'ep_mask'    => EP_PERMALINK,
+		);
+
+		$rewrite = ( $use_rewrite == 'no' ) ? true : $rewrite_var;
+
 			$name = __('Car Listing', 'bon');
 			$plural = __('Car Listings', 'bon');
 			$labels = array(
@@ -397,7 +507,8 @@ if( !function_exists('shandora_setup_car_dealer_post_type') ) {
 				'parent_item_colon' 	=> '',
 				'menu_name' 			=> $plural
 			);
-		$cpt->create('Car Listing', array( 'labels' => $labels, 'supports' => array('editor','title', 'excerpt', 'thumbnail'), 'menu_position' => 8 ));
+
+		$cpt->create('Car Listing', array( 'has_archive' => $has_archive, 'rewrite' => $rewrite, 'labels' => $labels, 'supports' => array('editor','title', 'excerpt', 'thumbnail'), 'menu_position' => 8 ));
 
 		$gallery_opts = array(
 
@@ -692,15 +803,64 @@ if( !function_exists('shandora_setup_car_dealer_post_type') ) {
 
 			
 		);
+		
 
+		/* The rewrite handles the URL structure. */
+		$manufacturer_rewrite_var = array(
+			'slug'         => $manufacturer_slug,
+			'with_front'   => false,
+			'hierarchical' => true,
+			'ep_mask'      => EP_NONE
+		);
 
-		$cpt->add_taxonomy("Manufacturer", array( 'label' => __('Manufacturers','bon'), 'labels' => array('menu_name' => __('Manufacturers','bon') ), 'hierarchical' => true ) );
+		
+		/* The rewrite handles the URL structure. */
+		$body_type_rewrite_var = array(
+			'slug'         => $body_type_slug,
+			'with_front'   => false,
+			'hierarchical' => false,
+			'ep_mask'      => EP_NONE
+		);
 
-		$cpt->add_taxonomy("Body Type", array( 'label' => __('Body Types','bon'), 'labels' => array('menu_name' => __('Body Types','bon') ), 'hierarchical' => true ) );
+		/* The rewrite handles the URL structure. */
+		$dealer_location_rewrite_var = array(
+			'slug'         => $dealer_location_slug,
+			'with_front'   => false,
+			'hierarchical' => true,
+			'ep_mask'      => EP_NONE
+		);
 
-		$cpt->add_taxonomy("Dealer Location", array( 'label' => __('Dealer Locations','bon'), 'labels' => array('menu_name' => __('Dealer Locations','bon') ),  'hierarchical' => true ) );
+		/* The rewrite handles the URL structure. */
+		$feature_rewrite_var = array(
+			'slug'         => $feature_slug,
+			'with_front'   => false,
+			'hierarchical' => false,
+			'ep_mask'      => EP_NONE
+		);
 
-		$cpt->add_taxonomy("Car Feature", array( 'label' => __('Car Features','bon'), 'labels' => array('menu_name' => __('Features','bon') ) ) );
+		if( $use_rewrite == 'no' ) {
+
+			$feature_rewrite = true;
+			$dealer_location_rewrite = true;
+			$body_type_rewrite = true;
+			$manufacturer_rewrite = true;
+
+		} else {
+
+			$feature_rewrite = $feature_rewrite_var;
+			$dealer_location_rewrite = $dealer_location_rewrite_var;
+			$body_type_rewrite = $body_type_rewrite_var;
+			$manufacturer_rewrite = $manufacturer_rewrite_var;
+
+		}
+
+		$cpt->add_taxonomy("Manufacturer", array( 'rewrite' => $manufacturer_rewrite, 'label' => __('Manufacturers','bon'), 'labels' => array('menu_name' => __('Manufacturers','bon') ), 'hierarchical' => true ) );
+
+		$cpt->add_taxonomy("Body Type", array( 'rewrite' => $body_type_rewrite, 'label' => __('Body Types','bon'), 'labels' => array('menu_name' => __('Body Types','bon') ), 'hierarchical' => true ) );
+
+		$cpt->add_taxonomy("Dealer Location", array( 'rewrite' => $dealer_location_rewrite, 'label' => __('Dealer Locations','bon'), 'labels' => array('menu_name' => __('Dealer Locations','bon') ),  'hierarchical' => true ) );
+
+		$cpt->add_taxonomy("Car Feature", array( 'rewrite' => $feature_rewrite, 'label' => __('Car Features','bon'), 'labels' => array('menu_name' => __('Features','bon') ) ) );
 
 		$cpt->add_meta_box(   
 		    'gallery-options',
@@ -733,8 +893,8 @@ if( !function_exists('shandora_setup_agent_post_type') ) {
 
 		$cpt = $bon->cpt();
 
-		$name = __('Agent', 'bon');
-		$plural = __('Agents', 'bon');
+		$name = __('Perfil ECO', 'bon');
+		$plural = __('Perfis ECO', 'bon');
 		$labels = array(
 			'name' 					=> _x( $plural, 'post type general name' ),
 			'singular_name' 		=> _x( $name, 'post type singular name' ),
@@ -751,10 +911,17 @@ if( !function_exists('shandora_setup_agent_post_type') ) {
 			'menu_name' 			=> $plural
 		);
 
-		$cpt->create('Agent', array( 'labels' => $labels, 'supports' => array('editor', 'title' ) ,'exclude_from_search' => true, 'menu_position' => 7 ));
+		$cpt->create('Perfil ECO', array( 'labels' => $labels, 'supports' => array('editor', 'title' ) ,'exclude_from_search' => true, 'menu_position' => 7 ));
 
 
 		$agent_opt1 = array(
+
+			array( 
+				'label'	=> __('Job Title', 'bon'),
+				'desc'	=> '', 
+				'id'	=> $prefix.'agentjob',
+				'type'	=> 'text',
+			),
 
 			array( 
 				'label'	=> __('Facebook Username', 'bon'),
@@ -861,6 +1028,13 @@ if( !function_exists('shandora_setup_sales_rep_post_type') ) {
 		$agent_opt1 = array(
 
 			array( 
+				'label'	=> __('Job Title', 'bon'),
+				'desc'	=> '', 
+				'id'	=> $prefix.'agentjob',
+				'type'	=> 'text',
+			),
+
+			array( 
 				'label'	=> __('Facebook Username', 'bon'),
 				'desc'	=> '', 
 				'id'	=> $prefix.'agentfb',
@@ -936,21 +1110,77 @@ add_action( 'init', 'shandora_page_meta');
 if( !function_exists('shandora_page_meta') ) {
 
 	function shandora_page_meta() {
+
+		$prefix = bon_get_prefix();
+
 		if(is_admin()) {
+
 			global $bon;
 
 			$mb = $bon->mb();
+
+			$opts = shandora_get_search_option( 'status' );
+			$opts['featured'] = __('Featured', 'bon');
 
 			$fields = array(
 				array(
 					'id' => 'shandora_status_query',
 					'type' => 'select',
 					'label' => __('Property Status to Query','bon'),
-					'options' => shandora_get_search_option('status')
+					'options' => $opts
+				)
+			);
+
+			$fields = array(
+
+				array(
+					'id' => $prefix . 'slideshow_type',
+					'type' => 'select',
+					'label' => __('Slide Show Type', 'bon'),
+					'options' => array(
+						'full' => __('Full', 'bon'),
+						'boxed' => __('Boxed', 'bon')
+					)
+				),
+
+
+				array(
+					'id' => $prefix . 'slideshow_ids',
+					'type' => 'text',
+					'label' => __('Slide show IDs to Show', 'bon'),
+					'desc' => __('Input the slideshow ids you want to show separated by commas', 'bon')
+				),
+
+			);
+
+			$mb->create_box('slider-opt', __('Slider Options', 'bon'), $fields, array('page'));
+		}
+	}
+}
+
+add_action('init', 'shandora_property_page_meta' );
+if( !function_exists( 'shandora_property_page_meta' ) ) {
+	function shandora_property_page_meta() {
+		if(is_admin()) {
+
+			global $bon;
+
+			$mb = $bon->mb();
+
+			$opts = shandora_get_search_option( 'status' );
+			$opts['featured'] = __('Featured', 'bon');
+
+			$fields = array(
+				array(
+					'id' => 'shandora_status_query',
+					'type' => 'select',
+					'label' => __('Property Status to Query','bon'),
+					'options' => $opts
 				)
 			);
 
 			$mb->create_box('status-opt', __('Property Status', 'bon'), $fields, array('page'));
+
 		}
 	}
 }
@@ -963,12 +1193,15 @@ if( !function_exists('shandora_car_page_meta') ) {
 
 			$mb = $bon->mb();
 
+			$opts = shandora_get_car_search_option( 'status' );
+			$opts['featured'] = __('Featured', 'bon');
+
 			$fields = array(
 				array(
 					'id' => 'shandora_car_status_query',
 					'type' => 'select',
 					'label' => __('Car Status to Query','bon'),
-					'options' => shandora_get_car_search_option('status')
+					'options' => $opts
 				)
 			);
 

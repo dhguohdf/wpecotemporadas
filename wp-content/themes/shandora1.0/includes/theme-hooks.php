@@ -187,7 +187,7 @@ if( !function_exists('shandora_listing_open_ul') ) {
 			is_page_template('page-templates/page-template-all-car-listings.php') || is_page_template('page-templates/page-template-search-listings.php')
 			|| is_page_template('page-templates/page-template-search-car-listings.php')) && !is_singular('listing') && !is_singular( 'car-listing' ) && !is_search() ) {
 			
-			$show_map = 'no';
+			$show_map = 'yes';
 			$show_listing_count = bon_get_option('show_listing_count', 'no');
 
 			if( ( is_page_template('page-templates/page-template-property-status.php') || get_post_type() == 'listing' || is_page_template('page-templates/page-template-all-listings.php')
@@ -209,18 +209,19 @@ if( !function_exists('shandora_listing_open_ul') ) {
 				<form class="custom" action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="get" id="orderform" name="orderform">
 		            
 		            <div class="row">
+		            	<div class="column large-6 search-order">
+		                    <select class="no-mbot" name="search_orderby" onChange="document.forms['orderform'].submit()">
+		                        <option value="price" <?php selected( $search_orderby, 'price' );?> ><?php _e('Preço','bon'); ?></option>
+		                        <option value="date" <?php selected( $search_orderby, 'date' );?> ><?php _e('Data','bon'); ?></option>
+		                    </select>
+		                </div>
 		                <div class="column large-6 search-order">
 		                    <select class="no-mbot" name="search_order" onChange="document.forms['orderform'].submit()">
-		                        <option value="ASC" <?php selected( $search_order, 'ASC' );?> ><?php _e('Ascending','bon'); ?></option>
-		                        <option value="DESC" <?php selected( $search_order, 'DESC' );?> ><?php _e('Descending','bon'); ?></option>
+		                        <option value="ASC" <?php selected( $search_order, 'ASC' );?> ><?php _e('Menor para o maior','bon'); ?></option>
+		                        <option value="DESC" <?php selected( $search_order, 'DESC' );?> ><?php _e('Maior para o menor','bon'); ?></option>
 		                    </select>
 		                </div>
-		                <div class="column large-6 search-order">
-		                    <select class="no-mbot" name="search_orderby" onChange="document.forms['orderform'].submit()">
-		                        <option value="price" <?php selected( $search_orderby, 'price' );?> ><?php _e('Price','bon'); ?></option>
-		                        <option value="date" <?php selected( $search_orderby, 'date' );?> ><?php _e('Date','bon'); ?></option>
-		                    </select>
-		                </div>
+		                
 			                <?php 
 
 				                foreach($_GET as $name => $value) {
@@ -238,10 +239,16 @@ if( !function_exists('shandora_listing_open_ul') ) {
     	</div>
 		<?php	
 		if($show_map == 'show') {
-	        echo '<div id="listings-map"></div>';
+			$show_zoom = bon_get_option('show_listings_map_zoom', 'true' );
+			if( $show_zoom == 'show' ) { $show_zoom = 'true'; }
+
+			$show_type = bon_get_option('show_listings_map_type', 'true');
+			if( $show_type == 'show' ) { $show_type = 'true'; }
+
+	        echo '<div id="listings-map" data-show-zoom="'.$show_zoom.'" data-show-map-type="'.$show_type.'"></div>';
 	    }
 	    ?>
-		<ul class="listings <?php shandora_block_grid_column_class(); ?>" data-compareurl="<?php echo get_permalink($compare_page); ?>">
+		<ul class="listings <?php echo ( isset( $_GET['view'] ) && $_GET['view'] == 'list' ) ? 'list-view' : shandora_block_grid_column_class( false ); ?>" data-compareurl="<?php echo get_permalink($compare_page); ?>">
 		<?php
 		}
 	}

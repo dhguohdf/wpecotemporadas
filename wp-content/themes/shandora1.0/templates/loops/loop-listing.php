@@ -12,13 +12,33 @@
 
                if(!empty($lat) && !empty($long)) {
 
-					if (has_post_thumbnail( $post->ID ) ) :
-						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumbnail' );
-						$image = $image[0];
-					endif;
+					if ( has_post_thumbnail( $post->ID ) ) :
+                        $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumbnail' );
+                        $image = $image[0];
 
+                    else :
+
+                        $args = array(
+                            'post_type'   => 'attachment',
+                            'numberposts' => 1,
+                            'post_parent' => $post->ID,
+                        );
+
+                        $attachments = get_posts( $args );
+
+                        if ( $attachments && is_array($attachments) ) {
+
+                            $image = wp_get_attachment_image_src($attachments[0]->ID, 'thumbnail' );
+                            $image = $image[0];
+
+                        } else {
+                            $image = '';
+                        }
+
+                    endif;
                     $bath = shandora_get_meta($post->ID, 'listing_bath');
                     $bed = shandora_get_meta($post->ID, 'listing_bed');
+
 
 					$data_map[] = array(
 					    'photo' => (!empty($image)) ? $image : '',

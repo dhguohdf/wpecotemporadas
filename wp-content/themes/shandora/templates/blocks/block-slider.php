@@ -26,11 +26,12 @@
   <img src="<?php echo esc_url($image_src); ?>" alt="<?php the_title(); ?>" />
 
   <div class="flex-caption <?php echo $position; ?>">
-
-    <h1 class="primary-title"><?php the_title(); ?></h1>
+    <?php if(the_title( '', '', false ) !='') { ?>
+    <h2 class="primary-title"><?php the_title(); ?></h2>
+    <?php } ?>
 
     <?php if($subtitle) { ?>
-    <h2 class="hide-for-small secondary-title"><?php echo $subtitle; ?></h2>
+    <h3 class="hide-for-small secondary-title"><?php echo $subtitle; ?></h3>
     <?php } ?>
     
     <?php if($url) { ?>

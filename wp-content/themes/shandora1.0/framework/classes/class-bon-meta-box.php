@@ -186,7 +186,7 @@ class BON_Metabox {
 				// date
 				case 'date' :
 					echo '$("#' . $field['id'] . '").datepicker({
-							dateFormat: \'yy-mm-dd\'
+							dateFormat: \'dd-mm-yy\'
 						});';
 				break;
 				// slider
@@ -217,7 +217,7 @@ class BON_Metabox {
 							switch ($repeatable_field['type']) {
 								case 'date' :
 									echo '$("#' .$field['id'] . '_' . $i . '_' . $repeatable_field['id'] . '").datepicker({
-											dateFormat: \'yy-mm-dd\'
+											dateFormat: \'dd-mm-yy\'
 										});';
 								break;
 								// slider

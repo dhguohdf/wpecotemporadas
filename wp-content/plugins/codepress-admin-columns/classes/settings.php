@@ -3,29 +3,19 @@
 /**
  * CPAC_Settings Class
  *
- * @since 2.0.0
+ * @since 2.0
  */
 class CPAC_Settings {
 
 	/**
 	 * CPAC class
 	 *
-	 * @since 2.0.0
+	 * @since 2.0
 	 */
 	private $cpac;
 
 	/**
-	 * Settings uri
-	 *
-	 * @since 2.0.0
-	 * @param array URL for general, settings and info screens
-	 */
-	private $settings_urls = array();
-
-	/**
-	 * Constructor
-	 *
-	 * @since 2.0.0
+	 * @since 2.0
 	 * @param object CPAC
 	 */
 	function __construct( $cpac ) {
@@ -38,25 +28,126 @@ class CPAC_Settings {
 		// handle requests gets a low priority so it will trigger when all other plugins have loaded their columns
 		add_action( 'admin_init', array( $this, 'handle_column_request' ), 1000 );
 
-		// handle addon downloads
-		add_action( 'admin_init', array( $this, 'handle_download_request' ) );
+		add_action( 'wp_ajax_cpac_column_refresh', array( $this, 'ajax_column_refresh' ) );
 
-		// Settings Url's
-		$this->settings_urls = (object) array(
-			'admin' 	=> admin_url( 'options-general.php?page=codepress-admin-columns' ),
-			'general' 	=> admin_url( 'options-general.php?page=codepress-admin-columns&tab=general' ),
-			'settings' 	=> admin_url( 'options-general.php?page=codepress-admin-columns&tab=settings' ),
-			'info' 		=> admin_url( 'options-general.php?page=codepress-admin-columns&info=' ),
-			'upgrade' 	=> admin_url( 'options-general.php?page=cpac-upgrade' )
-		);
+		add_action( 'cpac_messages', array( $this, 'maybe_display_addon_statuschange_message' ) );
 	}
 
 	/**
-	 * Admin Menu.
+	 * Get available Admin Columns admin page URLs
 	 *
-	 * Create the admin menu link for the settings page.
+	 * @since 2.2
+	 * @return array Available settings URLs ([settings_page] => [url])
+	 */
+	public function get_settings_urls() {
+
+		/**
+		 * Filter the URLs for the different settings screens available in admin columns
+		 *
+		 * @since 2.2
+		 *
+		 * @param array $settings_urls Available settings URLs ([settings_page] => [url])
+		 * @param CPAC_Settings $settings_instance Settings class instance
+		 */
+		$settings_urls = apply_filters( 'cac/settings/settings_urls', array(
+			'admin' 		=> admin_url( 'options-general.php?page=codepress-admin-columns' ),
+			'info' 			=> admin_url( 'options-general.php?page=codepress-admin-columns&info=' ),
+			'upgrade' 		=> admin_url( 'options-general.php?page=cpac-upgrade' )
+		), $this );
+
+		return $settings_urls;
+	}
+
+	/**
+	 * Get the settings URL for a page
 	 *
-	 * @since 1.0.0
+	 * @since 2.2
+	 * @param string $page Optional. Admin page to get the URL from. Defaults to the basic Admin Columns page
+	 * @return string Settings page URL
+	 */
+	public function get_settings_url( $page = '' ) {
+
+		$settings_urls = $this->get_settings_urls();
+
+		if ( isset( $settings_urls[ $page ] ) ) {
+			return $settings_urls[ $page ];
+		}
+
+		if ( ! $page ) {
+			return $settings_urls['admin'];;
+		}
+
+		return add_query_arg( 'tab', $page, $this->get_settings_url() );
+	}
+
+	/**
+	 * Display an activation/deactivation message on the addons page if applicable
+	 *
+	 * @since 2.2
+	 */
+	public function maybe_display_addon_statuschange_message() {
+
+		if ( empty( $_REQUEST['tab'] ) || $_REQUEST['tab'] != 'addons' ) {
+			return;
+		}
+
+		$message = '';
+
+		if ( ! empty( $_REQUEST['activate'] ) ) {
+			$message = __( 'Add-on successfully activated.', 'cpac' );
+		}
+		else if ( ! empty( $_REQUEST['deactivate'] ) ) {
+			$message = __( 'Add-on successfully deactivated.', 'cpac' );
+		}
+
+		if ( ! $message ) {
+			return;
+		}
+		?>
+		<div class="updated cac-notification below-h2">
+			<p><?php echo $message; ?></p>
+		</div>
+		<?php
+	}
+
+	/**
+	 * @since 2.2
+	 */
+	public function ajax_column_refresh() {
+		if ( ! empty( $_POST['formdata'] ) && ! empty( $_POST['column'] ) ) {
+			parse_str( $_POST['formdata'], $formdata );
+			$storagemodel_key = ! empty( $formdata['cpac_key'] ) ? $formdata['cpac_key'] : '';
+
+			if ( $storagemodel_key && ! empty( $formdata[ $storagemodel_key ][ $_POST['column'] ] ) ) {
+				$columndata = $formdata[ $formdata['cpac_key'] ][ $_POST['column'] ];
+				$storage_model = $this->cpac->get_storage_model( $formdata['cpac_key'] );
+				$registered_columns = $storage_model->get_registered_columns();
+
+				if ( in_array( $columndata['type'], array_keys( $registered_columns ) ) ) {
+					$column = clone $registered_columns[ $columndata['type'] ];
+					$column->set_clone( $columndata['clone'] );
+
+					foreach ( $columndata as $optionname => $optionvalue ) {
+						$column->set_options( $optionname, $optionvalue );
+					}
+
+					$column->sanitize_label();
+
+					$columns = array( $column->properties->name => $column );
+
+					do_action( 'cac/columns', $columns );
+					do_action( "cac/columns/storage_key={$storagemodel_key}", $columns );
+
+					$column->display();
+				}
+			}
+		}
+
+		exit;
+	}
+
+	/**
+	 * @since 1.0
 	 */
 	public function settings_menu() {
 
@@ -73,69 +164,53 @@ class CPAC_Settings {
 		// register setting
 		register_setting( 'cpac-general-settings', 'cpac_general_options' );
 
-		// @ todo_minor REMOVE
-		// add capabilty to administrator to manage admin columns
-		// note to devs: you can use this to grant other roles this privilidge as well.
-		//if ( $role = get_role( 'administrator' ) )
-   			//$role->add_cap( 'manage_admin_columns' );
-
 		// add cap to options.php
    		add_filter( 'option_page_capability_cpac-general-settings', array( $this, 'add_capability' ) );
 	}
 
 	/**
-	 * Add capability
-	 *
 	 * Allows the capaiblity 'manage_admin_columns' to store data through /wp-admin/options.php
 	 *
-	 * @since 2.0.0
+	 * @since 2.0
 	 */
 	public function add_capability() {
-
 		return 'manage_admin_columns';
 	}
 
 	/**
-	 * Register admin css
-	 *
-	 * @since 1.0.0
+	 * @since 1.0
 	 */
 	public function admin_styles() {
 		wp_enqueue_style( 'wp-pointer' );
 		wp_enqueue_style( 'jquery-ui-lightness', CPAC_URL . 'assets/ui-theme/jquery-ui-1.8.18.custom.css', array(), CPAC_VERSION, 'all' );
 		wp_enqueue_style( 'cpac-admin', CPAC_URL . 'assets/css/admin-column.css', array(), CPAC_VERSION, 'all' );
-		wp_enqueue_style( 'cpac-custom-fields-css', CPAC_URL . 'assets/css/custom-fields.css', array(), CPAC_VERSION, 'all' );
 	}
 
 	/**
-	 * Register admin scripts
-	 *
-	 * @since 1.0.0
+	 * @since 1.0
 	 */
 	public function admin_scripts() {
 
 		wp_enqueue_script( 'wp-pointer' );
 		wp_enqueue_script( 'jquery-ui-slider' );
 
-		// columns
-		wp_enqueue_script( 'cpac-admin-columns', CPAC_URL . 'assets/js/admin-columns.js', array( 'jquery', 'dashboard', 'jquery-ui-slider', 'jquery-ui-sortable' ), CPAC_VERSION );
-		wp_enqueue_script( 'cpac-custom-fields-js', CPAC_URL . 'assets/js/custom-fields.js', array( 'jquery' ), CPAC_VERSION );
+		$minified = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
+
+		wp_enqueue_script( 'cpac-admin-settings', CPAC_URL . "assets/js/admin-settings{$minified}.js", array( 'jquery', 'dashboard', 'jquery-ui-slider', 'jquery-ui-sortable' ), CPAC_VERSION );
 
 		// javascript translations
-		wp_localize_script( 'cpac-admin-columns', 'cpac_i18n', array(
+		wp_localize_script( 'cpac-admin-settings', 'cpac_i18n', array(
 			'clone'	=> __( '%s column is already present and can not be duplicated.', 'cpac' ),
 		));
 	}
 
 	/**
-	 * Handle column requests.
-	 *
-	 * @since 1.0.0
+	 * @since 1.0
 	 */
 	public function handle_column_request() {
 
 		// only handle updates from the admin columns page
-		if ( ! ( isset($_GET['page'] ) && in_array( $_GET['page'], array( 'codepress-admin-columns', 'cpac-settings' ) ) && isset( $_REQUEST['cpac_action'] ) ) )
+		if ( ! ( isset($_GET['page'] ) && in_array( $_GET['page'], array( 'codepress-admin-columns' ) ) && isset( $_REQUEST['cpac_action'] ) ) )
 			return false;
 
 		// use $_REQUEST because the values are send both over $_GET and $_POST
@@ -146,7 +221,6 @@ class CPAC_Settings {
 		switch ( $action ) :
 
 			case 'update_by_type' :
-
 				if ( wp_verify_nonce( $nonce, 'update-type' ) ) {
 					$storage_model = $this->cpac->get_storage_model( $key );
 					$storage_model->store();
@@ -170,9 +244,9 @@ class CPAC_Settings {
 	}
 
 	/**
-	 * Restore defaults
+	 * Restore all column defaults
 	 *
-	 * @since 1.0.0
+	 * @since 1.0
 	 */
 	private function restore_all() {
 		global $wpdb;
@@ -183,7 +257,7 @@ class CPAC_Settings {
 	}
 
 	/**
-	 * Add help tabs
+	 * Add help tabs to top menu
 	 *
 	 * @since 1.3.0
 	 */
@@ -194,7 +268,6 @@ class CPAC_Settings {
 		if ( ! method_exists( $screen,'add_help_tab' ) )
 			return;
 
-		// add help content
 		$tabs = array(
 			array(
 				'title'		=> __( "Overview", 'cpac' ),
@@ -245,25 +318,24 @@ class CPAC_Settings {
 	}
 
 	/**
-	 * External Urls
-	 *
-	 * @since 1.0.0
-	 *
+	 * @since 1.0
 	 * @param string $storage_model URL type.
 	 * @return string Url.
 	 */
 	function get_url( $type ) {
 
-		$site_url = 'http://www.codepresshq.com';
+		$site_url = 'http://www.admincolumns.com';
 
 		$urls = array(
-			'codepress'		=> $site_url,
-			'admincolumns'	=> $site_url . '/wordpress-plugins/admin-columns/',
-			'pro_addon'		=> $site_url . '/wordpress-plugins/admin-columns/pro-add-on/',
-			'documentation'	=> $site_url . '/wordpress-plugins/admin-columns/',
-			'feedback'		=> $site_url . '/contact',
-			'plugins'		=> 'http://wordpress.org/extend/plugins/codepress-admin-columns/',
-			'support'		=> 'http://wordpress.org/tags/codepress-admin-columns/',
+			'main'				=> $site_url,
+			'pricing'			=> $site_url . '/pricing-purchase/',
+			'codepress'			=> 'http://www.codepresshq.com',
+			'admincolumns'		=> $site_url,
+			'admincolumnspro'	=> $site_url,
+			'documentation'		=> $site_url . '/documentation/',
+			'feedback'			=> 'http://www.codepresshq.com/contact',
+			'plugins'			=> 'http://wordpress.org/extend/plugins/codepress-admin-columns/',
+			'support'			=> 'http://wordpress.org/tags/codepress-admin-columns/',
 		);
 
 		if ( ! isset( $urls[ $type ] ) )
@@ -273,9 +345,7 @@ class CPAC_Settings {
 	}
 
 	/**
-	 * Has Custom Field
-	 *
-	 * @since 2.0.0
+	 * @since 2.0
 	 */
 	public function uses_custom_fields() {
 
@@ -294,56 +364,9 @@ class CPAC_Settings {
 	}
 
 	/**
-	 * Handle Addon Download
-	 *
-	 * @since 2.0.0
-	 */
-	function handle_download_request() {
-
-		// API domain
-		$store_url = 'http://codepresshq.com';
-
-		if ( ! isset( $_REQUEST['cpac_product_id'] ) ) return false;
-
-		$args = array(
-			'codepress-wc-api' 	=> 'plugin_updater',
-			'secret_key'		=> '',
-			'product_id'		=> $_REQUEST['cpac_product_id'],
-			'licence_key'		=> isset( $_REQUEST['cpac_license_key'] ) ? $_REQUEST['cpac_license_key'] : '',
-			'slug'				=> '',
-			'instance'			=> 'fresh_install'
-		);
-
-		$result = wp_remote_get( add_query_arg( $args, $store_url ), array( 'timeout' => 15, 'sslverify' => false ) );
-
-		// Call the custom API.
-		$response = json_decode( wp_remote_retrieve_body( $result ) );
-
-		if ( ! $response  )  {
-			cpac_admin_message( 'Could not connect to API.', 'error' );
-			return;
-		}
-		if( isset( $response->error ) ) {
-			cpac_admin_message( $response->error, 'error' );
-			return;
-		}
-		if( empty( $response->package ) ) {
-			cpac_admin_message( 'No File found.', 'error' );
-			return;
-		}
-
-		// no @ signs allowed/
-		// source: http://wordpress.stackexchange.com/questions/64818/wp-sanitize-redirect-strips-out-signs-even-from-parameters-why
-		$redirect_url = str_replace( '@', urlencode('@'), $response->package );
-
-		wp_redirect( $redirect_url );
-		exit;
-	}
-
-	/**
 	 * Welcome screen
 	 *
-	 * @since 2.0.0
+	 * @since 2.0
 	 */
 	public function welcome_screen() {
 
@@ -360,7 +383,6 @@ class CPAC_Settings {
 		// Set check that welcome should not be displayed.
 		delete_transient('cpac_show_welcome');
 
-		// Get tab
 		$tab = !empty( $_GET['info'] ) ? $_GET['info'] : 'whats-new';
 
 		// check if old site used custom field columns
@@ -383,11 +405,8 @@ class CPAC_Settings {
 
 			<div class="cpac-content-body">
 				<h2 class="nav-tab-wrapper">
-					<a class="cpac-tab-toggle nav-tab <?php if( $tab == 'whats-new' ){ echo 'nav-tab-active'; } ?>" href="<?php echo $this->settings_urls->info; ?>whats-new"><?php _e( "What’s New", 'cpac' ); ?></a>
-					<a class="cpac-tab-toggle nav-tab <?php if( $tab == 'changelog' ){ echo 'nav-tab-active'; } ?>" href="<?php echo $this->settings_urls->info; ?>changelog"><?php _e( "Changelog", 'cpac' ); ?></a>
-					<?php if( $tab == 'download-add-ons' ): ?>
-					<a class="cpac-tab-toggle nav-tab nav-tab-active" href="<?php echo $this->settings_urls->info; ?>download-add-ons"><?php _e( "Download Addons", 'cpac' ); ?></a>
-					<?php endif; ?>
+					<a class="cpac-tab-toggle nav-tab <?php if( $tab == 'whats-new' ){ echo 'nav-tab-active'; } ?>" href="<?php echo $this->get_settings_url( 'info' ); ?>whats-new"><?php _e( "What’s New", 'cpac' ); ?></a>
+					<a class="cpac-tab-toggle nav-tab <?php if( $tab == 'changelog' ){ echo 'nav-tab-active'; } ?>" href="<?php echo $this->get_settings_url( 'info' ); ?>changelog"><?php _e( "Changelog", 'cpac' ); ?></a>
 				</h2>
 
 			<?php if ( 'whats-new' === $tab ) : ?>
@@ -400,13 +419,13 @@ class CPAC_Settings {
 				<h4><?php _e( "This website uses the Sortorder Addon. This addon needs to be downloaded." ,'cpac' ); ?></h4>
 				<div class="cpac-alert cpac-alert-success">
 					<p>
-						<?php _e( "Addons are seperate plugins which need to be downloaded.", 'cpac' ); ?> <a href="<?php echo $this->settings_urls->info; ?>download-add-ons" class="button-primary" style="display: inline-block;"><?php _e( "Download your Addons", 'cpac'); ?></a>
+						<?php _e( "Addons are seperate plugins which need to be downloaded.", 'cpac' ); ?> <a href="<?php echo $this->get_settings_url( 'info' ); ?>download-add-ons" class="button-primary" style="display: inline-block;"><?php _e( "Download your Addons", 'cpac'); ?></a>
 					</p>
 				</div>
 			<?php else : ?>
 				<div class="cpac-alert cpac-alert-success">
 					<p>
-						<strong><?php _e( 'This website does not use add-ons', 'cpac' ); ?></strong>. <a target="_blank" href="<?php echo $this->get_url('pro_addon'); ?>"><?php _e( 'See our website for the Pro-addon.', 'cpac' ); ?></a>
+						<strong><?php _e( 'This website does not use add-ons', 'cpac' ); ?></strong>. <a target="_blank" href="<?php echo $this->get_url('admincolumnspro'); ?>"><?php _e( 'See our website for Admin Columns Pro.', 'cpac' ); ?></a>
 					</p>
 				</div>
 			<?php endif; ?>
@@ -419,7 +438,7 @@ class CPAC_Settings {
 				<p><?php _e("The database has been changed between versions 1 and 2. But we made sure you can still roll back to version 1x without any issues.",'cpac'); ?></p>
 
 			<?php if ( get_option( 'cpac_version', false ) < CPAC_UPGRADE_VERSION ) : ?>
-				<p><?php _e("Make sure you backup your database and then click",'cpac'); ?> <a href="<?php echo $this->settings_urls->upgrade; ?>" class="button-primary"><?php _e( "Upgrade Database", 'cpac' );?></a></p>
+				<p><?php _e("Make sure you backup your database and then click",'cpac'); ?> <a href="<?php echo $this->get_settings_url( 'upgrade' ); ?>" class="button-primary"><?php _e( "Upgrade Database", 'cpac' );?></a></p>
 			<?php endif; ?>
 
 				<h4><?php _e( "Potential Issues", 'cpac' ); ?></h4>
@@ -452,54 +471,12 @@ class CPAC_Settings {
 				</ul>
 
 			<?php endif; ?>
-			<?php if ( 'download-add-ons' === $tab ) : ?>
-
-				<h3><?php _e("Overview",'cpac'); ?></h3>
-
-				<p><?php _e( "New to v2, all Addons act as separate plugins which need to be individually downloaded, installed and updated.", 'cpac' ); ?></p>
-				<p><?php _e( "This page will assist you in downloading and installing each available Addon.", 'cpac' ); ?></p>
-				<h3><?php _e( "Available Addons", 'cpac' ); ?></h3>
-
-				<table class="widefat" id="cpac-download-add-ons-table">
-					<thead>
-					<tr>
-						<th><?php _e("Name",'cpac'); ?></th>
-						<th><?php _e("Download",'cpac'); ?></th>
-					</tr>
-					</thead>
-					<tbody>
-					<?php if ( $uses_sortorder ): ?>
-					<tr>
-						<th class="td-name"><?php _e("Pro Add-on (includes Sortorder add-on)",'cpac'); ?></th>
-						<td class="td-download">
-							<a class="button" href="<?php echo $this->settings_urls->info; ?>download-add-ons&amp;cpac_product_id=cac-pro&amp;cpac_license_key=<?php echo get_option( "cpac_sortable_ac" ); ?>"><?php _e("Download",'cpac'); ?></a>
-						</td>
-					</tr>
-					<?php endif; ?>
-
-					</tbody>
-				</table>
-
-				<h3><?php _e("Installation",'cpac'); ?></h3>
-
-				<p><?php _e("For each Add-on available, please perform the following:",'cpac'); ?></p>
-				<ol>
-					<li><?php _e("Download the Addon plugin (.zip file) to your desktop",'cpac'); ?></li>
-					<li><?php _e("Navigate to",'cpac'); ?> <a target="_blank" href="<?php echo admin_url('plugin-install.php?tab=upload'); ?>"><?php _e("Plugins > Add New > Upload",'cpac'); ?></a></li>
-					<li><?php _e("Use the uploader to browse, select and install your Add-on (.zip file)",'cpac'); ?></li>
-					<li><?php _e("Once the plugin has been uploaded and installed, click the 'Activate Plugin' link",'cpac'); ?></li>
-					<li><?php _e("The Add-on is now installed and activated!",'cpac'); ?></li>
-					<li><?php printf( __("For automatic updates make sure to <a href='%s'>enter your licence key</a>.",'cpac'), $this->settings_urls->settings ); ?></li>
-				</ol>
-
-			<?php endif; ?>
-
 				<hr/>
 
 			</div><!--.cpac-content-body-->
 
 			<div class="cpac-content-footer">
-				<a class="button-primary button-large" href="<?php echo $this->settings_urls->general; ?>"><?php _e("Start using Admin Columns",'cpac'); ?></a>
+				<a class="button-primary button-large" href="<?php echo $this->get_settings_url( 'general' ); ?>"><?php _e("Start using Admin Columns",'cpac'); ?></a>
 			</div><!--.cpac-content-footer-->
 
 		</div>
@@ -509,209 +486,31 @@ class CPAC_Settings {
 	}
 
 	/**
-	 * Column Settings.
-	 *
-	 * @since 1.0.0
+	 * @since 2.2
 	 */
-	public function display() {
+	function display_menu_by_type( $menu_type = '', $label = '', $active_item = '' ) {
 
-		// Load Welcome screen
-		if ( $this->welcome_screen() ) return;
+		$storage_models_by_type = array();
 
-		$current_tab = ( empty( $_GET['tab'] ) ) ? 'general' : sanitize_text_field( urldecode( $_GET['tab'] ) );
+		foreach( $this->cpac->storage_models as $k => $storage_model ) {
+			if ( $menu_type == $storage_model->menu_type ) {
+				$storage_models_by_type[ $menu_type ][ $k ] = $storage_model;
+			}
+		}
 
-		// get first element from post-types
-		$post_types = array_values( $this->cpac->get_post_types() );
-		$first 		= array_shift( $post_types );
-	?>
-
-		<div id="cpac" class="wrap">
-
-			<?php screen_icon( 'codepress-admin-columns' ); ?>
-
-			<h2 class="nav-tab-wrapper cpac-nav-tab-wrapper">
-				<?php
-				$tabs = array(
-					'general'	=> __( 'Admin Columns', 'cpac' ),
-					'settings'	=> __( 'Settings', 'cpac' )
-				);
-				foreach( $tabs as $name => $label ) : ?>
-					<a href="<?php echo $this->settings_urls->admin . "&amp;tab={$name}"; ?>" class="nav-tab<?php if( $current_tab == $name ) echo ' nav-tab-active'; ?>"><?php echo $label; ?></a>
-				<?php endforeach; ?>
-			</h2>
-
-			<?php do_action( 'cpac_messages' ); ?>
-
+		if ( ! empty( $storage_models_by_type[ $menu_type ] ) ) { $count = 0; ?>
+			<ul class="subsubsub">
+				<li class="first"><?php echo $label; ?>: </li>
+			<?php foreach ( $storage_models_by_type[ $menu_type ] as $storage_model ) : ?>
+				<li><?php echo $count++ != 0 ? ' | ' : ''; ?><a href="#cpac-box-<?php echo $storage_model->key; ?>" <?php echo $storage_model->is_menu_type_current( $active_item ) ? ' class="current"' : '';?> ><?php echo $storage_model->label; ?></a></li>
+			<?php endforeach; ?>
+			</ul>
 		<?php
-		switch ($current_tab) :
-
-			case "general" :
-		?>
-
-			<div class="cpac-menu">
-				<ul class="subsubsub">
-					<?php $count = 0; ?>
-					<?php foreach ( $this->cpac->storage_models as $storage_model ) : ?>
-					<li><?php echo $count++ != 0 ? ' | ' : ''; ?><a href="#cpac-box-<?php echo $storage_model->key; ?>" <?php echo $storage_model->is_menu_type_current( $first ) ? ' class="current"' : '';?> ><?php echo $storage_model->label; ?></a></li>
-					<?php endforeach; ?>
-				</ul>
-			</div>
-
-			<?php foreach ( $this->cpac->storage_models as $storage_model ) : ?>
-
-			<div class="columns-container" data-type="<?php echo $storage_model->key ?>"<?php echo $storage_model->is_menu_type_current( $first ) ? '' : ' style="display:none"'; ?>>
-
-				<div class="columns-left">
-					<div id="titlediv">
-						<h2>
-							<?php echo $storage_model->label; ?>
-							<?php $storage_model->screen_link(); ?>
-						</h2>
-					</div>
-				</div>
-
-				<div class="columns-right">
-					<div class="columns-right-inside">
-						<div class="sidebox" id="form-actions">
-							<h3>
-								<?php _e( 'Store settings', 'cpac' ) ?>
-							</h3>
-							<?php $has_been_stored = $storage_model->get_stored_columns() ? true : false; ?>
-							<div class="form-update">
-								<a href="javascript:;" class="button-primary submit-update"><?php echo $has_been_stored ? __( 'Update' ) : __('Publish'); ?> <?php echo $storage_model->label; ?></a>
-							</div>
-							<?php if ( $has_been_stored ) : ?>
-							<div class="form-reset">
-								<a href="<?php echo add_query_arg( array( '_cpac_nonce' => wp_create_nonce('restore-type'), 'cpac_key' => $storage_model->key, 'cpac_action' => 'restore_by_type' ), $this->settings_urls->admin ); ?>" class="reset-column-type" onclick="return confirm('<?php printf( __( "Warning! The %s columns data will be deleted. This cannot be undone. \'OK\' to delete, \'Cancel\' to stop", 'cpac' ), $storage_model->label ); ?>');">
-									<?php _e( 'Restore', 'cpac' ); ?> <?php echo $storage_model->label; ?> <?php _e( 'columns', 'cpac' ); ?>
-								</a>
-							</div>
-							<?php endif; ?>
-
-							<?php do_action( 'cac/settings/form_actions', $storage_model ); ?>
-
-						</div><!--form-actions-->
-
-						<?php if ( ! class_exists( 'CAC_Addon_Pro' ) ) : ?>
-						<div class="sidebox" id="pro-version">
-							<div class="padding-box cta">
-								<h3>
-									<a href="<?php echo $this->get_url('pro_addon'); ?>"><?php _e( 'Get the Pro Add-on', 'cpac' ) ?></a>
-								</h3>
-								<div class="inside">
-									<ul>
-										<li><a href="<?php echo $this->get_url('pro_addon'); ?>"><?php _e( 'Add Sorting', 'cpac' ); ?></a></li>
-										<li><a href="<?php echo $this->get_url('pro_addon'); ?>"><?php _e( 'Add Filtering', 'cpac' ); ?></a></li>
-										<li><a href="<?php echo $this->get_url('pro_addon'); ?>"><?php _e( 'Add Import/Export', 'cpac' ); ?></a></li>
-									</ul>
-									<p>
-										<?php printf( __( 'Check the <a href="%s">Pro Add-on</a> for more details!', 'cpac' ), $this->get_url('pro_addon') ); ?>
-									</p>
-								</div>
-							</div>
-
-							<?php
-							// @todo: add newsletter
-							if ( false ) : ?>
-							<div class="padding-box newsletter">
-								<form action="http://codepress.us4.list-manage.com/subscribe/post?u=902ae7f162ce5bc38a0bc8a4f&amp;id=183e843a76" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
-									<?php $user = wp_get_current_user(); ?>
-									<p>
-										<?php _e ( "Subscribe to receive news &amp; updates below.", 'cpac' ); ?>
-									</p>
-									<div class="mc-field-group">
-										<label for="mce-FNAME"><?php _e( 'First Name', 'cpac' ); ?></label>
-										<input type="text" value="<?php echo trim( esc_attr( $user->first_name ) ); ?>" name="FNAME" class="" id="mce-FNAME">
-									</div>
-									<div class="mc-field-group">
-										<label for="mce-EMAIL"><?php _e( 'Your Email', 'cpac' ); ?></label>
-										<input type="email" value="<?php echo trim( esc_attr( $user->user_email ) ); ?>" name="EMAIL" class="required email" id="mce-EMAIL">
-									</div>
-									<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-								</form>
-							</div>
-							<?php endif; ?>
-						</div>
-					<?php endif; ?>
-
-						<div class="sidebox" id="plugin-support">
-							<h3><?php _e( 'Support', 'cpac' ); ?></h3>
-							<div class="inside">
-								<?php if ( version_compare( get_bloginfo( 'version' ), '3.2', '>' ) ) : ?>
-									<p><?php _e( 'Check the <strong>Help</strong> section in the top-right screen.', 'cpac' ); ?></p>
-								<?php endif; ?>
-								<p>
-									<?php printf( __("For full documentation, bug reports, feature suggestions and other tips <a href='%s'>visit the Admin Columns website</a>", 'cpac' ), $this->get_url('documentation') ); ?>
-								</p>
-							</div>
-						</div><!--.form-actions-->
-
-					</div><!--.columns-right-inside-->
-				</div><!--.columns-right-->
-
-				<div class="columns-left">
-					<div class="cpac-boxes">
-						<div class="cpac-columns">
-
-							<form method="post" action="">
-								<?php wp_nonce_field( 'update-type', '_cpac_nonce'); ?>
-
-								<input type="hidden" name="cpac_key" value="<?php echo $storage_model->key; ?>" />
-								<input type="hidden" name="cpac_action" value="update_by_type" />
-
-								<?php
-								foreach ( $storage_model->columns as $column ) {
-									$column->display();
-								}
-								?>
-							</form>
-
-						</div><!--.cpac-columns-->
-
-						<div class="column-footer">
-							<div class="order-message"><?php _e( 'Drag and drop to reorder', 'cpac' ); ?></div>
-
-							<div class="button-container">
-								<a href="javascript:;" class="add_column button button-primary">+ <?php _e( 'Add Column', 'cpac' );?></a><br/>
-							</div>
-
-						</div><!--.cpac-column-footer-->
-					</div><!--.cpac-boxes-->
-				</div><!--.columns-left-->
-				<div class="clear"></div>
-
-				<div class="for-cloning-only" style="display:none">
-					<?php
-					foreach ( $storage_model->get_registered_columns() as $column ) {
-						$column->display();
-					}
-					?>
-				</div>
-
-			</div><!--.columns-container-->
-
-			<?php endforeach; // storage_models ?>
-
-			<div class="clear"></div>
-
-		<?php
-				break; // case: general
-
-			case 'settings' :
-				$this->display_settings();
-				break;
-
-		endswitch;
-		?>
-
-		</div><!--.wrap-->
-	<?php
+		}
 	}
 
 	/**
-	 * General Settings.
-	 *
-	 * @since 1.0.0
+	 * @since 1.0
 	 */
 	public function display_settings() {
 	?>
@@ -731,12 +530,16 @@ class CPAC_Settings {
 								<p>
 									<br/>
 								</p>
+								<?php
+								/*
 								<p>
 									<label for="show_hidden">
 										<input name="cpac_general_options[show_hidden]" id="show_hidden" type="checkbox" value="1" <?php checked( isset( $options['show_hidden'] ) ? $options['show_hidden'] : '', '1' ); ?>>
 										<?php _e( 'Show hidden custom fields. Default is <code>off</code>.', 'cpac' ); ?>
 									</label>
 								</p>
+								*/
+								?>
 								<p>
 									<label for="show_edit_button">
 										<input name="cpac_general_options[show_edit_button]" id="show_edit_button" type="checkbox" value="1" <?php checked( isset( $options['show_edit_button'] ) ? $options['show_edit_button'] : '', '1' ); ?>>
@@ -803,5 +606,363 @@ class CPAC_Settings {
 		</table>
 
 	<?php
+	}
+
+	/**
+	 * @since 1.0
+	 */
+	public function display() {
+
+		if ( $this->welcome_screen() ) return;
+
+		$tabs = array(
+			'general'	=> __( 'Admin Columns', 'cpac' ),
+			'settings'	=> __( 'Settings', 'cpac' ),
+			'addons'	=> __( 'Add-ons', 'cpac' )
+		);
+
+		$tabs = apply_filters( 'cac/settings/tabs', $tabs );
+
+		$current_tab = ( empty( $_GET['tab'] ) ) ? 'general' : sanitize_text_field( urldecode( $_GET['tab'] ) );
+
+		$post_types = array_values( $this->cpac->get_post_types() );
+		$first 		= array_shift( $post_types );
+		?>
+
+		<div id="cpac" class="wrap">
+			<?php screen_icon( 'codepress-admin-columns' ); ?>
+			<h2 class="nav-tab-wrapper cpac-nav-tab-wrapper">
+				<?php foreach( $tabs as $name => $label ) : ?>
+					<a href="<?php echo $this->get_settings_url( 'admin' ) . "&amp;tab={$name}"; ?>" class="nav-tab<?php if( $current_tab == $name ) echo ' nav-tab-active'; ?>"><?php echo $label; ?></a>
+				<?php endforeach; ?>
+			</h2>
+
+			<?php do_action( 'cpac_messages' ); ?>
+
+			<?php
+			switch ( $current_tab ) :
+				case 'general':
+					?>
+					<div class="cpac-menu">
+						<?php $this->display_menu_by_type( 'post', __( 'Posttypes', 'cpac' ), $first ); ?>
+						<?php $this->display_menu_by_type( 'other', __( 'Others', 'cpac' ) ); ?>
+						<?php $this->display_menu_by_type( 'taxonomy', __( 'Taxonomies', 'cpac' ) ); ?>
+					</div>
+
+					<?php do_action( 'cac/settings/after_menu' ); ?>
+
+					<?php $count = 0; ?>
+					<?php foreach ( $this->cpac->storage_models as $storage_model ) : ?>
+						<div class="columns-container" data-type="<?php echo $storage_model->key ?>"<?php echo $storage_model->is_menu_type_current( $first ) ? '' : ' style="display:none"'; ?>>
+
+							<div class="columns-left">
+								<div id="titlediv">
+									<h2>
+										<?php echo $storage_model->label; ?>
+										<?php $storage_model->screen_link(); ?>
+									</h2>
+								</div>
+
+								<?php if ( $storage_model->stored_columns !== NULL ) : ?>
+									<div class="error below-h2">
+										<p><?php printf( __( 'The columns for <strong>%s</strong> are set up via PHP and can therefore not be edited in the admin panel.', 'cpac' ), $storage_model->label ); ?></p>
+									</div>
+								<?php endif; ?>
+							</div>
+
+							<div class="columns-right">
+								<div class="columns-right-inside">
+									<?php if ( $storage_model->stored_columns === NULL ) : ?>
+										<div class="sidebox" id="form-actions">
+											<h3>
+												<?php _e( 'Store settings', 'cpac' ) ?>
+											</h3>
+											<?php $has_been_stored = $storage_model->get_stored_columns() ? true : false; ?>
+											<div class="form-update">
+												<a href="javascript:;" class="button-primary submit-update"><?php echo $has_been_stored ? __( 'Update' ) : __('Save'); ?> <?php echo $storage_model->label; ?></a>
+											</div>
+											<?php if ( $has_been_stored ) : ?>
+											<div class="form-reset">
+												<a href="<?php echo add_query_arg( array( '_cpac_nonce' => wp_create_nonce('restore-type'), 'cpac_key' => $storage_model->key, 'cpac_action' => 'restore_by_type' ), $this->get_settings_url( 'admin' ) ); ?>" class="reset-column-type" onclick="return confirm('<?php printf( __( "Warning! The %s columns data will be deleted. This cannot be undone. \'OK\' to delete, \'Cancel\' to stop", 'cpac' ), $storage_model->label ); ?>');">
+													<?php _e( 'Restore', 'cpac' ); ?> <?php echo $storage_model->label; ?> <?php _e( 'columns', 'cpac' ); ?>
+												</a>
+											</div>
+											<?php endif; ?>
+
+											<?php do_action( 'cac/settings/form_actions', $storage_model ); ?>
+
+										</div><!--form-actions-->
+									<?php endif; ?>
+
+									<?php if ( ! class_exists( 'CAC_Addon_Pro' ) ) : ?>
+									<?php $url_args = array(
+										'utm_source' => 'plugin-installation',
+										'utm_medium' => 'banner',
+										'utm_campaign' => 'plugin-installation'
+									); ?>
+									<div class="sidebox" id="pro-version">
+										<div class="padding-box cta">
+											<h3>
+												<a href="<?php echo add_query_arg( array_merge( $url_args, array( 'utm_content' => 'title' ) ), $this->get_url( 'admincolumnspro' ) ); ?>"><?php _e( 'Get Admin Columns Pro', 'cpac' ) ?></a>
+											</h3>
+											<div class="inside">
+												<ul>
+													<li><a href="<?php echo add_query_arg( array_merge( $url_args, array( 'utm_content' => 'usp-sorting' ) ), $this->get_url( 'admincolumnspro' ) ) ?>"><?php _e( 'Add Sorting', 'cpac' ); ?></a></li>
+													<li><a href="<?php echo add_query_arg( array_merge( $url_args, array( 'utm_content' => 'usp-filtering' ) ), $this->get_url( 'admincolumnspro' ) ) ?>"><?php _e( 'Add Filtering', 'cpac' ); ?></a></li>
+													<li><a href="<?php echo add_query_arg( array_merge( $url_args, array( 'utm_content' => 'usp-import-export' ) ), $this->get_url( 'admincolumnspro' ) ) ?>"><?php _e( 'Add Import/Export', 'cpac' ); ?></a></li>
+													<li><a href="<?php echo add_query_arg( array_merge( $url_args, array( 'utm_content' => 'usp-editing' ) ), $this->get_url( 'admincolumnspro' ) ) ?>"><?php _e( 'Add Direct Editing', 'cpac' ); ?></a></li>
+												</ul>
+												<p>
+													<?php printf( __( 'Check out <a href="%s">Admin Columns Pro</a> for more details!', 'cpac' ), add_query_arg( array_merge( $url_args, array( 'utm_content' => 'cta' ) ), $this->get_url( 'admincolumnspro' ) ) ); ?>
+												</p>
+											</div>
+										</div>
+									</div>
+
+										<?php
+										// @todo: add newsletter
+										/* ?>
+										<div class="padding-box newsletter">
+											<form action="http://codepress.us4.list-manage.com/subscribe/post?u=902ae7f162ce5bc38a0bc8a4f&amp;id=183e843a76" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
+												<?php $user = wp_get_current_user(); ?>
+												<p>
+													<?php _e ( "Subscribe to receive news &amp; updates below.", 'cpac' ); ?>
+												</p>
+												<div class="mc-field-group">
+													<label for="mce-FNAME"><?php _e( 'First Name', 'cpac' ); ?></label>
+													<input type="text" value="<?php echo trim( esc_attr( $user->first_name ) ); ?>" name="FNAME" class="" id="mce-FNAME">
+												</div>
+												<div class="mc-field-group">
+													<label for="mce-EMAIL"><?php _e( 'Your Email', 'cpac' ); ?></label>
+													<input type="email" value="<?php echo trim( esc_attr( $user->user_email ) ); ?>" name="EMAIL" class="required email" id="mce-EMAIL">
+												</div>
+												<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+											</form>
+										</div>
+										<?php */ ?>
+
+
+									<div class="sidebox" id="direct-feedback">
+										<div id="feedback-choice">
+											<h3><?php _e( 'Are you happy with Admin Columns?', 'cpac' ); ?></h3>
+											<div class="inside">
+												<a href="#" class="yes">Yes</a>
+												<a href="#" class="no">No</a>
+											</div>
+										</div>
+										<div id="feedback-support">
+											<div class="inside">
+												<p><?php _e( "What's wrong? Need help? Let us know!", 'cpac' ); ?></p>
+												<p><?php _e( 'Check out our extensive documentation, or you can open a support topic on WordPress.org!', 'cpac' ); ?></p>
+												<ul class="share">
+													<li>
+														<a href="<?php echo add_query_arg( array(
+															'utm_source' => 'plugin-installation',
+															'utm_medium' => 'feedback-docs-button',
+															'utm_campaign' => 'plugin-installation'
+														), $this->get_url( 'documentation' ) ); ?>" target="_blank">
+															<div class="dashicons dashicons-editor-help"></div> <?php _e( 'Docs', 'cpac' ); ?>
+														</a>
+													</li>
+													<li>
+														<a href="https://wordpress.org/support/plugin/codepress-admin-columns" target="_blank">
+															<div class="dashicons dashicons-wordpress"></div> <?php _e( 'Forums', 'cpac' ); ?>
+														</a>
+													</li>
+												</ul>
+												<div class="clear"></div>
+											</div>
+										</div>
+										<div id="feedback-rate">
+											<div class="inside">
+												<p><?php _e( "Woohoo! We're glad to hear that!", 'cpac' ); ?></p>
+												<p><?php _e( 'We would really love it if you could show your appreciation by giving us a rating on WordPress.org or tweet about Admin Columns!', 'cpac' ); ?></p>
+												<ul class="share">
+													<li>
+														<a href="http://wordpress.org/support/view/plugin-reviews/codepress-admin-columns#postform" target="_blank">
+															<div class="dashicons dashicons-star-empty"></div> <?php _e( 'Rate', 'cpac' ); ?>
+														</a>
+													</li>
+
+													<li>
+														<a href="<?php echo add_query_arg( array(
+															'hashtags' => 'wordpress',
+															'text' => urlencode( "I'm using Admin Columns for WordPress!" ),
+															'url' => urlencode( 'http://wordpress.org/plugins/codepress-admin-columns/' ),
+															'via' => 'wpcolumns'
+														), 'https://twitter.com/intent/tweet' ); ?>" target="_blank">
+															<div class="dashicons dashicons-twitter"></div> <?php _e( 'Tweet', 'cpac' ); ?>
+														</a>
+													</li>
+
+													<li>
+														<a href="<?php echo add_query_arg( array(
+															'utm_source' => 'plugin-installation',
+															'utm_medium' => 'feedback-purchase-button',
+															'utm_campaign' => 'plugin-installation'
+														), $this->get_url( 'admincolumnspro' ) ); ?>" target="_blank">
+															<div class="dashicons dashicons-cart"></div> <?php _e( 'Buy Pro', 'cpac' ); ?>
+														</a>
+													</li>
+												</ul>
+												<div class="clear"></div>
+											</div>
+										</div>
+									</div>
+
+									<?php endif; ?>
+
+									<div class="sidebox" id="plugin-support">
+										<h3><?php _e( 'Support', 'cpac' ); ?></h3>
+										<div class="inside">
+											<?php if ( version_compare( get_bloginfo( 'version' ), '3.2', '>' ) ) : ?>
+												<p><?php _e( 'Check the <strong>Help</strong> section in the top-right screen.', 'cpac' ); ?></p>
+											<?php endif; ?>
+											<p>
+												<?php printf( __("For full documentation, bug reports, feature suggestions and other tips <a href='%s'>visit the Admin Columns website</a>", 'cpac' ), $this->get_url('documentation') ); ?>
+											</p>
+										</div>
+									</div><!--plugin-support-->
+
+								</div><!--.columns-right-inside-->
+							</div><!--.columns-right-->
+
+							<div class="columns-left">
+								<div class="cpac-boxes">
+									<?php if ( $storage_model->stored_columns === NULL ) : ?>
+										<div class="cpac-columns">
+
+											<form method="post" action="">
+												<?php wp_nonce_field( 'update-type', '_cpac_nonce'); ?>
+
+												<input type="hidden" name="cpac_key" value="<?php echo $storage_model->key; ?>" />
+												<input type="hidden" name="cpac_action" value="update_by_type" />
+
+												<?php
+												foreach ( $storage_model->columns as $column ) {
+													$column->display();
+												}
+												?>
+											</form>
+
+										</div><!--.cpac-columns-->
+
+										<div class="column-footer">
+											<div class="order-message"><?php _e( 'Drag and drop to reorder', 'cpac' ); ?></div>
+
+											<div class="button-container">
+												<a href="javascript:;" class="add_column button button-primary">+ <?php _e( 'Add Column', 'cpac' );?></a><br/>
+											</div>
+
+										</div><!--.cpac-column-footer-->
+									<?php endif; ?>
+								</div><!--.cpac-boxes-->
+							</div><!--.columns-left-->
+							<div class="clear"></div>
+
+							<div class="for-cloning-only" style="display:none">
+								<?php
+								foreach ( $storage_model->get_registered_columns() as $column ) {
+									$column->display();
+								}
+								?>
+							</div>
+						</div><!--.columns-container-->
+					<?php endforeach; // storage_models ?>
+
+					<div class="clear"></div>
+					<?php
+					break; // case: general
+				case 'settings' :
+					$this->display_settings();
+					break;
+				case 'addons' :
+					$this->tab_addons();
+					break;
+				case 'help' :
+					//$this->tab_addons();
+					break;
+				default:
+					echo apply_filters( 'cac/settings/tab_contents/tab=' . $current_tab, apply_filters( 'cac/settings/tab_contents', '', $current_tab ) );
+					break;
+			endswitch;
+			?>
+		</div><!--.wrap-->
+	<?php
+	}
+
+	/**
+	 * @since 2.2
+	 */
+	public function tab_addons() {
+
+		$addon_groups = $this->cpac->addons()->get_addon_groups();
+		$grouped_addons = $this->cpac->addons()->get_available_addons( true );
+		?>
+		<?php foreach ( $grouped_addons as $group_name => $addons ) : ?>
+			<h3><?php echo $addon_groups[ $group_name ]; ?></h3>
+
+			<ul class="cpac-addons">
+				<?php foreach ( $addons as $addon_name => $addon ) : ?>
+					<li>
+						<div class="cpac-addon-content">
+							<?php if ( ! empty( $addon['image'] ) ) : ?>
+								<img src="<?php echo $addon['image']; ?>" />
+							<?php else : ?>
+								<h3><?php echo $addon['title']; ?></h3>
+							<?php endif; ?>
+						</div>
+						<div class="cpac-addon-header">
+							<h3><?php echo $addon['title']; ?></h3>
+							<p><?php echo $addon['description']; ?></p>
+						</div>
+						<div class="cpac-addon-actions">
+							<?php
+
+							// Installed..
+							if ( ( $plugin_basename = $this->cpac->addons()->get_installed_addon_plugin_basename( $addon_name ) ) ) : ?>
+								<?php if ( is_plugin_active( $plugin_basename ) ) : ?>
+									<?php $deactivation_url = wp_nonce_url( add_query_arg( array(
+										'action' => 'deactivate',
+										'plugin' => urlencode( $plugin_basename ),
+										'cpac-redirect' => true
+									), admin_url( 'plugins.php' ) ), 'deactivate-plugin_' . $plugin_basename ); ?>
+									<a href="#" class="button button-disabled cpac-installed"><?php _e( 'Active', 'cpac' ); ?></a>
+									<a href="<?php echo esc_attr( $deactivation_url ); ?>" class="button right"><?php _e( 'Deactivate', 'cpac' ); ?></a>
+								<?php else : ?>
+									<?php $activation_url = wp_nonce_url( add_query_arg( array(
+										'action' => 'activate',
+										'plugin' => urlencode( $plugin_basename ),
+										'cpac-redirect' => true
+									), admin_url( 'plugins.php' ) ), 'activate-plugin_' . $plugin_basename ); ?>
+									<a href="#" class="button button-disabled cpac-installed"><?php _e( 'Installed', 'cpac' ); ?></a>
+									<a href="<?php echo esc_attr( $activation_url ); ?>" class="button right"><?php _e( 'Activate', 'cpac' ); ?></a>
+								<?php endif; ?>
+							<?php
+
+							// Not installed...
+							else :
+
+								// Got ACP?
+								if ( class_exists('CAC_Addon_Pro') ) :
+									$install_url = wp_nonce_url( add_query_arg( array(
+										'action' => 'install',
+										'plugin' => $addon_name,
+									), $this->get_settings_url( 'addons' ) ), 'install-cac-addon' );
+									?>
+									<a href="<?php echo esc_attr( $install_url ); ?>" class="button"><?php _e( 'Download & Install', 'cpac' ); ?></a>
+								<?php
+
+								// Get ACP?
+								else : ?>
+									<a target="_blank" href="<?php echo esc_attr( $this->get_url('pricing') ); ?>" class="button"><?php _e( 'Get this add-on', 'cpac' ); ?></a>
+								<?php endif; ?>
+							<?php endif; ?>
+						</div>
+					</li>
+				<?php endforeach; // addons ?>
+			</ul>
+		<?php endforeach; // grouped_addons ?>
+		<?php
 	}
 }

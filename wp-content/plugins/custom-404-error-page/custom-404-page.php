@@ -3,7 +3,7 @@
 Plugin Name: Custom 404 Error Page
 Plugin URI: 
 Description: Set any page to be used as 404 error page.
-Version: 0.2
+Version: 0.2.4
 Author: Kaspars Dambis
 Domain Path: /lang
 Text Domain: custom-404-page
@@ -39,7 +39,7 @@ class Custom404Page {
 		// This will allow for symlinked plugins
 		$this->plugin_path = sprintf( '%s/%s/%s', WP_PLUGIN_DIR, basename( dirname( __FILE__ ) ), basename( __FILE__ ) );
 
-		$this->page_for_404 = get_option( 'page_for_404' );
+		$this->page_for_404 = (int) get_option( 'page_for_404' );
 
 		// Add Page 404 settings to Settings > Reading
 		add_action( 'admin_init', array( $this, 'custom_404_page_admin_settings' ) );
@@ -54,9 +54,6 @@ class Custom404Page {
 
 			// Set WP to use page template (page.php) even when returning 404
 			add_filter( '404_template', array( $this, 'maybe_use_custom_404_template' ) );
-			
-			// Set our custom 404 page for the loop
-			add_filter( 'the_posts', array( $this, 'maybe_set_custom_404_page' ) );
 			
 			// Disable direct access to our custom 404 page
 			add_action( 'template_redirect',  array( $this, 'maybe_redirect_custom_404_page' ) );
@@ -161,8 +158,28 @@ class Custom404Page {
 
 	function maybe_use_custom_404_template( $template ) {
 
+		global $wp_query, $post;
+
 		if ( is_404() && $this->page_for_404 ) {
 
+			// Get our custom 404 post object. We need to assign
+			// $post global in order to force get_post() to work
+			// during page template resolving.
+			$post = get_post( $this->page_for_404 );
+
+			// Populate the posts array with our 404 page object
+			$wp_query->posts = array( $post );
+
+			// Set the query object to enable support for custom page templates
+			$wp_query->queried_object_id = $this->page_for_404;
+			$wp_query->queried_object = $post;
+			
+			// Set post counters to avoid loop errors
+			$wp_query->post_count = 1;
+			$wp_query->found_posts = 1;
+			$wp_query->max_num_pages = 0;
+
+			// Return the page.php template instead of 404.php
 			return get_page_template();
 
 		}
@@ -180,19 +197,6 @@ class Custom404Page {
 			exit;
 		
 		}
-
-	}
-
-
-	function maybe_set_custom_404_page( $posts ) {
-
-		if ( is_404() && $this->page_for_404 ) {
-
-			return array( get_post( $this->page_for_404 ) );
-
-		}
-
-		return $posts;
 
 	}
 

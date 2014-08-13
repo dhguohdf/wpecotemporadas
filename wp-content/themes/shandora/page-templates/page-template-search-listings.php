@@ -48,7 +48,6 @@ get_header();
                     }
 
 
-                    
                     // if city is set add it to taxonomy query
                     if(isset($_GET['property_location']) && !empty($_GET['property_location']))
                     {
@@ -120,7 +119,7 @@ get_header();
                         if( $beds != 'any' )
                         {                               
                             $meta_query[] = array(
-                                'key' => 'shandora_listing_bed',
+                                'key' => bon_get_prefix() . 'listing_bed',
                                 'value' => $beds,
                                 'compare' => '>=',
                                 'type'=> 'NUMERIC'
@@ -135,7 +134,7 @@ get_header();
                         if( $baths != 'any' )
                         {                               
                                 $meta_query[] = array(
-                                                'key' => 'shandora_listing_bath',
+                                                'key' => bon_get_prefix() . 'listing_bath',
                                                 'value' => $baths,
                                                 'compare' => '=',
                                                 'type'=> 'NUMERIC'
@@ -150,7 +149,7 @@ get_header();
                         if( $basement != 'any' )
                         {                               
                                 $meta_query[] = array(
-                                                'key' => 'shandora_listing_basement',
+                                                'key' => bon_get_prefix() . 'listing_basement',
                                                 'value' => $basement,
                                                 'compare' => '=',
                                                 'type'=> 'NUMERIC'
@@ -165,7 +164,7 @@ get_header();
                         if( $garage != 'any' )
                         {                               
                                 $meta_query[] = array(
-                                                'key' => 'shandora_listing_garage',
+                                                'key' => bon_get_prefix() . 'listing_garage',
                                                 'value' => $garage,
                                                 'compare' => '=',
                                                 'type'=> 'NUMERIC'
@@ -180,7 +179,7 @@ get_header();
                         if( $floor != 'any' )
                         {                               
                                 $meta_query[] = array(
-                                                'key' => 'shandora_listing_floor',
+                                                'key' => bon_get_prefix() . 'listing_floor',
                                                 'value' => $floor,
                                                 'compare' => '=',
                                                 'type'=> 'NUMERIC'
@@ -194,7 +193,7 @@ get_header();
                         if( $status != 'any' )
                         {                               
                             $meta_query[] = array(
-                                'key' => 'shandora_listing_status',
+                                'key' => bon_get_prefix() . 'listing_status',
                                 'value' => $status,
                                 'compare' => '=',
                             );
@@ -207,7 +206,7 @@ get_header();
                         if( $zip != 'any' )
                         {                               
                             $meta_query[] = array(
-                                'key' => 'shandora_listing_zip',
+                                'key' => bon_get_prefix() . 'listing_zip',
                                 'value' => $zip,
                                 'compare' => '=',
                             );
@@ -220,8 +219,21 @@ get_header();
                         if( $mls != 'any' )
                         {                               
                             $meta_query[] = array(
-                                'key' => 'shandora_listing_mls',
+                                'key' => bon_get_prefix() . 'listing_mls',
                                 'value' => $mls,
+                                'compare' => '=',
+                            );
+                        }
+                    }
+
+                    if(isset($_GET['yearbuilt']) && !empty($_GET['yearbuilt']) )
+                    {
+                        $yearbuilt = $_GET['yearbuilt'];
+                        if( $yearbuilt != '' )
+                        {                               
+                            $meta_query[] = array(
+                                'key' => bon_get_prefix() . 'listing_yearbuild',
+                                'value' => $yearbuilt,
                                 'compare' => '=',
                             );
                         }
@@ -233,7 +245,7 @@ get_header();
                         if( $mortgage != 'any' )
                         {                               
                             $meta_query[] = array(
-                                'key' => 'shandora_listing_mortgage',
+                                'key' => bon_get_prefix() . 'listing_mortgage',
                                 'value' => $mortgage,
                                 'compare' => '=',
                             );
@@ -246,7 +258,7 @@ get_header();
                         if( $agent != 'any' )
                         {                               
                             $meta_query[] = array(
-                                'key' => 'shandora_listing_agentpointed',
+                                'key' => bon_get_prefix() . 'listing_agentpointed',
                                 'value' => serialize(array(strval($agent))),
                                 'compare' => '=',
                             );
@@ -264,7 +276,7 @@ get_header();
                         //ignore max price
                         if( $min_price >= 0 && $max_price == $the_max ) {
                             $meta_query[] = array(
-                                    'key' => 'shandora_listing_price',
+                                    'key' => bon_get_prefix() . 'listing_price',
                                     'value' => $min_price,
                                     'type' => 'NUMERIC',
                                     'compare' => '>='
@@ -274,12 +286,12 @@ get_header();
                         else if( $min_price >= 0 && $max_price > $min_price )
                         {                               
                             $meta_query[] = array(
-                                    'key' => 'shandora_listing_price',
+                                    'key' => bon_get_prefix() . 'listing_price',
                                     'value' => array( $min_price, $max_price ),
                                     'type' => 'NUMERIC',
                                     'compare' => 'BETWEEN'
                                 );
-                        } 
+                        }
                     }
 
                      // if both of the min and max prices are specified then add them to meta query
@@ -292,7 +304,7 @@ get_header();
                         if( $min >= 0 && $max > $min )
                         {                               
                             $meta_query[] = array(
-                                                'key' => 'shandora_listing_lotsize',
+                                                'key' => bon_get_prefix() . 'listing_lotsize',
                                                 'value' => array( $min, $max ),
                                                 'type' => 'NUMERIC',
                                                 'compare' => 'BETWEEN'
@@ -309,7 +321,7 @@ get_header();
                         if( $min >= 0 && $max > $min )
                         {                               
                             $meta_query[] = array(
-                                                'key' => 'shandora_listing_buildingsize',
+                                                'key' => bon_get_prefix() . 'listing_buildingsize',
                                                 'value' => array( $min, $max ),
                                                 'type' => 'NUMERIC',
                                                 'compare' => 'BETWEEN'
@@ -338,7 +350,8 @@ get_header();
                     $search_args = array(
                                 'post_type' => 'listing',
                                 'posts_per_page' => $numberposts,
-                                'paged' => $paged                          
+                                'paged' => $paged,
+                                'post_title' => isset( $_GET['title'] ) ? $_GET['title'] : '',                          
                     );
                     
                     if($tax_count > 0)
@@ -351,19 +364,40 @@ get_header();
                         $search_args['meta_query'] = $meta_query;
                     }
 
-                    $orderby = '';
+                    $orderby = bon_get_option('listing_orderby');
+                    $order = bon_get_option('listing_order', 'DESC');
                     $key = '';
+
+                    switch ( $orderby ) {
+                        case 'price':
+                            $orderby = 'meta_value_num';
+                            $key = bon_get_prefix() . 'listing_price';
+                            break;
+                        
+                        case 'title':
+                            $orderby = 'title';
+
+                            break;
+
+                        case 'size':
+                            $orderby = 'meta_value_num';
+                            $key = bon_get_prefix() . 'listing_buildingsize';
+
+                            break;
+
+                        default:
+                            $orderby = 'date';
+                            break;
+                    }
+                    
                     if(isset($_GET['search_orderby'])) {
                         $orderby = $_GET['search_orderby'];
                     }
-                    $order = 'DESC';
+                    
                     if(isset($_GET['search_order'])) {
                         $order = $_GET['search_order'];
                     }
-                    if($orderby == 'price') {
-                        $key = 'shandora_listing_price';
-                        $orderby = 'meta_value_num';
-                    }
+
                     $search_args['meta_key'] = $key;
                     $search_args['orderby'] = $orderby;
                     $search_args['order'] = $order;
@@ -372,7 +406,7 @@ get_header();
 
                     ?>
 
-                <?php bon_get_template_part('loop', 'listing'); ?>
+                <?php bon_get_template_part( 'loop', 'listing' ); ?>
 
                 <?php bon_get_template_part( 'loop','nav' ); // Loads the loop-nav.php template. ?>
             <?php 

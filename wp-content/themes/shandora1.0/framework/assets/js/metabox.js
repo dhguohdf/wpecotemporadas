@@ -218,7 +218,7 @@
 
 			clone.find('.datepicker').each(function(){
 				$(this).datepicker({
-					dateFormat: 'yy-mm-dd'
+					dateFormat: 'dd-mm-yy'
 				});
 			});
 
@@ -302,9 +302,9 @@
 				// Create the media frame.
 				image_gallery_frame = wp.media.frames.downloadable_file = wp.media({
 					// Set the title of the modal.
-					title: 'Adicionar imagens à galeria',
+					title: 'Escolha suas imagens',
 					button: {
-						text: 'Finalizar galeria de imagens',
+						text: 'Utilizar imagens',
 					},
 					multiple: true
 				});

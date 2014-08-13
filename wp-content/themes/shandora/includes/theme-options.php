@@ -29,15 +29,16 @@ if( !function_exists('bon_set_theme_options') ) {
 		    }
 		}
 
-		$color_options = array(
+		$color_options = apply_filters('bon_color_options', array(
 			'blue' => __('Blue', 'bon'),
 			'red' => __('Red', 'bon'),
 			'green' => __('Green', 'bon'),
 			'orange' => __('Orange', 'bon'),
 			'purple' => __('Purple', 'bon'),
-		);
+		));
 		
-		$search_fields = array(
+		$search_fields = apply_filters('bon_search_field_options', array(
+			'title' => __('Post Title Field (Real Estate / Car Dealer)', 'bon'),
 			'mls' => __('MLS Text Field', 'bon'),
 			'zip' => __('Zip Text Field', 'bon'),
 			'status' => __('Status Dropdown', 'bon'),
@@ -57,9 +58,9 @@ if( !function_exists('bon_set_theme_options') ) {
 			'price' => __('Price Range Slider', 'bon'),
 			'bed' => __('Beds Slider', 'bon'),
 			'bath' => __('Baths Slider', 'bon'),
-		);
+		));
 
-		$car_search_fields = array(
+		$car_search_fields = apply_filters('bon_car_search_field_options', array(
 			'reg' => __('Reg Number Field **Car Listing**', 'bon'),
 			'car_status' => __('Car Status Dropdown **Car Listing**','bon'),
 			'mileage' => __('Mileage Slider **Car Listing**', 'bon'),
@@ -75,7 +76,23 @@ if( !function_exists('bon_set_theme_options') ) {
 			'manufacturer' => __('Manufacturer Dropdown **Car Listing**', 'bon'),
 			'manufacturer_level1' => __('Manufacturer Dropdown Level 1 **Car Listing**', 'bon'),
 			'manufacturer_level2' => __('Manufacturer Dropdown Level 2 **Car Listing**', 'bon'),
-			'manufacturer_level3' => __('Manufacturer Dropdown Level 3 **Car Listing**', 'bon')
+			'manufacturer_level3' => __('Manufacturer Dropdown Level 3 **Car Listing**', 'bon'),
+			'dealer_location_level1' => __('Level 1 Dealer Location Only **Car Listing**', 'bon'),
+			'dealer_location_level2' => __('Level 2 Dealer Location Only **Car Listing**', 'bon'),
+			'dealer_location_level3' => __('Level 3 Dealer Location Only **Car Listing**', 'bon'),
+			'yearbuilt' => __('Year Built', 'bon'),
+		));
+
+		$orderby_options = apply_filters('bon_orderby_options', array(
+			'date' => __('Date', 'bon'),
+			'price' => __('Price', 'bon'),
+			'title' => __('Title', 'bon'),
+			'buildingsize' => __('Size', 'bon'),
+		));
+
+		$order_options = array(
+			'ASC' => __('Ascending', 'bon'),
+			'DESC' => __('Descending', 'bon')
 		);
 
 		if(bon_get_option('enable_car_listing') == 'yes') {
@@ -166,6 +183,12 @@ if( !function_exists('bon_set_theme_options') ) {
 		    				'desc' => __( 'How many slideshow to show?', 'bon' ),
 		    				'id' => 'slider_post_per_page',
 		    				'std' => '',
+		    				'type' => 'text' );
+
+		$options[] = array( 'slug' => 'bon_options',
+							'label' => __( 'Slider Interval', 'bon' ),
+		    				'desc' => __( 'Slideshow Interval for each auto slide', 'bon' ),
+		    				'id' => 'slider_interval',
 		    				'type' => 'text' );
 
 		$options[] = array( 'slug' => 'bon_options', 'label' => __( 'Show BreadCrumb', 'bon' ),
@@ -356,6 +379,18 @@ if( !function_exists('bon_set_theme_options') ) {
 		                    	),
 		                    );
 
+
+		$options[] = array( 'slug' => 'bon_options',
+							'label' => __( 'Enable Real Estate Listing', 'bon' ),
+		                    'desc' => __('If enable there will be new menu in admin','bon'),
+		                    'id' => 'enable_property_listing',
+		                    'type' => 'select',
+		                    'options' => array(
+		                    	'yes' => __('Yes','bon'),
+		                    	'no' => __('No','bon')
+		                    	),
+		                    );
+
 		$options[] = array( 'slug' => 'bon_options',
 							'label' => __( 'Enable Car Dealership Listing', 'bon' ),
 		                    'desc' => __('If enable there will be new menu in admin','bon'),
@@ -366,6 +401,24 @@ if( !function_exists('bon_set_theme_options') ) {
 		                    	'no' => __('No','bon')
 		                    	),
 		                    );
+
+		$options[] = array( 'slug' => 'bon_options',
+							'label' => __( 'Default Order By', 'bon' ),
+		                    'desc' => __('Select default listing order by','bon'),
+		                    'id' => 'listing_orderby',
+		                    'type' => 'select',
+		                    'options' => $orderby_options
+		                    );
+
+
+		$options[] = array( 'slug' => 'bon_options',
+							'label' => __( 'Default Order', 'bon' ),
+		                    'desc' => __('Select default listing order','bon'),
+		                    'id' => 'listing_order',
+		                    'type' => 'select',
+		                    'options' => $order_options
+		                    );
+
 
 		$options[] = array( 'slug' => 'bon_options',
 							'label' => __( 'Compare Page', 'bon' ),
@@ -723,16 +776,6 @@ if( !function_exists('bon_set_theme_options') ) {
 		                     );
 			}
 		}
-
-		$options[] = array( 'slug' => 'bon_options',
-							'label' => __( 'Slider Label', 'bon' ),
-		                    'desc' => __('If you are using multilevel location define the label here.','bon'),
-		                    'id' => 'test',
-		                    'min' => '0',
-		                    'max' => '100',
-		                    'step' => '5',
-		                    'type' => 'slider' );
-
 
 		$options[] = array( 'slug' => 'bon_options',
 							'label' => __( 'Location Level 1 Label', 'bon' ),
@@ -1103,7 +1146,107 @@ if( !function_exists('bon_set_theme_options') ) {
 		    					)
 		    				) );
 
-		return $options;
+
+		$options[] = array( 'slug' => 'bon_options', 
+							'label' => __( 'URL Rewrite', 'bon' ),
+		    				'type' => 'heading',
+		    				'icon' => 'box' );
+
+		$options[] = array( 'slug' => 'bon_options',
+							'label' => '',
+		                    'desc' => '',
+		                    'std' =>  __( 'This section will handle Custom URL Rewrite for the Listing. Default url for real estate is "http://yourdomain.com/listing/post-title" and for car listing is "http://yourdomain.com/car-listing/post-title" you can rewrite it into something else in here.', 'bon' ),
+		                    'type' => 'info' );
+
+		$options[] = array( 'slug' => 'bon_options',
+							'label' => '',
+		                    'desc' => '',
+		                    'std' =>  __( 'Please note that you are required to flush your permalink after enable this feature by going to Settings > Permalink and hit save', 'bon' ),
+		                    'type' => 'info' );
+
+		$options[] = array( 'slug' => 'bon_options', 
+							'label' => __( 'Enable Custom Url Rewrite', 'bon' ),
+		    				'id' => 'use_rewrite',
+		    				'type' => 'select',
+		    				'options' => array(
+		    					'no' => __('No', 'bon'),
+		    					'yes' => __('Yes', 'bon'),
+		    				)
+		    			);
+
+		$options[] = array( 'slug' => 'bon_options', 
+							'label' => __( 'Rewrite Root', 'bon' ),
+		    				'id' => 'rewrite_root',
+		    				'type' => 'text',
+		    				'desc' => __('The Global listing URL base /listing/real-estate/ (non-required), if not empty will use %rewrite_root%/%real_estate_or_car_base%', 'bon')
+		    			);
+
+		$options[] = array( 'slug' => 'bon_options', 
+							'label' => __( 'Real Estate Listing Base', 'bon' ),
+		    				'id' => 'realestate_root',
+		    				'type' => 'text',
+		    				'desc' => __('The Property Feature URL base /listing/ (required)', 'bon')
+		    			);
+
+		$options[] = array( 'slug' => 'bon_options', 
+							'label' => __( 'Real Estate Property Type Base', 'bon' ),
+		    				'id' => 'realestate_property_type_root',
+		    				'type' => 'text',
+		    				'desc' => __('The Property Type URL base /property-type/ (required)', 'bon')
+		    			);
+
+		$options[] = array( 'slug' => 'bon_options', 
+							'label' => __( 'Real Estate Property Location Base', 'bon' ),
+		    				'id' => 'realestate_property_location_root',
+		    				'type' => 'text',
+		    				'desc' => __('The Property Location URL base /property-location/ (required)', 'bon')
+		    			);
+
+		$options[] = array( 'slug' => 'bon_options', 
+							'label' => __( 'Real Estate Property Feature Base', 'bon' ),
+		    				'id' => 'realestate_property_feature_root',
+		    				'type' => 'text',
+		    				'desc' => __('The Property Feature URL base /property-feature/ (required)', 'bon')
+		    			);
+
+
+		$options[] = array( 'slug' => 'bon_options', 
+							'label' => __( 'Car Listing Base', 'bon' ),
+		    				'id' => 'car_root',
+		    				'type' => 'text',
+		    				'desc' => __('The Global Car Listing URL base /car-listing/ (required)', 'bon')
+		    			);
+
+
+		$options[] = array( 'slug' => 'bon_options', 
+							'label' => __( 'Car Manufacturer Base', 'bon' ),
+		    				'id' => 'car_manufacturer_root',
+		    				'type' => 'text',
+		    				'desc' => __('The Manufacturer URL base /manufacturer/ (required)','bon')
+		    			);
+
+		$options[] = array( 'slug' => 'bon_options', 
+							'label' => __( 'Car Body Type Base', 'bon' ),
+		    				'id' => 'car_body_type_root',
+		    				'type' => 'text',
+		    				'desc' => __('The Body Type URL base /body-type/ (required)','bon')
+		    			);
+
+		$options[] = array( 'slug' => 'bon_options', 
+							'label' => __( 'Car Dealer Location Base', 'bon' ),
+		    				'id' => 'car_dealer_location_root',
+		    				'type' => 'text',
+		    				'desc' => __('The Dealer Location URL base /dealer-location/ (required)','bon')
+		    			);
+
+		$options[] = array( 'slug' => 'bon_options', 
+							'label' => __( 'Car Feature Base', 'bon' ),
+		    				'id' => 'car_feature_root',
+		    				'type' => 'text',
+		    				'desc' => __('The Car Feature URL base /car-feature/ (required)','bon')
+		    			);
+
+		return apply_filters( 'bon_theme_options', $options );
 	}
 }
 

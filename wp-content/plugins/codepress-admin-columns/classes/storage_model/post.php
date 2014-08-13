@@ -5,27 +5,17 @@ class CPAC_Storage_Model_Post extends CPAC_Storage_Model {
 	/**
 	 * Constructor
 	 *
-	 * @since 2.0.0
+	 * @since 2.0
 	 */
 	function __construct( $post_type ) {
 
 		$this->key 		 = $post_type;
 		$this->label 	 = $this->get_label();
 		$this->type 	 = 'post';
+		$this->meta_type = 'post';
 		$this->page 	 = 'edit';
 		$this->post_type = $post_type;
-
-		// @todo_minor
-		// Add parent::__construct and move these two over:
-		// $this->set_custom_columns()
-		// add_action( 'admin_init', array( $this, 'set_columns' ) );
-		// also for the other types
-
-		$this->set_columns_filepath();
-
-		// Populate columns variable.
-		// This is used for manage_value. By storing these columns we greatly improve performance.
-		add_action( 'admin_init', array( $this, 'set_columns' ) );
+		$this->menu_type = 'post';
 
 		// Headings
 
@@ -33,17 +23,65 @@ class CPAC_Storage_Model_Post extends CPAC_Storage_Model {
 		add_filter( "manage_{$post_type}_posts_columns", array( $this, 'add_headings' ), 100, 1 );
 
 		// Deprecated ( as of 3.1 ) Note: This one is still used by woocommerce.
+		// Priority set to 11 top make sure the WooCommerce headings are overwritten by CAC
 		// @todo_minor check compatibility issues for this deprecated filter
 		add_filter( "manage_{$this->page}-{$post_type}_columns",  array( $this, 'add_headings' ), 100, 1 );
 
 		// values
-		add_action( "manage_{$post_type}_posts_custom_column", array( $this, 'manage_value' ), 100, 2 );
+		add_action( "manage_{$this->post_type}_posts_custom_column", array( $this, 'manage_value' ), 100, 2 );
+
+		// @todo: description
+		add_action( 'load-edit.php', array( $this, 'set_columns' ), 1000 );
+
+		parent::__construct();
+	}
+
+	/**
+	 * @since 2.2.1
+	 */
+	public function get_original_column_value( $column, $id ) {
+
+		global $post;
+
+		// Setup post data for current post
+		$post_old = $post;
+		$post = get_post( $id );
+		setup_postdata( $post );
+
+		// Remove Admin Columns action for this column's value
+		remove_action( "manage_{$this->post_type}_posts_custom_column", array( $this, 'manage_value' ), 100, 2 );
+
+		ob_start();
+
+		// Run WordPress native actions to display column content
+		if ( is_post_type_hierarchical( $this->post_type ) ) {
+			do_action( 'manage_pages_custom_column', $column, $id );
+		}
+		else {
+			do_action( 'manage_posts_custom_column', $column, $id );
+		}
+
+		do_action( "manage_{$this->post_type}_posts_custom_column", $column, $id );
+
+		$contents = ob_get_clean();
+
+		// Add removed Admin Columns action for this column's value
+		add_action( "manage_{$this->post_type}_posts_custom_column", array( $this, 'manage_value' ), 100, 2 );
+
+		// Restore original post object
+		$post = $post_old;
+
+		if ( $post ) {
+			setup_postdata( $post );
+		}
+
+		return $contents;
 	}
 
 	/**
 	 * Get screen link
 	 *
-	 * @since 2.0.0
+	 * @since 2.0
 	 *
 	 * @return string Link
 	 */
@@ -53,9 +91,27 @@ class CPAC_Storage_Model_Post extends CPAC_Storage_Model {
 	}
 
 	/**
+	 * @since 2.2
+	 *
+	 * @return bool
+	 */
+	public function is_columns_screen() {
+
+		$is_columns_screen = parent::is_columns_screen();
+
+		if ( ! $is_columns_screen ) {
+			if ( ! empty( $_REQUEST['_inline_edit'] ) && wp_verify_nonce( $_REQUEST['_inline_edit'], 'inlineeditnonce' ) ) {
+				$is_columns_screen = true;
+			}
+		}
+
+		return $is_columns_screen;
+	}
+
+	/**
 	 * Get Label
 	 *
-	 * @since 2.0.0
+	 * @since 2.0
 	 *
 	 * @return string Singular posttype name
 	 */
@@ -69,41 +125,36 @@ class CPAC_Storage_Model_Post extends CPAC_Storage_Model {
 	 * Get WP default supported admin columns per post type.
 	 *
 	 * @see CPAC_Type::get_default_columns()
-	 * @since 1.0.0
+	 * @since 1.0
 	 *
 	 * @return array
 	 */
 	public function get_default_columns() {
 
-		if ( ! function_exists('_get_list_table') ) return array();
-
-		//if ( ! $this->is_columns_screen() && ! $this->is_settings_page() )
-			//return array();
+		if ( ! function_exists('_get_list_table') ) {
+			return array();
+		}
 
 		// You can use this filter to add thirdparty columns by hooking into this.
 		// See classes/third_party.php for an example.
 		do_action( "cac/columns/default/posts" );
 		do_action( "cac/columns/default/storage_key={$this->key}" );
 
-        // Get the WP default columns
-		$table 	 = _get_list_table( 'WP_Posts_List_Table', array( 'screen' => $this->key ) );
-        $columns = $table->get_columns();
+		// Initialize table so it can add actions to manage_{screenid}_columns
+		_get_list_table( 'WP_Posts_List_Table', array( 'screen' => 'edit-' . $this->key ) );
 
-        // Get columns that have been set by other plugins. If a plugin use the hook "manage_edit-{$post_type}_columns"
-		// we know that the columns have been overwritten. Use these columns instead of the WP default ones.
-        //
-		// We have to make sure this filter only loads on the Admin Columns settings page. To prevent a loop
-		// when it's being called by CPAC_Storage_Model::add_headings()
-		if ( $this->is_settings_page() )
-			$columns =  array_merge( get_column_headers( 'edit-' . $this->key ), $columns );
+		// get_column_headers() runs through both the manage_{screenid}_columns
+		// and manage_{$post_type}_posts_columns filters
+		$columns = apply_filters( 'manage_edit-' . $this->key . '_columns', array() );
+		$columns = array_filter( $columns );
 
-		return array_filter( $columns );
+		return $columns;
 	}
 
 	/**
      * Get Meta
      *
-	 * @since 2.0.0
+	 * @since 2.0
 	 *
 	 * @return array
      */
@@ -116,24 +167,36 @@ class CPAC_Storage_Model_Post extends CPAC_Storage_Model {
 	/**
 	 * Manage value
 	 *
-	 * @since 2.0.0
+	 * @since 2.0
 	 *
 	 * @param string $column_name
 	 * @param int $post_id
 	 */
 	public function manage_value( $column_name, $post_id ) {
 
+		global $post;
+
+		// Setup post data for current post
+		$post_old = $post;
+		$post = get_post( $post_id );
+		setup_postdata( $post );
+
+		// Column value
 		$value = '';
-
-		$column = $this->get_column_by_name( $column_name );
-
-		// get value
-		if ( $column )
+		if ( $column = $this->get_column_by_name( $column_name ) ) {
 			$value = $column->get_value( $post_id );
+		}
 
 		// Filters
 		$value = apply_filters( "cac/column/value", $value, $post_id, $column, $this->key );
 		$value = apply_filters( "cac/column/value/{$this->type}", $value, $post_id, $column, $this->key );
+
+		// Reset query to old post
+		$post = $post_old;
+
+		if ( $post ) {
+			setup_postdata( $post );
+		}
 
 		echo $value;
 	}

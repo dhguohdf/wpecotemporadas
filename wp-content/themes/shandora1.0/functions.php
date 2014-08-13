@@ -35,7 +35,39 @@ $includes = array(
 $includes = apply_filters( 'shandora_includes', $includes );
 
 
+function eco_status_aprovado_expirando(){
+	register_post_status( 'expirando', array(
+		'label'                     => _x( 'Expirando', 'post' ),
+		'public'                    => true,
+		'exclude_from_search'       => false,
+		'show_in_admin_all_list'    => true,
+		'show_in_admin_status_list' => true,
+		'label_count'               => _n_noop( 'Expirando <span class="count">(%s)</span>', 'Expirando <span class="count">(%s)</span>' ),
+	) );
+}
+add_action( 'init', 'eco_status_aprovado_expirando' );
 
+
+	add_action('admin_footer-post.php', 'eco_append_post_status_list');
+	function eco_append_post_status_list(){
+	     global $post;
+	     $complete = '';
+	     $label = '';
+	     if($post->post_type == 'post'){
+	          if($post->post_status == 'expirando'){
+	               $complete = ' selected="selected"';
+	               $label = '<span id="post-status-display"> Expirando</span>';
+	          }
+	          echo '
+	          <script>
+	          jQuery(document).ready(function($){
+	               $("select#post_status").append("<option value="archive" '.$complete.'>Expirando</option>");
+	               $(".misc-pub-section label").append("'.$label.'");
+	          });
+	          </script>
+	          ';
+	     }
+	}
 foreach ( $includes as $i ) {
 	require_once( $i );
 }
@@ -55,7 +87,7 @@ function shandora_admin_init() {
 
 
 
-add_action( 'after_setup_theme', 'shandora_admin_init');
+//add_action( 'after_setup_theme', 'shandora_admin_init');
 // this function for checking update in ThemeForest! Please do not edit the code
 function shandora_updater() {
 	if(bon_get_framework_option('bon_framework_update_notification') == true) {
@@ -72,10 +104,11 @@ function shandora_updater() {
 	}
 }
 
-add_action('admin_init', 'shandora_updater');
+//add_action('admin_init', 'shandora_updater');
 
 /*-----------------------------------------------------------------------------------*/
-/* You can add custom functions below */
+/* You can add 
+ functions below */
 /*-----------------------------------------------------------------------------------*/
 
 function shandora_first_and_last_menu_class($items) {
@@ -113,63 +146,32 @@ function shandora_add_listing_class($class) {
 }
 add_filter('shandora_body_class', 'shandora_add_listing_class');
 
-add_action('admin_footer','posts_status_color');
-function posts_status_color(){
-?>
-<style>
-.status-draft{background: #edd2d1 !important; color: #990500 !important;}
-.status-pending{background: #E1F9FA !important;}
-.status-publish{background: #d1ede0 !important;}
-.status-future{background: red !important;}
-.status-private{background:#ffdcb4;}
-
-</style>
-<?php
+function test_modify_post_table( $columns ) {
+	return array_merge($columns, 
+        array('pagamento' => __('Formas de Pagamento')));
 }
-
-function custom_post_status(){
-	register_post_status( 'status-processo-revisao', array(
-		'label'                     => false,
-		'public'                    => true,
-		'exclude_from_search'       => false,
-		'show_in_admin_all_list'    => true,
-		'show_in_admin_status_list' => true,
-		'private'                   => true,
-		'label_count'               => _n_noop( 'Processo de Revisão <span class="count">(%s)</span>', 'Processos de revisão <span class="count">(%s)</span>' ),
-	) );
-}
-add_action( 'init', 'custom_post_status' );
-
-function test_modify_post_table( $column ) {
-    $column['pagamento'] = 'Pagamento'; 
-    return $column;
-}
-
-
-
-add_filter( 'manage_posts_columns', 'test_modify_post_table' );
+add_filter( 'manage_listing_posts_columns', 'test_modify_post_table' );
 
 function test_modify_post_table_row( $column_name, $post_id ) {
-	if (get_post_status ( $ID ) == 'private'	) {
+	if (get_post_status ( $ID ) == 'private' or get_post_status ( $ID ) == 'expirando') {
     switch ($column_name) {
         case 'pagamento' :
-		$EmailVendedor = 'andre@eaxdesign.com.br';
+		$EmailVendedor = 'pagamentos@ecotemporadas.com';
 		$identificacao = get_the_ID();
+		$p = get_post($identificacao);
+		$comprador = $p->post_author;
 		global $current_user;
       	get_currentuserinfo();
+
+      	if(function_exists('reserva_wp_busca_ultima_transacao')) {
+			$rwp_transacao = reserva_wp_busca_ultima_transacao($current_user->ID, $post_id);
+			$identificacao .= '-'.$rwp_transacao;
+		}
+
       	echo '<form><spam></spam></form>';
-        echo '<form target="PagSeguro" action="https://pagseguro.uol.com.br/security/webpagamentos/webpagto.aspx" method="post" name="TestePS" id="TestePS" />
+        echo '<form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post" onsubmit="PagSeguroLightbox(this); return false;">
 
-			<input type="hidden" name="email_cobranca" value="'.$EmailVendedor.'">
-			<input type="hidden" name="tipo" value="CP" />
-			<input type="hidden" name="moeda" value="BRL" />
-			<input type="hidden" name="ref_transacao" value="ID '.$identificacao.'" />
-
-			<input type="hidden" name="item_id_1" value="1" />
-			<input type="hidden" name="item_descr_1" value="Anuncio ECOtrimestral" />
-			<input type="hidden" name="item_quant_1" value="1" />
-			<input type="hidden" name="item_valor_1" value="85,00" />
-
+			<input type="hidden" name="code" value="C5FE5DE6EFEFA1E004943F95F8914B2B" />
 			<input type="hidden" name="cliente_nome" value="'.$current_user->user_firstname.' '.$current_user->user_lastname.'" />
 			<input type="hidden" name="cliente_end" value="'.$current_user->addr1.'" />
 			<input type="hidden" name="cliente_num" value="'.$current_user->numaddr.'" />
@@ -181,21 +183,27 @@ function test_modify_post_table_row( $column_name, $post_id ) {
 			<input type="hidden" name="cliente_ddd" value="'.$current_user->ddd.'" />
 
 			<input type="hidden" name="cliente_tel" value="'.$current_user->phone1.'" />
-			<input type="hidden" name="cliente_email" value="'.$current_user->user_email.'" />
-			<input type="image" src="http://ecotemporadas.com/wp-content/uploads/website-img/botao_trimestral.jpg" alt="Plano Trimestral"></form>';
+			<input type="image" src="http://ecotemporadas.com/wp-content/uploads/eco-botao_pagamento1_eax2.png" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+			</form>
+			<script type="text/javascript" src="https://stc.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.lightbox.js"></script>
+
+';
 
 
+?><!--
 		echo '<form target="PagSeguro" action="https://pagseguro.uol.com.br/security/webpagamentos/webpagto.aspx" method="post" name="TestePS" id="TestePS" />
 
-			<input type="hidden" name="email_cobranca" value="'.$EmailVendedor.'">
+			<input type="hidden" name="email_cobranca" value="'.$EmailVendedor.'">11361326
+
 			<input type="hidden" name="tipo" value="CP" />
 			<input type="hidden" name="moeda" value="BRL" />
 			<input type="hidden" name="ref_transacao" value="ID '.$identificacao.'" />
 
 			<input type="hidden" name="item_id_1" value="2" />
-			<input type="hidden" name="item_descr_1" value="Anuncio ECOsemestral" />
+			<input type="hidden" name="item_descr_1" value="Anuncio ECO - 6 meses" />
 			<input type="hidden" name="item_quant_1" value="1" />
 			<input type="hidden" name="item_valor_1" value="160,00" />
+			<input type="hidden" name="item_frete_1" value="0" />
 
 			<input type="hidden" name="cliente_nome" value="'.$current_user->user_firstname.' '.$current_user->user_lastname.'" />
 			<input type="hidden" name="cliente_end" value="'.$current_user->addr1.'" />
@@ -210,7 +218,7 @@ function test_modify_post_table_row( $column_name, $post_id ) {
 			<input type="hidden" name="cliente_tel" value="'.$current_user->phone1.'" />
 			<input type="hidden" name="cliente_email" value="'.$current_user->user_email.'" />
 
-			<input type="image" src="http://ecotemporadas.com/wp-content/uploads/website-img/botao_semestral.jpg" alt="Plano Semestral">
+			<input class="pgtosemestral" rel="'.$rwp_transacao.'" type="image" src="http://ecotemporadas.com/wp-content/uploads/website-img/botao_semestral.jpg" alt="Plano Semestral">
 			</form>';
 
 		echo '<form target="PagSeguro" action="https://pagseguro.uol.com.br/security/webpagamentos/webpagto.aspx" method="post" name="TestePS" id="TestePS" />
@@ -221,9 +229,10 @@ function test_modify_post_table_row( $column_name, $post_id ) {
 			<input type="hidden" name="ref_transacao" value="ID '.$identificacao.'" />
 
 			<input type="hidden" name="item_id_1" value="3" />
-			<input type="hidden" name="item_descr_1" value="Anuncio ECOanual" />
+			<input type="hidden" name="item_descr_1" value="Anuncio ECO - 12 meses" />
 			<input type="hidden" name="item_quant_1" value="1" />
 			<input type="hidden" name="item_valor_1" value="310,00" />
+			<input type="hidden" name="item_frete_1" value="0" />
 
 			<input type="hidden" name="cliente_nome" value="'.$current_user->user_firstname.' '.$current_user->user_lastname.'" />
 			<input type="hidden" name="cliente_end" value="'.$current_user->addr1.'" />
@@ -238,15 +247,18 @@ function test_modify_post_table_row( $column_name, $post_id ) {
 			<input type="hidden" name="cliente_tel" value="'.$current_user->phone1.'" />
 			<input type="hidden" name="cliente_email" value="'.$current_user->user_email.'" />
 
-			<input type="image" src="http://ecotemporadas.com/wp-content/uploads/website-img/botao_anual.jpg" alt="Plano Anual">
+			<input class="pgtoanual" rel="'.$rwp_transacao.'" type="image" src="http://ecotemporadas.com/wp-content/uploads/website-img/botao_anual.jpg" alt="Plano Anual">
 			</form>';
+
+			--><?php 
             break;
  
         default:
-    }}
+    } }
 }
  
-add_filter( 'manage_posts_custom_column', 'test_modify_post_table_row', 10, 2 );
+// add_filter( 'manage_posts_custom_column', 'test_modify_post_table_row', 10, 2 );
+add_action( 'manage_listing_posts_custom_column', 'test_modify_post_table_row', 10, 2 );
 
 
 
@@ -305,10 +317,6 @@ function remove_quick_edit( $actions ) {
     return $actions;
 }
 
-add_action('wp_footer', 'add_googleanalytics');
- 
-function add_googleanalytics() { } 
-
 
 function wp_admin_bar_new_item() {
 global $wp_admin_bar;
@@ -322,21 +330,18 @@ add_action('wp_before_admin_bar_render', 'wp_admin_bar_new_item');
 
 //Loading the drag'n drop blocker script
 function load_custom_wp_admin_js() {
-        wp_register_script( 'my_custom_script', get_template_directory_uri() . '/custom.js');
+        wp_register_script( 'my_custom_script', get_template_directory_uri() . '/custom3.js');
         wp_enqueue_script( 'my_custom_script' );
 }
-//add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_js' );
+add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_js' );
 
-function set_default_admin_color($user_id) {
-	$args = array(
-		'ID' => $user_id,
-		'admin_color' => 'flat'
-	);
-	wp_update_user( $args );
+function eco_scripts() {
+wp_enqueue_script( 'ecotempo-mask-js', get_stylesheet_directory_uri() . '/jquery.mask.min.js', array(), '1.0.0', true );
+wp_enqueue_script( 'ecotempo-bootstrap-js', get_stylesheet_directory_uri() . '/bootstrap.min.js', array(), '1.0.0', true );
 }
-add_action('user_register', 'set_default_admin_color');
 
-
+add_action( 'wp_enqueue_scripts', 'eco_scripts' );
+add_action( 'admin_enqueue_scripts', 'eco_scripts' );
 
 function my_plugin_get_comment_list_by_user($clauses) {
 if (is_admin()) {
@@ -360,16 +365,16 @@ $singular = $obj->labels->name;
 
 $messages[$post_type] = array(
 0 => '', // Unused. Messages start at index 1.
-1 => sprintf( __($singular.' criado. <a href="%s">Ver '.strtolower($singular).'</a>'), esc_url( get_permalink($post_ID) ) ),
+1 => sprintf( __($singular.' foi alterado! <a href="%s">Veja o seu anúncio alterado aqui!</a>'), esc_url( get_permalink($post_ID) ) ),
 2 => __('Custom field updated.'),
 3 => __('Custom field deleted.'),
-4 => __($singular.' updated.'),
+4 => __($singular.' atualizado!.'),
 5 => isset($_GET['revision']) ? sprintf( __($singular.' restored to revision from %s'), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
-6 => sprintf( __($singular.' criado. <a href="%s">Visualizar '.strtolower($singular).'</a>'), esc_url( get_permalink($post_ID) ) ),
+6 => sprintf( __('<div class="warning-message">Parabéns! Você criou seu Perfil ECO!</br></br>Agora comece a criar seu anúncio <a href="http://ecotemporadas.com/wp-admin/post-new.php?post_type=listing" class="warning-red">clicando aqui.</a></br>Não esqueça de vincular o seu Perfil ECO que você acabou de criar!</div>'), esc_url( get_permalink($post_ID) ) ),
 7 => __('Page saved.'),
-8 => sprintf( __($singular.' enviado para revisão. <a target="_blank" href="%s">Verifique como seria publicado clicando aqui. '.strtolower($singular).'</a> Aguarde no máximo 24 horas para revisão de seu anúncio e liberação para pagamento/pubblicação!'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+8 => sprintf( '<div class="warning-message">Parabéns! '. __($singular.' enviado para revisão! <a target="_blank" href="%s" class="warning-red">Clique aqui para ver como ficou.</a><br> Aguarde no máximo 3 horas para revisão de seu anúncio e liberação para pagamento/publicação!<br><br><strong>Não se preocupe, você receberá um email! :) </strong></div>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
 9 => sprintf( __($singular.' scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview '.strtolower($singular).'</a>'), date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post_ID) ) ),
-10 => sprintf( __($singular.' rascunho atualizado. <a target="_blank" href="%s"> Verifique como seria publicado clicando aqui. '.strtolower($singular).'</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+10 => sprintf( __($singular.': rascunho atualizado. <a target="_blank" href="%s"> Verifique como seria publicado clicando aqui.</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
 );
 return $messages;
 }
@@ -382,7 +387,7 @@ function custom_dashboard_widget() {
 	include("custom-dashboard.php");
 }
 function add_custom_dashboard_widget() {
-	wp_add_dashboard_widget('custom_dashboard_widget', '<h1>Bem vindo ao painel de suas temporadas!</h1>', 'custom_dashboard_widget');
+	wp_add_dashboard_widget('custom_dashboard_widget', 'Vai uma ajudinha aí? Tire suas dúvidas abaixo!', 'custom_dashboard_widget');
 }
 add_action('wp_dashboard_setup', 'add_custom_dashboard_widget');
 
@@ -397,36 +402,6 @@ function so_screen_layout_dashboard() {
 }
 add_filter( 'get_user_option_screen_layout_dashboard', 'so_screen_layout_dashboard' );
 
-/**
- * Adicionando limite de uploads no post type listing
- */
-function limite_upload($file) {
-        global $post, $post_ID;
-        $post_type = get_post_type( $post_ID );
-        
-  if ($file['type']=='application/octet-stream' && isset($file['tmp_name'])) {
-    $file_size = getimagesize($file['tmp_name']);
-    if (isset($file_size['error']) && $file_size['error']!=0) {
-      $file['error'] = "Unexpected Error: {$file_size['error']}";
-      return $file;
-    } else {
-      $file['type'] = $file_size['mime'];
-    }
-  }
-  list($category,$type) = explode('/',$file['type']);
-
-  if ('image'!=$category || !in_array($type,array('jpg','jpeg','gif','png')) && $post_type == "listing" ) {
-    $file['error'] = "Desculpe você só pode fazer upload de arquivos .GIF, .JP ou .PNG.";
-  } else if ($post_id = (isset($_REQUEST['post_id']) ? $_REQUEST['post_id'] : false)) {
-
-                if ( count( get_posts( "post_type=attachment&post_parent={$post_id}" ) ) > 19 )
-                        $file['error'] = "Você atingiu seu limite de imagens (20).";
-                }
-  return $file;
-}
-
-add_filter('wp_handle_upload_prefilter', 'limite_upload');
-
 // Mensagem padrão nos post types
 
 add_filter( 'default_content', 'conteudo_editor', 10, 2 );
@@ -435,10 +410,10 @@ function conteudo_editor( $content, $post ) {
 
     switch( $post->post_type ) {
         case 'listing':
-            $content = '<h1>Título de Mensagem</h1><br /> Mensagem default para anúncio!';
+            $content = '<h5>Insira uma descrição  do seu anúncio.</h5>';
         break;
         case 'agent':
-            $content = 'Mensagem default para Perfil Eco';
+            $content = 'Deixe uma mensagem falando sobre você!<br> Faça seus clientes confiarem em seus anúncios dando mais credibilidade!';
         break;
 
         default:
@@ -471,7 +446,7 @@ add_action( 'in_admin_header', 'insert_header_wpse_51023' );
 
 function insert_header_wpse_51023()
 {
-    echo '<div style="width:100%"><img src="https://trello-attachments.s3.amazonaws.com/525813762c0bfe3c1300254f/52e11e1c74fbf8652458b47c/47768b956006948401b2cff079902b8c/BARRA_DO_CLIENTE.png" width="100%" /></div>';
+    echo '<div style="width:63%"><img src="http://ecotemporadas.com/wp-content/themes/shandora1.0/assets/theme/eco-barra_cliente_eax1.png" width="100%" /></div>';
 }
 
 
@@ -493,3 +468,81 @@ function my_submit_button_filter( $string ) {
 	return $string;
 
 }
+
+// Move Yoast to bottom
+function yoasttobottom() {
+	return 'low';
+}
+
+
+add_filter( 'wpseo_metabox_prio', 'yoasttobottom');
+
+/*SUBSUB SUB UPDATE WITH TEH POSTS*/
+function jquery_remove_counts()
+{
+	?>
+	<script type="text/javascript">
+	jQuery(function(){
+		jQuery("li.all").remove();
+		jQuery("li.publish").find("span.count").remove();
+		jQuery("li.trash").find("span.count").remove();
+		jQuery("li.draft").find("span.count").remove();
+		jQuery("li.pending").find("span.count").remove();
+		jQuery("li.private").find("span.count").remove();
+	});
+	</script>
+	<?php
+}
+add_action('admin_footer', 'jquery_remove_counts');
+
+function custom_post_states( $states ) {
+     global $post;
+     $arg = get_query_var( 'post_status' );
+     if($arg != 'post'){
+          if($post->post_status == 'private'){
+               return array('<br><h3>Renove seu anúncio</h3>');
+          }
+          if($post->post_status == 'draft'){
+               return array('<br><h3>Salve para enviar para revisão</h3>');
+          }
+          if($post->post_status == 'expirando'){
+               return array('<br><h3>O anúncio está perto de expirar</h3>');
+          }
+          if($post->post_status == 'pending'){
+               return array('<br><h3>Enviaremos o link de<br> pagamento em seu email</h3>');
+          }
+     }
+    return $states;
+}
+add_filter( 'display_post_states', 'custom_post_states' );
+if ( is_singular( 'book' ) ) {
+    // conditional content/code
+}
+
+add_action('do_meta_boxes', 'move_publish_metabox');
+function move_publish_metabox(){
+    remove_meta_box( 'submitdiv', 'listing', 'side' ); //check the name, I'm doing this from memory
+    remove_meta_box( 'submitdiv', 'agent', 'side' ); //check the name, I'm doing this from memory
+    add_meta_box('submitdiv', 'Publique seu anúncio', 'post_submit_meta_box', 'listing', 'normal', 'low');
+    add_meta_box('submitdiv', 'Crie seu Perfil Eco', 'post_submit_meta_box', 'agent', 'normal', 'low');
+}
+
+
+function fb_remove_postbox() {
+    wp_deregister_script('postbox');
+}
+//add_action( 'admin_init', 'fb_remove_postbox' );
+
+function set_user_cookie() {
+    if (!isset($_COOKIE['popover_never_view'])) {
+		setcookie("popover_never_view", "hidealways", time()+3600);  /* expire in 1 hour */
+    }
+}
+add_action( 'init', 'set_user_cookie');
+
+function post_expire_notification( $id ){
+	wp_mail( get_option('admin_email'), '[ecotemporadas.com] O anúncio ' . $id . ' expirou', 'O anúncio ' . $id . ' expirou. <p>Email the author: <a href="mailto:'. get_the_author_meta('user_email') .'">'.the_author_meta('display_name').'</a></p>') ;
+}
+
+add_action( 'postExpiratorExpire', 'post_expire_notification' );
+

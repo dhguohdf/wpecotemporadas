@@ -44,7 +44,7 @@
               </div>
               <div class="icon bath">
                 <i class="sha-bath"></i>
-                <span><?php echo $BathsShortString;?></span>
+                <span><?php echo $BathsTotal;?></span>
               </div>
               <div class="icon size">
                 <i class="sha-ruler"></i>

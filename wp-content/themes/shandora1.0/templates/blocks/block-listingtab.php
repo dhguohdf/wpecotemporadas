@@ -14,11 +14,11 @@
     $year = shandora_get_meta($post->ID,'listing_yearbuild');
     $floor = shandora_get_meta($post->ID,'listing_floor');
     $agent_ids = get_post_meta($post->ID,'shandora_listing_agentpointed', true);
-    $address = shandora_get_meta($post->ID, 'listing_address');
+    $address = shandora_get_meta2($post->ID, 'shandora_listing_route');
     $location = get_the_term_list( $post->ID, 'property-location', '', '/ ' );
     $type = get_the_term_list($post->ID, 'property-type');
     $mls = shandora_get_meta($post->ID, 'listing_mls');
-    $zip = shandora_get_meta($post->ID, 'listing_zip');
+    $zip = shandora_get_meta2($post->ID, 'shandora_listing_zip');
     $eco1 = shandora_get_meta($post->ID, 'listing_eco1');
 	$eco2 = shandora_get_meta($post->ID, 'listing_eco2');
 	$eco3 = shandora_get_meta($post->ID, 'listing_eco3');
@@ -48,7 +48,7 @@
 			}?>
 			<ul class="property-details">
 				<li><strong><?php _e('Endereço:','bon'); ?></strong><span><?php echo (!empty($address)) ? $address  : '-'; ?></span></li>
-				<li><strong><?php _e('Cidade:','bon'); ?></strong><span><?php echo (!empty($location)) ? $location : '-'; ?></span></li>
+				<li><strong><?php _e('Estado/Cidade:','bon'); ?></strong><span><?php echo (!empty($location)) ? $location : '-'; ?></span></li>
 				<li><strong><?php _e('CEP:','bon'); ?></strong><span><?php echo (!empty($zip)) ? $zip  : '-'; ?></span></li>
                 <li><strong><?php _e('Localização:','bon'); ?></strong><span><?php echo (!empty($status)) ? ucwords( str_replace('-',' ', $status) ) : '-'; ?></span></li>
                 <li><strong><?php _e('Tipo:','bon'); ?></strong><span><?php echo (!empty($type)) ? $type : '-'; ?></span></li>
@@ -79,6 +79,7 @@
                 <li><strong><?php _e('Garagens:','bon'); ?></strong><span><?php echo (!empty($basement)) ? $basement . ' unidade(s)' : '-'; ?></span></li>
                 <li><strong><?php _e('Andares:','bon'); ?></strong><span><?php echo (!empty($floor)) ? $floor . ' unidade(s)' : '-'; ?></span></li>
                 <li><strong><?php _e('Total de cômodos:','bon'); ?></strong><span><?php echo (!empty($totalroom)) ? $totalroom . ' unidade(s)' : '-'; ?></span></li>
+                <li><strong><?php _e('Data Disponível:','bon'); ?></strong><span><?php echo (!empty($date)) ? $date : '-'; ?></span></li>
 			</ul>
 		</div>
 	</div>

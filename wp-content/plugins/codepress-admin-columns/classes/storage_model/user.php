@@ -5,45 +5,50 @@ class CPAC_Storage_Model_User extends CPAC_Storage_Model {
 	/**
 	 * Constructor
 	 *
-	 * @since 2.0.0
+	 * @since 2.0
 	 */
 	function __construct() {
 
-		$this->key 		= 'wp-users';
-		$this->label 	= __( 'Users' );
-		$this->type 	= 'user';
-		$this->page 	= 'users';
-
-		$this->set_columns_filepath();
-
-		// populate columns variable
-		add_action( 'admin_init', array( $this, 'set_columns' ) );
+		$this->key 		 = 'wp-users';
+		$this->label 	 = __( 'Users' );
+		$this->type 	 = 'user';
+		$this->meta_type = 'user';
+		$this->page 	 = 'users';
+		$this->menu_type = 'other';
 
 		// headings
 		add_filter( "manage_{$this->page}_columns",  array( $this, 'add_headings' ), 100 );
 
 		// values
 		add_filter( 'manage_users_custom_column', array( $this, 'manage_value_callback' ), 100, 3 );
+
+		parent::__construct();
 	}
 
 	/**
 	 * Get WP default supported admin columns per post type.
 	 *
 	 * @see CPAC_Type::get_default_columns()
-	 * @since 1.0.0
+	 * @since 1.0
 	 *
 	 * @return array
 	 */
 	public function get_default_columns() {
 
-		if ( ! function_exists('_get_list_table') ) return array();
+		if ( ! function_exists('_get_list_table') ) {
+			return array();
+		}
 
 		// You can use this filter to add third_party columns by hooking into this.
 		do_action( "cac/columns/default/storage_key={$this->key}" );
 
 		// get columns
 		$table 		= _get_list_table( 'WP_Users_List_Table', array( 'screen' => 'users' ) );
-		$columns 	= $table->get_columns();
+		$columns 	= (array) $table->get_columns();
+
+		if ( $this->is_settings_page() ) {
+			$columns = array_merge( get_column_headers( 'users' ), $columns );
+		}
 
 		return $columns;
 	}
@@ -98,7 +103,7 @@ class CPAC_Storage_Model_User extends CPAC_Storage_Model {
      * Get Meta
      *
 	 * @see CPAC_Columns::get_meta_keys()
-	 * @since 2.0.0
+	 * @since 2.0
 	 *
 	 * @return array
      */

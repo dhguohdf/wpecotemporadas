@@ -184,7 +184,7 @@ class BON_Cpt
 		}
 		
 		/* Attaches meta boxes to the post type */
-		public function add_meta_box( $id, $title, $fields = array(), $context = 'normal', $priority = 'high' )
+		public function add_meta_box( $id, $title, $fields = array(), $context = 'normal', $priority = 'default' )
 		{
 			$this->mb = new BON_Metabox();
 			

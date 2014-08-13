@@ -180,7 +180,7 @@ function bon_meta_description() {
 	}
 
 	/* Format the meta description. */
-	if ( !empty( $description ) )
+	if ( !empty( $description ) ) 
 		$description = '<meta name="description" content="' . str_replace( array( "\r", "\n", "\t" ), '', esc_attr( strip_tags( $description ) ) ) . '" />' . "\n";
 
 	echo apply_atomic( 'meta_description', $description );

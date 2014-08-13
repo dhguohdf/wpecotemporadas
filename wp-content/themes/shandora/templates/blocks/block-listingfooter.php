@@ -22,18 +22,24 @@ if( !empty($agent_id) ) {
 			<div class="column large-6">
 				<strong class="agent-title"><?php _e('Agent for this listing','bon'); ?></strong>
 				<h3 class="subheader agent-name"><?php echo get_the_title($agent_id); ?></h3>
+				<?php if( shandora_get_meta( $agent_id, 'agentmobilephone') ) { ?> 
 				<div class="agent-info">
 					<strong><?php _e('Mobile:','bon'); ?></strong>
 					<span><?php echo shandora_get_meta( $agent_id, 'agentmobilephone'); ?></span>
 				</div>
+				<?php } ?>
+				<?php if ( shandora_get_meta( $agent_id, 'agentofficephone' ) ) { ?>
 				<div class="agent-info">	
 					<strong><?php _e('Offce:','bon'); ?></strong>
 					<span><?php echo shandora_get_meta( $agent_id, 'agentofficephone'); ?></span>
 				</div>
+				<?php } ?>
+				<?php if ( shandora_get_meta( $agent_id, 'agentfax') ) { ?>
 				<div class="agent-info">			
 					<strong><?php _e('Fax:','bon'); ?></strong>
 					<span><?php echo shandora_get_meta( $agent_id, 'agentfax'); ?></span>
 				</div>
+				<?php } ?>
 			</div>
 			
 		</div>
@@ -89,7 +95,8 @@ if( !empty($agent_id) ) {
 						</div>
 					</div>
 					<div>
-						<input type="hidden" name="subject" value="<?php printf(__('Contact For %s Property','bon'), get_the_title()); ?>" />
+						<input type="hidden" name="subject" value="<?php printf(__('Contact For %s Property','bon'), get_the_title( $post->ID )); ?>" />
+						<input type="hidden" name="listing_id" value="<?php echo $post->ID; ?>" />
 						<input type="hidden" name="receiver" value="<?php echo $agent_email; ?>" />
 						<input class="flat button red radius" name="submit" type="submit" id="submit" tabindex="5" value="<?php _e('Submit', 'bon') ?>" />
 						<span class="contact-loader"><img src="<?php echo trailingslashit(BON_THEME_URI); ?>assets/images/loader.gif" alt="loading..." />

@@ -22,6 +22,17 @@
     foreach ($data as $listing) {
       extract($listing); 
 
+      if($PhotoCount > 0 ) {
+          $photourl = trailingslashit( esc_url( $PhotoUriBase ) ) . '0-full.jpg';
+        } else {
+          $photourl = get_template_directory_uri() . '/assets/images/nophoto.png';
+        }
+
+      $img = self::process_photo($photo, $listing, array('width'=>400, 'height' => 400));
+
+      if(empty($img)) {
+        $img = '<img src="'.$photourl.'" alt="'.$title.'"/>';
+      }
 
       $classes = array(
       'listing-' . $mls
@@ -32,22 +43,22 @@
 
         <article>
           <header class="entry-header">
-            <?php echo '<a href="' . $url . '" rel="nofollow" alt="'.$title.'">' . self::process_photo($photo, $listing, array('width'=>400, 'height' => 400)) . '</a>';?>
+            <?php echo '<a href="' . $url . '" rel="nofollow" alt="'.$title.'">' . $img . '</a>';?>
           </header>
           <div class="entry-summary">
             <h1 itemprop="name" class="entry-title"><?php echo '<a href="' . $url . '" rel="nofollow" alt="'.$title.'">' . $title . '</a>'; ?></h1>
             <div class="entry-meta">
               <div class="icon bed">
                 <i class="sha-bed"></i>
-                <span><?php echo $beds;?></span>
+                <span><?php echo (isset($beds) && !empty($beds)) ? $beds : $bedsshortstring;?></span>
               </div>
               <div class="icon bath">
                 <i class="sha-bath"></i>
-                <span><?php echo $baths;?></span>
+                <span><?php echo (isset($baths) && !empty($baths)) ? $baths : $bathsshortstring;?></span>
               </div>
               <div class="icon size">
                 <i class="sha-ruler"></i>
-                <span><?php echo $homesize;?></span>
+                <span><?php echo (isset($homesize) && !empty($homesize)) ? $homesize : $ImprovedSqFt;?></span>
               </div>
             </div>
           </div>

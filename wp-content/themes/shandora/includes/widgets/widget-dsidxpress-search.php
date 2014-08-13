@@ -323,7 +323,7 @@ class Shandora_dsIDXpress_Search extends WP_Widget {
 		));
 
 		$title = htmlspecialchars($instance["title"]);
-
+        
 		$titleFieldId = $this->get_field_id("title");
 		$titleFieldName = $this->get_field_name("title");
 		$searchOptionsFieldId = $this->get_field_id("searchOptions");

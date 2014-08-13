@@ -7,17 +7,21 @@
  */
 class CPAC_Column_Custom_Field extends CPAC_Column {
 
-	private $user_settings;
+	/**
+	 * @see CPAC_Column::init()
+	 * @since 2.2.1
+	 */
+	function init() {
 
-	function __construct( $storage_model ) {
+		parent::init();
 
-		// define properties
+		// Properties
 		$this->properties['type']	 		= 'column-meta';
 		$this->properties['label']	 		= __( 'Custom Field', 'cpac' );
 		$this->properties['classes']		= 'cpac-box-metafield';
 		$this->properties['is_cloneable']	= true;
 
-		// define additional options
+		// Options
 		$this->options['field']				= '';
 		$this->options['field_type']		= '';
 		$this->options['before']			= '';
@@ -31,12 +35,6 @@ class CPAC_Column_Custom_Field extends CPAC_Column {
 
 		$this->options['date_format']		= '';
 		$this->options['date_save_format']	= '';
-
-		// for retireving sorting preference
-		$this->user_settings = get_option( 'cpac_general_options' );
-
-		// call construct
-		parent::__construct( $storage_model );
 	}
 
 	/**
@@ -79,7 +77,13 @@ class CPAC_Column_Custom_Field extends CPAC_Column {
 		// deprecated. do not use, will be removed.
 		$custom_field_types = apply_filters( 'cpac_custom_field_types', $custom_field_types );
 
-		// Filter
+		/**
+		 * Filter the available custom field types for the meta (custom field) field
+		 *
+		 * @since 2.0
+		 *
+		 * @param array $custom_field_types Available custom field types ([type] => [label])
+		 */
 		$custom_field_types = apply_filters( 'cac/column/meta/types', $custom_field_types );
 
 		return $custom_field_types;
@@ -171,7 +175,7 @@ class CPAC_Column_Custom_Field extends CPAC_Column {
 	/**
 	 * Get meta value
 	 *
-	 * @since 2.0.0
+	 * @since 2.0
 	 *
 	 * @param string $meta Contains Meta Value
 	 * @param int $id Optional Object ID
@@ -250,8 +254,8 @@ class CPAC_Column_Custom_Field extends CPAC_Column {
 	 *
 	 * @since 1.0
 	 */
-	function hex2rgb($hex) {
-		$hex = str_replace("#", "", $hex);
+	function hex2rgb( $hex ) {
+		$hex = str_replace( "#", "", $hex );
 
 		if(strlen($hex) == 3) {
 			$r = hexdec(substr($hex,0,1).substr($hex,0,1));
@@ -282,7 +286,7 @@ class CPAC_Column_Custom_Field extends CPAC_Column {
 	/**
 	 * Get meta by ID
 	 *
-	 * @since 1.0.0
+	 * @since 1.0
 	 *
 	 * @param int $id ID
 	 * @return string Meta Value
@@ -329,7 +333,11 @@ class CPAC_Column_Custom_Field extends CPAC_Column {
 	 */
 	function get_raw_value( $id, $single = true ) {
 
-		return get_metadata( $this->storage_model->type, $id, $this->get_field_key(), $single );
+		$field_key = $this->get_field_key();
+
+		$raw_value = get_metadata( $this->storage_model->meta_type, $id, $field_key, $single );
+
+		return apply_filters( 'cac/column/meta/raw_value', $raw_value, $id, $field_key, $this );
 	}
 
 	/**
@@ -365,8 +373,7 @@ class CPAC_Column_Custom_Field extends CPAC_Column {
 	 */
 	function display_settings() {
 
-		$show_hidden_meta = isset( $this->user_settings['show_hidden'] ) && '1' === $this->user_settings['show_hidden'] ? true : false;
-
+		$show_hidden_meta = true;
 		?>
 
 		<tr class="column_field">
@@ -398,50 +405,20 @@ class CPAC_Column_Custom_Field extends CPAC_Column {
 		</tr>
 
 		<?php
+		switch ( $this->options->field_type ) {
+			case 'date':
+				$this->display_field_date_format();
+				break;
+			 case 'image':
+			 case 'library_id':
+			 	$this->display_field_preview_size();
+			 	break;
+			 case 'excerpt':
+			 	$this->display_field_excerpt_length();
+			 	break;
+		}
 
-		/**
-		 * Add Date Format
-		 *
-		 */
-		$is_hidden = in_array( $this->options->field_type, array( 'date' ) ) ? false : true;
-
-		$this->display_field_date_format( $is_hidden );
-
-		/**
-		 * Add Preview size
-		 *
-		 */
-		$is_hidden = in_array( $this->options->field_type, array( 'image', 'library_id' ) ) ? false : true;
-
-		$this->display_field_preview_size( $is_hidden );
-
-		/**
-		 * Add Excerpt length
-		 *
-		 */
-		$is_hidden = in_array( $this->options->field_type, array( 'excerpt' ) ) ? false : true;
-
-		$this->display_field_excerpt_length( $is_hidden );
-
-		/**
-		 * Before / After
-		 *
-		 */
-		?>
-
-		<tr class="column_before">
-			<?php $this->label_view( __( "Before", 'cpac' ), __( 'This text will appear before the custom field value.', 'cpac' ), 'before' ); ?>
-			<td class="input">
-				<input type="text" class="cpac-before" name="<?php $this->attr_name( 'before' ); ?>" id="<?php $this->attr_id( 'before' ); ?>" value="<?php echo esc_attr( stripslashes( $this->options->before ) ); ?>"/>
-			</td>
-		</tr>
-		<tr class="column_after">
-			<?php $this->label_view( __( "After", 'cpac' ), __( 'This text will appear after the custom field value.', 'cpac' ), 'after' ); ?>
-			<td class="input">
-				<input type="text" class="cpac-after" name="<?php $this->attr_name( 'after' ); ?>" id="<?php $this->attr_id( 'after' ); ?>" value="<?php echo esc_attr( stripslashes( $this->options->after ) ); ?>"/>
-			</td>
-		</tr>
-		<?php
-
+		$this->display_field_before_after();
 	}
+
 }

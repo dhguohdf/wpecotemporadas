@@ -469,7 +469,7 @@ function shandora_render_builder_element_listing($value) {
 
 			case 'featured':
 				$meta_property_query = array(
-					'key' => 'shandora_listing_featured',
+					'key' => bon_get_prefix() . 'listing_featured',
 					'value' => true,
 					'compare' => '=',
 				);
@@ -477,7 +477,7 @@ function shandora_render_builder_element_listing($value) {
 			
 			case 'none':
 				$meta_property_query = array(
-					'key' => 'shandora_listing_status',
+					'key' => bon_get_prefix() . 'listing_status',
 					'value' => 'none',
 					'compare' => '=',
 				);
@@ -485,7 +485,7 @@ function shandora_render_builder_element_listing($value) {
 
 			case 'for-rent':
 				$meta_property_query = array(
-					'key' => 'shandora_listing_status',
+					'key' => bon_get_prefix() . 'listing_status',
 					'value' => 'for-rent',
 					'compare' => '=',
 				);
@@ -493,7 +493,7 @@ function shandora_render_builder_element_listing($value) {
 
 			case 'for-sale':
 				$meta_property_query = array(
-					'key' => 'shandora_listing_status',
+					'key' => bon_get_prefix() . 'listing_status',
 					'value' => 'for-sale',
 					'compare' => '=',
 				);
@@ -501,7 +501,7 @@ function shandora_render_builder_element_listing($value) {
 
 			case 'reduced':
 				$meta_property_query = array(
-					'key' => 'shandora_listing_status',
+					'key' => bon_get_prefix() . 'listing_status',
 					'value' => 'reduced',
 					'compare' => '=',
 				);
@@ -509,7 +509,7 @@ function shandora_render_builder_element_listing($value) {
 
 			case 'new':
 				$meta_property_query = array(
-					'key' => 'shandora_listing_status',
+					'key' => bon_get_prefix() . 'listing_status',
 					'value' => 'new',
 					'compare' => '=',
 				);
@@ -517,7 +517,7 @@ function shandora_render_builder_element_listing($value) {
 
 			case 'sold':
 				$meta_property_query = array(
-					'key' => 'shandora_listing_status',
+					'key' => bon_get_prefix() . 'listing_status',
 					'value' => 'sold',
 					'compare' => '=',
 				);
@@ -525,7 +525,7 @@ function shandora_render_builder_element_listing($value) {
 
 			case 'on-show':
 				$meta_property_query = array(
-					'key' => 'shandora_listing_status',
+					'key' => bon_get_prefix() . 'listing_status',
 					'value' => 'on-show',
 					'compare' => '=',
 				);
@@ -570,7 +570,7 @@ function shandora_render_builder_element_listing($value) {
 			$currency = bon_get_option('currency');
 			
 			$o .= '<li>';
-			$o .= '<article id="post-'.get_the_ID().'" class="'.bon_entry_class($status, null, false).'" itemscope itemtype="http://schema.org/RealEstateAgent">';
+			$o .= '<article id="post-'.get_the_ID().'" class="'.join(' ', get_post_class($status, null, false)).'" itemscope itemtype="http://schema.org/RealEstateAgent">';
 
 				$o .= '<header class="entry-header"><div class="listing-hover"><span class="mask"></span>';
 				$o .= shandora_get_listing_hover_action(get_the_ID());	
@@ -595,25 +595,9 @@ function shandora_render_builder_element_listing($value) {
 
 				$o .= '</header><!-- .entry-header -->';
 
-				$o .= '<div class="entry-summary">' . apply_atomic_shortcode( 'entry_title', the_title( '<h1 class="entry-title" itemprop="name"><a href="'.get_permalink().'" title="'.the_title_attribute( array('before' => __('Permalink to ','bon'), 'echo' => false) ).'">', '</a></h1>', false ) );
-				$o .= '<div class="entry-meta">';
-				
-				$o .= '<div class="icon bed"><i class="sha-bed"></i><span>';
-
-				if(empty($bed)) { $o .= __('No Bed','bon'); } else { $o .= sprintf( _n('%s Bed','%s Beds', $bed , 'bon'), $bed ); }
-				
-				$o .= '</span></div>';
-
-				$o .= '<div class="icon bath"><i class="sha-bath"></i><span>';
-
-				if(empty($bath)) { $o .= __('No Bath','bon'); } else { $o .= sprintf(_n('%s Bath','%s Baths', $bath , 'bon'), $bath ); }
-				$o .= '</span></div>';
-
-				$o .= '<div class="icon size"><i class="sha-ruler"></i><span>';
-				if($lotsize) { $o .= $lotsize . ' ' . $sizemeasurement; } else { $o .= __('Unspecified','bon'); }
-				$o .= '</span></div>';
-
-				$o .= '</div></div><!-- .entry-summary -->';
+				$o .= '<div class="entry-summary">' . apply_atomic_shortcode( 'entry_title', the_title( '<h3 class="entry-title" itemprop="name"><a href="'.get_permalink().'" title="'.the_title_attribute( array('before' => __('Permalink to ','bon'), 'echo' => false) ).'">', '</a></h3>', false ) );
+				$o .= shandora_entry_meta();
+				$o .= '</div><!-- .entry-summary -->';
 
 				$o .= '<footer class="entry-footer">';
 					
@@ -662,7 +646,7 @@ function shandora_render_builder_element_car_listing($value) {
 
 			case 'featured':
 				$meta_car_query = array(
-					'key' => 'shandora_listing_featured',
+					'key' => bon_get_prefix() . 'listing_featured',
 					'value' => true,
 					'compare' => '=',
 				);
@@ -670,7 +654,7 @@ function shandora_render_builder_element_car_listing($value) {
 			
 			case 'new':
 				$meta_car_query = array(
-					'key' => 'shandora_listing_status',
+					'key' => bon_get_prefix() . 'listing_status',
 					'value' => 'new',
 					'compare' => '=',
 				);
@@ -678,7 +662,7 @@ function shandora_render_builder_element_car_listing($value) {
 
 			case 'used':
 				$meta_car_query = array(
-					'key' => 'shandora_listing_status',
+					'key' => bon_get_prefix() . 'listing_status',
 					'value' => 'used',
 					'compare' => '=',
 				);
@@ -686,7 +670,7 @@ function shandora_render_builder_element_car_listing($value) {
 
 			case 'certified':
 				$meta_car_query = array(
-					'key' => 'shandora_listing_status',
+					'key' => bon_get_prefix() . 'listing_status',
 					'value' => 'certified',
 					'compare' => '=',
 				);
@@ -723,7 +707,7 @@ function shandora_render_builder_element_car_listing($value) {
 	$o .= '<ul class="listings '.$ul_class.'" data-compareurl="'.get_permalink($compare_page).'">';
 
 		while ( have_posts() ) : the_post();
-
+		
 			$suffix = 'listing_';
 		    $transmission = shandora_get_meta(get_the_ID(), $suffix . 'transmission');
 		    $engine = shandora_get_meta(get_the_ID(), $suffix . 'enginesize');
@@ -736,7 +720,7 @@ function shandora_render_builder_element_car_listing($value) {
 		    }
 		    
 			$o .= '<li>';
-			$o .= '<article id="post-'.get_the_ID().'" class="'.bon_entry_class($badgeclr, null, false).'" itemscope itemtype="http://schema.org/RealEstateAgent">';
+			$o .= '<article id="post-'.get_the_ID().'" class="'.join(' ', get_post_class($badgeclr, null, false)).'" itemscope itemtype="http://schema.org/RealEstateAgent">';
 
 				$o .= '<header class="entry-header"><div class="listing-hover"><span class="mask"></span>';
 				$o .= shandora_get_listing_hover_action(get_the_ID());	
@@ -760,26 +744,11 @@ function shandora_render_builder_element_car_listing($value) {
 
 				$o .= '</header><!-- .entry-header -->';
 
-				$o .= '<div class="entry-summary">' . apply_atomic_shortcode( 'entry_title', the_title( '<h1 class="entry-title" itemprop="name"><a href="'.get_permalink().'" title="'.the_title_attribute( array('before' => __('Permalink to ','bon'), 'echo' => false) ).'">', '</a></h1>', false ) );
-				$o .= '<div class="entry-meta">';
+				$o .= '<div class="entry-summary">' . apply_atomic_shortcode( 'entry_title', the_title( '<h3 class="entry-title" itemprop="name"><a href="'.get_permalink().'" title="'.the_title_attribute( array('before' => __('Permalink to ','bon'), 'echo' => false) ).'">', '</a></h3>', false ) );
 				
-				$o .= '<div class="icon engine"><i class="sha-engine"></i><span>';
+				$o .= shandora_entry_meta();
 
-				if($engine){ $o .= $engine; } else { $o .= __('Unspecified','bon'); }
-				
-				$o .= '</span></div>';
-
-				$o .= '<div class="icon transmission"><i class="sha-gear-shifter"></i><span>';
-
-				if($transmission){ $o .= $transmission; } else { $o .= __('Unspecified','bon'); }
-
-				$o .= '</span></div>';
-
-				$o .= '<div class="icon mileage"><i class="awe-dashboard"></i><span>';
-				if($mileage) { $o .= $mileage; } else { $o .= __('Unspecified','bon'); }
-				$o .= '</span></div>';
-
-				$o .= '</div></div><!-- .entry-summary -->';
+				$o .= '</div><!-- .entry-summary -->';
 
 				$o .= '<footer class="entry-footer">';
 					

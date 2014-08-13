@@ -38,6 +38,7 @@ if ( $listing_gal ) {
 	?>
 	</ul>
 	<?php endif; ?>
+	<div id="bookingdatepicker"></div>
 </div>
 
 <?php } 

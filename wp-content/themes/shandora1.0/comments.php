@@ -45,8 +45,11 @@ if ( post_password_required() || ( !have_comments() && !comments_open() && !ping
 	<?php endif;
 
 	if ( comments_open() ) : ?>
+	<div id="respond">
+		<?php comment_form(); ?>		
+	</div>
 
-	<?php comment_form(); ?>
+
 
 	<?php endif; // if you delete this the sky will fall on your head ?>
 

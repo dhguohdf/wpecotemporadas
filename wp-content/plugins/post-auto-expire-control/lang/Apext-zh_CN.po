@@ -1,0 +1,217 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Apext.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-10-13 00:44+0800\n"
+"PO-Revision-Date: \n"
+"Last-Translator: tc <geekykuan@ymail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: post-auto-expire-control.php:108
+msgid "Your post \"[title]\" will be expired on [exdate]"
+msgstr "您的文章[title]将于[exdate]到期"
+
+#: post-auto-expire-control.php:109
+msgid "<p>Dear [authorname],<br>Your post \"[title_link]\", with the id of <b>[post_id]</b>, will be expired by <b>[exdate]</b></p>"
+msgstr "<p>亲爱的[authorname],您的文章“[title_link]”，id为<b>[post_id]</b>，将于<b>[exdate]</b>到期。</p>"
+
+#: post-auto-expire-control.php:111
+msgid "Your post \"[title]\" will be expired by today"
+msgstr "您的文章[title]将于今天到期"
+
+#: post-auto-expire-control.php:112
+msgid "<p>Dear [authorname],<br>Your post \"[title_link]\", with the id of <b>[post_id]</b>, will be expired by <b>today</b>.<br>Feel free to come back to post again.</p>"
+msgstr "<p>亲爱的[authorname],您的文章“[title_link]”，id为<b>[post_id]</b>，将于<b>今天</b>到期。<br>欢迎你再回来发表文章。</p><p>[admin_name],<br>[sitename]</p>"
+
+#: post-auto-expire-control.php:380
+#: post-auto-expire-control.php:382
+#: html/render_output.php:9
+msgid "Posts Auto Expire Control"
+msgstr "文章自动过期控制"
+
+#: post-auto-expire-control.php:392
+msgid " days to expire since the post has published."
+msgstr "日后文章才到期，从发布日算起。"
+
+#: html/render_output.php:21
+msgid "<b>Duplicate Rules Found!</b> Check your User Role and Post Type for each rule columns, make sure they are not identical for each rule. Your previous settings was not saved"
+msgstr "<b>发现重复规则！</b>请检查每一行的用户和文章类型列表，确保每一行里没有相同的用户和文章类型在表格里。"
+
+#: html/render_output.php:24
+msgid "<b>The Life Spane column Should Be Numbers and Not null!</b> Check your User Days columns for each rule. Your previous settings was not saved."
+msgstr "<b>文章寿命只允许数字输入且不能是空白和零！</b>请检查"
+
+#: html/render_output.php:36
+#: html/render_output.php:46
+#: html/add_rule_form.php:11
+msgid "User Role"
+msgstr "用户角色"
+
+#: html/render_output.php:37
+#: html/render_output.php:47
+#: html/add_rule_form.php:20
+msgid "Post Type"
+msgstr "文章类型"
+
+#: html/render_output.php:38
+#: html/render_output.php:48
+#: html/add_rule_form.php:29
+msgid "Action"
+msgstr "行动"
+
+#: html/render_output.php:39
+#: html/render_output.php:49
+msgid "Life Span (Days)"
+msgstr "文章寿命 (天)"
+
+#: html/render_output.php:40
+#: html/render_output.php:50
+msgid "Edit Rule"
+msgstr "编辑规则"
+
+#: html/render_output.php:56
+msgid "Post Expiration Rules"
+msgstr "添加文章过期规则"
+
+#: html/render_output.php:91
+msgid "Edit"
+msgstr "编辑"
+
+#: html/render_output.php:91
+#: html/add_rule_ajax.php:33
+msgid "Remove"
+msgstr "删除"
+
+#: html/render_output.php:99
+msgid "Save Changes"
+msgstr "更改保存"
+
+#: html/render_output.php:99
+msgid "Click this after add/edit rules"
+msgstr "请在添加/编辑条例后点击"
+
+#: html/render_output.php:105
+msgid "Apply rules to previously published posts"
+msgstr "运用规则于已发布文章"
+
+#: html/render_output.php:106
+msgid "Apply"
+msgstr "运用"
+
+#: html/render_output.php:106
+msgid "Click this <b>ONLY</b> if you want your new edited rules applied to your previously published posts. Otherwise only new posts will applied to your added/edited rules."
+msgstr "点击这里如果您要新添加/编辑规则运用于<b>之前发表过的文章</b>。否则新添加/编辑的规则将运用于新发布的文章上。"
+
+#: html/render_output.php:115
+msgid "Only number allowed in the input of day of send notification before expiration!"
+msgstr "发送通知日只允许数字输入！"
+
+#: html/render_output.php:118
+msgid "The day of send notification cannot be empty when you enabled notification before post's expiry date!"
+msgstr "当您启用文章到期日之前的通知后，文章过期通知日输入不能够是空白或零！"
+
+#: html/render_output.php:124
+msgid "Auto Post Expiration Email Notification Control"
+msgstr "文章到期电邮通知控制"
+
+#: html/render_output.php:125
+msgid "Indicate whether to send notifications before the post is expired, or on the day of expiration."
+msgstr "指示是否在文章到期前，或在当日发送到期通知。"
+
+#: html/render_output.php:131
+msgid "Save Notification Setting"
+msgstr "保存通知设置"
+
+#: html/mailsetting.php:14
+msgid "Enable notification before post's expiry date?"
+msgstr "启用文章到期前通知？"
+
+#: html/mailsetting.php:16
+msgid "How many days to send the notification before expiration? "
+msgstr "文章到期前的多少日发送通知？"
+
+#: html/mailsetting.php:19
+#: html/mailsetting.php:29
+msgid "Email Subject"
+msgstr "电邮标题"
+
+#: html/mailsetting.php:22
+#: html/mailsetting.php:32
+msgid "Email Content"
+msgstr "电邮内容"
+
+#: html/mailsetting.php:27
+msgid "Enable notification <b>ON</b> the expiry date?"
+msgstr "启用文章到期<b>当日</b>发送通知？"
+
+#: html/mailsetting.php:35
+msgid "Allowed html tags in email content :"
+msgstr "电邮内容内可使用的HTML标签："
+
+#: html/mailsetting.php:36
+msgid "&lt;p&gt;, &lt;br&gt;, &lt;strong&gt;, &lt;em&gt;, &lt;i&gt;, &lt;li&gt;, &lt;ul&gt;, &lt;a href&gt;"
+msgstr ""
+
+#: html/mailsetting.php:37
+msgid "Available variable tags :"
+msgstr "可用的变量标签 ： "
+
+#: html/mailsetting.php:38
+msgid "<b>[authorname]</b> = post author's username, <b>[post_id]</b> = post id,  <b>[title]</b> = post's title without link, <b>[title_link]</b> = post's title with permalink, <b>[exdate]</b> = post expire date, <b>[admin_name]</b> = admin's username, <b>[sitename]</b> = site's name"
+msgstr "<b>[authorname]</b> = 文章作者用户名, <b>[post_id]</b> = 文章 ID,  <b>[title]</b> = 无链接文章标题, <b>[title_link]</b> =  有链接文章标题, <b>[exdate]</b> = 文章到期日期, <b>[admin_name]</b> = 管理员用户名, <b>[sitename]</b> = 网站名"
+
+#: html/add_rule_form.php:8
+msgid "Add Post Expiration Rule"
+msgstr "添加文章过期规则"
+
+#: html/add_rule_form.php:17
+msgid "Select user role"
+msgstr "选择用户角色"
+
+#: html/add_rule_form.php:26
+msgid "Select Post Type"
+msgstr "选择文章类型"
+
+#: html/add_rule_form.php:34
+msgid "Action taken after post expired"
+msgstr "文章过期后采取的行动"
+
+#: html/add_rule_form.php:37
+msgid "Life Span"
+msgstr "文章寿命"
+
+#: html/add_rule_form.php:39
+msgid "Days to expire"
+msgstr "多少日到期"
+
+#: html/add_rule_form.php:42
+msgid "Add Rule"
+msgstr "添加规则"
+
+#, fuzzy
+#~ msgid "Apply to Published Post"
+#~ msgstr "运用于已发布文章"
+#~ msgid "Days after post publish"
+#~ msgstr "文章日限"
+
+#, fuzzy
+#~ msgid "Email Content (Before post expire)"
+#~ msgstr "文章过期后的行动"
+#~ msgid "Days"
+#~ msgstr "日"
+#~ msgid "Duration"
+#~ msgstr "日限"
+#~ msgid "Add Post Expiry Rule"
+#~ msgstr "添加文章过期条例"
+#~ msgid "Duplicate Rules Found!"
+#~ msgstr "发现重复条例"
+#~ msgid "Pending"
+#~ msgstr "待后"
+

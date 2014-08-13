@@ -303,6 +303,7 @@ if( !function_exists('shandora_setup_theme_thumbnails') ) {
 		$theme_thumbnails = array(
 			'listing_small' => array('width'=>270, 'height'=>220, 'crop' => true ),							
 			'listing_small_box'	=> array('width'=>300, 'height'=>300, 'crop' => true),
+			'listing_list' => array( 'width' => 420, 'height' => 420, 'crop' => true ),
 			'blog_small' => array('width' => 285, 'height' => 285, 'crop' => true),
 			'listing_large' => array('width' => 800, 'height' => 400, 'crop' => true),
 			'listing_medium' => array('width' => 400, 'height' => 200, 'crop' => true),

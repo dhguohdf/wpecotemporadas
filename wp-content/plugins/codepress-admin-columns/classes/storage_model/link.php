@@ -5,7 +5,7 @@ class CPAC_Storage_Model_Link extends CPAC_Storage_Model {
 	/**
 	 * Constructor
 	 *
-	 * @since 2.0.0
+	 * @since 2.0
 	 */
 	function __construct() {
 
@@ -13,29 +13,29 @@ class CPAC_Storage_Model_Link extends CPAC_Storage_Model {
 		$this->label 	= __( 'Links' );
 		$this->type 	= 'link';
 		$this->page 	= 'link-manager';
-
-		$this->set_columns_filepath();
-
-		// populate columns variable
-		add_action( 'admin_init', array( $this, 'set_columns' ) );
+		$this->menu_type = 'other';
 
 		// headings
 		add_filter( "manage_{$this->page}_columns",  array( $this, 'add_headings' ), 100 );
 
 		// values
 		add_action( 'manage_link_custom_column', array( $this, 'manage_value' ), 100, 2 );
+
+		parent::__construct();
 	}
 
 	/**
 	 * Get WP default supported admin columns per post type.
 	 *
-	 * @since 1.0.0
+	 * @since 1.0
 	 *
 	 * @return array
 	 */
 	public function get_default_columns() {
 
-		if ( ! function_exists('_get_list_table') ) return array();
+		if ( ! function_exists('_get_list_table') ) {
+			return array();
+		}
 
 		// You can use this filter to add thirdparty columns by hooking into this.
 		// See classes/third_party.php for an example.
@@ -43,7 +43,7 @@ class CPAC_Storage_Model_Link extends CPAC_Storage_Model {
 
 		// get columns
 		$table 		= _get_list_table( 'WP_Links_List_Table', array( 'screen' => 'link-manager' ) );
-		$columns 	= $table->get_columns();
+		$columns 	= (array) $table->get_columns();
 
 		return $columns;
 	}
@@ -51,7 +51,7 @@ class CPAC_Storage_Model_Link extends CPAC_Storage_Model {
 	/**
      * Get Meta
      *
-	 * @since 2.0.0
+	 * @since 2.0
 	 *
 	 * @return array
      */
@@ -60,7 +60,7 @@ class CPAC_Storage_Model_Link extends CPAC_Storage_Model {
 	/**
 	 * Manage value
 	 *
-	 * @since 2.0.0
+	 * @since 2.0
 	 *
 	 * @param string $column_name
 	 * @param int $post_id

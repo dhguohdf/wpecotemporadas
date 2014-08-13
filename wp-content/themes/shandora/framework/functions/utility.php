@@ -17,9 +17,14 @@
 
 /* Add extra support for post types. */
 add_action( 'init', 'bon_add_post_type_support' );
+add_action( 'after_switch_theme', 'bon_flush_rewrite_rules' );
 
-/* Add extra file headers for themes. */
-add_filter( 'extra_theme_headers', 'bon_extra_theme_headers' );
+
+
+/* Flush your rewrite rules */
+function bon_flush_rewrite_rules() {
+     flush_rewrite_rules();
+}
 
 /**
  * This function is for adding extra support for features not default to the core post types.
@@ -38,101 +43,6 @@ function bon_add_post_type_support() {
 
 	/* Add support for trackbacks to the 'attachment' post type. */
 	add_post_type_support( 'attachment', array( 'trackbacks' ) );
-}
-
-/**
- * Creates custom theme headers.  This is the information shown in the header block of a theme's 'style.css' 
- * file.  Themes are not required to use this information, but the framework does make use of the data for 
- * displaying additional information to the theme user.
- *
- * @since 1.0
- * @access public
- * @link http://codex.wordpress.org/Theme_Review#Licensing
- * @param array $headers Array of extra headers added by plugins/themes.
- * @return array $headers
- */
-function bon_extra_theme_headers( $headers ) {
-
-	/* Add support for 'Template Version'. This is for use in child themes to note the version of the parent theme. */
-	if ( !in_array( 'Template Version', $headers ) )
-		$headers[] = 'Template Version';
-
-	/* Add support for 'License'.  Proposed in the guidelines for the WordPress.org theme review. */
-	if ( !in_array( 'License', $headers ) )
-		$headers[] = 'License';
-
-	/* Add support for 'License URI'. Proposed in the guidelines for the WordPress.org theme review. */
-	if ( !in_array( 'License URI', $headers ) )
-		$headers[] = 'License URI';
-
-	/* Add support for 'Support URI'.  This should be a link to the theme's support forums. */
-	if ( !in_array( 'Support URI', $headers ) )
-		$headers[] = 'Support URI';
-
-	/* Add support for 'Documentation URI'.  This should be a link to the theme's documentation. */
-	if ( !in_array( 'Documentation URI', $headers ) )
-		$headers[] = 'Documentation URI';
-
-	/* Return the array of custom theme headers. */
-	return $headers;
-}
-
-
-/**
- * Generates the relevant template info.  Adds template meta with theme version.  Uses the theme 
- * name and version from style.css.  In 0.6, added the bon_meta_template 
- * filter hook.
- *
- * @since 1.0
- * @access public
- * @return void
- */
-function bon_meta_template() {
-	$theme = wp_get_theme( get_template(), get_theme_root( get_template_directory() ) );
-	$template = '<meta name="template" content="' . esc_attr( $theme->get( 'Name' ) . ' ' . $theme->get( 'Version' ) ) . '" />' . "\n";
-	echo apply_atomic( 'meta_template', $template );
-}
-
-/**
- * Dynamic element to wrap the site title in.  If it is the front page, wrap it in an <h1> element.  One other 
- * pages, wrap it in a <div> element. 
- *
- * @since 1.0
- * @access public
- * @return void
- */
-function bon_site_title() {
-
-	/* If viewing the front page of the site, use an <h1> tag.  Otherwise, use a <div> tag. */
-	$tag = ( is_front_page() ) ? 'h1' : 'div';
-
-	/* Get the site title.  If it's not empty, wrap it with the appropriate HTML. */
-	if ( $title = get_bloginfo( 'name' ) )
-		$title = sprintf( '<%1$s id="site-title"><a href="%2$s" title="%3$s" rel="home"><span>%4$s</span></a></%1$s>', tag_escape( $tag ), home_url(), esc_attr( $title ), $title );
-
-	/* Display the site title and apply filters for developers to overwrite. */
-	echo apply_atomic( 'site_title', $title );
-}
-
-/**
- * Dynamic element to wrap the site description in.  If it is the front page, wrap it in an <h2> element.  
- * On other pages, wrap it in a <div> element.
- *
- * @since 1.0
- * @access public
- * @return void
- */
-function bon_site_description() {
-
-	/* If viewing the front page of the site, use an <h2> tag.  Otherwise, use a <div> tag. */
-	$tag = ( is_front_page() ) ? 'h2' : 'div';
-
-	/* Get the site description.  If it's not empty, wrap it with the appropriate HTML. */
-	if ( $desc = get_bloginfo( 'description' ) )
-		$desc = sprintf( '<%1$s id="site-description"><span>%2$s</span></%1$s>', tag_escape( $tag ), $desc );
-
-	/* Display the site description and apply filters for developers to overwrite. */
-	echo apply_atomic( 'site_description', $desc );
 }
 
 /**
@@ -385,4 +295,51 @@ if( !function_exists('bon_color_mod') ) {
 		return $newcolor;
 	}
 }
+
+
+function bon_author_rewrite_rules(){
+
+	$rules = array(
+		'subscriber',
+		'contributor',
+		'author',
+		'editor',
+		'administrator',
+	);
+
+	foreach ( $rules as $rule ) {
+		add_rewrite_rule(
+			$rule . '/([^/]+)/?$','index.php?author_name=$matches[1]',
+			'top'
+		);
+	}
+
+}
+
+add_action( 'init', 'bon_author_rewrite_rules' );
+
+function bon_custom_author_link( $link, $author_id, $author_nicename ){
+
+	$rules = array(
+		'subscriber',
+		'contributor',
+		'author',
+		'editor',
+		'administrator',
+	);
+
+
+	foreach( $rules as $rule ) {
+		if ( user_can( $author_id, $rule ) ) {
+			return home_url( $rule . '/' . $author_nicename . '/' );
+		}
+	}
+   
+    return $link;
+
+}
+add_filter( 'author_link', 'bon_custom_author_link', 10, 3 );
+
+
+
 ?>

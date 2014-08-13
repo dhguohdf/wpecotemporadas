@@ -25,8 +25,10 @@ get_header();
         do_atomic('before_loop'); ?>
 
 
+                
                 <?php 
-                        
+                  
+            
                     $prefix = bon_get_prefix();    
                     
                     $compare_id = '';
@@ -97,7 +99,7 @@ get_header();
                             $totalroom = shandora_get_meta($post->ID,'listing_totalroom');
                             $year = shandora_get_meta($post->ID,'listing_yearbuild');
                             $floor = shandora_get_meta($post->ID,'listing_floor');
-                            $agent_ids = get_post_meta($post->ID,'shandora_listing_agentpointed', true);
+                            $agent_ids = get_post_meta($post->ID, bon_get_prefix() . 'listing_agentpointed', true);
                             $link = '<a class="button red flat radius" href="'. get_permalink( $post->ID ) .'" title="'. get_the_title($post->ID ) . '">'.__('View Property','bon'). '</a>';
                             $agent = '';
                             if(is_array($agent_ids)) {
@@ -162,6 +164,7 @@ get_header();
 
                     <?php endwhile; ?>
 
+                    
                     <table id="comparison-table">
                       <thead>
                         <tr>

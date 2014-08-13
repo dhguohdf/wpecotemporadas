@@ -46,6 +46,9 @@
 			wp_enqueue_style  ('arvo', 'http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Arvo:400,400italic,700,700italic' );		
 			wp_enqueue_style  ('wp-color-picker' );
 			
+			wp_enqueue_script ('select2',    MAINTENANCE_URI .'js/select2/select2.min.js' );
+			wp_enqueue_style  ('select2',    MAINTENANCE_URI .'js/select2/select2.css' );	
+			
 			wp_enqueue_script ('uplaods_',    MAINTENANCE_URI .'js/uploads_.min.js' );
 			wp_enqueue_script ('maintenance', MAINTENANCE_URI .'js/init.min.js', array( 'wp-color-picker' ), false, true );
 			wp_enqueue_style  ('maintenance', MAINTENANCE_URI .'css/admin.css' );	
@@ -60,6 +63,7 @@
 		$mt_option = mt_get_plugin_options(true);
 	?>
 		<div id="maintenance-options" class="wrap">	
+			<h2></h2>						
 			<form method="post" action="" enctype="multipart/form-data" name="options-form">
 				<?php wp_nonce_field('maintenance_edit_post','maintenance_nonce'); ?>
 				<?php wp_nonce_field('meta-box-order',  'meta-box-order-nonce', false ); ?>
@@ -80,8 +84,8 @@
 						</div>
 						 
 					</div>
+					<?php submit_button(__('Save changes', 'maintenance'), 'primary'); ?>
 				</div>	
-				<?php submit_button(__('Save changes', 'maintenance'), 'primary'); ?>
 			</form>
 		</div>
 	<?php

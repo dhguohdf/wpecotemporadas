@@ -27,19 +27,40 @@ get_header();
                 <?php
                 $numberposts = (bon_get_option('listing_per_page')) ? bon_get_option('listing_per_page') : 8;
                 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                $orderby = '';
+                $orderby = bon_get_option('listing_orderby');
+                $order = bon_get_option('listing_order', 'DESC');
                 $key = '';
+
+                switch ( $orderby ) {
+                    case 'price':
+                        $orderby = 'meta_value_num';
+                        $key = bon_get_prefix() . 'listing_price';
+                        break;
+                    
+                    case 'title':
+                        $orderby = 'title';
+
+                        break;
+
+                    case 'size':
+                        $orderby = 'meta_value_num';
+                        $key = bon_get_prefix() . 'listing_mileage';
+
+                        break;
+
+                    default:
+                        $orderby = 'date';
+                        break;
+                }
+                
                 if(isset($_GET['search_orderby'])) {
                     $orderby = $_GET['search_orderby'];
                 }
-                $order = 'DESC';
+                
                 if(isset($_GET['search_order'])) {
                     $order = $_GET['search_order'];
                 }
-                if($orderby == 'price') {
-                    $key = 'shandora_listing_price';
-                    $orderby = 'meta_value_num';
-                }
+                
                 $listing_args = array(
                         'post_type' => 'car-listing',
                         'posts_per_page' => $numberposts,

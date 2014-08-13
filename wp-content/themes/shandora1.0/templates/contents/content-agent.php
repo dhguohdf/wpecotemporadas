@@ -38,7 +38,7 @@ if( is_singular( get_post_type() ) ) {
 						<strong><?php _e('Celular','bon'); ?>: </strong><?php echo $agent_mobile; ?><br/>
 						<strong><?php _e('Telefone 1','bon'); ?>: </strong><?php echo $agent_office; ?><br/>
 						<strong><?php _e('Telefone 2','bon'); ?>: </strong><?php echo $agent_fax; ?><br/>
-						<strong><?php _e('Website','bon'); ?>: </strong><?php echo $agent_site; ?><br/>
+						<strong><?php _e('Website','bon'); ?>: </strong><a href="<?php echo $agent_site;?>" target="_blank"><?php echo $agent_site; ?></a><br/>
 					</div>
 
 					<div class="social-media column large-6">

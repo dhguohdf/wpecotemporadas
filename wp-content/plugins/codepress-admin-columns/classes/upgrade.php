@@ -1,13 +1,10 @@
 <?php
-
-// @dev_only: set_site_transient( 'update_plugins', null );
-
 /**
  * Upgrade
  *
  * Class largely based on code from ACF ( thanks to Elliot Condon )
  *
- * @since 2.0.0
+ * @since 2.0
  */
 class CPAC_Upgrade {
 
@@ -16,10 +13,10 @@ class CPAC_Upgrade {
 	 */
 	private $cpac;
 
+	public $update_prevented = false;
+
 	/**
-	 * Constructor
-	 *
-	 * @since 2.0.0
+	 * @since 2.0
 	 */
 	function __construct( $cpac ) {
 
@@ -29,29 +26,64 @@ class CPAC_Upgrade {
 		add_action( 'admin_init', array( $this, 'init' ) );
 		add_action( 'admin_menu', array( $this, 'admin_menu' ), 11 );
 		add_action( 'wp_ajax_cpac_upgrade', array( $this, 'ajax_upgrade' ) );
+
+		if ( ! $this->allow_upgrade() ) {
+			add_action( 'cpac_messages', array( $this, 'proaddon_notice' ) );
+		}
 	}
 
 	/**
-	 * Add submenu page
+	 * Display a notice about the deprecated pro add-on
 	 *
-	 * @since 2.0.0
+	 * @since 2.2
+	 */
+	public function proaddon_notice() {
+
+		if ( apply_filters( 'cpac/suppress_proaddon_notice', false ) ) {
+			return;
+		}
+		?>
+		<div class="message error">
+			<p>
+				<?php _e( '<strong>Important:</strong> We&#39;ve noticed that you&#39;re using the <em>Pro add-on</em>, which is no longer supported by Admin Columns 2.2+. However, a free license of <strong>Admin Columns Pro</strong> <a href="http://www.admincolumns.com/pro-addon-information/" target="_blank">is available</a>, which features a bunch of cool new features, including Direct Inline Editing!', 'cpac' ); ?>
+				<a href="http://www.admincolumns.com/pro-addon-information/" target="_blank"><?php _e( 'Learn more', 'cpac' ); ?></a>
+			</p>
+		</div>
+		<?php
+	}
+
+	/**
+	 * Whether upgrading is allowed
+	 *
+	 * @since 2.1.5
+	 *
+	 * @return bool Whether plugin upgrading is allowed
+	 */
+	public function allow_upgrade() {
+
+		require_once ABSPATH . 'wp-admin/includes/plugin.php';
+
+		return ! is_plugin_active( 'cac-addon-pro/cac-addon-pro.php' );
+	}
+
+	/**
+	 * Add submenu page & scripts
+	 *
+	 * @since 2.0
 	 */
 	public function admin_menu() {
 
 		// Don't run on plugin activate
-		if ( isset( $_GET['action'] ) && 'activate-plugin' == $_GET['action'] ) return;
+		if ( isset( $_GET['action'] ) && 'activate-plugin' === $_GET['action'] ) {
+			return;
+		}
 
-		// add settings page
 		$upgrade_page = add_submenu_page( 'options-general.php', __( 'Upgrade', 'cpac' ), __( 'Upgrade', 'cpac' ), 'manage_options', 'cpac-upgrade', array( $this, 'start_upgrade' ) );
-
-		// add scripts
 		add_action( "admin_print_scripts-{$upgrade_page}", array( $this, 'admin_scripts' ) );
 	}
 
 	/**
-	 * init
-	 *
-	 * @since 2.0.0
+	 * @since 2.0
 	 */
 	public function init() {
 
@@ -117,7 +149,7 @@ class CPAC_Upgrade {
 	/**
 	 * Init Upgrade Process
 	 *
-	 * @since 2.0.0
+	 * @since 2.0
 	 */
 	public function ajax_upgrade() {
 
@@ -316,7 +348,7 @@ class CPAC_Upgrade {
 	/*
 	* Starting points of the upgrade process
 	*
-	* @since 2.0.0
+	* @since 2.0
 	*/
 	public function start_upgrade() {
 
@@ -346,7 +378,7 @@ class CPAC_Upgrade {
 	/**
 	 * Scripts
 	 *
-	 * @since 2.0.0
+	 * @since 2.0
 	 */
 	public function admin_scripts() {
 		wp_enqueue_script( 'cpac-upgrade', CPAC_URL . 'assets/js/upgrade.js', array( 'jquery' ), CPAC_VERSION );

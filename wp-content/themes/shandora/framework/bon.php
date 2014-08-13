@@ -20,8 +20,7 @@ function bon_set_base_data() {
 	$setting_pages = array(
 
 		array( 'slug' => 'bon_options', 'parent'=>'bon', 'title' => 'Theme Options', 'role' => 'manage_options'),
-		//array( 'slug' => 'bon_backup', 'parent'=>'bon_backup', 'title' => 'Backup Settings', 'role' => 'manage_options' ),
-		array( 'slug' => 'bon_framework', 'parent'=>'bon_framework', 'title' => 'Framework Settings', 'role' => 'superuser' ),	
+		array( 'slug' => 'bon_framework', 'parent'=>'bon_framework', 'title' => 'Framework Settings', 'role' => 'superuser' ),
 								 
 	);
 

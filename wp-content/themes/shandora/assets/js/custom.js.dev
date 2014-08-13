@@ -26,682 +26,23 @@
  */
 (function(b){b.support.touch="ontouchend" in document;if(!b.support.touch){return;}var c=b.ui.mouse.prototype,e=c._mouseInit,a;function d(g,h){if(g.originalEvent.touches.length>1){return;}g.preventDefault();var i=g.originalEvent.changedTouches[0],f=document.createEvent("MouseEvents");f.initMouseEvent(h,true,true,window,1,i.screenX,i.screenY,i.clientX,i.clientY,false,false,false,false,0,null);g.target.dispatchEvent(f);}c._touchStart=function(g){var f=this;if(a||!f._mouseCapture(g.originalEvent.changedTouches[0])){return;}a=true;f._touchMoved=false;d(g,"mouseover");d(g,"mousemove");d(g,"mousedown");};c._touchMove=function(f){if(!a){return;}this._touchMoved=true;d(f,"mousemove");};c._touchEnd=function(f){if(!a){return;}d(f,"mouseup");d(f,"mouseout");if(!this._touchMoved){d(f,"click");}a=false;};c._mouseInit=function(){var f=this;f.element.bind("touchstart",b.proxy(f,"_touchStart")).bind("touchmove",b.proxy(f,"_touchMove")).bind("touchend",b.proxy(f,"_touchEnd"));e.call(f);};})(jQuery);
 
+
 jQuery(document).ready(function ($) {
-    var $w = $(window);
-    $.ajax({
-        type: "POST",
-        url: bon_ajax.url,
-        data: {
-            action: "price-range"
-        },
-        success: function (data) {
-            if ($('#idx-slider-range2').length > 0) {
-                set_idx_price_slider2(data)
-            }
-            if ($('#idx-slider-range-widget').length > 0) {
-                set_idx_price_slider(data)
-            }
-        }
-    });
-    $(document).foundation();
-    $('.select-slider').each(function (e) {
-        var id = $(this).attr('id');
-        makeSelectToSlider(id)
-    });
-    $('.range-slider').each(function (e) {
-        var id = $(this).attr('id');
-        makeRangeSlider(id, $(this).data('min'), $(this).data('max'), $(this).data('step'))
-    });
-    if ($('#property_status').length > 0) {
-        $('#property_status').change(function (e) {
-            var t = $('.range-slider[data-type="price"]');
-            var id = t.attr('id');
-            if ($('#property_status').length > 0 && t.data('type') == 'price' && t.slider) {
-                if ($('#property_status').val() == 'for-rent') {
-                    var data_min = t.data('min-r');
-                    var data_max = t.data('max-r');
-                    var data_step = t.data('step-r');
-                    t.removeClass('active-sell').addClass('active-rent');
-                    t.slider("destroy");
-                    t.find('ol[role="presentation"]').remove();
-                    $('#min_price').val(data_min);
-                    $('#max_price').val(data_max);
-                    makeRangeSlider(id, data_min, data_max, data_step);
-                    a = $('#' + id).slider('value');
-                    console.log(a)
-                } else {
-                    var data_min = t.data('min');
-                    var data_max = t.data('max');
-                    var data_step = t.data('step');
-                    t.removeClass('active-rent').addClass('active-sell');
-                    t.slider("destroy");
-                    t.find('ol[role="presentation"]').remove();
-                    $('#min_price').val(data_min);
-                    $('#max_price').val(data_max);
-                    makeRangeSlider(id, data_min, data_max, data_step)
-                }
-            }
-        }).change()
-    }
-    if ($.flexslider) {
-        var interval = $('#main-slider').data('interval') ? $('#main-slider').data('interval') : 12000;
-        $('#main-slider').flexslider({
-            animation: "fade",
-            controlNav: false,
-            animationSpeed: 600,
-            slideshowSpeed: interval,
-            after: captionAnimation,
-            start: captionAnimation,
-            controlsContainer: "#main-slider",
-            prevText: '',
-            nextText: ''
-        })
-    }
-    if ($.fn.bxSlider) {
-        $('.bxslider').bxSlider({
-            pagerCustom: '#bx-pager',
-            controls: false,
-            mode: 'fade',
-            adaptiveHeight: true,
-            onSliderLoad: function (index) {
-                $(this.pagerCustom).find('li').removeClass('active-list');
-                $(this.pagerCustom).each(function (i, el) {
-                    $(el).find('li').eq(index).addClass('active-list')
-                })
-            },
-            onSlideBefore: function (selector) {
-                var index = selector.index();
-                $(this.pagerCustom).find('li').removeClass('active-list');
-                $(this.pagerCustom).each(function (i, el) {
-                    $(el).find('li').eq(index).addClass('active-list')
-                })
-            }
-        });
-        $('.bxslider-no-thumb').bxSlider({
-            pager: false,
-            controls: true,
-            adaptiveHeight: true,
-            mode: 'fade',
-            nextText: '<i class="awe-angle-right"></i>',
-            prevText: '<i class="awe-angle-left"></i>'
-        });
-        $('.bxslider-both').bxSlider({
-            pagerCustom: '#bx-pager',
-            controls: true,
-            adaptiveHeight: true,
-            mode: 'fade',
-            nextText: '<i class="awe-angle-right"></i>',
-            prevText: '<i class="awe-angle-left"></i>',
-            onSliderLoad: function (index) {
-                $(this.pagerCustom).find('li').removeClass('active-list');
-                $(this.pagerCustom).each(function (i, el) {
-                    $(el).find('li').eq(index).addClass('active-list')
-                })
-            },
-            onSlideBefore: function (selector) {
-                var index = selector.index();
-                $(this.pagerCustom).find('li').removeClass('active-list');
-                $(this.pagerCustom).each(function (i, el) {
-                    $(el).find('li').eq(index).addClass('active-list')
-                })
-            }
-        });
-    }
-    $('#backtop').click(function () {
-        jQuery('body,html').animate({
-            scrollTop: 0
-        }, 600, "easeInSine");
-        return false
-    });
-    var post_carousel = $('.post-carousel');
-    post_carousel.foundationCarousel({
-        itemSelector: ".post-item",
-        slidesContainer: ".post-carousel-slides",
-        controlContainer: ".post-carousel-control",
-        prevText: '',
-        nextText: '',
-        prevClass: 'post-carousel-prev',
-        nextClass: 'post-carousel-next',
-    });
-    post_carousel.each(function () {
-        $(this).find('.post-carousel-control a').each(function () {
-            if ($(this).hasClass('post-carousel-next')) {
-                $(this).addClass('hovered')
-            }
-            $(this).hover(function () {
-                $(this).siblings().removeClass('hovered');
-                $(this).addClass('hovered')
-            }, function () {
-                if ($(this).siblings().hasClass('post-carousel-next')) {
-                    $(this).siblings().addClass('hovered');
-                    $(this).removeClass('hovered')
-                }
-            })
-        })
-    });
-    if ($().jPlayer && $('.bon-jplayer').length > 0) {
-        jQuery(".bon-jplayer").each(function () {
-            var m4v_url = $(this).data('m4v');
-            var ogv_url = $(this).data('ogv');
-            var poster_url = $(this).data('poster');
-            var id = $(this).siblings('.jp-video-container').find('.jp-interface').attr('id');
-            $(this).jPlayer({
-                ready: function () {
-                    $(this).jPlayer("setMedia", {
-                        m4v: m4v_url,
-                        ogv: ogv_url,
-                        poster: poster_url
-                    });
-                    var parentWidth = $(this).siblings('.jp-video-container').outerWidth();
-                    var playWidth = $(this).siblings('.jp-video-container').find('.jp-play').outerWidth(true);
-                    var muteWidth = $(this).siblings('.jp-video-container').find('.jp-mute').outerWidth(true);
-                    var volumeWidth = $(this).siblings('.jp-video-container').find('.jp-volume-bar-container').outerWidth(true);
-                    var minusWidth = playWidth + muteWidth + volumeWidth;
-                    var progressWidth = parentWidth - minusWidth;
-                    $(this).siblings('.jp-video-container').find('.jp-progress').css('width', progressWidth + "px")
-                },
-                size: {
-                    width: "100.05%",
-                    height: "auto"
-                },
-                swfPath: "/libs/jplayer",
-                cssSelectorAncestor: "#" + id,
-                supplied: "m4v,ogv,all"
-            })
-        })
-    }
-    $('.header-toggler .toggler-button').click(function () {
-        $(this).parent().parent().prev().slideToggle(function () {
-            $(this).toggleClass('hide')
-        })
-    });
-    if (Modernizr.mq('only screen and (min-width: 781px)')) {
-        $('.panel.callaction').each(function () {
-            var mT = ($(this).outerHeight() - $(this).find('.panel-button a').outerHeight()) / 2;
-            $(this).find('.panel-button a').css({
-                "margin-top": mT + "px"
-            })
-        })
-    } else {
-        $('.panel.callaction').each(function () {
-            $(this).find('.panel-button a').removeAttr('style')
-        })
-    }
-    $w.resize(function () {
-        matchHeight();
-        onResize()
-    }).resize();
-    var items = $('.slide');
-    var content = $('#inner-wrap');
-    var open = function () {
-        $(items).removeClass('close').addClass('open')
+    wrapSelects = function () {
+        $('.search-listing .select-wrap:not(.is-wrapped)')
+            .addClass('is-wrapped')
+            .wrap('<div class="customs dropdowns select-dark" />')
+            .after('<span class="selector"></span>');
     };
-    var close = function () {
-        $(items).removeClass('open').addClass('close')
-    };
-    $('#nav-toggle').click(function () {
-        if (content.hasClass('open')) {
-            $(close)
-        } else {
-            $(open)
-        }
-    });
-    content.click(function () {
-        if (content.hasClass('open')) {
-            $(close)
-        }
-    });
-    $('.menu-has-children .menu-toggle').click(function (e) {
-        if ($(this).hasClass('awe-angle-down')) {
-            $(this).removeClass('awe-angle-down').addClass('awe-angle-up')
-        } else {
-            $(this).removeClass('awe-angle-up').addClass('awe-angle-down')
-        }
-        $(this).siblings('.sub-menu').slideToggle();
-        $(this).parent().toggleClass('sub-menu-active')
-    });
-    $('.listing-gallery').each(function () {
-        var imageset = $(this).data('imageset');
-        if (imageset != '') {
-            $(this).magnificPopup({
-                items: imageset,
-                gallery: {
-                    enabled: true
-                },
-                image: {
-                    markup: '<div class="mfp-figure">' + '<div class="mfp-title"></div>' + '<div class="mfp-close"></div>' + '<div class="mfp-img"></div>' + '<div class="mfp-bottom-bar">' + '<div class="mfp-counter"></div>' + '</div>' + '</div>',
-                },
-                type: 'image'
-            })
-        }
-    });
-    $('.gallery-link-file a').magnificPopup({
-        type: 'image',
-        gallery: {
-            enabled: true
-        }
-    });
-    $('#agent-contactform').submit(function () {
-        var $t = $(this);
-        var error = false;
-        $t.find('.sending-result').fadeOut(200);
-        $t.find('.required').each(function () {
-            if ($.trim($(this).val()) == '') {
-                error = true;
-                $(this).siblings('.contact-form-error').fadeIn(200)
-            } else if ($(this).hasClass('email')) {
-                var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-                if (!emailReg.test($.trim($(this).val()))) {
-                    error = true;
-                    $(this).siblings('.contact-form-error').fadeIn(200)
-                } else {
-                    $(this).siblings('.contact-form-error').fadeOut(200)
-                }
-            } else {
-                $(this).siblings('.contact-form-error').fadeOut(200)
-            }
-        });
-        if (error) {
-            return false
-        }
-        $(this).find('.contact-loader').fadeIn();
-        var send_data = $(this).serialize();
-        $.post(bon_toolkit_ajax.url, 'action=process_agent_contact&' + send_data, function (data) {
-            $t.find('.contact-loader').fadeOut();
-            if (data.success == '1') {
-                $t.find('input[type="text"], textarea').val('');
-                $t.find('.sending-result div.bon-toolkit-alert').each(function () {
-                    $(this).html(data.value);
-                    $(this).removeClass('red').addClass('green').css({
-                        'margin-top': '10px',
-                        'display': 'block'
-                    });
-                    $(this).parent().fadeIn(200)
-                })
-            } else {
-                $t.find('.sending-result div.bon-toolkit-alert').each(function () {
-                    $(this).html(data.value);
-                    $(this).removeClass('green').addClass('red').css({
-                        'margin-top': '10px',
-                        'display': 'block'
-                    });
-                    $(this).parent().fadeIn(200)
-                })
-            }
-        }, 'json');
-        return false
-    });
-    $('.listings').on('click', '.listing-compare', function (e) {
-        e.preventDefault();
-        var $t = $(this);
-        var $ac = $('body').find('.action-compare');
-        var compare_url = $t.parents('.listings').data('compareurl');
-        var post_id = $t.data('id');
-        var icon_checked = 'sha-check';
-        var icon_not_checked = 'sha-paperclip';
-        var data_count = $ac.data('count');
-        var data_compare_id = $ac.data('compare');
-        var data_return = '';
-        if ($t.hasClass('checked')) {
-            $t.removeClass('checked').children('i').removeClass();
-            $t.children('i').addClass(icon_not_checked);
-            if (data_count > 0) {
-                data_count--;
-                $ac.data('count', data_count)
-            }
-        } else {
-            if (data_count < 2) {
-                $t.addClass('checked').children('i').removeClass();
-                $t.children('i').addClass(icon_checked);
-                data_count++;
-                $ac.data('count', data_count);
-                if (data_count == 1) {
-                    data_return = post_id
-                } else if (data_count > 1) {
-                    data_return = data_compare_id + "," + post_id
-                }
-                $ac.data('compare', data_return)
-            }
-        } if (data_count == 2) {
-            window.location = compare_url + '/?compare=' + $ac.data('compare')
-        }
-    });
-    if ($('.video-embed').length > 0) {
-        if ($.fn.fitVids) {
-            $('.video-embed').fitVids()
-        }
-    }
-    $('#detail-tab .tab-nav a').click(function (e) {
-        e.preventDefault();
-        $(this).siblings().removeClass('active');
-        $(this).addClass('active');
-        var target = $(this).attr('href');
-        $(this).parent().parent().find('.tab-content').removeClass('active');
-        $(this).parent().parent().find(target).addClass('active')
-    });
-    if ($('#property_location_level1').length > 0) {
-        $("property_location_level1").trigger('change');
-        $("property_location_level3").trigger('change');
-        $("#property_location_level1").change(function () {
-            if ($("#property_location_level2").length > 0) {
-                $("#property_location_level2").parent().find('a.current').text('Loading...');
-                var opt_val = $(this).val();
-                $.ajax({
-                    type: "POST",
-                    url: bon_ajax.url,
-                    data: {
-                        action: "location-level",
-                        term_slug: opt_val,
-                        nonce: $(this).parents('.search-listing').find('#search_nonce').val()
-                    },
-                    success: function (data) {
-                        var select, name, option;
-                        select = $('#property_location_level2');
-                        if (select.prop) {
-                            var options = select.prop('options')
-                        } else {
-                            var options = select.attr('options')
-                        }
-                        console.log(options);
-                        $(select).find('option').remove();
-                        $.each(data, function (val, text) {
-                            options[options.length] = new Option(text, val)
-                        });
-                        Foundation.libs.forms.refresh_custom_select($('#property_location_level2'), true)
-                    }
-                })
-            }
-        })
-    }
-    if ($('#property_location_level2').length > 0) {
-        $("property_location_level2").trigger('change');
-        $("#property_location_level2").change(function () {
-            if ($("#property_location_level3").length > 0) {
-                $("#property_location_level3").parent().find('a.current').text('Loading...');
-                var opt_val = $(this).val();
-                $.ajax({
-                    type: "POST",
-                    url: bon_ajax.url,
-                    data: {
-                        action: "location-level",
-                        term_slug: opt_val,
-                        nonce: $(this).parents('.search-listing').find('#search_nonce').val()
-                    },
-                    success: function (data) {
-                        var select, name, option;
-                        select = $('#property_location_level3');
-                        if (select.prop) {
-                            var options = select.prop('options')
-                        } else {
-                            var options = select.attr('options')
-                        }
-                        console.log(options);
-                        $(select).find('option').remove();
-                        $.each(data, function (val, text) {
-                            options[options.length] = new Option(text, val)
-                        });
-                        Foundation.libs.forms.refresh_custom_select($('#property_location_level3'), true)
-                    }
-                })
-            }
-        })
-    }
+    $(wrapSelects);
+});
 
+(function($){
+	
+	// USE STRICT
+	"use strict";
 
-    if ($('#manufacturer_level1').length > 0) {
-        $("manufacturer_level1").trigger('change');
-        $("manufacturer_level3").trigger('change');
-        $("#manufacturer_level1").change(function () {
-            if ($("#manufacturer_level2").length > 0) {
-                $("#manufacturer_level2").parent().find('a.current').text('Loading...');
-                var opt_val = $(this).val();
-                $.ajax({
-                    type: "POST",
-                    url: bon_ajax.url,
-                    data: {
-                        action: "manufacturer-level",
-                        term_slug: opt_val,
-                        nonce: $(this).parents('.search-listing').find('#search_nonce').val()
-                    },
-                    success: function (data) {
-                        var select, name, option;
-                        select = $('#manufacturer_level2');
-                        if (select.prop) {
-                            var options = select.prop('options')
-                        } else {
-                            var options = select.attr('options')
-                        }
-                        console.log(options);
-                        $(select).find('option').remove();
-                        $.each(data, function (val, text) {
-                            options[options.length] = new Option(text, val)
-                        });
-                        Foundation.libs.forms.refresh_custom_select($('#manufacturer_level2'), true)
-                    }
-                })
-            }
-        })
-    }
-
-    if ($('#manufacturer_level2').length > 0) {
-        $("manufacturer_level2").trigger('change');
-        $("#manufacturer_level2").change(function () {
-            if ($("#manufacturer_level3").length > 0) {
-                $("#manufacturer_level3").parent().find('a.current').text('Loading...');
-                var opt_val = $(this).val();
-                $.ajax({
-                    type: "POST",
-                    url: bon_ajax.url,
-                    data: {
-                        action: "manufacturer-level",
-                        term_slug: opt_val,
-                        nonce: $(this).parents('.search-listing').find('#search_nonce').val()
-                    },
-                    success: function (data) {
-                        var select, name, option;
-                        select = $('#manufacturer_level3');
-                        if (select.prop) {
-                            var options = select.prop('options')
-                        } else {
-                            var options = select.attr('options')
-                        }
-                        console.log(options);
-                        $(select).find('option').remove();
-                        $.each(data, function (val, text) {
-                            options[options.length] = new Option(text, val)
-                        });
-                        Foundation.libs.forms.refresh_custom_select($('#manufacturer_level3'), true)
-                    }
-                })
-            }
-        })
-    }
-
-    function matchHeight() {
-        $("[data-match-height]").each(function () {
-            var parentRow = $(this),
-                childrenCols = $(this).find("[data-height-watch]"),
-                childHeights = childrenCols.map(function () {
-                    return $(this).height()
-                }).get(),
-                tallestChild = Math.max.apply(Math, childHeights);
-            childrenCols.css('min-height', tallestChild);
-            if (parentRow.hasClass('textarea-container')) {
-                var padT = childrenCols.find('textarea').css('padding-top');
-                var padB = childrenCols.find('textarea').css('padding-bottom');
-                var pad = parseInt(padT) + parseInt(padB);
-                childrenCols.find('.attached-label').css('min-height', tallestChild).end().find('textarea').css('min-height', tallestChild)
-            }
-        })
-    }
-
-    function onResize() {
-        if (Modernizr.mq('only screen and (max-width: 780px)')) {
-            $('#main-header').show().removeClass('hide');
-            $('html').addClass('offcanvas-nav')
-        } else {
-            $('html').removeClass('offcanvas-nav')
-        } if (Modernizr.mq('only screen and (min-width: 781px)')) {
-            $('.menu-has-children .menu-toggle').each(function () {
-                $(this).parent().removeClass('sub-menu-active');
-                $(this).siblings('.sub-menu').removeAttr('style');
-                $(this).removeClass().addClass('icon awe-angle-down menu-toggle')
-            });
-            $('.panel.callaction').each(function () {
-                var mT = ($(this).outerHeight() - $(this).find('.panel-button a').outerHeight()) / 2;
-                $(this).find('.panel-button a').css({
-                    "margin-top": mT + "px"
-                })
-            })
-        } else {
-            $('.panel.callaction').each(function () {
-                $(this).find('.panel-button a').removeAttr('style')
-            })
-        }
-    }
-
-    function makeSelectToSlider(selector) {
-        var label_count = '';
-        var opt_len = $("#" + selector + " option").length;
-        if (opt_len < 10) {
-            label_count = opt_len
-        } else {
-            label_count = opt_len / 2
-        }
-        $("select#" + selector).selectToUISlider({
-            labels: label_count,
-            tooltip: false,
-            labelSrc: 'text',
-            sliderOptions: {
-                create: function (e, ui) {
-                    var filterSelected = $("select#" + selector).val();
-                    if (filterSelected != '') {
-                        $(".ui-slider-label:contains(" + filterSelected + ")", this).addClass("filter-active")
-                    }
-                },
-                change: function (e, ui) {
-                    var filterSelected = $("select#" + selector + " option").eq(ui.values[0]).val();
-                    $(this).find(".ui-slider-label").removeClass("filter-active");
-                    $(".ui-slider-label:contains(" + filterSelected + ")", this).addClass("filter-active")
-                }
-            }
-        }).hide()
-    }
-
-    function makeRangeSlider(selector, min, max, step) {
-        $t = $("#" + selector);
-        var min_val = parseInt(min),
-            max_val = parseInt(max),
-            type = $t.data('type'),
-            step = parseInt(step),
-            initial_min_val = (parseInt($('#min_' + type).val())) ? parseInt($('#min_' + type).val()) : min_val,
-            initial_max_val = (parseInt($('#max_' + type).val())) ? parseInt($('#max_' + type).val()) : max_val;
-        $t.slider({
-            range: true,
-            min: min_val,
-            max: max_val,
-            values: [initial_min_val, initial_max_val],
-            step: step,
-            create: function (event, ui) {
-                var li_min = '<li class="min-val"><span class="ui-slider-label ui-slider-label-show">' + addCommaCur(min_val) + '</span></li>';
-                var li_max = '<li class="max-val"><span class="ui-slider-label ui-slider-label-show">' + addCommaCur(max_val) + '</span></li>';
-                var labelComponent = '<ol role="presentation">' + li_min + li_max + '</ol>';
-                $t.append(labelComponent)
-            },
-            slide: function (event, ui) {
-                $("#min_" + type + "_text").text(addCommaCur(ui.values[0]));
-                $("#max_" + type + "_text").text(addCommaCur(ui.values[1]))
-            },
-            stop: function (event, ui) {
-                $("#min_" + type).val(ui.values[0]);
-                $("#max_" + type).val(ui.values[1])
-            }
-        });
-        $("#min_" + type + "_text").text(addCommaCur($t.slider("values", 0)));
-        $("#max_" + type + "_text").text(addCommaCur($t.slider("values", 1)));
-        $("#min_" + type).val($t.slider("values", 0));
-        $("#max_" + type).val($t.slider("values", 1))
-    }
-
-    function set_idx_price_slider(data) {
-        var min_val = parseInt(data.min_val),
-            max_val = parseInt(data.max_val),
-            step = parseInt(data.step),
-            initial_min_val = (parseInt($('#idx-q-PriceMin-widget').val())) ? parseInt($('#idx-q-PriceMin-widget').val()) : min_val,
-            initial_max_val = (parseInt($('#idx-q-PriceMax-widget').val())) ? parseInt($('#idx-q-PriceMax-widget').val()) : max_val;
-        $("#idx-slider-range-widget").slider({
-            range: true,
-            min: min_val,
-            max: max_val,
-            values: [initial_min_val, initial_max_val],
-            step: step,
-            create: function (event, ui) {
-                var $target = $(event.target);
-                var li_min = '<li class="min-val"><span class="ui-slider-label ui-slider-label-show">' + addCommaCur(min_val) + '</span></li>';
-                var li_max = '<li class="max-val"><span class="ui-slider-label ui-slider-label-show">' + addCommaCur(max_val) + '</span></li>';
-                var labelComponent = '<ol role="presentation">' + li_min + li_max + '</ol>';
-                $target.append(labelComponent)
-            },
-            slide: function (event, ui) {
-                $("#idx-min-price-text-widget").text(addCommaCur(ui.values[0]));
-                $("#idx-max-price-text-widget").text(addCommaCur(ui.values[1]))
-            },
-            stop: function (event, ui) {
-                $("#idx-q-PriceMin-widget").val(ui.values[0]);
-                $("#idx-q-PriceMax-widget").val(ui.values[1])
-            }
-        });
-        $("#idx-min-price-text-widget").text(addCommaCur($('#idx-slider-range-widget').slider("values", 0)));
-        $("#idx-max-price-text-widget").text(addCommaCur($('#idx-slider-range-widget').slider("values", 1)));
-        $("#idx-min-price-text-widget").val($("#idx-slider-range-widget").slider("values", 0));
-        $("#idx-max-price-text-widget").val($("#idx-slider-range-widget").slider("values", 1))
-    }
-
-    function set_idx_price_slider2(data) {
-        var min_val = parseInt(data.min_val),
-            max_val = parseInt(data.max_val),
-            step = parseInt(data.step),
-            initial_min_val = (parseInt($('#idx-q-PriceMin').val())) ? parseInt($('#idx-q-PriceMin').val()) : min_val,
-            initial_max_val = (parseInt($('#idx-q-PriceMax').val())) ? parseInt($('#idx-q-PriceMax').val()) : max_val;
-        $("#idx-slider-range2").slider({
-            range: true,
-            min: min_val,
-            max: max_val,
-            values: [initial_min_val, initial_max_val],
-            step: step,
-            create: function (event, ui) {
-                var $target = $(event.target);
-                var li_min = '<li class="min-val"><span class="ui-slider-label ui-slider-label-show">' + addCommaCur(min_val) + '</span></li>';
-                var li_max = '<li class="max-val"><span class="ui-slider-label ui-slider-label-show">' + addCommaCur(max_val) + '</span></li>';
-                var labelComponent = '<ol role="presentation">' + li_min + li_max + '</ol>';
-                $target.append(labelComponent)
-            },
-            slide: function (event, ui) {
-                $("#idx-min-price-text").text(addCommaCur(ui.values[0]));
-                $("#idx-max-price-text").text(addCommaCur(ui.values[1]))
-            },
-            stop: function (event, ui) {
-                $("#idx-q-PriceMin").val(ui.values[0]);
-                $("#idx-q-PriceMax").val(ui.values[1])
-            }
-        });
-        $("#idx-min-price-text").text(addCommaCur($('#idx-slider-range2').slider("values", 0)));
-        $("#idx-max-price-text").text(addCommaCur($('#idx-slider-range2').slider("values", 1)));
-        $("#idx-min-price-text").val($("#idx-slider-range2").slider("values", 0));
-        $("#idx-max-price-text").val($("#idx-slider-range2").slider("values", 1))
-    }
-    $('#search-listing-form').submit(function () {
-        post_data = $(this).serializeArray();
-        name = $(this).attr('id');
-        $(post_data).each(function (e) {
-            $.cookie(this.name, this.value, {
-                path: '/',
-                expires: 365
-            })
-        })
-    });
-
-    function rememberCookie(selector) {
+	var rememberCookie = function (selector) {
         $(selector).each(function () {
             var name = $(this).attr('name');
             if ($.cookie(name)) {
@@ -714,21 +55,21 @@ jQuery(document).ready(function ($) {
                 })
             })
         })
-    }
+    };
 
-    function addCommaCur(nStr) {
+    var addCommaCur = function (nStr) {
         nStr += '';
-        x = nStr.split('.');
-        x1 = x[0];
-        x2 = x.length > 1 ? '.' + x[1] : '';
+        var x = nStr.split('.');
+        var x1 = x[0];
+        var x2 = x.length > 1 ? '.' + x[1] : '';
         var rgx = /(\d+)(\d{3})/;
         while (rgx.test(x1)) {
             x1 = x1.replace(rgx, '$1' + ',' + '$2')
         }
         return x1 + x2
-    }
+    };
 
-    function captionAnimation(args) {
+    var captionAnimation = function (args) {
         if (args.slides != undefined) {
             var caption = $(args.slides).find('.flex-caption'),
                 currentCaption = $(args.slides.eq(args.currentSlide)).find('.flex-caption'),
@@ -812,147 +153,909 @@ jQuery(document).ready(function ($) {
                 caption.find('.primary-title').delay(300).animate(animTitle, 400, 'easeOutQuint')
             }
         }
-    }
+    };
 
-    if ($('#listings-map').length > 0 && typeof shandora_data != 'undefined') {
-    	var zoomMore = '<div class="mapbutton mapzoom more">+</div>';
-        var zoomLess = '<div class="mapbutton mapzoom less">-</div>';
-        var typePlain = '';
-        var typeSat = '';
-        var typeHyb = '';
-        var typeBox = '<div class="maptypebox"><div class="mapbutton maptype plain selected">Plain</div><div class="mapbutton maptype sat">Satellite</div><div class="mapbutton maptype hyb">Hybrid</div></div>';
-        var mapContainer = document.getElementById('listings-map');
-        var mapOptions = {
-            mapTypeId: google.maps.MapTypeId.ROADMAP,
-            mapTypeControl: false,
-            scrollwheel: false,
-            disableDefaultUI: true,
-            disableDoubleClickZoom: true,
-            zoom: 12
-        };
-        var x = new google.maps.MarkerImage(bon_ajax.toolkit_url + 'assets/images/marker-blue.png');
-        var map = new google.maps.Map(mapContainer, mapOptions);
-        var infowindow = new google.maps.InfoWindow();
-        var marker, i;
-        var bounds = new google.maps.LatLngBounds();
-        var e = shandora_data.results;
-        for (i = 0; i < e.length; i++) {
-            var pos = new google.maps.LatLng(e[i].latitude, e[i].longitude);
-            bounds.extend(pos);
-            marker = new google.maps.Marker({
-                position: pos,
-                map: map,
-                icon: x,
-            });
-            google.maps.event.addListener(marker, 'mouseover', (function (marker, i) {
-                var cs = '';
-                cs += '<div class="listing-map-hover clear">';
-                cs += '<div class="listing-map-image">';
-                cs += '<img src="' + e[i].photo + '" alt="' + e[i].title + '" />';
-                cs += '</div>';
-                cs += '<div class="listing-map-details"><h4 class="listing-map-title"><a href="' + e[i].permalink + '" title="' + e[i].title + '">' + e[i].title + '</a></h4>';
-                cs += '<div class="listing-map-price">' + e[i].price + '</div>';
-                cs += '<ul class="listing-map-meta">';
-                cs += '<li class="listing-map-beds">' + e[i].beds + '</li>';
-                cs += '<li class="listing-map-beds">' + e[i].baths + '</li>';
-                cs += '</ul></div>';
-                cs += '</div>';
-                return function () {
-                    infowindow.setContent(cs);
-                    infowindow.open(map, marker)
+	var makeSelectToSlider = function (selector) {
+        var label_count = '';
+        var opt_len = $("#" + selector + " option").length;
+        if (opt_len < 10) {
+            label_count = opt_len
+        } else {
+            label_count = opt_len / 2
+        }
+        $("select#" + selector).selectToUISlider({
+            labels: label_count,
+            tooltip: false,
+            labelSrc: 'text',
+            sliderOptions: {
+                create: function (e, ui) {
+                    var filterSelected = $("select#" + selector).val();
+                    if (filterSelected != '') {
+                        $(".ui-slider-label:contains(" + filterSelected + ")", this).addClass("filter-active")
+                    }
+                },
+                change: function (e, ui) {
+                    var filterSelected = $("select#" + selector + " option").eq(ui.values[0]).val();
+                    $(this).find(".ui-slider-label").removeClass("filter-active");
+                    $(".ui-slider-label:contains(" + filterSelected + ")", this).addClass("filter-active")
                 }
-            })(marker, i))
-        }
-        if( $(mapContainer).data('show-zoom') == true ) {
-        	$(mapContainer).append(zoomMore).append(zoomLess)
-        }
-        if( $(mapContainer).data('show-map-type') == true ) {
-        	$(mapContainer).append(typeBox);
-        }
-        
-        $('#listings-map .less').click(function () {
-            mapOptions.zoom--;
-            if (mapOptions.zoom <= 0) mapOptions.zoom = 0;
-            console.log(mapOptions.zoom);
-            map.setZoom(mapOptions.zoom);
-            $(this).blur()
-        });
-        $('#listings-map .more').click(function () {
-            mapOptions.zoom++;
-            if (mapOptions.zoom >= 21) mapOptions.zoom = 21;
+            }
+        }).hide()
+    };
 
-            map.setZoom(mapOptions.zoom);
-            $(this).blur()
-        });
-        $('#listings-map .maptype.plain').click(function () {
-            map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
-            $('.maptype').removeClass('selected');
-            $(this).addClass('selected')
-        });
-        $('#listings-map .maptype.hyb').click(function () {
-            map.setMapTypeId(google.maps.MapTypeId.HYBRID);
-            $('.maptype').removeClass('selected');
-            $(this).addClass('selected')
-        });
-        $('#listings-map .maptype.sat').click(function () {
-            map.setMapTypeId(google.maps.MapTypeId.SATELLITE);
-            $('.maptype').removeClass('selected');
-            $(this).addClass('selected')
-        });
-        $('.more, .less').hover(function (e) {
-            $(this).addClass('hovered')
-        }, function (e) {
-            $(this).removeClass('hovered')
-        });
-        map.fitBounds(bounds)
-    }
-    if (typeof shandora_data_count != 'undefined') {
-        $('h3#listed-property').text(shandora_data_count)
-    }
-    if (Modernizr.touch) {
-        $('.listings .entry-header').click(function () {
-            if ($(this).hasClass('active')) {
-                $(this).removeClass('active');
-                $(this).find('.listing-hover').css({
-                    'opacity': 0
-                }).end().find('.mask').css({
-                    'margin-top': '100%'
-                }).end().find('.hover-icon-wrapper').hide()
-            } else {
-                $(this).addClass('active');
-                $(this).find('.listing-hover').css({
-                    'opacity': 1
-                }).end().find('.mask').css({
-                    'margin-top': '0'
-                }).end().find('.hover-icon-wrapper').show()
+
+    var matchHeight = function () {
+        $("[data-match-height]").each(function () {
+            var parentRow = $(this),
+                childrenCols = $(this).find("[data-height-watch]"),
+                childHeights = childrenCols.map(function () {
+                    return $(this).height()
+                }).get(),
+                tallestChild = Math.max.apply(Math, childHeights);
+            childrenCols.css('min-height', tallestChild);
+            if (parentRow.hasClass('textarea-container')) {
+                var padT = childrenCols.find('textarea').css('padding-top');
+                var padB = childrenCols.find('textarea').css('padding-bottom');
+                var pad = parseInt(padT) + parseInt(padB);
+                childrenCols.find('.attached-label').css('min-height', tallestChild).end().find('textarea').css('min-height', tallestChild)
             }
         })
-    }
-    $('#loancalculator_cars button').click(function () {
-        LoanAmount = $('#LoanAmount').val();
-        DownPayment = $('#DownPayment').val();
-        AnnualInterestRate = ($('#InterestRate').val()) / 100;
-        Years = $('#NumberOfYears').val();
-        MonthRate = AnnualInterestRate / 12;
-        NumPayments = Years * 12;
-        Prin = LoanAmount - DownPayment;
-        MonthPayment = Math.floor((Prin * MonthRate) / (1 - Math.pow((1 + MonthRate), (-1 * NumPayments))) * 100) / 100;
-        $('#NumberOfPayments').val(NumPayments);
-        $('#MonthlyPayment').val(MonthPayment);
-        $('#MonthlyPayment').addClass('calculatorresult');
-        return false
-    });
-
-    $(".listing-gallery-popup").magnificPopup({
-        type: 'image'
-    });
-
-});jQuery(document).ready(function ($) {
-    wrapSelects = function () {
-        $('.search-listing .select-wrap:not(.is-wrapped)')
-            .addClass('is-wrapped')
-            .wrap('<div class="customs dropdowns select-dark" />')
-            .after('<span class="selector"></span>');
     };
-    $(wrapSelects);
-});
+
+
+    var makeRangeSlider = function(selector, min, max, step) {
+        var $t = $("#" + selector);
+        var min_val = parseInt(min),
+            max_val = parseInt(max),
+            type = $t.data('type'),
+            step = parseInt(step),
+            initial_min_val = (parseInt($('#min_' + type).val())) ? parseInt($('#min_' + type).val()) : min_val,
+            initial_max_val = (parseInt($('#max_' + type).val())) ? parseInt($('#max_' + type).val()) : max_val;
+        $t.slider({
+            range: true,
+            min: min_val,
+            max: max_val,
+            values: [initial_min_val, initial_max_val],
+            step: step,
+            create: function (event, ui) {
+                var li_min = '<li class="min-val"><span class="ui-slider-label ui-slider-label-show">' + addCommaCur(min_val) + '</span></li>';
+                var li_max = '<li class="max-val"><span class="ui-slider-label ui-slider-label-show">' + addCommaCur(max_val) + '</span></li>';
+                var labelComponent = '<ol role="presentation">' + li_min + li_max + '</ol>';
+                $t.append(labelComponent)
+            },
+            slide: function (event, ui) {
+                $("#min_" + type + "_text").text(addCommaCur(ui.values[0]));
+                $("#max_" + type + "_text").text(addCommaCur(ui.values[1]))
+            },
+            stop: function (event, ui) {
+                $("#min_" + type).val(ui.values[0]);
+                $("#max_" + type).val(ui.values[1])
+            }
+        });
+        $("#min_" + type + "_text").text(addCommaCur($t.slider("values", 0)));
+        $("#max_" + type + "_text").text(addCommaCur($t.slider("values", 1)));
+        $("#min_" + type).val($t.slider("values", 0));
+        $("#max_" + type).val($t.slider("values", 1))
+    };
+
+    var set_idx_price_slider = function (data) {
+        var min_val = parseInt(data.min_val),
+            max_val = parseInt(data.max_val),
+            step = parseInt(data.step),
+            initial_min_val = (parseInt($('#idx-q-PriceMin-widget').val())) ? parseInt($('#idx-q-PriceMin-widget').val()) : min_val,
+            initial_max_val = (parseInt($('#idx-q-PriceMax-widget').val())) ? parseInt($('#idx-q-PriceMax-widget').val()) : max_val;
+        $("#idx-slider-range-widget").slider({
+            range: true,
+            min: min_val,
+            max: max_val,
+            values: [initial_min_val, initial_max_val],
+            step: step,
+            create: function (event, ui) {
+                var $target = $(event.target);
+                var li_min = '<li class="min-val"><span class="ui-slider-label ui-slider-label-show">' + addCommaCur(min_val) + '</span></li>';
+                var li_max = '<li class="max-val"><span class="ui-slider-label ui-slider-label-show">' + addCommaCur(max_val) + '</span></li>';
+                var labelComponent = '<ol role="presentation">' + li_min + li_max + '</ol>';
+                $target.append(labelComponent)
+            },
+            slide: function (event, ui) {
+                $("#idx-min-price-text-widget").text(addCommaCur(ui.values[0]));
+                $("#idx-max-price-text-widget").text(addCommaCur(ui.values[1]))
+            },
+            stop: function (event, ui) {
+                $("#idx-q-PriceMin-widget").val(ui.values[0]);
+                $("#idx-q-PriceMax-widget").val(ui.values[1])
+            }
+        });
+        $("#idx-min-price-text-widget").text(addCommaCur($('#idx-slider-range-widget').slider("values", 0)));
+        $("#idx-max-price-text-widget").text(addCommaCur($('#idx-slider-range-widget').slider("values", 1)));
+        $("#idx-min-price-text-widget").val($("#idx-slider-range-widget").slider("values", 0));
+        $("#idx-max-price-text-widget").val($("#idx-slider-range-widget").slider("values", 1))
+    };
+
+    var set_idx_price_slider2 = function (data) {
+        var min_val = parseInt(data.min_val),
+            max_val = parseInt(data.max_val),
+            step = parseInt(data.step),
+            initial_min_val = (parseInt($('#idx-q-PriceMin').val())) ? parseInt($('#idx-q-PriceMin').val()) : min_val,
+            initial_max_val = (parseInt($('#idx-q-PriceMax').val())) ? parseInt($('#idx-q-PriceMax').val()) : max_val;
+        $("#idx-slider-range2").slider({
+            range: true,
+            min: min_val,
+            max: max_val,
+            values: [initial_min_val, initial_max_val],
+            step: step,
+            create: function (event, ui) {
+                var $target = $(event.target);
+                var li_min = '<li class="min-val"><span class="ui-slider-label ui-slider-label-show">' + addCommaCur(min_val) + '</span></li>';
+                var li_max = '<li class="max-val"><span class="ui-slider-label ui-slider-label-show">' + addCommaCur(max_val) + '</span></li>';
+                var labelComponent = '<ol role="presentation">' + li_min + li_max + '</ol>';
+                $target.append(labelComponent)
+            },
+            slide: function (event, ui) {
+                $("#idx-min-price-text").text(addCommaCur(ui.values[0]));
+                $("#idx-max-price-text").text(addCommaCur(ui.values[1]))
+            },
+            stop: function (event, ui) {
+                $("#idx-q-PriceMin").val(ui.values[0]);
+                $("#idx-q-PriceMax").val(ui.values[1])
+            }
+        });
+        $("#idx-min-price-text").text(addCommaCur($('#idx-slider-range2').slider("values", 0)));
+        $("#idx-max-price-text").text(addCommaCur($('#idx-slider-range2').slider("values", 1)));
+        $("#idx-min-price-text").val($("#idx-slider-range2").slider("values", 0));
+        $("#idx-max-price-text").val($("#idx-slider-range2").slider("values", 1))
+    };
+	var onReady = {
+		init: function(){
+
+			$(document).foundation();
+
+			if (typeof shandora_data_count != 'undefined') {
+		        $('h3#listed-property').text(shandora_data_count)
+		    }
+		    if (Modernizr.touch) {
+		        $('.listings .entry-header').click(function () {
+		            if ($(this).hasClass('active')) {
+		                $(this).removeClass('active');
+		                $(this).find('.listing-hover').css({
+		                    'opacity': 0
+		                }).end().find('.mask').css({
+		                    'margin-top': '100%'
+		                }).end().find('.hover-icon-wrapper').hide()
+		            } else {
+		                $(this).addClass('active');
+		                $(this).find('.listing-hover').css({
+		                    'opacity': 1
+		                }).end().find('.mask').css({
+		                    'margin-top': '0'
+		                }).end().find('.hover-icon-wrapper').show()
+		            }
+		        })
+		    }
+			if (Modernizr.mq('only screen and (min-width: 781px)')) {
+		        $('.panel.callaction').each(function () {
+		            var mT = ($(this).outerHeight() - $(this).find('.panel-button a').outerHeight()) / 2;
+		            $(this).find('.panel-button a').css({
+		                "margin-top": mT + "px"
+		            })
+		        })
+		    } else {
+		        $('.panel.callaction').each(function () {
+		            $(this).find('.panel-button a').removeAttr('style')
+		        })
+		    }
+		   
+		    
+		    $('.listings').on('click', '.listing-compare', function (e) {
+		        e.preventDefault();
+		        var $t = $(this);
+		        var $ac = $('body').find('.action-compare');
+		        var compare_url = $t.parents('.listings').data('compareurl');
+		        var post_id = $t.data('id');
+		        var icon_checked = 'sha-check';
+		        var icon_not_checked = 'sha-paperclip';
+		        var data_count = $ac.data('count');
+		        var data_compare_id = $ac.data('compare');
+		        var data_return = '';
+		        if ($t.hasClass('checked')) {
+		            $t.removeClass('checked').children('i').removeClass();
+		            $t.children('i').addClass(icon_not_checked);
+		            if (data_count > 0) {
+		                data_count--;
+		                $ac.data('count', data_count)
+		            }
+		        } else {
+		            if (data_count < 2) {
+		                $t.addClass('checked').children('i').removeClass();
+		                $t.children('i').addClass(icon_checked);
+		                data_count++;
+		                $ac.data('count', data_count);
+		                if (data_count == 1) {
+		                    data_return = post_id
+		                } else if (data_count > 1) {
+		                    data_return = data_compare_id + "," + post_id
+		                }
+		                $ac.data('compare', data_return)
+		            }
+		        } if (data_count == 2) {
+		            window.location = compare_url + '/?compare=' + $ac.data('compare')
+		        }
+		    });
+		    
+
+
+		    
+		    $('#search-listing-form').submit(function () {
+		        var post_data = $(this).serializeArray();
+		        name = $(this).attr('id');
+		        $(post_data).each(function (e) {
+		            $.cookie(this.name, this.value, {
+		                path: '/',
+		                expires: 365
+		            })
+		        })
+		    });
+			
+			$('#backtop').click(function () {
+		        jQuery('body,html').animate({
+		            scrollTop: 0
+		        }, 600, "easeInSine");
+		        return false
+		    });
+		    
+		    $('.header-toggler .toggler-button').click(function () {
+		        $(this).parent().parent().prev().slideToggle(function () {
+		            $(this).toggleClass('hide')
+		        })
+		    });
+			
+			var items = $('.slide');
+		    var content = $('#inner-wrap');
+		    var open = function () {
+		        $(items).removeClass('close').addClass('open')
+		    };
+		    var close = function () {
+		        $(items).removeClass('open').addClass('close')
+		    };
+		    $('#nav-toggle').click(function () {
+		        if (content.hasClass('open')) {
+		            $(close)
+		        } else {
+		            $(open)
+		        }
+		    });
+		    content.click(function () {
+		        if (content.hasClass('open')) {
+		            $(close)
+		        }
+		    });
+		    $('.menu-has-children .menu-toggle').click(function (e) {
+		        if ($(this).hasClass('awe-angle-down')) {
+		            $(this).removeClass('awe-angle-down').addClass('awe-angle-up')
+		        } else {
+		            $(this).removeClass('awe-angle-up').addClass('awe-angle-down')
+		        }
+		        $(this).siblings('.sub-menu').slideToggle();
+		        $(this).parent().toggleClass('sub-menu-active')
+		    });
+
+		    if ($('#property_location_level1').length > 0) {
+		        $("property_location_level1").trigger('change');
+		        $("property_location_level3").trigger('change');
+		        $("#property_location_level1").change(function () {
+		            if ($("#property_location_level2").length > 0) {
+		                $("#property_location_level2").parent().find('a.current').text('Loading...');
+		                var opt_val = $(this).val();
+		                $.ajax({
+		                    type: "POST",
+		                    url: bon_ajax.url,
+		                    data: {
+		                        action: "location-level",
+		                        term_slug: opt_val,
+		                        nonce: $(this).parents('.search-listing').find('#search_nonce').val()
+		                    },
+		                    success: function (data) {
+		                        var select, name, option;
+		                        select = $('#property_location_level2');
+		                        if (select.prop) {
+		                            var options = select.prop('options')
+		                        } else {
+		                            var options = select.attr('options')
+		                        }
+		                        $(select).find('option').remove();
+		                        $.each(data, function (val, text) {
+		                            options[options.length] = new Option(text, val)
+		                        });
+		                        Foundation.libs.forms.refresh_custom_select($('#property_location_level2'), true)
+		                    }
+		                })
+		            }
+		        })
+		    }
+		    
+		    if ($('#property_location_level2').length > 0) {
+		        $("property_location_level2").trigger('change');
+		        $("#property_location_level2").change(function () {
+		            if ($("#property_location_level3").length > 0) {
+		                $("#property_location_level3").parent().find('a.current').text('Loading...');
+		                var opt_val = $(this).val();
+		                $.ajax({
+		                    type: "POST",
+		                    url: bon_ajax.url,
+		                    data: {
+		                        action: "location-level",
+		                        term_slug: opt_val,
+		                        nonce: $(this).parents('.search-listing').find('#search_nonce').val()
+		                    },
+		                    success: function (data) {
+		                        var select, name, option;
+		                        select = $('#property_location_level3');
+		                        if (select.prop) {
+		                            var options = select.prop('options')
+		                        } else {
+		                            var options = select.attr('options')
+		                        }
+		                        $(select).find('option').remove();
+		                        $.each(data, function (val, text) {
+		                            options[options.length] = new Option(text, val)
+		                        });
+		                        Foundation.libs.forms.refresh_custom_select($('#property_location_level3'), true)
+		                    }
+		                })
+		            }
+		        })
+		    }
+
+		     if ($('#dealer_location_level1').length > 0) {
+		        $("dealer_location_level1").trigger('change');
+		        $("dealer_location_level3").trigger('change');
+		        $("#dealer_location_level1").change(function () {
+		            if ($("#dealer_location_level2").length > 0) {
+		                $("#dealer_location_level2").parent().find('a.current').text('Loading...');
+		                var opt_val = $(this).val();
+		                $.ajax({
+		                    type: "POST",
+		                    url: bon_ajax.url,
+		                    data: {
+		                        action: "dealer-location-level",
+		                        term_slug: opt_val,
+		                        nonce: $(this).parents('.search-listing').find('#search_nonce').val()
+		                    },
+		                    success: function (data) {
+		                        var select, name, option;
+		                        select = $('#dealer_location_level2');
+		                        if (select.prop) {
+		                            var options = select.prop('options')
+		                        } else {
+		                            var options = select.attr('options')
+		                        }
+		                        $(select).find('option').remove();
+		                        $.each(data, function (val, text) {
+		                            options[options.length] = new Option(text, val)
+		                        });
+		                        Foundation.libs.forms.refresh_custom_select($('#dealer_location_level2'), true)
+		                    }
+		                })
+		            }
+		        })
+		    }
+		    
+		    if ($('#dealer_location_level2').length > 0) {
+		        $("dealer_location_level2").trigger('change');
+		        $("#dealer_location_level2").change(function () {
+		            if ($("#dealer_location_level3").length > 0) {
+		                $("#dealer_location_level3").parent().find('a.current').text('Loading...');
+		                var opt_val = $(this).val();
+		                $.ajax({
+		                    type: "POST",
+		                    url: bon_ajax.url,
+		                    data: {
+		                        action: "dealer-location-level",
+		                        term_slug: opt_val,
+		                        nonce: $(this).parents('.search-listing').find('#search_nonce').val()
+		                    },
+		                    success: function (data) {
+		                        var select, name, option;
+		                        select = $('#dealer_location_level3');
+		                        if (select.prop) {
+		                            var options = select.prop('options')
+		                        } else {
+		                            var options = select.attr('options')
+		                        }
+		                        $(select).find('option').remove();
+		                        $.each(data, function (val, text) {
+		                            options[options.length] = new Option(text, val)
+		                        });
+		                        Foundation.libs.forms.refresh_custom_select($('#dealer_location_level3'), true)
+		                    }
+		                })
+		            }
+		        })
+		    }
+
+		    if ($('#manufacturer_level1').length > 0) {
+		        $("manufacturer_level1").trigger('change');
+		        $("manufacturer_level3").trigger('change');
+		        $("#manufacturer_level1").change(function () {
+		            if ($("#manufacturer_level2").length > 0) {
+		                $("#manufacturer_level2").parent().find('a.current').text('Loading...');
+		                var opt_val = $(this).val();
+		                $.ajax({
+		                    type: "POST",
+		                    url: bon_ajax.url,
+		                    data: {
+		                        action: "dealer-location-level",
+		                        term_slug: opt_val,
+		                        nonce: $(this).parents('.search-listing').find('#search_nonce').val()
+		                    },
+		                    success: function (data) {
+		                        var select, name, option;
+		                        select = $('#manufacturer_level2');
+		                        if (select.prop) {
+		                            var options = select.prop('options')
+		                        } else {
+		                            var options = select.attr('options')
+		                        }
+		                        $(select).find('option').remove();
+		                        $.each(data, function (val, text) {
+		                            options[options.length] = new Option(text, val)
+		                        });
+		                        Foundation.libs.forms.refresh_custom_select($('#manufacturer_level2'), true)
+		                    }
+		                })
+		            }
+		        })
+		    }
+
+		    if ($('#manufacturer_level2').length > 0) {
+		        $("manufacturer_level2").trigger('change');
+		        $("#manufacturer_level2").change(function () {
+		            if ($("#manufacturer_level3").length > 0) {
+		                $("#manufacturer_level3").parent().find('a.current').text('Loading...');
+		                var opt_val = $(this).val();
+		                $.ajax({
+		                    type: "POST",
+		                    url: bon_ajax.url,
+		                    data: {
+		                        action: "manufacturer-level",
+		                        term_slug: opt_val,
+		                        nonce: $(this).parents('.search-listing').find('#search_nonce').val()
+		                    },
+		                    success: function (data) {
+		                        var select, name, option;
+		                        select = $('#manufacturer_level3');
+		                        if (select.prop) {
+		                            var options = select.prop('options')
+		                        } else {
+		                            var options = select.attr('options')
+		                        }
+		                        $(select).find('option').remove();
+		                        $.each(data, function (val, text) {
+		                            options[options.length] = new Option(text, val)
+		                        });
+		                        Foundation.libs.forms.refresh_custom_select($('#manufacturer_level3'), true)
+		                    }
+		                })
+		            }
+		        })
+		    }
+
+
+		    $('#agent-contactform').submit(function () {
+		        var $t = $(this);
+		        var error = false;
+		        $t.find('.sending-result').fadeOut(200);
+		        $t.find('.required').each(function () {
+		            if ($.trim($(this).val()) == '') {
+		                error = true;
+		                $(this).siblings('.contact-form-error').fadeIn(200)
+		            } else if ($(this).hasClass('email')) {
+		                var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+		                if (!emailReg.test($.trim($(this).val()))) {
+		                    error = true;
+		                    $(this).siblings('.contact-form-error').fadeIn(200)
+		                } else {
+		                    $(this).siblings('.contact-form-error').fadeOut(200)
+		                }
+		            } else {
+		                $(this).siblings('.contact-form-error').fadeOut(200)
+		            }
+		        });
+		        if (error) {
+		            return false
+		        }
+		        $(this).find('.contact-loader').fadeIn();
+		        var send_data = $(this).serialize();
+		        $.post(bon_toolkit_ajax.url, 'action=process_agent_contact&' + send_data, function (data) {
+		            $t.find('.contact-loader').fadeOut();
+		            if (data.success == '1') {
+		                $t.find('input[type="text"], textarea').val('');
+		                $t.find('.sending-result div.bon-toolkit-alert').each(function () {
+		                    $(this).html(data.value);
+		                    $(this).removeClass('red').addClass('green').css({
+		                        'margin-top': '10px',
+		                        'display': 'block'
+		                    });
+		                    $(this).parent().fadeIn(200)
+		                })
+		            } else {
+		                $t.find('.sending-result div.bon-toolkit-alert').each(function () {
+		                    $(this).html(data.value);
+		                    $(this).removeClass('green').addClass('red').css({
+		                        'margin-top': '10px',
+		                        'display': 'block'
+		                    });
+		                    $(this).parent().fadeIn(200)
+		                })
+		            }
+		        }, 'json');
+		        return false
+		    });
+
+			
+			if ($('.video-embed').length > 0) {
+		        if ($.fn.fitVids) {
+		            $('.video-embed').fitVids()
+		        }
+		    }
+		    $('#detail-tab .tab-nav a').click(function (e) {
+		        e.preventDefault();
+		        $(this).siblings().removeClass('active');
+		        $(this).addClass('active');
+		        var target = $(this).attr('href');
+		        $(this).parent().parent().find('.tab-content').removeClass('active');
+		        $(this).parent().parent().find(target).addClass('active')
+		    });
+		}
+	};
+
+	var onLoad = {
+		init: function(){
+
+			$.ajax({
+		        type: "POST",
+		        url: bon_ajax.url,
+		        data: {
+		            action: "price-range"
+		        },
+		        success: function (data) {
+		            if ($('#idx-slider-range2').length > 0) {
+		                set_idx_price_slider2(data)
+		            }
+		            if ($('#idx-slider-range-widget').length > 0) {
+		                set_idx_price_slider(data)
+		            }
+		        }
+		    });
+		    $('.select-slider').each(function (e) {
+		        var id = $(this).attr('id');
+		        makeSelectToSlider(id)
+		    });
+		    $('.range-slider').each(function (e) {
+		        var id = $(this).attr('id');
+		        makeRangeSlider(id, $(this).data('min'), $(this).data('max'), $(this).data('step'))
+		    });
+		    if ($('#property_status').length > 0) {
+		        $('#property_status').change(function (e) {
+		            var t = $('.range-slider[data-type="price"]');
+		            var id = t.attr('id');
+		            if ($('#property_status').length > 0 && t.data('type') == 'price' && t.slider) {
+		                if ($('#property_status').val() == 'for-rent') {
+		                    var data_min = t.data('min-r');
+		                    var data_max = t.data('max-r');
+		                    var data_step = t.data('step-r');
+		                    t.removeClass('active-sell').addClass('active-rent');
+		                    t.slider("destroy");
+		                    t.find('ol[role="presentation"]').remove();
+		                    $('#min_price').val(data_min);
+		                    $('#max_price').val(data_max);
+		                    makeRangeSlider(id, data_min, data_max, data_step);
+		                    a = $('#' + id).slider('value');
+		                } else {
+		                    var data_min = t.data('min');
+		                    var data_max = t.data('max');
+		                    var data_step = t.data('step');
+		                    t.removeClass('active-rent').addClass('active-sell');
+		                    t.slider("destroy");
+		                    t.find('ol[role="presentation"]').remove();
+		                    $('#min_price').val(data_min);
+		                    $('#max_price').val(data_max);
+		                    makeRangeSlider(id, data_min, data_max, data_step)
+		                }
+		            }
+		        }).change()
+		    }
+		    if ($.flexslider) {
+		        var interval = $('#main-slider').data('interval') ? $('#main-slider').data('interval') : 12000;
+		        $('#main-slider').flexslider({
+		            animation: "fade",
+		            controlNav: false,
+		            animationSpeed: 600,
+		            slideshowSpeed: interval,
+		            after: captionAnimation,
+		            start: captionAnimation,
+		            controlsContainer: "#main-slider",
+		            prevText: '',
+		            nextText: ''
+		        })
+		    }
+		    if ($.fn.bxSlider) {
+		        $('.bxslider').bxSlider({
+		            pagerCustom: '#bx-pager',
+		            controls: false,
+		            mode: 'fade',
+		            adaptiveHeight: true,
+		            onSliderLoad: function (index) {
+		                $(this.pagerCustom).find('li').removeClass('active-list');
+		                $(this.pagerCustom).each(function (i, el) {
+		                    $(el).find('li').eq(index).addClass('active-list')
+		                })
+		            },
+		            onSlideBefore: function (selector) {
+		                var index = selector.index();
+		                $(this.pagerCustom).find('li').removeClass('active-list');
+		                $(this.pagerCustom).each(function (i, el) {
+		                    $(el).find('li').eq(index).addClass('active-list')
+		                })
+		            }
+		        });
+		        $('.bxslider-no-thumb').bxSlider({
+		            pager: false,
+		            controls: true,
+		            adaptiveHeight: true,
+		            mode: 'fade',
+		            nextText: '<i class="awe-angle-right"></i>',
+		            prevText: '<i class="awe-angle-left"></i>'
+		        });
+		        $('.bxslider-both').bxSlider({
+		            pagerCustom: '#bx-pager',
+		            controls: true,
+		            adaptiveHeight: true,
+		            mode: 'fade',
+		            nextText: '<i class="awe-angle-right"></i>',
+		            prevText: '<i class="awe-angle-left"></i>',
+		            onSliderLoad: function (index) {
+		                $(this.pagerCustom).find('li').removeClass('active-list');
+		                $(this.pagerCustom).each(function (i, el) {
+		                    $(el).find('li').eq(index).addClass('active-list')
+		                })
+		            },
+		            onSlideBefore: function (selector) {
+		                var index = selector.index();
+		                $(this.pagerCustom).find('li').removeClass('active-list');
+		                $(this.pagerCustom).each(function (i, el) {
+		                    $(el).find('li').eq(index).addClass('active-list')
+		                })
+		            }
+		        });
+		    }
+
+		    var post_carousel = $('.post-carousel');
+		    post_carousel.foundationCarousel({
+		        itemSelector: ".post-item",
+		        slidesContainer: ".post-carousel-slides",
+		        controlContainer: ".post-carousel-control",
+		        prevText: '',
+		        nextText: '',
+		        prevClass: 'post-carousel-prev',
+		        nextClass: 'post-carousel-next',
+		    });
+		    post_carousel.each(function () {
+		        $(this).find('.post-carousel-control a').each(function () {
+		            if ($(this).hasClass('post-carousel-next')) {
+		                $(this).addClass('hovered')
+		            }
+		            $(this).hover(function () {
+		                $(this).siblings().removeClass('hovered');
+		                $(this).addClass('hovered')
+		            }, function () {
+		                if ($(this).siblings().hasClass('post-carousel-next')) {
+		                    $(this).siblings().addClass('hovered');
+		                    $(this).removeClass('hovered')
+		                }
+		            })
+		        })
+		    });
+		    if ($().jPlayer && $('.bon-jplayer').length > 0) {
+		        jQuery(".bon-jplayer").each(function () {
+		            var m4v_url = $(this).data('m4v');
+		            var ogv_url = $(this).data('ogv');
+		            var poster_url = $(this).data('poster');
+		            var id = $(this).siblings('.jp-video-container').find('.jp-interface').attr('id');
+		            $(this).jPlayer({
+		                ready: function () {
+		                    $(this).jPlayer("setMedia", {
+		                        m4v: m4v_url,
+		                        ogv: ogv_url,
+		                        poster: poster_url
+		                    });
+		                    var parentWidth = $(this).siblings('.jp-video-container').outerWidth();
+		                    var playWidth = $(this).siblings('.jp-video-container').find('.jp-play').outerWidth(true);
+		                    var muteWidth = $(this).siblings('.jp-video-container').find('.jp-mute').outerWidth(true);
+		                    var volumeWidth = $(this).siblings('.jp-video-container').find('.jp-volume-bar-container').outerWidth(true);
+		                    var minusWidth = playWidth + muteWidth + volumeWidth;
+		                    var progressWidth = parentWidth - minusWidth;
+		                    $(this).siblings('.jp-video-container').find('.jp-progress').css('width', progressWidth + "px")
+		                },
+		                size: {
+		                    width: "100.05%",
+		                    height: "auto"
+		                },
+		                swfPath: "/libs/jplayer",
+		                cssSelectorAncestor: "#" + id,
+		                supplied: "m4v,ogv,all"
+		            })
+		        })
+		    }
+
+		    if ($('#listings-map').length > 0 && typeof shandora_data != 'undefined') {
+		    	var zoomMore = '<div class="mapbutton mapzoom more">+</div>';
+		        var zoomLess = '<div class="mapbutton mapzoom less">-</div>';
+		        var typePlain = '';
+		        var typeSat = '';
+		        var typeHyb = '';
+		        var typeBox = '<div class="maptypebox"><div class="mapbutton maptype plain selected">Plain</div><div class="mapbutton maptype sat">Satellite</div><div class="mapbutton maptype hyb">Hybrid</div></div>';
+		        var mapContainer = document.getElementById('listings-map');
+		        var mapOptions = {
+		            mapTypeId: google.maps.MapTypeId.ROADMAP,
+		            mapTypeControl: false,
+		            scrollwheel: false,
+		            disableDefaultUI: true,
+		            disableDoubleClickZoom: true,
+		            zoom: 12
+		        };
+		        var x = new google.maps.MarkerImage(bon_ajax.toolkit_url + 'assets/images/marker-blue.png');
+		        var map = new google.maps.Map(mapContainer, mapOptions);
+		        var infowindow = new google.maps.InfoWindow();
+		        var marker, i;
+		        var bounds = new google.maps.LatLngBounds();
+		        var e = shandora_data.results;
+		        for (i = 0; i < e.length; i++) {
+		            var pos = new google.maps.LatLng(e[i].latitude, e[i].longitude);
+		            bounds.extend(pos);
+		            marker = new google.maps.Marker({
+		                position: pos,
+		                map: map,
+		                icon: x,
+		            });
+		            google.maps.event.addListener(marker, 'mouseover', (function (marker, i) {
+		                var cs = '';
+		                cs += '<div class="listing-map-hover clear">';
+		                cs += '<div class="listing-map-image">';
+		                cs += '<img src="' + e[i].photo + '" alt="' + e[i].title + '" />';
+		                cs += '</div>';
+		                cs += '<div class="listing-map-details"><h4 class="listing-map-title"><a href="' + e[i].permalink + '" title="' + e[i].title + '">' + e[i].title + '</a></h4>';
+		                cs += '<div class="listing-map-price">' + e[i].price + '</div>';
+		                cs += '<ul class="listing-map-meta">';
+		                cs += '<li class="listing-map-beds">' + e[i].beds + '</li>';
+		                cs += '<li class="listing-map-beds">' + e[i].baths + '</li>';
+		                cs += '</ul></div>';
+		                cs += '</div>';
+		                return function () {
+		                    infowindow.setContent(cs);
+		                    infowindow.open(map, marker)
+		                }
+		            })(marker, i))
+		        }
+		        if( $(mapContainer).data('show-zoom') == true ) {
+		        	$(mapContainer).append(zoomMore).append(zoomLess)
+		        }
+		        if( $(mapContainer).data('show-map-type') == true ) {
+		        	$(mapContainer).append(typeBox);
+		        }
+		        
+		        $('#listings-map .less').click(function () {
+		            mapOptions.zoom--;
+		            if (mapOptions.zoom <= 0) mapOptions.zoom = 0;
+		            map.setZoom(mapOptions.zoom);
+		            $(this).blur()
+		        });
+		        $('#listings-map .more').click(function () {
+		            mapOptions.zoom++;
+		            if (mapOptions.zoom >= 21) mapOptions.zoom = 21;
+
+		            map.setZoom(mapOptions.zoom);
+		            $(this).blur()
+		        });
+		        $('#listings-map .maptype.plain').click(function () {
+		            map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
+		            $('.maptype').removeClass('selected');
+		            $(this).addClass('selected')
+		        });
+		        $('#listings-map .maptype.hyb').click(function () {
+		            map.setMapTypeId(google.maps.MapTypeId.HYBRID);
+		            $('.maptype').removeClass('selected');
+		            $(this).addClass('selected')
+		        });
+		        $('#listings-map .maptype.sat').click(function () {
+		            map.setMapTypeId(google.maps.MapTypeId.SATELLITE);
+		            $('.maptype').removeClass('selected');
+		            $(this).addClass('selected')
+		        });
+		        $('.more, .less').hover(function (e) {
+		            $(this).addClass('hovered')
+		        }, function (e) {
+		            $(this).removeClass('hovered')
+		        });
+		        map.fitBounds(bounds)
+		    }
+
+		     $('.listing-gallery').each(function () {
+		        var imageset = $(this).data('imageset');
+		        if (imageset != '') {
+		            $(this).magnificPopup({
+		                items: imageset,
+		                gallery: {
+		                    enabled: true
+		                },
+		                image: {
+		                    markup: '<div class="mfp-figure">' + '<div class="mfp-title"></div>' + '<div class="mfp-close"></div>' + '<div class="mfp-img"></div>' + '<div class="mfp-bottom-bar">' + '<div class="mfp-counter"></div>' + '</div>' + '</div>',
+		                },
+		                type: 'image'
+		            })
+		        }
+		    });
+		    $('.gallery-link-file a').magnificPopup({
+		        type: 'image',
+		        gallery: {
+		            enabled: true
+		        }
+		    });
+
+		    $('#loancalculator_cars button').click(function () {
+		        LoanAmount = $('#LoanAmount').val();
+		        DownPayment = $('#DownPayment').val();
+		        AnnualInterestRate = ($('#InterestRate').val()) / 100;
+		        Years = $('#NumberOfYears').val();
+		        MonthRate = AnnualInterestRate / 12;
+		        NumPayments = Years * 12;
+		        Prin = LoanAmount - DownPayment;
+		        MonthPayment = Math.floor((Prin * MonthRate) / (1 - Math.pow((1 + MonthRate), (-1 * NumPayments))) * 100) / 100;
+		        $('#NumberOfPayments').val(NumPayments);
+		        $('#MonthlyPayment').val(MonthPayment);
+		        $('#MonthlyPayment').addClass('calculatorresult');
+		        return false
+		    });
+
+		    $(".listing-gallery-popup").magnificPopup({
+		        type: 'image'
+		    });
+		}
+	};
+
+	var onResize = {
+		init: function(){
+
+			matchHeight();
+
+			if (Modernizr.mq('only screen and (max-width: 780px)')) {
+	            $('#main-header').show().removeClass('hide');
+	            $('html').addClass('offcanvas-nav')
+	        } else {
+	            $('html').removeClass('offcanvas-nav')
+	        } if (Modernizr.mq('only screen and (min-width: 781px)')) {
+	            $('.menu-has-children .menu-toggle').each(function () {
+	                $(this).parent().removeClass('sub-menu-active');
+	                $(this).siblings('.sub-menu').removeAttr('style');
+	                $(this).removeClass().addClass('icon awe-angle-down menu-toggle')
+	            });
+	            $('.panel.callaction').each(function () {
+	                var mT = ($(this).outerHeight() - $(this).find('.panel-button a').outerHeight()) / 2;
+	                $(this).find('.panel-button a').css({
+	                    "margin-top": mT + "px"
+	                })
+	            })
+	        } else {
+	            $('.panel.callaction').each(function () {
+	                $(this).find('.panel-button a').removeAttr('style')
+	            })
+	        }
+
+		}
+	};
+
+	$(document).ready(onReady.init);
+	$(window).load(onLoad.init);
+	$(window).resize(onResize.init);
+
+})(jQuery);

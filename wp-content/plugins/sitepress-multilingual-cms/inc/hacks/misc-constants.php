@@ -1,3 +1,3 @@
-<?php
-define('ICL_PRODUCTION_MODE', '2.1.1');
-?>
+<?php
+define('ICL_PRODUCTION_MODE', '2.1.1');
+?>

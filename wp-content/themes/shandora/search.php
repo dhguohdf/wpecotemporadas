@@ -26,7 +26,7 @@
 
                 <?php while ( have_posts() ) : the_post(); ?>
 
-                    <article id="post-<?php the_ID(); ?>" class="<?php bon_entry_class(); ?>">
+                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 						<header class="entry-header">
 							<?php echo apply_atomic_shortcode( 'entry_title', '[entry-title]' ); ?>

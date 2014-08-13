@@ -1,0 +1,5312 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gravity Forms v1.7.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2014-08-11 23:48-0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.6.5\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ../\n"
+"X-Textdomain-Support: yes\n"
+"Language: pt_BR\n"
+"X-Poedit-SearchPath-0: .\n"
+
+msgid " 2 to 3 times a month"
+msgstr "2 a 3 Vezes ao Mês"
+
+msgid " Bulk action"
+msgstr "Ação em massa"
+
+msgid " Bulk action "
+msgstr "Ação em massa "
+
+msgid " but looking for work"
+msgstr "mas procurando emprego"
+
+msgid "\"Other\" Choice"
+msgstr "\"Outra\" Escolha"
+
+msgid "$100,000 - $150,000"
+msgstr "$ 100.000,00 - $ 150.000,00"
+
+msgid "$150,000 or more"
+msgstr "Mais de $ 150.000,00"
+
+msgid "$20,000 - $30,000"
+msgstr "$ 20.000,00 - $ 30.000,00"
+
+msgid "$30,000 - $40,000"
+msgstr "$ 30.000,00 - $ 40.000,00"
+
+msgid "$40,000 - $50,000"
+msgstr "$ 40.000,00 - $ 50.000,00"
+
+msgid "$50,000 - $75,000"
+msgstr "$ 50.000,00 - $ 75.000,00"
+
+msgid "$75,000 - $100,000"
+msgstr "$ 75.000,00 - $ 100.000,00"
+
+msgid "%1$s at %2$s"
+msgstr "%1$s as %2$s"
+
+msgid "%d entries"
+msgstr "%d registros"
+
+msgid "%d of %d items shown. Edit field to view all"
+msgstr "%d de %d itens mostrados. Edite o campo para ver todos"
+
+msgid "%s ago"
+msgstr "%s atrás"
+
+msgid "%s deleted."
+msgstr "%s excluído."
+
+msgid "%s marked as read."
+msgstr "%s marcada como lida."
+
+msgid "%s marked as spam."
+msgstr "%s marcados como spam."
+
+msgid "%s marked as unread."
+msgstr "%s marcadas como não lidas."
+
+msgid "%s moved to Trash."
+msgstr "%s enviado para o lixo."
+
+msgid "%s restored from the Trash."
+msgstr "%s restaurados da lixeira."
+
+msgid "%s restored from the spam."
+msgstr "%s restaurados do spam."
+
+msgid "%s starred."
+msgstr "%s com estrela."
+
+msgid "%s unstarred."
+msgstr "%s sem estrela."
+
+msgid "%sSign up%s for a free account to get the key."
+msgstr "%sRegistre-se%s para uma conta gratuita para pegar a chave."
+
+msgid ""
+"'Would you like to delete this file? \\'Cancel\\' to stop. \\'OK\\' to "
+"delete'"
+msgstr ""
+"'Você gostaria de apagar esse arquivos? \\'Cancelar\\' para parar. \\'OK\\' "
+"para apagar'"
+
+msgid "1 entry"
+msgstr "1 registro"
+
+msgid "1-3 years"
+msgstr "1 a 3 Anos"
+
+msgid "1-6 months"
+msgstr "1 a 6 Meses"
+
+msgid "12 hour"
+msgstr "12 horas"
+
+msgid "18-24"
+msgstr "18-24"
+
+msgid "2 to 3 times a week"
+msgstr "2 a 3 Vezes por Semana"
+
+msgid "24 hour"
+msgstr "24 horas"
+
+msgid "25-34"
+msgstr "25-34"
+
+msgid "35-44"
+msgstr "35-44"
+
+msgid "45-54"
+msgstr "45-54"
+
+msgid "5 of %d items shown. Edit field to view all"
+msgstr "5 itens de %d mostrados. Editar campo para ver todos"
+
+msgid "55-64"
+msgstr "55-64"
+
+msgid "65 or Above"
+msgstr "Acima de 65"
+
+msgid ""
+"<a href=\"admin.php?page=gf_settings\">Register</a> your copy of Gravity "
+"Forms to receive access to automatic updates and support. Need a license "
+"key? <a href=\"http://www.gravityforms.com\">Purchase one now</a>."
+msgstr ""
+"<a href=\"admin.php?page=gf_settings\">Registrar</a> sua cópia do Gravity "
+"Forms para receber atualizações automáticas e suporte. Precisa de uma chave "
+"de licença? <a href=\"http://www.gravityforms.com\">Compre uma agora</a>."
+
+msgid ""
+"<p>You can update to the latest version automatically or download the update "
+"and install it manually. %sUpdate Automatically%s %sDownload Update%s"
+msgstr ""
+"<p>Você pode atualizar automaticamente para a versão mais recente ou baixar "
+"a atualização e instalar manualmente. %Atualizar Automaticamente%s %Download "
+"da Atualização%s"
+
+msgid ""
+"<strong>IMPORTANT NOTICE:</strong> We do not provide support via e-mail. "
+"Please post any support queries in our <a href='http://forum.gravityhelp."
+"com/'>support forums</a>."
+msgstr ""
+"<strong>NOTA IMPORTANTE:</strong> Nós não fornecemos suporte via email. Por "
+"favor, envie qualquer pergunta de suporte em nosso <a href='http://forum."
+"gravityhelp.com/'>fórum de suporte</a>."
+
+msgid ""
+"<strong>Note:</strong> Only licensed Gravity Forms customers are granted "
+"access to the documentation section."
+msgstr ""
+"<strong>Nota:</strong> Somente Gravity Forms registrados tem acesso a "
+"documentação."
+
+msgid ""
+"<strong>Please Note:</strong> Only licensed Gravity Forms customers are "
+"granted access to the FAQ section."
+msgstr ""
+"<strong>Atenção:</strong> Somente clientes licenciados Gravity Forms têm "
+"acesso à seção FAQ."
+
+msgid ""
+"<strong>Please Note:</strong> Only licensed Gravity Forms customers are "
+"granted access to the downloads section."
+msgstr ""
+"<strong>Atenção:</strong> Somente clientes licenciados Gravity Forms têm "
+"acesso à seção de downloads."
+
+msgid ""
+"<strong>Please Note:</strong> Only licensed Gravity Forms customers are "
+"granted access to the support forums."
+msgstr ""
+"<strong>Atenção:</strong> Somente clientes licenciados Gravity Forms têm "
+"acesso a fóruns de suporte."
+
+msgid ""
+"<strong>Please note:</strong> The Gravity Forms support team does not "
+"provide support for third party scripts, widgets, etc."
+msgstr ""
+"<strong>Atenção:</strong> A equipe do Gravity Forms não oferece suporte para "
+"scripts de terceiros, widgets, etc"
+
+msgid "AFGHANISTAN"
+msgstr "AFEGANISTÃO"
+
+msgid "ALBANIA"
+msgstr "ALBÂNIA"
+
+msgid "ALGERIA"
+msgstr "ARGÉLIA"
+
+msgid "AM"
+msgstr "AM"
+
+msgid "AMERICAN SAMOA"
+msgstr "SAMOA AMERICANA"
+
+msgid "ANDORRA"
+msgstr "ANDORRA"
+
+msgid "ANGOLA"
+msgstr "ANGOLA"
+
+msgid "ANTIGUA AND BARBUDA"
+msgstr "ANTÍGUA E BARBUDA"
+
+msgid "ARGENTINA"
+msgstr "ARGENTINA"
+
+msgid "ARMENIA"
+msgstr "ARMÉNIA"
+
+msgid "AUSTRALIA"
+msgstr "AUSTRÁLIA"
+
+msgid "AUSTRIA"
+msgstr "ÁUSTRIA"
+
+msgid "AZERBAIJAN"
+msgstr "AZERBAIJÃO"
+
+msgid "About the Same"
+msgstr "A mesma Coisa"
+
+msgid "Above inputs"
+msgstr "Acima do campo"
+
+msgid "Accounting/Finance"
+msgstr "Contabilidade / Finanças"
+
+msgid "Active"
+msgstr "Ativo"
+
+msgid "Active Columns"
+msgstr "Ativar Colunas"
+
+msgid ""
+"Add Choices to this field. You can mark each choice as checked by default by "
+"using the radio/checkbox fields on the left."
+msgstr ""
+"Adicione items para este campo. Use os campos de radio/checkbox a esquerda "
+"para que os items sejam selecionados inicialmente."
+
+msgid "Add Gravity Form"
+msgstr "Adicionar Gravity Form"
+
+msgid "Add Icon URL"
+msgstr "Adicionar URL do Ícone"
+
+msgid "Add New"
+msgstr "Adicionar Novo"
+
+msgid "Add Note"
+msgstr "Adicionar nota"
+
+msgid "Add Star"
+msgstr "Adicionar estrela"
+
+msgid "Add a row"
+msgstr "Adicionar uma linha"
+
+msgid "Add page break between entries"
+msgstr "Adicionar quebra de página entre as entradas"
+
+msgid "Add-Ons"
+msgstr "Add-ons"
+
+msgid "Address"
+msgstr "Endereço"
+
+msgid "Address Line 2"
+msgstr "Bairro e Complemento"
+
+msgid "Address Type"
+msgstr "Tipo de Endereço"
+
+msgid "Admin Label"
+msgstr "Legenda Admin"
+
+msgid "Admin Notification"
+msgstr "Notificação de administração"
+
+msgid "Admin Only"
+msgstr "Somente Admin"
+
+msgid "Advanced"
+msgstr "Avançado"
+
+msgid "Advanced Fields"
+msgstr "Campos Avançados"
+
+msgid ""
+"Advanced Fields are for specific uses.  They enable advanced formatting of "
+"regularly used fields such as Name, Email, Address, etc."
+msgstr ""
+"Campos Avançados são para usuários específicos. Eles fornecem formatações "
+"avançadas de campos como Nome, Email, Endereço, etc."
+
+msgid "Advertising/Public Relations"
+msgstr "Publicidade / Relações Públicas"
+
+msgid "Aerospace/Aviation"
+msgstr "Aerospacial / Aviação"
+
+msgid "Afghanistan"
+msgstr "Afeganistão"
+
+msgid "Africa"
+msgstr "África"
+
+msgid "Age"
+msgstr "Idade"
+
+msgid "Agree"
+msgstr "Concordo"
+
+msgid "Agreement"
+msgstr "Acordo"
+
+msgid "Ajax error while adding field"
+msgstr "Erro Ajax ao adicionar campo"
+
+msgid "Ajax error while changing input type"
+msgstr "Erro do Ajax ao adicionar campo"
+
+msgid "Ajax error while deleting field."
+msgstr "Erro Ajax ao apagar o campo."
+
+msgid "Ajax error while duplicating field"
+msgstr "Erro Ajax na duplicação do campo"
+
+msgid "Ajax error while saving form"
+msgstr "Ajax erro ao salvar formulário"
+
+msgid "Ajax error while selecting a form"
+msgstr "Erro de Ajax ao selecioanr o formulário."
+
+msgid "Ajax error while setting lead property"
+msgstr "Error do Ajax quando atualizando o registro"
+
+msgid "Ajax error while update form"
+msgstr "Erro Ajax ao atualizar formulário"
+
+msgid "Alabama"
+msgstr "Alabama"
+
+msgid "Alaska"
+msgstr "Alaska"
+
+msgid "Albania"
+msgstr "Albânia"
+
+msgid "Alberta"
+msgstr "Alberta"
+
+msgid "Algeria"
+msgstr "Argelia"
+
+msgid "All"
+msgstr "Todos"
+
+msgid "All Categories"
+msgstr "Todas Categorias"
+
+msgid "All Pricing Fields"
+msgstr "Todos os Campos de Preço"
+
+msgid "All Submitted Fields"
+msgstr "Todos os campos submetidos"
+
+msgid ""
+"All other characters are literal values and will be displayed automatically."
+msgstr ""
+"Todos os outros caracteres são valores reais e serão exibidos "
+"automaticamente."
+
+msgid "Allow field to be populated dynamically"
+msgstr "Permitir o campo ser preenchido dinamicamente"
+
+msgid "Allowed File Extensions"
+msgstr "Extensões Permitidas"
+
+msgid "Allowed file extensions"
+msgstr "Extensões permitidas"
+
+msgid ""
+"Allows notification to be sent to different email addresses depending on "
+"values selected in the form."
+msgstr ""
+"Permite que a notificação seja enviada para endereços de email diferentes "
+"dependendo dos valores selecionados no formulário."
+
+msgid "Also email this note to"
+msgstr "Mande esta nota para o email"
+
+msgid "American Samoa"
+msgstr "Samoa Americana"
+
+msgid "Andorra"
+msgstr "Andorra"
+
+msgid "Angola"
+msgstr "Angola"
+
+msgid "Antarctica"
+msgstr "Antártida"
+
+msgid "Antigua and Barbuda"
+msgstr "Antígua e Barbuda"
+
+msgid "Any"
+msgstr "Qualquer"
+
+msgid "Apply"
+msgstr "Aplicar"
+
+msgid "April"
+msgstr "Abril"
+
+msgid "Are you sure you would like to reset the Views for the selected forms? "
+msgstr ""
+"Tem certeza que você gostaria de redefinir as Visualizações dos forms "
+"selecionados?"
+
+msgid "Argentina"
+msgstr "Argentina"
+
+msgid "Arizona"
+msgstr "Arizona"
+
+msgid "Arkansas"
+msgstr "Arkansas"
+
+msgid "Armed Forces Americas"
+msgstr "Forças Armadas Américas"
+
+msgid "Armed Forces Europe"
+msgstr "Forças Armadas da Europa"
+
+msgid "Armed Forces Pacific"
+msgstr "Forças Armadas do Pacífico"
+
+msgid "Armenia"
+msgstr "Armenia"
+
+msgid "Arts/Entertainment/Publishing"
+msgstr "Artes / Entretenimento / Editora"
+
+msgid "Asia"
+msgstr "Ásia"
+
+msgid "Associate Degree"
+msgstr "Associate Degree"
+
+msgid "August"
+msgstr "Agosto"
+
+msgid "Australia"
+msgstr "Austrália"
+
+msgid "Australian Dollar"
+msgstr "Dólar Australiano"
+
+msgid "Austria"
+msgstr "Áustria"
+
+msgid "Automotive"
+msgstr "Automotivo"
+
+msgid "Azerbaijan"
+msgstr "Azerbaijão"
+
+msgid "BAHAMAS"
+msgstr "BAHAMAS"
+
+msgid "BAHRAIN"
+msgstr "BAHRAIN"
+
+msgid "BANGLADESH"
+msgstr "BANGLADESH"
+
+msgid "BARBADOS"
+msgstr "BARBADOS"
+
+msgid "BCC"
+msgstr "BCC"
+
+msgid "BELARUS"
+msgstr "BELARUS"
+
+msgid "BELGIUM"
+msgstr "BÉLGICA"
+
+msgid "BELIZE"
+msgstr "BELIZE"
+
+msgid "BENIN"
+msgstr "BENIN"
+
+msgid "BERMUDA"
+msgstr "BERMUDA"
+
+msgid "BHUTAN"
+msgstr "BUTÃO"
+
+msgid "BOLIVIA"
+msgstr "BOLÍVIA"
+
+msgid "BOSNIA AND HERZEGOVINA"
+msgstr "BÓSNIA E HERZEGOVINA"
+
+msgid "BOTSWANA"
+msgstr "BOTSWANA"
+
+msgid "BRAZIL"
+msgstr "BRASIL"
+
+msgid "BRUNEI"
+msgstr "BRUNEI"
+
+msgid "BULGARIA"
+msgstr "BULGÁRIA"
+
+msgid "BURKINA FASO"
+msgstr "BURKINA FASO"
+
+msgid "BURUNDI"
+msgstr "BURUNDI"
+
+msgid "Bachelor's Degree"
+msgstr "Bacharel"
+
+msgid "Background Color"
+msgstr "Cor de fundo"
+
+msgid "Bad"
+msgstr "Mau"
+
+msgid "Bahamas"
+msgstr "Bahamas"
+
+msgid "Bahrain"
+msgstr "Bahrain"
+
+msgid "Bangladesh"
+msgstr "Bangladesh"
+
+msgid "Banking/Mortgage"
+msgstr "Banco / Hipoteca"
+
+msgid "Barbados"
+msgstr "Barbados"
+
+msgid "Base Price"
+msgstr "Preço Base"
+
+msgid "Belarus"
+msgstr "Belarus"
+
+msgid "Belgium"
+msgstr "Bélgica"
+
+msgid "Belize"
+msgstr "Belize"
+
+msgid "Below inputs"
+msgstr "Abaixo do campo"
+
+msgid "Benin"
+msgstr "Benin"
+
+msgid "Bermuda"
+msgstr "Bermuda"
+
+msgid "Bhutan"
+msgstr "Butão"
+
+msgid "Black Glass"
+msgstr "Black Glass"
+
+msgid "Blind Carbon Copy Addresses"
+msgstr "Cópia Carbono dos Endereços"
+
+msgid "Blue"
+msgstr "Azul"
+
+msgid "Body"
+msgstr "Conteúdo"
+
+msgid "Bolivia"
+msgstr "Bolivia"
+
+msgid "Bosnia and Herzegovina"
+msgstr "Bósnia e Hezergovina"
+
+msgid "Botswana"
+msgstr "Botsuana"
+
+msgid "Brazil"
+msgstr "Brasil"
+
+msgid "Brazilian Real"
+msgstr "Real Brasileiro"
+
+msgid "British Columbia"
+msgstr "Columbia Britânica"
+
+msgid "Brunei"
+msgstr "Brunei"
+
+msgid "Bulgaria"
+msgstr "Bulgaria"
+
+msgid "Bulk Add / Predefined Choices"
+msgstr "Adicionar em Massa / Escolhas Predefinidas"
+
+msgid "Bulk action"
+msgstr "Ação em massa"
+
+msgid "Burkina Faso"
+msgstr "Burkina Faso"
+
+msgid "Burundi"
+msgstr "Burundi"
+
+msgid "Business Development"
+msgstr "Desenvolvimento de Negócios"
+
+msgid "Business Opportunity"
+msgstr "Oportunidade de Negócios"
+
+msgid ""
+"By selecting this option, the <a href='http://harvesthq.github.com/chosen/' "
+"target='_blank'>Chosen</a> jQuery script will be applied to this field, "
+"enabling search capabilities to Drop Down fields and a more user-friendly "
+"interface for Multi Select fields."
+msgstr ""
+"Ao selecionar esta opção, o <a href='http://harvesthq.github.com/chosen/' "
+"target='_blank'>Escolhido</a> script jQuery será aplicado a este campo, "
+"permitindo que recursos de pesquisa para o campo Drop Down e uma interface "
+"mais amigável para Multi Selecionar campos."
+
+msgid "C&OCIRC;TE D'IVOIRE"
+msgstr "COSTA DO MARFIM"
+
+msgid "C&ocirc;te d'Ivoire"
+msgstr "Costa do Marfim"
+
+msgid "CAMBODIA"
+msgstr "CAMBOJA"
+
+msgid "CAMEROON"
+msgstr "CAMARÕES"
+
+msgid "CANADA"
+msgstr "CANADÁ"
+
+msgid "CAPE VERDE"
+msgstr "CABO VERDE"
+
+msgid "CAPTCHA"
+msgstr "CAPTCHA"
+
+msgid "CAPTCHA Type"
+msgstr "Tipo de CAPTCHA"
+
+msgid "CENTRAL AFRICAN REPUBLIC"
+msgstr "REPÚBLICA CENTRO AFRICANO"
+
+msgid "CHAD"
+msgstr "CHADE"
+
+msgid "CHILE"
+msgstr "CHILE"
+
+msgid "CHINA"
+msgstr "CHINA"
+
+msgid "COLOMBIA"
+msgstr "COLÔMBIA"
+
+msgid "COMOROS"
+msgstr "COMORES"
+
+msgid "COSTA RICA"
+msgstr "COSTA RICA"
+
+msgid "CROATIA"
+msgstr "CROÁCIA"
+
+msgid "CSS Class Name"
+msgstr "Nome da Classe CSS"
+
+msgid "CUBA"
+msgstr "CUBA"
+
+msgid "CYPRUS"
+msgstr "CHIPRE"
+
+msgid "CZECH REPUBLIC"
+msgstr "REPÚBLICA CHECA"
+
+msgid "Calendar Icon"
+msgstr "Ícone de Calendário"
+
+msgid "California"
+msgstr "Califórnia"
+
+msgid "Cambodia"
+msgstr "Camboja"
+
+msgid "Cameroon"
+msgstr "Camarões"
+
+msgid "Can't find your form? Make sure it is active."
+msgstr ""
+"Não é possível encontrar o seu formulário? Verifique se ele está ativado."
+
+msgid "Canada"
+msgstr "Canadá"
+
+msgid "Canadian"
+msgstr "Canadense"
+
+msgid "Canadian Dollar"
+msgstr "Dólar Canadense"
+
+msgid "Canadian Province/Territory"
+msgstr "Províncias / Territórios Canadenses"
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "Cape Verde"
+msgstr "Cabo Verde"
+
+msgid "Captcha"
+msgstr "Captcha"
+
+msgid "Caption"
+msgstr "Texto"
+
+msgid "Card Number"
+msgstr "Número do cartão"
+
+msgid "Card Type"
+msgstr "Tipo de Cartão"
+
+msgid "Category"
+msgstr "Categoria"
+
+msgid "Central African Republic"
+msgstr "República Central Africana"
+
+msgid "Chad"
+msgstr "Chade"
+
+msgid ""
+"Check this box to prevent Province field from being displayed in the form."
+msgstr ""
+"Marque esta caixa para prevenir que o campo Província seja exibido no "
+"formulário."
+
+msgid ""
+"Check this box to prevent the State field from being displayed in the form."
+msgstr ""
+"Marque esta caixa para impedir que o campo Estado seja exibido no formulário."
+
+msgid ""
+"Check this box to prevent the State/Province/Region from being displayed in "
+"the form."
+msgstr ""
+"Marque esta caixa para impedir que o Estado / Província / Região sejam "
+"exibidos no formulário."
+
+msgid ""
+"Check this box to prevent the extra address input (Address Line 2) from "
+"being displayed in the form."
+msgstr ""
+"Marque esta caixa para prevenir que a entrada de endereço extra (Bairro e "
+"Complemento) seja exibida no formulário."
+
+msgid ""
+"Check this option to add a text input as the final choice of your radio "
+"button field. This allows the user to specify a value that is not a "
+"predefined choice."
+msgstr ""
+"Marque esta opção para adicionar uma entrada de texto como a escolha final "
+"do seu campo radio button. Isso permite que o usuário especifique um valor "
+"que não é uma escolha pré-definida."
+
+msgid ""
+"Check this option to enable a sliding animation when displaying/hiding "
+"conditional logic fields."
+msgstr ""
+"Marque esta opção para permitir uma animação de slide ao exibir / ocultar "
+"campos de lógica condicional."
+
+msgid ""
+"Check this option to enable data to be passed to the form and pre-populate "
+"this field dynamically. Data can be passed via Query Strings, Shortcode and/"
+"or Hooks"
+msgstr ""
+"Marque esta opção para permitir que dados sejam passados ​​para o formulário e "
+"pré-preencher este campo dinamicamente. Os dados podem ser passados ​​via "
+"Query Strings, Shortcode e / ou Ganchos(Hooks)"
+
+msgid "Check this option to require a user to be logged in to view this form"
+msgstr ""
+"Marque esta opção para exigir que um usuário esteja logado para ver este "
+"formulário"
+
+msgid "Check this option to set this image as the post's Featured Image."
+msgstr ""
+"Marque esta opção para definir esta imagem como imagem destacada do post."
+
+msgid ""
+"Check this option to specify a value for each choice. Choice values are not "
+"displayed to the user viewing the form, but are accessible to administrators "
+"when viewing the entry."
+msgstr ""
+"Marque esta opção para especificar um valor para cada escolha. Os valores "
+"não são exibidos para o usuário preenchendo o form, mas são acessíveis aos "
+"administradores ao ver a entrada."
+
+msgid "Checkboxes"
+msgstr "Checkboxes"
+
+msgid "Chile"
+msgstr "Chile"
+
+msgid "China"
+msgstr "China"
+
+msgid "Choices"
+msgstr "Escolhas"
+
+msgid "City"
+msgstr "Cidade"
+
+msgid "Clean"
+msgstr "Clean"
+
+msgid "Clerical/Administrative"
+msgstr "Clerical / Igreja / Administrativo"
+
+msgid "Click to edit post"
+msgstr "Click para editar o post"
+
+msgid "Click to select..."
+msgstr "Clique para selecionar ..."
+
+msgid "Click to view"
+msgstr "Click para ver"
+
+msgid "Client IP Address"
+msgstr "Endereço IP do Usuário"
+
+msgid "Close"
+msgstr "Fechar"
+
+msgid "Close Window"
+msgstr "Fechar Janela"
+
+msgid "Colombia"
+msgstr "Colombia"
+
+msgid "Colorado"
+msgstr "Colorado"
+
+msgid "Column 1"
+msgstr "Coluna 1"
+
+msgid "Column 2"
+msgstr "Coluna 2"
+
+msgid "Column 3"
+msgstr "Coluna 3"
+
+msgid "Comoros"
+msgstr "Comores"
+
+msgid "Comparison"
+msgstr "Comparação"
+
+msgid "Conditional Logic"
+msgstr "Condição Lógica"
+
+msgid "Confirm Email"
+msgstr "Confirmar e-mail"
+
+msgid "Confirm Password"
+msgstr "Confirme a senha"
+
+msgid "Confirmation Message Text"
+msgstr "Texto de Confirmação da Mensagem"
+
+msgid "Connecticut"
+msgstr "Connecticut"
+
+msgid "Construction/Facilities"
+msgstr "Construção / Instalações"
+
+msgid "Consumer Goods"
+msgstr "Bens de Consumo"
+
+msgid "Contact Us"
+msgstr "Fale Conosco"
+
+msgid "Content"
+msgstr "Conteúdo"
+
+msgid "Continents"
+msgstr "Continentes"
+
+msgid "Continue Editing this Form"
+msgstr "Continue editando esse form"
+
+msgid "Continue editing this form"
+msgstr "Continue editando esse form"
+
+msgid "Contract"
+msgstr "Contratado"
+
+msgid "Conversion"
+msgstr "Conversão"
+
+msgid ""
+"Conversion is the percentage of form views that generated an entry. If a "
+"form was viewed twice, and one entry was generated, the conversion will be "
+"50%."
+msgstr ""
+"A conversão é o percentual de pontos de formulário gerada por um registro. "
+"Se um formulário foi visualizado duas vezes, e um registro foi gerado, a "
+"conversão será de 50%."
+
+msgid "Costa Rica"
+msgstr "Costa Rica"
+
+msgid "Countries"
+msgstr "Países"
+
+msgid "Country"
+msgstr "País"
+
+msgid "Course Code"
+msgstr "Código do Curso"
+
+msgid "Create content template"
+msgstr "Criar um modelo de conteúdo"
+
+msgid ""
+"Create rules to dynamically display or hide the page's Next Button based on "
+"values from another field"
+msgstr ""
+"Criar regras para dinamicamente exibir ou ocultar o Botão Avançar Página com "
+"base em valores de outro campo"
+
+msgid ""
+"Create rules to dynamically display or hide the submit button based on "
+"values from another field"
+msgstr ""
+"Criar regras para dinamicamente exibir ou ocultar o botão de envio com base "
+"em valores de outro campo"
+
+msgid ""
+"Create rules to dynamically display or hide this field based on values from "
+"another field"
+msgstr ""
+"Criar regras para dinamicamente exibir ou ocultar este campo com base em "
+"valores de outro campo"
+
+msgid ""
+"Create rules to dynamically display or hide this page based on values from "
+"another field"
+msgstr ""
+"Criar regras para dinamicamente exibir ou ocultar esta página com base em "
+"valores de outro campo"
+
+msgid "Credit Card"
+msgstr "Cartão de crédito"
+
+msgid "Croatia"
+msgstr "Croacia"
+
+msgid "Cuba"
+msgstr "Cuba"
+
+msgid "Currency"
+msgstr "Moeda"
+
+msgid "Custom"
+msgstr "Personalizado"
+
+msgid "Custom Field"
+msgstr "Campo Personalizado"
+
+msgid "Custom Field Name"
+msgstr "Nome Personalizado do Campo"
+
+msgid "Custom Icon"
+msgstr "Ícone Personalizado"
+
+msgid "Custom Mask Instructions"
+msgstr "Instruções da Máscara"
+
+msgid "Customer Service"
+msgstr "Atendimento ao Cliente"
+
+msgid "Cyprus"
+msgstr "Chipre"
+
+msgid "Czech Koruna"
+msgstr "Coroa checa"
+
+msgid "Czech Republic"
+msgstr "República Tcheca"
+
+msgid "DD"
+msgstr "DD"
+
+msgid "DENMARK"
+msgstr "DINAMARCA"
+
+msgid "DJIBOUTI"
+msgstr "DJIBUTI"
+
+msgid "DOMINICA"
+msgstr "DOMINICA"
+
+msgid "DOMINICAN REPUBLIC"
+msgstr "REPÚBLICA DOMINICANA"
+
+msgid "Danish Krone"
+msgstr "Coroa Dinamarquesa"
+
+msgid "Date"
+msgstr "Data"
+
+msgid "Date Drop Down"
+msgstr "Drop Down de Data"
+
+msgid "Date Field"
+msgstr "Campos de Data"
+
+msgid "Date Format"
+msgstr "Formato da data"
+
+msgid "Date Input Type"
+msgstr "Tipo de Inserção de Data"
+
+msgid "Date Picker"
+msgstr "Data Picker"
+
+msgid ""
+"Date Range is optional, if no date range is selected all entries will be "
+"exported."
+msgstr ""
+"Período é opcional. Se nenhum intervalo for selecionado, todas os registros "
+"serão exportados."
+
+msgid "Day"
+msgstr "Dia"
+
+msgid "Days of the Week"
+msgstr "Dias da Semana"
+
+msgid "December"
+msgstr "Dezembro"
+
+msgid "Default"
+msgstr "Padrão"
+
+msgid "Default %s"
+msgstr "Padrão %s"
+
+msgid "Default Country"
+msgstr "País Padrão"
+
+msgid "Default Post Author"
+msgstr "Autor do Post Padrão"
+
+msgid "Default Province"
+msgstr "Estado Padrão"
+
+msgid "Default State"
+msgstr "Estado Padrão"
+
+msgid "Default Value"
+msgstr "Valor Padrão"
+
+msgid "Definitely"
+msgstr "Definitivamente"
+
+msgid "Definitely Not"
+msgstr "Definitivamente Não"
+
+msgid "Delaware"
+msgstr "Delaware"
+
+msgid "Delete"
+msgstr "Apagar"
+
+msgid "Delete All Spam"
+msgstr "Apagar Todos os Spams"
+
+msgid "Delete Entries"
+msgstr "Apagar Entradas"
+
+msgid "Delete Form"
+msgstr "Deletar Formulário"
+
+msgid "Delete Icon URL"
+msgstr "Excluir URL do Ícone"
+
+msgid "Delete Permanently"
+msgstr "Excluir Permanentemente"
+
+msgid "Delete file"
+msgstr "Apagar arquivo"
+
+msgid "Delete this Form"
+msgstr "Apagar esse Form"
+
+msgid "Delete this custom choice list? 'OK' to delete, 'Cancel' to abort."
+msgstr ""
+"Apagar esta lista de opções personalizadas? 'OK'  para apagar, 'Cancel' para "
+"abortar."
+
+msgid "Delete this entry permanently"
+msgstr "Excluir permanentemente esta entrada"
+
+msgid "Deleted Field"
+msgstr "Apagar Campo"
+
+msgid "Denmark"
+msgstr "Dinamarca"
+
+msgid "Description"
+msgstr "Descrição"
+
+msgid "Description Placement"
+msgstr "Local da Descrição"
+
+msgid "Deselect All"
+msgstr "De-selecionar Todos"
+
+msgid "Design and Layout"
+msgstr "Design e Layout"
+
+msgid "Details"
+msgstr "Detalhes"
+
+msgid "Developer Docs"
+msgstr "Developer Docs"
+
+msgid "Disable Auto-Formatting"
+msgstr "Desativar Auto-Formatação"
+
+msgid "Disable Auto-formatting"
+msgstr "Desativar Auto-formatação"
+
+msgid "Disable Default Margins"
+msgstr "Desativar Margem Padrão"
+
+msgid "Disable Quantity"
+msgstr "Desativar Quantidade"
+
+msgid "Disable default margins"
+msgstr "Desativar margem padrão"
+
+msgid "Disable quantity field"
+msgstr "Desabilitar campo de quantidade"
+
+msgid "Disable script output"
+msgstr "Desabilitar script de saída"
+
+msgid ""
+"Disables the quantity field.  A quantity of 1 will be assumed or you can add "
+"a Quantity field to your form from the Pricing Fields."
+msgstr ""
+"Desativa o campo de quantidade. A quantidade de 1 será assumida ou você pode "
+"adicionar um campo Quantidade ao seu formulário a partir dos Campos de "
+"Preços."
+
+msgid "Disagree"
+msgstr "Não Concordo"
+
+msgid "Dismiss"
+msgstr "Ignorar"
+
+msgid "Display form description"
+msgstr "Exibir descrição do formulário"
+
+msgid "Display form title"
+msgstr "Exibir título do formulário"
+
+msgid "Display placeholder"
+msgstr "Display placeholder"
+
+msgid "District of Columbia"
+msgstr "Distrito de Columbia"
+
+msgid "Divorced"
+msgstr "Divorciado (a)"
+
+msgid "Djibouti"
+msgstr "Djibouti"
+
+msgid "Documentation (please select a topic)"
+msgstr "Documentação (selecione um tópico)"
+
+msgid "Dominica"
+msgstr "Dominica"
+
+msgid "Dominican Republic"
+msgstr "República Dominicana"
+
+msgid "Donation"
+msgstr "Doação"
+
+msgid "Donations are not editable"
+msgstr "Doações não são editáveis"
+
+msgid "Download Export File"
+msgstr "Baixar arquivo de Exportação."
+
+msgid "Download file"
+msgstr "Download do arquivo"
+
+msgid "Downloads (please select a product)"
+msgstr "Downloads (escolha um produto)"
+
+msgid ""
+"Drag & drop to order and select which columns are displayed in the entries "
+"table."
+msgstr ""
+"Segure e Arraste para ordenar e selecionar quais colunas são exibidas na "
+"tabela de entradas."
+
+msgid "Drop Down"
+msgstr "Drop Down"
+
+msgid "Duplicate"
+msgstr "Duplicar"
+
+msgid "Duplicate this form"
+msgstr "Duplicar este Formulário"
+
+msgid "Dutch"
+msgstr "Holandês"
+
+msgid "EAST TIMOR"
+msgstr "TIMOR LESTE"
+
+msgid "ECUADOR"
+msgstr "EQUADOR"
+
+msgid "EGYPT"
+msgstr "EGIPTO"
+
+msgid "EL SALVADOR"
+msgstr "EL SALVADOR"
+
+msgid "EQUATORIAL GUINEA"
+msgstr "GUINÉ EQUATORIAL"
+
+msgid "ERITREA"
+msgstr "ERITREIA"
+
+msgid "ESTONIA"
+msgstr "ESTÔNIA"
+
+msgid "ETHIOPIA"
+msgstr "ETIÓPIA"
+
+msgid "East Timor"
+msgstr "Timor Leste"
+
+msgid "Ecuador"
+msgstr "Equador"
+
+msgid "Edit"
+msgstr "Editar"
+
+msgid "Edit Last Page"
+msgstr "Editar Última Página"
+
+msgid "Edit Post"
+msgstr "Editar Post"
+
+msgid "Education"
+msgstr "Educação"
+
+msgid "Education/Training"
+msgstr "Educação / Formação / Treinamento"
+
+msgid "Egypt"
+msgstr "Egito"
+
+msgid "El Salvador"
+msgstr "El Salvador"
+
+msgid "Email"
+msgstr "E-Mail"
+
+msgid "Embed Post/Page Id"
+msgstr "Incorporar Id da Post/Página"
+
+msgid "Embed Post/Page Title"
+msgstr "Incorporar Título do Post/Página"
+
+msgid "Embed URL"
+msgstr "Incorporar URL"
+
+msgid "Embed Url"
+msgstr "Incorporar URL"
+
+msgid "Employed Full-Time"
+msgstr "Empregado (a) Full-Time"
+
+msgid "Employed Part-Time"
+msgstr "Empregado (a) Meio-Período"
+
+msgid "Employee"
+msgstr "Empregado"
+
+msgid "Employment"
+msgstr "Emprego"
+
+msgid "Empty Trash"
+msgstr "Esvaziar Lixeira"
+
+msgid "Enable \"other\" choice"
+msgstr "Habilitar \"outra\" opção"
+
+msgid "Enable AJAX"
+msgstr "Ativar AJAX"
+
+msgid "Enable Animation"
+msgstr "Ativar Animação"
+
+msgid "Enable Anti-spam honeypot"
+msgstr "Habilitar honeypot Anti-spam"
+
+msgid "Enable Choice Values"
+msgstr "Ativar Escolha de Valores"
+
+msgid "Enable Conditional Logic"
+msgstr "Ativar a Condicional Lógica"
+
+msgid "Enable Email Confirmation"
+msgstr "Ativar a Confirmação de E-mail"
+
+msgid "Enable Enhanced UI"
+msgstr "Habilitar interface de usuário melhorada"
+
+msgid "Enable Next Button Conditional Logic"
+msgstr "Habilitar Lógica Condicional de Botão Próximo"
+
+msgid "Enable Page Conditional Logic"
+msgstr "Habilitar Lógica Condicional de Página"
+
+msgid "Enable Password Input"
+msgstr "Ativar Campo de Senha"
+
+msgid "Enable Password Strength"
+msgstr "Ativar Resistência de Senha"
+
+msgid "Enable anti-spam honeypot"
+msgstr "Ativar anti-spam honeypot"
+
+msgid "Enable enhanced user interface"
+msgstr "Habilitar interface melhorada"
+
+msgid "Enable multiple columns"
+msgstr "Habilitar várias colunas"
+
+msgid ""
+"Enables the honeypot spam protection technique, which is an alternative to "
+"the reCAPTCHA field."
+msgstr ""
+"Habilita a técnica de proteção honeypot spam, que é uma alternativa para o "
+"campo reCAPTCHA."
+
+msgid "End"
+msgstr "fim"
+
+msgid "Energy/Utilities"
+msgstr "Energia / Utilidades"
+
+msgid "Engineering"
+msgstr "Engenharia"
+
+msgid "English"
+msgstr "Inglês"
+
+msgid "Enter Email"
+msgstr "Digite o e-mail"
+
+msgid "Enter Password"
+msgstr "Digite a senha"
+
+msgid ""
+"Enter a comma separated list of email addresses you would like to receive "
+"the selected notification emails."
+msgstr ""
+"Digite uma lista separada por vírgula de endereços de e-mail que você "
+"gostaria de receber os e-mails de notificação selecionado."
+
+msgid "Enter a custom mask"
+msgstr "Digite uma máscara personalizada"
+
+msgid ""
+"Enter a description for your form. This may be used for user instructions."
+msgstr ""
+"Digite uma descrição para seu formulário. Isso pode ser usado para "
+"instruções ao usuário."
+
+msgid ""
+"Enter a message to be displayed to users who are not logged in (shortcodes "
+"and HTML are supported)"
+msgstr ""
+"Digite uma mensagem para ser exibida aos usuários que não estão logados "
+"(shortcodes e HTML são suportados)"
+
+msgid ""
+"Enter a number in the input box below to limit the number of entries allowed "
+"for this form. The form will become inactive when that number is reached."
+msgstr ""
+"Digite um número na caixa de entrada abaixo para limitar o número de "
+"entradas permitidas para este formulário. O formulário ficará inativo quando "
+"esse número for atingido."
+
+msgid "Enter name"
+msgstr "Digite o nome"
+
+msgid ""
+"Enter that allowed file extensions for file uploads.  This will limit what "
+"type of files a user may upload."
+msgstr ""
+"Digite as extensões permitidas para upload de arquivos. Isso limitará os "
+"tipos de arquivos permitidos para upload pelo usuário."
+
+msgid ""
+"Enter the CSS class name you would like to use in order to override the "
+"default styles for this field."
+msgstr ""
+"Selecione o nome da classe CSS que deseja utilizar no lugar dos estilos "
+"padrões desse formulário."
+
+msgid ""
+"Enter the CSS class name you would like to use in order to override the "
+"default styles for this form."
+msgstr ""
+"Digite o nome da classe CSS que gostaria de sobrescrever os estilos padrões "
+"desse formulário."
+
+msgid "Enter the URL of a custom image to replace the default 'add item' icon."
+msgstr ""
+"Digite a URL de uma imagem personalizada para substituir o ícone 'adicionar "
+"item' padrão."
+
+msgid ""
+"Enter the URL of a custom image to replace the default 'delete item' icon."
+msgstr ""
+"Digite a URL de uma imagem personalizada para substituir ícone 'deletar "
+"item' padrão."
+
+msgid ""
+"Enter the URL of the webpage you would like the user to be redirected to "
+"after they have submitted the form."
+msgstr ""
+"Digite a URL do website que o usuário será redirecionado ao submeter esse "
+"formulário."
+
+msgid ""
+"Enter the admin label of the form field.  Entering a value in this field "
+"will override the Field Label when displayed in the Gravity Forms "
+"administration tool."
+msgstr ""
+"Digite a legenda admin do campo. Digitando um valor nesse campo, ele "
+"substituirá a Legenda do Campo quando visualizada na ferramenta de "
+"administração do Gravity Forms."
+
+msgid "Enter the base price for this product."
+msgstr "Digite a base de preço para este produto."
+
+msgid "Enter the content (Text or HTML) to be displayed on the form."
+msgstr "Digite o conteúdo (Texto ou HTML) a ser exibido no formulário."
+
+msgid ""
+"Enter the description for the form field.  This will be displayed to the "
+"user and provide some direction on how the field should be filled out or "
+"selected."
+msgstr ""
+"Digite a descrição do campo. Isso será mostrado ao usuário para auxiliá-lo "
+"no preenchimento ou seleção no campo."
+
+msgid ""
+"Enter the label for this HTML block. It will help you identify your HTML "
+"blocks in the form editor, but it will not be displayed on the form."
+msgstr ""
+"Digite a legenda para este bloco de HTML. Ela irá ajudá-lo a identificar "
+"seus blocos de HTML no editor de formulário, mas não será exibido no "
+"formulário."
+
+msgid ""
+"Enter the label of the form field.  This is the field title the user will "
+"see when filling out the form."
+msgstr ""
+"Digite o nome do campo. Esse é o campo do título que o usário visualizará ao "
+"preencher o formulário."
+
+msgid ""
+"Enter the maximum number of characters that this field is allowed to have."
+msgstr "Digite o número máximo de caracteres que este campo é permitido ter."
+
+msgid "Enter the maximum number of rows that users are allowed to add."
+msgstr ""
+"Digite o número máximo de linhas que os usuários têm permissão para "
+"adicionar."
+
+msgid ""
+"Enter the minimum and maximum values for this form field.  This will require "
+"that the value entered by the user must fall within this range."
+msgstr ""
+"Digite os valores mínimo e máximo para esse campo. Essa opção restringe ao "
+"usuário que digite um valor entre os valores estipulados."
+
+msgid ""
+"Enter the path to an image you would like to use as the form submit button."
+msgstr "Digite o caminho de uma imagem que gostaria de usar no botão submeter."
+
+msgid ""
+"Enter the path to an image you would like to use as the page next button"
+msgstr ""
+"Digite o caminho para uma imagem que você gostaria de usar no botão próxima "
+"página"
+
+msgid ""
+"Enter the path to an image you would like to use as the page previous button"
+msgstr ""
+"Digite o caminho para uma imagem que você gostaria de usar como o botão da "
+"página anterior"
+
+msgid ""
+"Enter the text you would like the user to see on the confirmation page of "
+"this form."
+msgstr ""
+"Digite o texto que o usuário verá na página de confirmação desse formulário."
+
+msgid "Enter the text you would like to appear on the form submit button."
+msgstr "Digite o texto que deseja que apareça no botão de submeter."
+
+msgid "Enter the text you would like to appear on the page next button"
+msgstr "Digite o texto que você gostaria de aparecer no botão próxima página"
+
+msgid "Enter the text you would like to appear on the page previous button"
+msgstr ""
+"Digite o texto que você gostaria de aparecer no botão de página anterior"
+
+msgid "Enter the title of your form."
+msgstr "Digite o título do seu formulário."
+
+msgid ""
+"Enter your reCAPTCHA Private Key, if you do not have a key you can register "
+"for one at the provided link.  reCAPTCHA is a free service."
+msgstr ""
+"Digite a sua chave privada do reCAPTCHA, se você não possui uma chave, você "
+"poderá obter uma no link fornecido. reCAPTCHA é um serviço gratuito."
+
+msgid ""
+"Enter your reCAPTCHA Public Key, if you do not have a key you can register "
+"for one at the provided link.  reCAPTCHA is a free service."
+msgstr ""
+"Digite a sua chave pública do reCAPTCHA, se você não possui uma chave, você "
+"poderá obter uma no link fornecido. reCAPTCHA é um serviço gratuito."
+
+msgid "Enter your reCAPTCHA keys in the %ssettings page%s"
+msgstr "Enter your reCAPTCHA keys in the %ssettings page%s"
+
+msgid "Entries"
+msgstr "Registros"
+
+msgid "Entries Conversion"
+msgstr "Conversão dos Registros"
+
+msgid "Entry #"
+msgstr "Registro #"
+
+msgid "Entry # "
+msgstr "Registro # "
+
+msgid "Entry Date"
+msgstr "Data da Entrada"
+
+msgid "Entry Id"
+msgstr "Registro Id"
+
+msgid "Entry Limit Reached Message"
+msgstr "Data do Registro"
+
+msgid "Entry List"
+msgstr "Lista de Registro"
+
+msgid "Entry URL"
+msgstr "Registro URL"
+
+msgid "Entry Updated."
+msgstr "Registro Atualizado."
+
+msgid "Entry deleted."
+msgstr "Registro excluído."
+
+msgid "Equatorial Guinea"
+msgstr "Guiné Equatorial"
+
+msgid "Eritrea"
+msgstr "Eritréia"
+
+msgid "Errors have been highlighted below."
+msgstr "Alguns erros foram destacados abaixo."
+
+msgid "Estonia"
+msgstr "Estônia"
+
+msgid "Ethiopia"
+msgstr "Etiópia"
+
+msgid "Euro"
+msgstr "Euro"
+
+msgid "Europe"
+msgstr "Europa"
+
+msgid "Everyday"
+msgstr "Todo Dia"
+
+msgid "Everyone"
+msgstr "Todo mundo"
+
+msgid "Examples"
+msgstr "Exemplos"
+
+msgid "Excerpt"
+msgstr "Resumo"
+
+msgid "Existing"
+msgstr "Existente"
+
+msgid "Expiration Date"
+msgstr "Data de validade"
+
+msgid "Export Date Range"
+msgstr "Selecione o Período"
+
+msgid "Export Entries"
+msgstr "Exportar Registros"
+
+msgid "Export Forms"
+msgstr "Exportar Formulários"
+
+msgid "Export Selected Fields"
+msgstr "Exportar Campos Selecionados"
+
+msgid "Export Selected Form"
+msgstr "Selecione um Formulário"
+
+msgid "Export Selected Forms"
+msgstr "Exportar Formulários Selecionados"
+
+msgid "Exporting entries. Please wait..."
+msgstr "Exportando registro. Por favor aguarde..."
+
+msgid "Extended"
+msgstr "Estendido"
+
+msgid "Extra Large"
+msgstr "Extra Grande"
+
+msgid "Extra Small"
+msgstr "Extra Pequeno"
+
+msgid "FAQ (please select a topic)"
+msgstr "FAQ (selecione um tópico)"
+
+msgid "FIJI"
+msgstr "FIJI"
+
+msgid "FINLAND"
+msgstr "FINLÂNDIA"
+
+msgid "FRANCE"
+msgstr "FRANÇA"
+
+msgid "Feature Requests"
+msgstr "Feature Requests"
+
+msgid "February"
+msgstr "Fevereiro"
+
+msgid "Female"
+msgstr "Feminino"
+
+msgid "Field Choices"
+msgstr "Escolhas"
+
+msgid "Field Date Format"
+msgstr "Formato do Campo Data"
+
+msgid "Field Description"
+msgstr "Descrição do Campo"
+
+msgid "Field ID"
+msgstr "ID do Campo"
+
+msgid "Field Label"
+msgstr "Legenda do Campo"
+
+msgid "Field Name Format"
+msgstr "Formato do Campo Nome"
+
+msgid "Field Size"
+msgstr "Tamanho do Campo"
+
+msgid "Field Type"
+msgstr "Tipo do Campo"
+
+msgid "Field type"
+msgstr "Tipo do Campo"
+
+msgid "Fiji"
+msgstr "Fiji"
+
+msgid "File"
+msgstr "Arquivo"
+
+msgid "File Upload"
+msgstr "Upload de Arquivo"
+
+msgid "Finland"
+msgstr "Finlândia"
+
+msgid "First"
+msgstr "Primeiro"
+
+msgid "First Choice"
+msgstr "Primeira Escolha"
+
+msgid "First Option"
+msgstr "Primeira Opção"
+
+msgid "First Page Options"
+msgstr "Opções da Página Primeira"
+
+msgid "Florida"
+msgstr "Flórida"
+
+msgid "Font Color"
+msgstr "Cor da Fonte"
+
+msgid ""
+"For addresses that only apply to one country, you can choose to not display "
+"the country drop down. Entries will still be recorded with the selected "
+"country."
+msgstr ""
+"Para os endereços que só se aplicam a um país, você pode optar por não "
+"exibir o país no formulário. As entradas ainda serão gravadas com o país "
+"selecionado."
+
+msgid "Form Button"
+msgstr "Botão do formulário"
+
+msgid "Form Button Image"
+msgstr "Imagem do Botão do Formulário"
+
+msgid "Form Button Text"
+msgstr "Texto do Botão do Formulário"
+
+msgid "Form CSS Class Name"
+msgstr "Nome da Classe CSS do Formulário"
+
+msgid "Form Description"
+msgstr "Descrição do Formulário"
+
+msgid "Form Editor"
+msgstr "Editor do Form"
+
+msgid "Form Expired Message"
+msgstr "Mensagem de Encerramento do Formulário"
+
+msgid "Form Id"
+msgstr "Id do Formulário"
+
+msgid "Form Id and Lead Id are required parameters."
+msgstr ""
+"Id do Foumulário e ID do \"COLOCAR TRADUÇÃO DE LEAD\" são parâmetros "
+"requeridos"
+
+msgid "Form Label Placement"
+msgstr "Local da Legenda"
+
+msgid "Form Preview"
+msgstr "Prévisualizar"
+
+msgid "Form Settings"
+msgstr "Configurações"
+
+msgid "Form Title"
+msgstr "Título do Form"
+
+msgid "Form updated successfully."
+msgstr "Formulário atualizado."
+
+msgid "Formatting/Styling Questions"
+msgstr "Perguntas sobre Formatar / Estilo"
+
+msgid "Forms"
+msgstr "Formulários"
+
+msgid ""
+"Forms could not be imported. Please make sure your XML export file is in the "
+"correct format."
+msgstr ""
+"Os formulários não foram importados. Por favor, certifique-se de que o "
+"arquivo XML está no formato correto."
+
+msgid ""
+"Forms could not be imported. Your XML export file is not compatible with "
+"your current version of Gravity Forms."
+msgstr ""
+"Os formulários não foram importados. O arquivo XML utilizado não é "
+"compatível com a sua versão do Gravity Forms."
+
+msgid "Forums (please select a topic)"
+msgstr "Forum (selecione um tópico)"
+
+msgid "France"
+msgstr "Franca"
+
+msgid "French"
+msgstr "Francês"
+
+msgid "Friday"
+msgstr "Sexta"
+
+msgid "From Email"
+msgstr "De E-Mail"
+
+msgid "From Email Address"
+msgstr "De E-Mail"
+
+msgid "From Name"
+msgstr "De Nome"
+
+msgid "Full Size - Right Aligned"
+msgstr "Tamanho Completo - Alinhado a direita"
+
+msgid "Full-Time"
+msgstr "Full-Time"
+
+msgid "GABON"
+msgstr "GABÃO"
+
+msgid "GAMBIA"
+msgstr "GÂMBIA"
+
+msgid "GEORGIA"
+msgstr "GEÓRGIA"
+
+msgid "GERMANY"
+msgstr "ALEMANHA"
+
+msgid "GHANA"
+msgstr "GANA"
+
+msgid "GO"
+msgstr "IR"
+
+msgid "GREECE"
+msgstr "GRÉCIA"
+
+msgid "GREENLAND"
+msgstr "GRONELÂNDIA"
+
+msgid "GRENADA"
+msgstr "GRANADA"
+
+msgid "GUAM"
+msgstr "GUAM"
+
+msgid "GUATEMALA"
+msgstr "GUATEMALA"
+
+msgid "GUINEA"
+msgstr "GUINÉ"
+
+msgid "GUINEA-BISSAU"
+msgstr "GUINÉ-BISSAU"
+
+msgid "GUYANA"
+msgstr "GUIANA"
+
+msgid "Gabon"
+msgstr "Gabão"
+
+msgid "Gambia"
+msgstr "Gambia"
+
+msgid "Gender"
+msgstr "Gênero"
+
+msgid "General"
+msgstr "Geral"
+
+msgid "General Questions"
+msgstr "Perguntas Gerais"
+
+msgid "General Settings"
+msgstr "Configurações Gerais"
+
+msgid "Georgia"
+msgstr "Georgia"
+
+msgid "German"
+msgstr "Alemão"
+
+msgid "Germany"
+msgstr "Alemanha"
+
+msgid "Getting Started"
+msgstr "Primeiros passos"
+
+msgid "Ghana"
+msgstr "Gana"
+
+msgid "Good"
+msgstr "Bom"
+
+msgid "Government/Military"
+msgstr "Governo / Militar"
+
+msgid "Graduate of Professional Degree"
+msgstr "Graduação em Licenciatura Profissional"
+
+msgid "Gravity Forms"
+msgstr "Gravity Forms"
+
+msgid "Gravity Forms Add-Ons"
+msgstr "Módulos do Gravity Forms"
+
+msgid "Gravity Forms Campaign Monitor Add-On"
+msgstr "Gravity Forms Campaign Monitor Add-On"
+
+msgid "Gravity Forms Documentation"
+msgstr "Documentação do Gravity Forms"
+
+msgid "Gravity Forms Downloads"
+msgstr "Downloads do Gravity Forms"
+
+msgid "Gravity Forms FAQ"
+msgstr "FAQ Gravity Forms"
+
+msgid "Gravity Forms FreshBooks Add-On"
+msgstr "Módulo FreshBooks do Gravity Forms"
+
+msgid "Gravity Forms Help"
+msgstr "Ajuda do Gravity Forms."
+
+msgid "Gravity Forms MailChimp Add-On"
+msgstr "Módulo MailChimp do Gravity Forms"
+
+msgid "Gravity Forms PayPal Add-On"
+msgstr "Gravity Forms PayPal Add-On"
+
+msgid "Gravity Forms Support Forums"
+msgstr "Forum de Suporte Gravity Forms"
+
+msgid "Gravity Forms Tutorials &amp; Resources"
+msgstr "Tutoriais Gravity Forms e Recursos"
+
+msgid "Gravity Forms Updates"
+msgstr "Atualizações do Gravity Form"
+
+msgid "Gravity Forms User Registration Add-On"
+msgstr "Gravity Forms User Registration Add-On"
+
+msgid "Gravity Forms Version"
+msgstr "Versão do Gravity Forms."
+
+msgid "Gravity Forms Widget"
+msgstr "Gravity Forms Widget"
+
+msgid ""
+"Gravity Forms have been successfully uninstalled. It can be re-activated "
+"from the %splugins page%s."
+msgstr ""
+"O Gravity Forms foi desinstalado com êxito. Ele pode ser reativado a partir "
+"da %spágina de plugins%s."
+
+msgid ""
+"Gravity Forms integrates with reCAPTCHA, a free CAPTCHA service that helps "
+"to digitize books while protecting your forms from spam bots. "
+msgstr ""
+"Gravity Forms integra com reCAPTCHA, um serviço CAPTCHA gratuito que ajuda a "
+"digitalizar livros e ao mesmo tempo protege seus formulários contra spam."
+
+msgid "Gravity Forms requires MySQL 5 or above."
+msgstr "Gravity Forms requer MySQL 5 ou superior."
+
+msgid "Gravity Forms requires PHP 5 or above."
+msgstr "Gravity Forms requer PHP 5 ou superior."
+
+msgid "Gray"
+msgstr "Cinza"
+
+msgid "Greece"
+msgstr "Grécia"
+
+msgid "Green"
+msgstr "Verde"
+
+msgid "Greenland"
+msgstr "Groenlândia"
+
+msgid "Grenada"
+msgstr "Grenada"
+
+msgid "Guam"
+msgstr "Guam"
+
+msgid "Guatemala"
+msgstr "Guatemala"
+
+msgid "Guinea"
+msgstr "Guiné"
+
+msgid "Guinea-Bissau"
+msgstr "Guiné-Bissau"
+
+msgid "Guyana"
+msgstr "Guiana"
+
+msgid "HAITI"
+msgstr "HAITI"
+
+msgid "HH"
+msgstr "HH"
+
+msgid "HONDURAS"
+msgstr "HONDURAS"
+
+msgid "HONG KONG"
+msgstr "HONG KONG"
+
+msgid "HTML"
+msgstr "HTML"
+
+msgid "HTML Block"
+msgstr "Bloco de HTML"
+
+msgid "HTTP Referer URL"
+msgstr "URL HTTP Referer"
+
+msgid "HTTP User Agent"
+msgstr "HTTP User Agent"
+
+msgid "HUNGARY"
+msgstr "HUNGRIA"
+
+msgid "Haiti"
+msgstr "Haiti"
+
+msgid "Hawaii"
+msgstr "Hawaii"
+
+msgid "Healthcare"
+msgstr "Cuidados com a Saúde"
+
+msgid "Help"
+msgstr "Ajuda"
+
+msgid "Hidden"
+msgstr "Oculto"
+
+msgid "Hidden Field"
+msgstr "Campo Oculto"
+
+msgid "Hide"
+msgstr "Esconder"
+
+msgid "Hide %s Field"
+msgstr "Esconder %s Field"
+
+msgid "Hide Address Line 2"
+msgstr "Esconder Linha 2 do Endereço"
+
+msgid "Hide Address Line 2 Field"
+msgstr "Esconder a Linha 2 de Endereço"
+
+msgid "Hide Country"
+msgstr "Esconder o País"
+
+msgid "Hide Country Field"
+msgstr "Esconder o Campo de País"
+
+msgid "Hide Province Field"
+msgstr "Esconder Campo Província"
+
+msgid "Hide State Field"
+msgstr "Esconder Campo Estado"
+
+msgid "Hide State/Province/Region"
+msgstr "Esconder Estado/Província/Região"
+
+msgid "High School"
+msgstr "High School"
+
+msgid "Homemaker"
+msgstr "Dona de Casa"
+
+msgid "Honduras"
+msgstr "Honduras"
+
+msgid "Hong Kong"
+msgstr "Hong Kong"
+
+msgid "Hong Kong Dollar"
+msgstr "Dólar de Hong Kong"
+
+msgid "Hospitality/Travel"
+msgstr "Hotelaria / Viagens"
+
+msgid "How Long"
+msgstr "Quanto Tempo"
+
+msgid "How Often"
+msgstr "Qual Frequencia"
+
+msgid "How To"
+msgstr "Como Fazer"
+
+msgid "Human Resources"
+msgstr "Recursos Humanos"
+
+msgid "Hungarian Forint"
+msgstr "Forint húngaro"
+
+msgid "Hungary"
+msgstr "Hungria"
+
+msgid "I am done. Take me back to form list"
+msgstr "Terminei. Leve-me a lista de form"
+
+msgid "ICELAND"
+msgstr "ISLÂNDIA"
+
+msgid "INDIA"
+msgstr "ÍNDIA"
+
+msgid "INDONESIA"
+msgstr "INDONÉSIA"
+
+msgid "IRAN"
+msgstr "IRAN"
+
+msgid "IRAQ"
+msgstr "IRAQUE"
+
+msgid "IRELAND"
+msgstr "IRLANDA"
+
+msgid "ISRAEL"
+msgstr "ISRAEL"
+
+msgid "ITALY"
+msgstr "ITÁLIA"
+
+msgid "Iceland"
+msgstr "Islândia"
+
+msgid "Id"
+msgstr "Id"
+
+msgid "Idaho"
+msgstr "Idaho"
+
+msgid ""
+"If you have other forms on the page (i.e. Comments Form), specify a higher "
+"tabindex start value so that your Gravity Form does not end up with the same "
+"tabindices as your other forms. To disable the tabindex, enter 0 (zero)."
+msgstr ""
+"Se você tem outros formulários na página (formulário de comentários, por "
+"exemplo), especifique um valor maior de tabindex para o Gravity Form não "
+"acabar com o tabindices igual aos outros formulários. Para desativar o "
+"tabindex, digite 0 (zero)."
+
+msgid ""
+"If you would like to override the default error validation for a field, "
+"enter it here.  This message will be displayed if there is an error with "
+"this field when the user submits the form."
+msgstr ""
+"Se você precisar substituir a mensagem de erro de validação padrão, digite "
+"ela aqui. Essa mensagem será mostrada se houver algum erro no campo quando o "
+"usuário enviar o formulário."
+
+msgid "If you would like to pre-populate the value of a field, enter it here."
+msgstr "Se você precisar pré-definir um valor para o campo, digite aqui. "
+
+msgid "Illinois"
+msgstr "Illinois"
+
+msgid "Image"
+msgstr "Imagem"
+
+msgid "Image Meta"
+msgstr "Imagem"
+
+msgid "Image Metadata"
+msgstr "Imagem"
+
+msgid "Image Path:"
+msgstr "Caminho da Imagem:"
+
+msgid "Image Path: "
+msgstr "Caminho da Imagem: "
+
+msgid "Import"
+msgstr "Importar"
+
+msgid "Import Forms"
+msgstr "Exportar Formulários"
+
+msgid "Import/Export"
+msgstr "Importar/Exportar"
+
+msgid "Importance"
+msgstr "Importância"
+
+msgid "Important"
+msgstr "Importante"
+
+msgid "Inactive"
+msgstr "Inativo"
+
+msgid "Inactive Columns"
+msgstr "Desativar Colunas"
+
+msgid "Include notes"
+msgstr "Incluir notas"
+
+msgid "Income"
+msgstr "Renda"
+
+msgid "Incoming Field Data"
+msgstr "Entrada de Campo de Dados"
+
+msgid "India"
+msgstr "India"
+
+msgid "Indiana"
+msgstr "Indiana"
+
+msgid "Indonesia"
+msgstr "Indonesia"
+
+msgid "Industry"
+msgstr "Indústria"
+
+msgid "Info"
+msgstr "Info"
+
+msgid "Input Mask"
+msgstr "Máscara de Entrada"
+
+msgid ""
+"Input masks provide a visual guide allowing users to more easily enter data "
+"in a specific format such as dates and phone numbers."
+msgstr ""
+"Máscaras de entrada fornecem um guia visual que permite aos usuários mais "
+"facilmente introduzir dados em um formato específico, como datas e números "
+"de telefone."
+
+msgid "Insert A Form"
+msgstr "Inserir Formulário"
+
+msgid "Insert Choices"
+msgstr "Inserir Opções"
+
+msgid "Installation Questions"
+msgstr "Perguntas sobre Instalação"
+
+msgid "Installation Status"
+msgstr "Status de instalação"
+
+msgid "Installation/Maintenance"
+msgstr "Automotiva"
+
+msgid "Insurance"
+msgstr "Seguros"
+
+msgid "Intern"
+msgstr "Interno"
+
+msgid "International"
+msgstr "Internacional"
+
+msgid "Internet"
+msgstr "Internet"
+
+msgid "Invalid credit card number."
+msgstr "Número de cartão de crédito inválido."
+
+msgid "Invalid selection. Please select one of the available choices."
+msgstr "Seleção inválida. Por favor, selecione uma das opções disponíveis."
+
+msgid "Iowa"
+msgstr "Iowa"
+
+msgid "Iran"
+msgstr "Iran"
+
+msgid "Iraq"
+msgstr "Iraque"
+
+msgid "Ireland"
+msgstr "Irlanda"
+
+msgid "Israel"
+msgstr "Israel"
+
+msgid "Israeli New Sheqel"
+msgstr "Novo shekel de Israel"
+
+msgid "Italy"
+msgstr "Italia"
+
+msgid "Item has been deleted."
+msgstr "O Item foi excluído."
+
+msgid "Item has been saved."
+msgstr "O Item foi salvo."
+
+msgid "JAMAICA"
+msgstr "JAMAICA"
+
+msgid "JAPAN"
+msgstr "JAPÃO"
+
+msgid "JORDAN"
+msgstr "JORDÂNIA"
+
+msgid "Jamaica"
+msgstr "Jamaica"
+
+msgid "January"
+msgstr "Janeiro"
+
+msgid "Japan"
+msgstr "Japão"
+
+msgid "Japanese Yen"
+msgstr "Yen japonês"
+
+msgid "Job Search Aids"
+msgstr "Auxílio ao Trabalhador"
+
+msgid "Job Type"
+msgstr "Tipo de Emprego"
+
+msgid "Jordan"
+msgstr "Jordania"
+
+msgid "July"
+msgstr "Julho"
+
+msgid "June"
+msgstr "Junho"
+
+msgid "KAZAKHSTAN"
+msgstr "CAZAQUISTÃO"
+
+msgid "KENYA"
+msgstr "QUÊNIA"
+
+msgid "KIRIBATI"
+msgstr "QUIRIBATI"
+
+msgid "KUWAIT"
+msgstr "KUWAIT"
+
+msgid "KYRGYZSTAN"
+msgstr "KYRGYZSTAN"
+
+msgid "Kansas"
+msgstr "Kansas"
+
+msgid "Kazakhstan"
+msgstr "Casaquistão"
+
+msgid "Kentucky"
+msgstr "Kentucky"
+
+msgid "Kenya"
+msgstr "Quenia"
+
+msgid "Kiribati"
+msgstr "Kiribati"
+
+msgid "Kuwait"
+msgstr "Kuwait"
+
+msgid "Kyrgyzstan"
+msgstr "Quirguistão"
+
+msgid "LAOS"
+msgstr "LAOS"
+
+msgid "LATVIA"
+msgstr "LETÔNIA"
+
+msgid "LEBANON"
+msgstr "LÍBANO"
+
+msgid "LESOTHO"
+msgstr "LESOTO"
+
+msgid "LIBERIA"
+msgstr "LIBÉRIA"
+
+msgid "LIBYA"
+msgstr "LÍBIA"
+
+msgid "LIECHTENSTEIN"
+msgstr "LIECHTENSTEIN"
+
+msgid "LITHUANIA"
+msgstr "LITUÂNIA"
+
+msgid "LUXEMBOURG"
+msgstr "LUXEMBURGO"
+
+msgid "Label"
+msgstr "Legenda"
+
+msgid "Language"
+msgstr "Linguagem"
+
+msgid "Laos"
+msgstr "Laos"
+
+msgid "Large"
+msgstr "Grande"
+
+msgid "Large - Right Aligned"
+msgstr "Grande - Alinhado a direita"
+
+msgid "Last"
+msgstr "Sobrenome"
+
+msgid "Last Page Options"
+msgstr "Opções da Última Página"
+
+msgid "Latvia"
+msgstr "Letônia"
+
+msgid "Law Enforcement/Security"
+msgstr "Aplicação da Legislação / Segurança"
+
+msgid "Lebanon"
+msgstr "Líbano"
+
+msgid "Left aligned"
+msgstr "Alinhado a esquerda"
+
+msgid "Legal"
+msgstr "Direito"
+
+msgid "Lesotho"
+msgstr "Lesoto"
+
+msgid "Less than a month"
+msgstr "Menos de Um Mês"
+
+msgid "Less than once a month"
+msgstr "Menos de Uma Vez por Mês"
+
+msgid "Liberia"
+msgstr "Libéria"
+
+msgid "Libya"
+msgstr "Líbia"
+
+msgid "License Key"
+msgstr "Chave de Licença"
+
+msgid "Liechtenstein"
+msgstr "Liechtenstein"
+
+msgid "Limit Form Activity"
+msgstr "Limitar Atividade do Formulário"
+
+msgid "Limit Number of Entries"
+msgstr "Número Limitado de Registros"
+
+msgid "Limit number of entries"
+msgstr "Número Limitado de Registros"
+
+msgid ""
+"Limit the number of entries a form can generate and/or schedule a time "
+"period the form is active."
+msgstr ""
+"Limitar o número de entradas de um formulário e / ou agendar um período de "
+"tempo que o formulário ficará ativo."
+
+msgid "List"
+msgstr "Lista"
+
+msgid "Lithuania"
+msgstr "Lituânia"
+
+msgid "Louisiana"
+msgstr "Louisiana"
+
+msgid "Luxembourg"
+msgstr "Luxemburgo"
+
+msgid "MACEDONIA"
+msgstr "MACEDÔNIA"
+
+msgid "MADAGASCAR"
+msgstr "MADAGASCAR"
+
+msgid "MALAWI"
+msgstr "MALAWI"
+
+msgid "MALAYSIA"
+msgstr "MALÁSIA"
+
+msgid "MALDIVES"
+msgstr "MALDIVAS"
+
+msgid "MALI"
+msgstr "MALI"
+
+msgid "MALTA"
+msgstr "MALTA"
+
+msgid "MARSHALL ISLANDS"
+msgstr "MARSHALL ILHAS"
+
+msgid "MAURITANIA"
+msgstr "MAURITÂNIA"
+
+msgid "MAURITIUS"
+msgstr "MAURÍCIA"
+
+msgid "MEXICO"
+msgstr "MÉXICO"
+
+msgid "MICRONESIA"
+msgstr "MICRONÉSIA"
+
+msgid "MM"
+msgstr "MM"
+
+msgid "MOLDOVA"
+msgstr "MOLDÁVIA"
+
+msgid "MONACO"
+msgstr "MONACO"
+
+msgid "MONGOLIA"
+msgstr "MONGÓLIA"
+
+msgid "MONTENEGRO"
+msgstr "MONTENEGRO"
+
+msgid "MOROCCO"
+msgstr "MARROCOS"
+
+msgid "MOZAMBIQUE"
+msgstr "MOÇAMBIQUE"
+
+msgid "MYANMAR"
+msgstr "MIANMAR"
+
+msgid "Macedonia"
+msgstr "Macedônia"
+
+msgid "Madagascar"
+msgstr "Madagascar"
+
+msgid "Maine"
+msgstr "Maine"
+
+msgid "Malawi"
+msgstr "Malawi"
+
+msgid "Malaysia"
+msgstr "Malásia"
+
+msgid "Malaysian Ringgit"
+msgstr "Ringgit da Malásia"
+
+msgid "Maldives"
+msgstr "Maldivas"
+
+msgid "Male"
+msgstr "Masculino"
+
+msgid "Mali"
+msgstr "Mali"
+
+msgid "Malta"
+msgstr "Malta"
+
+msgid "Management/Executive"
+msgstr "Gestão / Executiva"
+
+msgid "Manitoba"
+msgstr "Manitoba"
+
+msgid "Manufacturing/Operations"
+msgstr "Manufatura / Operações"
+
+msgid "March"
+msgstr "Março"
+
+msgid "Marital Status"
+msgstr "Estado Civil"
+
+msgid "Mark as Read"
+msgstr "Marcar como lido"
+
+msgid "Mark as Spam"
+msgstr "Marcar como Spam"
+
+msgid "Mark as Unread"
+msgstr "Marcar como não lido"
+
+msgid "Mark read"
+msgstr "Marcar lidos"
+
+msgid "Mark this entry as not spam"
+msgstr "Marcar esta entrada como não spam"
+
+msgid "Mark this entry as spam"
+msgstr "Marcar esta entrada como spam"
+
+msgid "Mark this entry as unread"
+msgstr "Marcar esse registro como não lido"
+
+msgid "Mark unread"
+msgstr "Marcar não lidos"
+
+msgid "Marketing"
+msgstr "Marketing"
+
+msgid "Married"
+msgstr "Casado (a)"
+
+msgid "Marshall Islands"
+msgstr "Ilhas Marshall"
+
+msgid "Maryland"
+msgstr "Maryland"
+
+msgid "Mask"
+msgstr "Máscara"
+
+msgid "Massachusetts"
+msgstr "Massachusetts"
+
+msgid "Math Challenge"
+msgstr "Desafio de Matemática"
+
+msgid "Mauritania"
+msgstr "Mauritânia"
+
+msgid "Mauritius"
+msgstr "Maurício"
+
+msgid "Max"
+msgstr "Max"
+
+msgid "Maximum Characters"
+msgstr "Máximo de Caracteres"
+
+msgid "Maximum Rows"
+msgstr "Máximo de Linhas"
+
+msgid "May"
+msgstr "Maio"
+
+msgid "Medium"
+msgstr "Médio"
+
+msgid "Medium - Right Aligned"
+msgstr "Médio - Alinhado a direita"
+
+msgid "Message"
+msgstr "Mensagem"
+
+msgid "Mexican Peso"
+msgstr "Peso mexicano"
+
+msgid "Mexico"
+msgstr "México"
+
+msgid "Michigan"
+msgstr "Michigan"
+
+msgid "Micronesia"
+msgstr "Micronésia"
+
+msgid "Min"
+msgstr "Min"
+
+msgid "Minimum Strength"
+msgstr "Força Mínima"
+
+msgid "Minnesota"
+msgstr "Minnesota"
+
+msgid "Mismatch"
+msgstr "Mismatch"
+
+msgid "Mississippi"
+msgstr "Mississippi"
+
+msgid "Missouri"
+msgstr "Missouri"
+
+msgid "Moldova"
+msgstr "Moldávia"
+
+msgid "Monaco"
+msgstr "Mônaco"
+
+msgid "Monday"
+msgstr "Segunda-Feira"
+
+msgid "Mongolia"
+msgstr "Mongólia"
+
+msgid "Montana"
+msgstr "Montana"
+
+msgid "Montenegro"
+msgstr "Montenegro"
+
+msgid "Month"
+msgstr "Mês"
+
+msgid "Months of the Year"
+msgstr "Meses do Ano"
+
+msgid "Morocco"
+msgstr "Morrocos"
+
+msgid "Move this entry to the trash"
+msgstr "Mover esta entrada para o lixo"
+
+msgid "Move to Trash"
+msgstr "Mover para o Lixo"
+
+msgid "Mozambique"
+msgstr "Moçambique"
+
+msgid "Much Better"
+msgstr "Muito Melhor"
+
+msgid "Much Worse"
+msgstr "Muito Pior"
+
+msgid "Multi Select"
+msgstr "Multi Select"
+
+msgid "MySQL Version"
+msgstr "Versão do MySQL"
+
+msgid "Myanmar"
+msgstr "Birmânia"
+
+msgid "NAMIBIA"
+msgstr "NAMÍBIA"
+
+msgid "NAURU"
+msgstr "NAURU"
+
+msgid "NEPAL"
+msgstr "NEPAL"
+
+msgid "NETHERLANDS"
+msgstr "HOLANDA"
+
+msgid "NEW ZEALAND"
+msgstr "NOVA ZELÂNDIA"
+
+msgid "NICARAGUA"
+msgstr "NICARÁGUA"
+
+msgid "NIGER"
+msgstr "NÍGER"
+
+msgid "NIGERIA"
+msgstr "NIGÉRIA"
+
+msgid "NORTH KOREA"
+msgstr "COREIA DO NORTE"
+
+msgid "NORTHERN MARIANA ISLANDS"
+msgstr "Ilhas Marianas do Norte"
+
+msgid "NORWAY"
+msgstr "NORUEGA"
+
+msgid "Name"
+msgstr "Nome"
+
+msgid "Name Format"
+msgstr "Formato do nome"
+
+msgid ""
+"Name each of the pages on your form.  Page names are displayed with the "
+"selected progress indicator"
+msgstr ""
+"Nomeie cada uma das páginas do formulário. Os nomes das páginas são exibidos "
+"com o indicador de progresso selecionado"
+
+msgid "Namibia"
+msgstr "Namíbia"
+
+msgid "Nauru"
+msgstr "Nauru"
+
+msgid "Nebraska"
+msgstr "Nebraska"
+
+msgid "Nepal"
+msgstr "Nepal"
+
+msgid "Netherlands"
+msgstr "Holanda"
+
+msgid "Neutral"
+msgstr "Neutro"
+
+msgid "Nevada"
+msgstr "Nevada"
+
+msgid "Never used"
+msgstr "Nunca usado"
+
+msgid "New"
+msgstr "Novo"
+
+msgid "New Brunswick"
+msgstr "Novo Brunswick"
+
+msgid "New Form"
+msgstr "Novo Formulário"
+
+msgid "New Hampshire"
+msgstr "New Hampshire"
+
+msgid "New Jersey"
+msgstr "New Jersey"
+
+msgid "New Mexico"
+msgstr "Novo México"
+
+msgid "New York"
+msgstr "New York"
+
+msgid "New Zealand"
+msgstr "Nova Zelândia"
+
+msgid "New Zealand Dollar"
+msgstr "Dólar da Nova Zelândia"
+
+msgid "New submission from"
+msgstr "#{entry_id}"
+
+msgid ""
+"New version %s available. Automatic upgrade available on the %splugins page%s"
+msgstr ""
+"Nova versão %s disponível. Atualização automática disponível na %spágina de "
+"plugin%s"
+
+msgid "Newfoundland & Labrador"
+msgstr "Newfoundland e Labrador"
+
+msgid "News &amp; Announcements"
+msgstr "Notícias e Anúncios"
+
+msgid "Next"
+msgstr "Seguinte"
+
+msgid "Next Button"
+msgstr "Botão Próximo"
+
+msgid "Next Button Conditional Logic"
+msgstr "Lógica Condicional do Botão Avançar"
+
+msgid "Next Button Image"
+msgstr "Imagem do Botão Avançar"
+
+msgid "Next Button Text"
+msgstr "Texto do Botão Avançar"
+
+msgid "Next Page"
+msgstr "Próxima Página"
+
+msgid "Nicaragua"
+msgstr "Nicarágua"
+
+msgid "Niger"
+msgstr "Níger"
+
+msgid "Nigeria"
+msgstr "Nigéria"
+
+msgid "No"
+msgstr "Não"
+
+msgid "No Duplicates"
+msgstr "Não Duplicar"
+
+msgid "No Icon"
+msgstr "Sem ícone"
+
+msgid "No results matched"
+msgstr "Nenhum resultado corresponde"
+
+msgid "Non-Profit/Volunteer"
+msgstr "ONGs / Voluntariado"
+
+msgid "None"
+msgstr "Nenhum"
+
+msgid "Normal"
+msgstr "Normal"
+
+msgid "North America"
+msgstr "América do Norte"
+
+msgid "North Carolina"
+msgstr "Carolina do Norte"
+
+msgid "North Dakota"
+msgstr "Dakota do Norte"
+
+msgid "North Korea"
+msgstr "Coréia do Norte"
+
+msgid "Northern Mariana Islands"
+msgstr "Ilhas Marianas do Norte"
+
+msgid "Northwest Territories"
+msgstr "Territórios do Noroeste"
+
+msgid "Norway"
+msgstr "Noruega"
+
+msgid "Norwegian Krone"
+msgstr "Coroa Norueguesa"
+
+msgid "Not Important"
+msgstr "Não é Importante"
+
+msgid "Not Spam"
+msgstr "Não é Spam"
+
+msgid "Not Sure"
+msgstr "Não Tenho Certeza"
+
+msgid "Not employed"
+msgstr "Desempregado (a)"
+
+msgid "Not employed and not looking for work"
+msgstr "Não é empregado e não à procura de trabalho"
+
+msgid ""
+"Note: This is a simple form preview. This form may display differently when "
+"added to your page based on inheritance from individual theme styles."
+msgstr ""
+"Nota: Esta é uma pré-visualização simples do formulário. Este formulário "
+"pode mostrar de forma diferente quando adicionado à sua página com base na "
+"herança de estilos do seu tema."
+
+msgid "Notes"
+msgstr "Notas"
+
+msgid "Notification Questions"
+msgstr "Perguntas sobre Notificação"
+
+msgid ""
+"Notification could not be updated. Please enter all required information "
+"below."
+msgstr ""
+"A notificação não pode ser atualizada. Por favor, preencha todas as "
+"informações necessárias abaixo."
+
+msgid "Notifications"
+msgstr "Notificações"
+
+msgid "Notifications for %s were resent successfully."
+msgstr "Notificações para %s foram reenviadas com sucesso."
+
+msgid "Notifications were resent successfully."
+msgstr "Notificações foram reenviadas com sucesso."
+
+msgid "Nova Scotia"
+msgstr "Nova Scócia"
+
+msgid "November"
+msgstr "Novembro"
+
+msgid "Number"
+msgstr "Número"
+
+msgid "Number Format"
+msgstr "Formato do Número"
+
+msgid "Number Range"
+msgstr "Intervalo do Número"
+
+msgid "Number of Entries"
+msgstr "Número de Registros"
+
+msgid "Nunavut"
+msgstr "Nunavut"
+
+msgid "OMAN"
+msgstr "OMAN"
+
+msgid "October"
+msgstr "Outubro"
+
+msgid "Ohio"
+msgstr "Ohio"
+
+msgid "Oklahoma"
+msgstr "Oklahoma"
+
+msgid "Oman"
+msgstr "Oman"
+
+msgid "Once a month"
+msgstr "Uma Vez ao Mês"
+
+msgid "Once a week"
+msgstr "Uma Vez por Semana"
+
+msgid "Only one Post Content field can be added to the form"
+msgstr "Apenas um campo de Conteúdo de Post pode ser adicionado ao formulário"
+
+msgid "Only one Post Excerpt field can be added to the form"
+msgstr "Apenas um campo Resumo do Post pode ser adicionado ao formulário"
+
+msgid "Only one Post Title field can be added to the form"
+msgstr "Apenas um campo Título de Post pode ser adicionado ao formulário"
+
+msgid "Only one Shipping field can be added to the form"
+msgstr "Somente um campo de envio pode ser adicionado ao formulário"
+
+msgid "Only one reCAPTCHA field can be added to the form."
+msgstr "Somente um campo reCAPTCHA pode ser incluído no formulário."
+
+msgid "Ontario"
+msgstr "Ontário"
+
+msgid "Oops! We could not locate your form."
+msgstr "Oops! Não conseguimos encontrar o seu formulário."
+
+msgid "Oops! We could not locate your form. Please try again."
+msgstr ""
+"Oops! Não conseguimos encontrar o seu formulário. Por favor, tente novamente."
+
+msgid ""
+"Oops!! Something went wrong.<br/>Please try again or <a href='http://www."
+"gravityforms.com'>contact us</a>."
+msgstr ""
+"Oops! Algo deu errado. <br/> Tente novamente ou entre em <a href='http://www."
+"gravityforms.com'>contato conosco</a>."
+
+msgid "Option"
+msgstr "Opção"
+
+msgid "Optional form fields"
+msgstr "Campos Opcionais do Formulário"
+
+msgid "Orange"
+msgstr "Laranja"
+
+msgid "Order"
+msgstr "Pedido"
+
+msgid "Oregon"
+msgstr "Oregon"
+
+msgid "Other"
+msgstr "Outros"
+
+msgid "Output CSS"
+msgstr "Incluir CSS"
+
+msgid "Output HTML5"
+msgstr "Utilizar HTML5"
+
+msgid "Over 3 Years"
+msgstr "Mais de 3 Anos"
+
+msgid "Override Notifications"
+msgstr "Substituir Notificações"
+
+msgid "PAKISTAN"
+msgstr "PAQUISTÃO"
+
+msgid "PALAU"
+msgstr "PALAU"
+
+msgid "PALESTINE"
+msgstr "PALESTINA"
+
+msgid "PANAMA"
+msgstr "PANAMÁ"
+
+msgid "PAPUA NEW GUINEA"
+msgstr "PAPUA-NOVA GUINÉ"
+
+msgid "PARAGUAY"
+msgstr "PARAGUAI"
+
+msgid "PERU"
+msgstr "PERU"
+
+msgid "PHILIPPINES"
+msgstr "FILIPINAS"
+
+msgid "PHP Version"
+msgstr "Versão do PHP"
+
+msgid "PM"
+msgstr "PM"
+
+msgid "POLAND"
+msgstr "POLÓNIA"
+
+msgid "PORTUGAL"
+msgstr "PORTUGAL"
+
+msgid "PUERTO RICO"
+msgstr "PUERTO RICO"
+
+msgid "Page"
+msgstr "Página"
+
+msgid "Page Break"
+msgstr "Quebra de Página"
+
+msgid "Page Conditional Logic"
+msgstr "Lógica Condicional de Página"
+
+msgid "Page Names"
+msgstr "Nome das Páginas"
+
+msgid "Pakistan"
+msgstr "Paquistão"
+
+msgid "Palau"
+msgstr "Palau"
+
+msgid "Palestine"
+msgstr "Palestina"
+
+msgid "Panama"
+msgstr "Panamá"
+
+msgid "Papua New Guinea"
+msgstr "Papua Nova Guiné"
+
+msgid "Paragraph Text"
+msgstr "Texto Parágrafo"
+
+msgid "Paraguay"
+msgstr "Paraguai"
+
+msgid "Parameter Name:"
+msgstr "Nome do Parâmetro:"
+
+msgid "Part-Time"
+msgstr "Meio Período"
+
+msgid "Pass Data Via Query String"
+msgstr "Passar dados Via Query String"
+
+msgid "Pass Field Data Via Query String"
+msgstr "Passar dados de campo Via Query String"
+
+msgid "Password"
+msgstr "Senha"
+
+msgid "Payment Amount"
+msgstr "Valor do Pagamento"
+
+msgid "Payment Date"
+msgstr "Data de Pagamento"
+
+msgid "Payment Status"
+msgstr "Situação do Pagamento"
+
+msgid "Pennsylvania"
+msgstr "Pennsylvania"
+
+msgid "Per Diem"
+msgstr "Per Diem"
+
+msgid "Peru"
+msgstr "Perú"
+
+msgid "Pharmaceutical/Biotech"
+msgstr "Farmacêutica / Biotecnologia"
+
+msgid "Philippine Peso"
+msgstr "Peso Filipino"
+
+msgid "Philippines"
+msgstr "Filipinas"
+
+msgid "Phone"
+msgstr "Telefone"
+
+msgid "Phone Format"
+msgstr "Formato do telefone"
+
+msgid "Phone Number Format"
+msgstr "Formato do Telefone"
+
+msgid "Phone format:"
+msgstr "Formato do Telefone:"
+
+msgid "Placeholder Label"
+msgstr "Placeholder Label"
+
+msgid "Please %scontact our support team%s."
+msgstr "Por favor, %scontate a nossa equipe de suporte%s."
+
+msgid ""
+"Please enter a Title for this form. When adding the form to a page or post, "
+"you will have the option to hide the title."
+msgstr ""
+"Por favor, digite um título para este formulário. Ao adicionar o formulário "
+"para uma página ou um post, você terá a opção para ocultar o título."
+
+msgid "Please enter a valid Website URL (i.e. http://www.gravityforms.com)."
+msgstr "Por favor, digite uma URL válida (ex: http://www.exemplo.com.br)."
+
+msgid "Please enter a valid amount."
+msgstr "Digite um valor válido."
+
+msgid "Please enter a valid date in the format (%s)."
+msgstr "Por favor insira uma data válida no formato (%s)."
+
+msgid "Please enter a valid date."
+msgstr "Por favor insira uma data válida."
+
+msgid "Please enter a valid email address."
+msgstr "Por favor, digite um E-Mail válido."
+
+msgid "Please enter a valid number"
+msgstr "Por favor, digite um número válido."
+
+msgid "Please enter a valid quantity"
+msgstr "Por favor, indique uma quantidade válida"
+
+msgid "Please enter a valid time."
+msgstr "Por favor, digite uma hora válida."
+
+msgid "Please enter a valid value."
+msgstr "Digite um valor válido."
+
+msgid "Please enter a value between %s and %s."
+msgstr "Por favor insira um valor entre %s e %s."
+
+msgid "Please enter a value greater than or equal to %s."
+msgstr "Por favor insira um valor maior ou igual a %s."
+
+msgid "Please enter a value less than or equal to %s."
+msgstr "Por favor insira um valor menor ou igual a %s."
+
+msgid "Please enter name."
+msgstr "Por favor, insira o nome."
+
+msgid "Please enter your card's security code."
+msgstr "Por favor insira o código de segurança do seu cartão."
+
+msgid "Please enter your credit card information."
+msgstr "Por favor digite suas informações de cartão de crédito."
+
+msgid ""
+"Please review the plugin documentation and <a href='http://www.gravityhelp."
+"com/frequently-asked-questions/'>frequently asked questions (FAQ)</a> first. "
+"If you still can't find the answer you need visit our <a href='http://forum."
+"gravityhelp.com/'>support forums</a> where we will be happy to answer your "
+"questions and assist you with any problems. <strong>Please note:</strong> If "
+"you have not <a href='http://www.gravityforms.com/purchase-gravity-"
+"forms/'>purchased a license</a> from us, you won't have access to these help "
+"resources."
+msgstr ""
+"Por favor, leia a documentação do plugin e <a href='http://www.gravityhelp."
+"com/frequently-asked-questions/'>perguntas frequentes (FAQ)</a> em primeiro "
+"lugar. Se você ainda não encontrar a resposta que você precisa, visite o "
+"nosso <a href='http://forum.gravityhelp.com/'>fórum de suporte</a> onde "
+"teremos o maior prazer em responder suas perguntas e ajudá-lo com quaisquer "
+"problemas. <strong>Atenção:</strong> Se você ainda não <a href='http://www."
+"gravityforms.com/purchase-gravity-forms/'>adquiriu uma licença</a> de nós, "
+"você não terá acesso a esses recursos de ajuda."
+
+msgid "Please select a form"
+msgstr "Por favor, selecione um formulário"
+
+msgid "Please select at least one entry."
+msgstr "Selecione pelo menos uma entrada."
+
+msgid ""
+"Please select the currency for your location.  Currency is used for pricing "
+"fields and price calculations."
+msgstr ""
+"Por favor, selecione a moeda para a sua localização. A moeda é usada para "
+"campos de preços e cálculos de preços."
+
+msgid "Please select the forms to be exported"
+msgstr "Por favor, selecione os formulários a serem exportados"
+
+msgid "Plugin Support"
+msgstr "Suporte Plugin"
+
+msgid "Poland"
+msgstr "Polônia"
+
+msgid "Polish Zloty"
+msgstr "Zloty polonês"
+
+msgid "Portugal"
+msgstr "Portugal"
+
+msgid "Portuguese"
+msgstr "Português"
+
+msgid "Post Author"
+msgstr "Autor do Post"
+
+msgid "Post Body"
+msgstr "Texto do Post"
+
+msgid "Post Category"
+msgstr "Categoria do Post"
+
+msgid "Post Content Template"
+msgstr "Modelo de Conteúdo do Post"
+
+msgid "Post Custom Field"
+msgstr "Campo Personalizado do Post"
+
+msgid "Post Edit URL"
+msgstr "URL da Edição do Post"
+
+msgid "Post Excerpt"
+msgstr "Resumo do Post"
+
+msgid "Post Fields"
+msgstr "Campos do Post"
+
+msgid ""
+"Post Fields allow you to add fields to your form that create Post Drafts in "
+"WordPress from the submitted data."
+msgstr ""
+"Campos de Posts permitem a criação de formulários que criam Rascunhos de "
+"Post no WordPress com as informações enviadas."
+
+msgid "Post Format"
+msgstr "Formato do Post"
+
+msgid "Post Id"
+msgstr "Id do Post"
+
+msgid "Post Image"
+msgstr "Imagem do Post"
+
+msgid "Post Status"
+msgstr "Status do Post"
+
+msgid "Post Tags"
+msgstr "Tags do Post"
+
+msgid "Post Title"
+msgstr "Título do Post"
+
+msgid "Post Title Template"
+msgstr "Modelo do Título do Post"
+
+msgid "Postal Code"
+msgstr "Código Postal"
+
+msgid "Pound Sterling"
+msgstr "Libras"
+
+msgid "Pre-Sale Questions"
+msgstr "Perguntas Pré-Venda"
+
+msgid "Prefer Not to Answer"
+msgstr "Prefere Não Responder"
+
+msgid "Prefix"
+msgstr "Prefixo"
+
+msgid "Preview"
+msgstr "Previsualizar"
+
+msgid "Preview this Form"
+msgstr "Ver este Formulário"
+
+msgid "Preview this form"
+msgstr "Previsualizar esse form"
+
+msgid "Preview this form to see your custom icon."
+msgstr "Visualizar este Formulário para ver o ícone personalizado."
+
+msgid "Previous"
+msgstr "Anterior"
+
+msgid "Previous Button"
+msgstr "Botão Anterior"
+
+msgid "Previous Button Image"
+msgstr "Imagem do Botão Anterior"
+
+msgid "Previous Button Text"
+msgstr "Texto do Botão Anterior"
+
+msgid "Previous Page"
+msgstr "Página Anterior"
+
+msgid "Price"
+msgstr "Preço"
+
+msgid "Price: "
+msgstr "Preço: "
+
+msgid "Pricing Fields"
+msgstr "Campos de Preços"
+
+msgid ""
+"Pricing fields allow you to add fields to your form that calculate pricing "
+"for selling goods and services."
+msgstr ""
+"Campos de Preços permitem adicionar campos ao formulário que calculam os "
+"preços de venda de bens e serviços."
+
+msgid "Pricing form fields"
+msgstr "Campos de Preço"
+
+msgid "Prince Edward Island"
+msgstr "Ilha Príncipe Eduardo"
+
+msgid "Print"
+msgstr "Imprimir"
+
+msgid "Print Entries"
+msgstr "Imprimir Registros"
+
+msgid "Print Preview"
+msgstr "Visualização de Impressão"
+
+msgid "Print all of the selected entries at once."
+msgstr "Imprimir todas as entradas selecionadas de uma vez."
+
+msgid "Probably"
+msgstr "Provavelmente"
+
+msgid "Probably Not"
+msgstr "Provavelmente Não"
+
+msgid "Product"
+msgstr "Produto"
+
+msgid "Product Field"
+msgstr "Campo do Produto"
+
+msgid "Product Name"
+msgstr "Nome do Produto"
+
+msgid "Product fields are not editable"
+msgstr "Os campos de Produto não são editáveis"
+
+msgid "Professional Services"
+msgstr "Serviços Profissionais"
+
+msgid "Progress Bar"
+msgstr "Barra de Progresso"
+
+msgid "Progress Bar Style"
+msgstr "Estilo da Barra de Progresso"
+
+msgid "Progress Indicator"
+msgstr "Indicador de Progresso"
+
+msgid "Properties"
+msgstr "Propriedades"
+
+msgid "Province"
+msgstr "Província"
+
+msgid "Puerto Rico"
+msgstr "Porto Rico"
+
+msgid "QA/Quality Control"
+msgstr "Controle de Qualidade"
+
+msgid "QATAR"
+msgstr "QATAR"
+
+msgid "Qatar"
+msgstr "Catar"
+
+msgid "Qty"
+msgstr "Quant"
+
+msgid "Qty: "
+msgstr "Qtd: "
+
+msgid "Quantity"
+msgstr "Quantidade"
+
+msgid "Quantity:"
+msgstr "Quantidade:"
+
+msgid "Quebec"
+msgstr "Quebec"
+
+msgid "ROMANIA"
+msgstr "ROMÉNIA"
+
+msgid "RUSSIA"
+msgstr "RÚSSIA"
+
+msgid "RWANDA"
+msgstr "RUANDA"
+
+msgid "Radio Buttons"
+msgstr "Radio Buttons"
+
+msgid "Range"
+msgstr "Range"
+
+msgid "Read more about reCAPTCHA"
+msgstr "Leia mais sobre o reCAPTCHA"
+
+msgid "Real Estate"
+msgstr "Imobiliário"
+
+msgid "Really Simple CAPTCHA"
+msgstr "Really Simple CAPTCHA"
+
+msgid "Recaptcha Theme"
+msgstr "temas Recaptcha"
+
+msgid "Red"
+msgstr "Vermelho"
+
+msgid "Redirect"
+msgstr "Redirecionar"
+
+msgid "Redirect Form to Page"
+msgstr "Redirecionar Fomulário para a Página"
+
+msgid "Redirect Form to URL"
+msgstr "Redirecionar para URL"
+
+msgid "Remove Star"
+msgstr "Remover estrela"
+
+msgid "Remove this row"
+msgstr "Remover esta linha"
+
+msgid "Reply To"
+msgstr "Responder Para"
+
+msgid "Require Login Message"
+msgstr "Exigir Mensagem de Login"
+
+msgid "Require user to be logged in"
+msgstr "Requerer que o usuário esteja logado"
+
+msgid "Required"
+msgstr "Requerido"
+
+msgid "Required Field"
+msgstr "Campos Obrigatórios"
+
+msgid "Required form fields"
+msgstr "Campos Obrigatórios do Formulário"
+
+msgid "Required only if you decide to use the reCAPTCHA field."
+msgstr "Necessário somente se você decidir usar o campo de reCAPTCHA."
+
+msgid "Resend Notifications"
+msgstr "Reenviar Notificações"
+
+msgid "Resending..."
+msgstr "Reenviando ..."
+
+msgid "Reset Views"
+msgstr "Reiniciar Visualizações"
+
+msgid "Restaurant/Food Service"
+msgstr "Restaurante / Food Service"
+
+msgid "Restore"
+msgstr "Restaurar"
+
+msgid "Restore this entry"
+msgstr "Restaurar esta entrada"
+
+msgid "Retail"
+msgstr "Varejo"
+
+msgid "Retired"
+msgstr "Aposentado (a)"
+
+msgid "Return to Form List"
+msgstr "Retornar a Lista de Form"
+
+msgid "Rhode Island"
+msgstr "Rhode Island"
+
+msgid "Right aligned"
+msgstr "Alinhado a direita"
+
+msgid "Romania"
+msgstr "Romênia"
+
+msgid "Routing"
+msgstr "Encaminhando"
+
+msgid "Rules"
+msgstr "Regras"
+
+msgid "Russia"
+msgstr "Rússia"
+
+msgid "Russian"
+msgstr "Russo"
+
+msgid "Rwanda"
+msgstr "Ruanda"
+
+msgid "SAINT KITTS AND NEVIS"
+msgstr "SÃO CRISTÓVÃO E NEVIS"
+
+msgid "SAINT LUCIA"
+msgstr "SANTA LUCIA"
+
+msgid "SAINT VINCENT AND THE GRENADINES"
+msgstr "São Vicente e Granadinas"
+
+msgid "SAMOA"
+msgstr "SAMOA"
+
+msgid "SAN MARINO"
+msgstr "SAN MARINO"
+
+msgid "SAO TOME AND PRINCIPE"
+msgstr "SÃO TOMÉ E PRÍNCIPE"
+
+msgid "SAUDI ARABIA"
+msgstr "ARÁBIA SAUDITA"
+
+msgid "SENEGAL"
+msgstr "SENEGAL"
+
+msgid "SERBIA AND MONTENEGRO"
+msgstr "SÉRVIA E MONTENEGRO"
+
+msgid "SEYCHELLES"
+msgstr "SEYCHELLES"
+
+msgid "SIERRA LEONE"
+msgstr "SERRA LEOA"
+
+msgid "SINGAPORE"
+msgstr "CINGAPURA"
+
+msgid "SLOVAKIA"
+msgstr "ESLOVÁQUIA"
+
+msgid "SLOVENIA"
+msgstr "ESLOVÉNIA"
+
+msgid "SOLOMON ISLANDS"
+msgstr "ILHAS SALOMÃO"
+
+msgid "SOMALIA"
+msgstr "SOMÁLIA"
+
+msgid "SOUTH AFRICA"
+msgstr "ÁFRICA DO SUL"
+
+msgid "SOUTH KOREA"
+msgstr "CORÉIA DO SUL"
+
+msgid "SPAIN"
+msgstr "ESPANHA"
+
+msgid "SRI LANKA"
+msgstr "SRI LANKA"
+
+msgid "SUDAN"
+msgstr "SUDÃO"
+
+msgid "SURINAME"
+msgstr "SURINAME"
+
+msgid "SWAZILAND"
+msgstr "SUAZILÂNDIA"
+
+msgid "SWEDEN"
+msgstr "SUÉCIA"
+
+msgid "SWITZERLAND"
+msgstr "SUÍÇA"
+
+msgid "SYRIA"
+msgstr "SÍRIA"
+
+msgid "Saint Kitts and Nevis"
+msgstr "São Cristóvão e Névis"
+
+msgid "Saint Lucia"
+msgstr "Santa Lúcia"
+
+msgid "Saint Vincent and the Grenadines"
+msgstr "São Vicente e Granadinas"
+
+msgid "Sales"
+msgstr "Vendas"
+
+msgid "Samoa"
+msgstr "Samoa"
+
+msgid "San Marino"
+msgstr "San Marino"
+
+msgid "Sao Tome and Principe"
+msgstr "São Tomé e Príncipe"
+
+msgid "Saskatchewan"
+msgstr "Saskatchewan"
+
+msgid "Satisfaction"
+msgstr "Satisfação"
+
+msgid "Satisfied"
+msgstr "Satisfeito"
+
+msgid "Saturday"
+msgstr "Sábado"
+
+msgid "Saudi Arabia"
+msgstr "Arábia Saudita"
+
+msgid "Save"
+msgstr "Salvar"
+
+msgid "Save Form"
+msgstr "Salvar Formulário"
+
+msgid "Save Settings"
+msgstr "Salvar Configurações"
+
+msgid "Save as"
+msgstr "Salvar como"
+
+msgid "Save as new custom choice"
+msgstr "Salvar como nova lista de opções"
+
+msgid "Schedule Form"
+msgstr "Formulário Programado"
+
+msgid "Schedule a time period the form is active."
+msgstr "Programe um período de tempo para que o formulário fique ativo."
+
+msgid "Schedule form"
+msgstr "Formulário Programado"
+
+msgid "Science/Research"
+msgstr "Ciência / Pesquisa"
+
+msgid "Search"
+msgstr "Pesquisar"
+
+msgid "Search Entries:"
+msgstr "Pesquisar Registros:"
+
+msgid "Seasonal"
+msgstr "Sazonal"
+
+msgid "Second Choice"
+msgstr "Segunda Escolha"
+
+msgid "Second Option"
+msgstr "Segunda Opção"
+
+msgid "Section Break"
+msgstr "Quebra de Seção"
+
+msgid "Security Code"
+msgstr "Código de Segurança"
+
+msgid "Select A Form"
+msgstr "Selecione um Formulário"
+
+msgid "Select All"
+msgstr "Selecionar Todos"
+
+msgid "Select Categories"
+msgstr "Selecione Categorias"
+
+msgid "Select Columns"
+msgstr "Selecionar Colunas"
+
+msgid "Select Date Range"
+msgstr "Selecione o Período"
+
+msgid "Select Fields"
+msgstr "Selecione um Campo"
+
+msgid "Select File"
+msgstr "Selecione um Arquivo"
+
+msgid "Select Forms"
+msgstr "Selecionar formulários"
+
+msgid "Select a Form"
+msgstr "Selecione um formulário"
+
+msgid "Select a Mask"
+msgstr "Selecione uma Máscara"
+
+msgid ""
+"Select a category and customize the predefined choices or paste your own "
+"list to bulk add choices."
+msgstr ""
+"Selecione uma categoria e personalize as opções predefinidas ou cole a sua "
+"própria lista de opções."
+
+msgid ""
+"Select a date range. Setting a range will only export entries submitted "
+"during that date range. If no range is set, all entries will be exported."
+msgstr ""
+"Selecione um intervalo de data. Selecionando um intervalo, somente os "
+"registros entre o intervalo selecionado serão exportados. Se nenhum "
+"intervalo for selecionado, todos os registros serão exportados."
+
+msgid "Select a field"
+msgstr "Selecione um campo"
+
+msgid "Select a form"
+msgstr "Selecione um Formulário"
+
+msgid "Select a form below to add it to your post or page."
+msgstr "Selecione um formulário abaixo para inserir em seu post ou página."
+
+msgid ""
+"Select a form below to export entries. Once you have selected a form you may "
+"select the fields you would like to export and an optional date range. When "
+"you click the download button below, Gravity Forms will create a CSV file "
+"for you to save to your computer."
+msgstr ""
+"Selecione um formulário abaixo para exportar os registros. Após selecionar o "
+"formulário, você pode selecionar os campos que deseja exportar e um período "
+"de datas. Quando você clicar no botão download, o Gravity Forms criará um "
+"arquivo CSV para você salvar no computador."
+
+msgid "Select a format"
+msgstr "Selecione um formato"
+
+msgid "Select a page"
+msgstr "Selecione uma página"
+
+msgid "Select an email field"
+msgstr "Selecione um campo de E-Mail"
+
+msgid "Select an existing custom field"
+msgstr "Selecione um campo personalizado existente"
+
+msgid "Select image size"
+msgstr "Selecione o tamanho da imagem"
+
+msgid ""
+"Select one or more image metadata field to be displayed along with the image "
+"upload field. They enable users to enter additional information about the "
+"uploaded image."
+msgstr ""
+"Selecione um ou mais campo de metadados de imagem para ser exibido "
+"juntamente com o campo de upload de imagem. Eles permitem que os usuários "
+"insiram informações adicionais sobre a imagem carregada."
+
+msgid ""
+"Select the Gravity Forms XML file you would like to import. When you click "
+"the import button below, Gravity Forms will import the forms."
+msgstr ""
+"Selecione o arquivo XML do Gravity Forms a ser importado. Quando você clicar "
+"no botão importar abaixo, o Gravity Forms importará os formulários"
+
+msgid ""
+"Select the author that will be used for the post that is created by the form "
+"entry."
+msgstr ""
+"Selecione o autor que será utilizado para o post quando criado com a entrada "
+"de formulário."
+
+msgid ""
+"Select the category that will be used for the post that is created by the "
+"form entry."
+msgstr ""
+"Escolha a categoria que será usada no post quando criado com a entrada de "
+"formulário."
+
+msgid ""
+"Select the country you would like to be selected by default when the form "
+"gets displayed."
+msgstr ""
+"Selecione o país que você gostaria de ser selecionado por padrão quando o "
+"formulário é exibido."
+
+msgid ""
+"Select the custom field name from available existing custom fields, or enter "
+"a new custom field name."
+msgstr ""
+"Selecione o nome do campo personalizado entre as opções disponíveis, ou "
+"digite um novo nome."
+
+msgid ""
+"Select the description placement.  Descriptions can be placed above the "
+"field inputs or below the field inputs."
+msgstr ""
+"Selecione o local da descrição. Descrições podem ser colocados acima das "
+"entradas de campo ou abaixo das entradas de campo."
+
+msgid ""
+"Select the fields from the select form you would like to export data from."
+msgstr "Selecione os campos do formulário que deseja exportar."
+
+msgid ""
+"Select the form you would like to export entry data from. You may only "
+"export data from one form at a time."
+msgstr ""
+"Selecione o formulário que deseja exportar os registros. Você pode exportar "
+"registros de um formulário por vez."
+
+msgid ""
+"Select the format of numbers that are allowed in this field. You have the "
+"option to use a comma or a dot as the decimal separator."
+msgstr ""
+"Selecione o formato de números que são permitidos neste campo. Você tem a "
+"opção de usar uma vírgula ou um ponto como separador decimal."
+
+msgid ""
+"Select the format you would like to use for the Name field.  There are 3 "
+"options, Normal which includes First and Last Name, Extended which adds "
+"Prefix and Suffix, or Simple which is a single input field."
+msgstr ""
+"Selecione o formato que gostaria para o Campo Nome. Há 3 opções, Normal "
+"(inclui Nome e Sobrenome), Extended (adiciona Prefixo e Sufixo), ou Simples "
+"(um campo de linha de texto)."
+
+msgid ""
+"Select the format you would like to use for the date input.  Available "
+"options are MM/DD/YYYY and DD/MM/YYYY."
+msgstr ""
+"Selecione o formato de data que gostaria de usar. As opções disponíveis são: "
+"MM/DD/YYYY e DD/MM/YYYY."
+
+msgid ""
+"Select the format you would like to use for the phone input.  Available "
+"options are domestic US/CANADA style phone number and international long "
+"format phone number."
+msgstr ""
+"Selecione o formato que você gostaria de usar para a entrada de telefone. As "
+"opções disponíveis são estilo US/CANADÁ e número de telefone internacional "
+"de longo formato."
+
+msgid ""
+"Select the format you would like to use for the time field.  Available "
+"options are 12 hour (i.e. 8:30 pm) and 24 hour (i.e. 20:30)."
+msgstr ""
+"Selecione o formato que você gostaria de usar para o campo de hora. As "
+"opções disponíveis são 12 horas (ou seja, 8:30pm) e 24 horas (ou seja, "
+"20:30)."
+
+msgid "Select the forms you would like to export."
+msgstr "Selecione os formulários que gostaria de exportar."
+
+msgid ""
+"Select the forms you would like to export. When you click the download "
+"button below, Gravity Forms will create a XML file for you to save to your "
+"computer. Once you've saved the download file, you can use the Import tool "
+"to import the forms."
+msgstr ""
+"Selecione os formulários a serem exportados. Quando você clicar no botão de "
+"download, o Gravity Forms criará um arquivo XML para você salvar no seu "
+"computador. Após salvar o arquivo, você pode usar a ferramenta de importação "
+"para importar os formulários."
+
+msgid ""
+"Select the label placement.  Labels can be top aligned above a field, left "
+"aligned to the left of a field, or right aligned to the left of a field."
+msgstr ""
+"Selecione o posicionamento da legenda. As legendas podem ficar alinhadas "
+"acima do campo, alinhadas a esquerda do lado esquerdo, ou alinhadas a "
+"direita do lado esquerdo. "
+
+msgid ""
+"Select the language you would like to use for the reCAPTCHA display from the "
+"available options."
+msgstr "Selecione a linguagem que deseja utilizar para o campo reCAPTCHA."
+
+msgid ""
+"Select the page you would like the user to be redirected to after they have "
+"submitted the form."
+msgstr ""
+"Selecione a página que o usuário será redirecionado ao submeter esse "
+"formulário."
+
+msgid ""
+"Select the post format that will be used for the post that is created by the "
+"form entry."
+msgstr ""
+"Selecione o formato do post que será usado na criação do post pela entrada "
+"desse formulário."
+
+msgid ""
+"Select the post status that will be used for the post that is created by the "
+"form entry."
+msgstr ""
+"Selecione o status do post que será utilizado quando criado com a entrada do "
+"formulário."
+
+msgid ""
+"Select the province you would like to be selected by default when the form "
+"gets displayed."
+msgstr ""
+"Selecione a província em que você gostaria de ser selecionada por padrão "
+"quando o formulário é exibido."
+
+msgid ""
+"Select the state you would like to be selected by default when the form gets "
+"displayed."
+msgstr ""
+"Selecione o estado que você gostaria de ser selecionado por padrão quando o "
+"formulário é exibido."
+
+msgid "Select the type of CAPTCHA you would like to use."
+msgstr "Selecione o tipo de CAPTCHA que você gostaria de usar."
+
+msgid "Select the type of address you would like to use."
+msgstr "Selecione o tipo de endereço que você quer usar."
+
+msgid "Select the type of field from the available form fields."
+msgstr "Selecione o tipo de campo entre os campos disponíveis."
+
+msgid ""
+"Select the type of inputs you would like to use for the date field. Date "
+"Picker will let users select a date from a calendar. Date Field will let "
+"users free type the date."
+msgstr ""
+"Selecione o tipo de entradas que você gostaria de usar para o campo de data. "
+"Data Picker vai permitir aos usuários selecionar uma data no calendário. "
+"Campo Data permitirá que os usuários digite a data livremente."
+
+msgid ""
+"Select the visibility for this field. Field visibility set to Everyone will "
+"be visible by the user submitting the form. Form field visibility set to "
+"Admin Only will only be visible within the Gravity Forms administration tool."
+"<br /><br />Setting a field to Admin Only is useful for creating fields that "
+"can be used to set a status or priority level on submitted entries."
+msgstr ""
+"Selecione a visibilidade para este campo. Campos definidos para Todos serão "
+"visíveis pelo usuário preenchendo o formulário. Campos definidos para "
+"Somente Admin serão visíveis dentro da ferramenta de administração do "
+"Gravity Forms. <br /><br /> A definição de um campo para Somente Admin é "
+"útil para a criação de campos que podem ser usados ​​para definir um estado ou "
+"nível de prioridade sobre as entradas enviadas."
+
+msgid ""
+"Select the visual theme for the reCAPTCHA field the available options to "
+"better match your site design."
+msgstr ""
+"Selecione o tema visual para o campo reCAPTCHA entre as opções dispoíveis. "
+"Selecione a melhor opção para o design do seu site."
+
+msgid ""
+"Select this option to limit user input to unique values only.  This will "
+"require that a value entered in a field does not currently exist in the "
+"entry database for that field."
+msgstr ""
+"Selecione essa oção para tornar o campo único. Essa opção restringe o campo "
+"a somente um valor único no banco de dados."
+
+msgid ""
+"Select this option to make the form field required.  A required field will "
+"prevent the form from being submitted if it is not filled out or selected."
+msgstr ""
+"Selecione essa opção para tornar esse campo requerido. Um campo requerido "
+"restringe um formulário de ser enviado sem ser preenchido corretamente."
+
+msgid "Select which Product this field is tied to."
+msgstr "Selecione o Produto que está campo está vinculado."
+
+msgid ""
+"Select which categories are displayed. You can choose to display all of them "
+"or select individual ones."
+msgstr ""
+"Selecione as categorias a serem mostradas. Voce pode mostrar todas ou "
+"selecionar algumas delas."
+
+msgid ""
+"Select which progress bar style you would like to use.  Select custom to "
+"choose your own text and background color"
+msgstr ""
+"Selecione o estilo que você gostaria de usar na barra de progresso. "
+"Selecione Personalizado para escolher seu próprio texto e cor de fundo"
+
+msgid ""
+"Select which type of visual progress indicator you would like to display.  "
+"Progress Bar, Steps or None"
+msgstr ""
+"Selecione o tipo de indicador de progresso visual que você gostaria de "
+"exibir. Barra de Progresso, Passos ou nenhum"
+
+msgid ""
+"Select yes or no to enable or disable CSS output.  Setting this to no will "
+"disable the standard Gravity Forms CSS from being included in your theme."
+msgstr ""
+"Selecione sim ou não para ativar o uso do CSS padrão. Selecionando não, você "
+"desativará o CSS padrão do Gravity Forms.  "
+
+msgid ""
+"Select yes or no to enable or disable HTML5 output. Setting this to no will "
+"disable the standard Gravity Forms HTML5 form field output."
+msgstr ""
+"Selecione sim ou não para habilitar ou desabilitar a saída HTML5. "
+"Selecionando a opção Não, irá desativar a saída padrão HTML5 do Gravity "
+"Forms."
+
+msgid ""
+"Selecting this option will set the post author to the WordPress user that "
+"submitted the form."
+msgstr ""
+"Selecionar esta opção irá definir o autor do post para o usuário do "
+"WordPress que enviou o formulário."
+
+msgid "Self-employed"
+msgstr "Autônomo"
+
+msgid "Send To"
+msgstr "Enviar para"
+
+msgid "Send To Email Address"
+msgstr "Enviar para E-Mail"
+
+msgid "Send to"
+msgstr "Enviar para E-Mail"
+
+msgid "Senegal"
+msgstr "Senegal"
+
+msgid "Separated with commas (i.e. jpg, gif, png, pdf)"
+msgstr "Separe por vírgulas (i.e. jpg, gif, png, pdf)"
+
+msgid "September"
+msgstr "Setembro"
+
+msgid "Serbia and Montenegro"
+msgstr "Sérvia and Montenegro"
+
+msgid "Set as Featured Image"
+msgstr "Definir como Imagem Destacada"
+
+msgid ""
+"Set this to No if you would like to disable the plugin from outputting HTML5 "
+"form fields."
+msgstr ""
+"Defina esta opção para Não, se você quiser desabilitar HTML5 nos campos de "
+"formulário."
+
+msgid ""
+"Set this to No if you would like to disable the plugin from outputting the "
+"form CSS."
+msgstr ""
+"Selecione \"Não\" se você quiser que o plugin nao inclua o arquivo de CSS no "
+"formulário."
+
+msgid "Settings"
+msgstr "Configurações"
+
+msgid "Settings License Key"
+msgstr "Chave de Licença"
+
+msgid "Settings Updated"
+msgstr "configurações atualizadas"
+
+msgid "Setup Email Notifications for this Form"
+msgstr "Configurar Notificações para este Formulário"
+
+msgid "Setup email notifications for this form"
+msgstr "Configurar Notificação para esse Formulario"
+
+msgid "Seychelles"
+msgstr "Seicheles"
+
+msgid "Shipping"
+msgstr "Frete"
+
+msgid "Short"
+msgstr "Curto"
+
+msgid "Show"
+msgstr "Mostrar"
+
+msgid "Sierra Leone"
+msgstr "Serra Leoa"
+
+msgid "Sign up%s for a free reCAPTCHA account"
+msgstr "Registe-se %s para uma conta gratuita reCAPTCHA"
+
+msgid "Simple"
+msgstr "Simples"
+
+msgid "Singapore"
+msgstr "Cingapura"
+
+msgid "Singapore Dollar"
+msgstr "Dólar de Cingapura"
+
+msgid "Single"
+msgstr "Solteiro (a)"
+
+msgid "Single Line Text"
+msgstr "Linha de Texto"
+
+msgid "Single Method"
+msgstr "Método Único"
+
+msgid "Single Product"
+msgstr "Único produto"
+
+msgid "Single line text"
+msgstr "Linha de texto"
+
+msgid "Size"
+msgstr "Tamanho"
+
+msgid "Skilled Labor"
+msgstr "Skilled Labor"
+
+msgid "Slovakia"
+msgstr "Eslováquia"
+
+msgid "Slovenia"
+msgstr "Eslovênia"
+
+msgid "Small"
+msgstr "Pequeno"
+
+msgid "Social Security Number"
+msgstr "Número de Segurança Social"
+
+msgid "Solomon Islands"
+msgstr "Ilhas Salomão"
+
+msgid "Somalia"
+msgstr "Somália"
+
+msgid "Some College"
+msgstr "Some College"
+
+msgid "Somewhat Better"
+msgstr "Um pouco melhor"
+
+msgid "Somewhat Important"
+msgstr "Pouco Importante"
+
+msgid "Somewhat Worse"
+msgstr "Um Pouco Pior"
+
+msgid "Sorry. This form is no longer accepting new submissions."
+msgstr "Desculpe! Este formulário não aceita mais envio de dados."
+
+msgid "Sorry. This form is no longer available."
+msgstr "Desculpe! Este formulário não existe mais."
+
+msgid "Sorry. You must be logged in to view this form."
+msgstr "Desculpe. Você deve estar logado para ver este formulário."
+
+msgid "Source Url"
+msgstr "URL de origem"
+
+msgid "South Africa"
+msgstr "África do Sul"
+
+msgid "South America"
+msgstr "América do Sul"
+
+msgid "South Carolina"
+msgstr "Carolina do Sul"
+
+msgid "South Dakota"
+msgstr "Dakota do Sul"
+
+msgid "South Korea"
+msgstr "Coréia do Sul"
+
+msgid "Spain"
+msgstr "Espanha"
+
+msgid "Spam"
+msgstr "Spam"
+
+msgid "Spanish"
+msgstr "Espanhol"
+
+msgid ""
+"Specify which notifications you would like to resend for the selected "
+"entries."
+msgstr ""
+"Especificar quais as notificações que gostaria de reenviar para as entradas "
+"selecionadas."
+
+msgid "Sri Lanka"
+msgstr "Sri Lanka"
+
+msgid "Standard"
+msgstr "Padrão"
+
+msgid "Standard Fields"
+msgstr "Campos Padrões"
+
+msgid "Standard Fields provide basic form functionality."
+msgstr "Campos Padrões fornecem funcionalidade básica ao formulário."
+
+msgid "Starred"
+msgstr "Estrelado"
+
+msgid "Start"
+msgstr "Inicio"
+
+msgid "Start Date"
+msgstr "Data de Início"
+
+msgid "State"
+msgstr "Estado"
+
+msgid "State / Province"
+msgstr "Estado"
+
+msgid "State / Province / Region"
+msgstr "Estado"
+
+msgid "Step"
+msgstr "Etapa"
+
+msgid "Steps"
+msgstr "Passos"
+
+msgid "Street Address"
+msgstr "Endereço"
+
+msgid "Strength indicator"
+msgstr "Indicador de força"
+
+msgid "Strong"
+msgstr "Forte"
+
+msgid "Strongly Agree"
+msgstr "Concordo Fortemente"
+
+msgid "Strongly Disagree"
+msgstr "Discordo Fortemente"
+
+msgid "Student"
+msgstr "Estudante"
+
+msgid "Style"
+msgstr "Estilo"
+
+msgid "Subject"
+msgstr "Assunto"
+
+msgid "Subject:"
+msgstr "Assunto:"
+
+msgid "Submit"
+msgstr "Enviar"
+
+msgid "Submitted on"
+msgstr "Enviado em"
+
+msgid "Subscriber Id"
+msgstr "ID do Assinante"
+
+msgid "Subscription Amount"
+msgstr "Valor da Assinatura"
+
+msgid "Subscription Status"
+msgstr "Status da Assinatura"
+
+msgid "Sudan"
+msgstr "Sudão"
+
+msgid "Suffix"
+msgstr "Sufixo"
+
+msgid "Sunday"
+msgstr "Domingo"
+
+msgid "Support License Key"
+msgstr "Chave de licença"
+
+msgid "Suriname"
+msgstr "Suriname"
+
+msgid "Swaziland"
+msgstr "Suazilândia"
+
+msgid "Sweden"
+msgstr "Suécia"
+
+msgid "Swedish Krona"
+msgstr "Coroa sueca"
+
+msgid "Swiss Franc"
+msgstr "Franco Suíço"
+
+msgid "Switch Form"
+msgstr "Trocar de Form"
+
+msgid "Switzerland"
+msgstr "Suíça"
+
+msgid "Syria"
+msgstr "Síria"
+
+msgid "TAIWAN"
+msgstr "TAIWAN"
+
+msgid "TAJIKISTAN"
+msgstr "TAJIQUISTÃO"
+
+msgid "TANZANIA"
+msgstr "TANZÂNIA"
+
+msgid "THAILAND"
+msgstr "TAILÂNDIA"
+
+msgid "TOGO"
+msgstr "TOGO"
+
+msgid "TONGA"
+msgstr "TONGA"
+
+msgid "TRINIDAD AND TOBAGO"
+msgstr "TRINIDAD E TOBAGO"
+
+msgid "TUNISIA"
+msgstr "TUNÍSIA"
+
+msgid "TURKEY"
+msgstr "TURQUIA"
+
+msgid "TURKMENISTAN"
+msgstr "TURCOMENISTÃO"
+
+msgid "TUVALU"
+msgstr "TUVALU"
+
+msgid "Tab Index Start"
+msgstr "Início do Tab Index"
+
+msgid "Tab Index Start Value"
+msgstr "Valor Inicial do Tab Index"
+
+msgid "Tags"
+msgstr "Tags"
+
+msgid "Taiwan"
+msgstr "Taiwan"
+
+msgid "Taiwan New Dollar"
+msgstr "Dólar de Taiwan Novo"
+
+msgid "Tajikistan"
+msgstr "Tadjiquistão"
+
+msgid "Tanzania"
+msgstr "Tanzânia"
+
+msgid "Technology"
+msgstr "Tecnologia"
+
+msgid "Telecommunications"
+msgstr "Telecomunicações"
+
+msgid "Temporary"
+msgstr "Temporário"
+
+msgid "Tennessee"
+msgstr "Tennessee"
+
+msgid "Testimonials"
+msgstr "Testemunhos"
+
+msgid "Texas"
+msgstr "Texas"
+
+msgid "Text"
+msgstr "Texto"
+
+msgid "Text Color"
+msgstr "Cor do texto"
+
+msgid "Text:"
+msgstr "Texto:"
+
+msgid "Thai Baht"
+msgstr "Baht tailandês"
+
+msgid "Thailand"
+msgstr "Tailândia"
+
+msgid "The <strong>Send To</strong> email address provided is not valid."
+msgstr "O endereço fornecido <strong>Enviar Para</strong> não é válido."
+
+msgid "The CAPTCHA wasn't entered correctly. Go back and try it again."
+msgstr "O Captcha não foi digitado corretamente. Volte e tente novamente."
+
+msgid ""
+"The form title you have entered is already taken. Please enter an unique "
+"form title"
+msgstr ""
+"O título do formulário digitado já existe. Por favor, digite um novo título"
+
+msgid ""
+"The form title you have entered is already taken. Please enter an unique "
+"form title."
+msgstr ""
+"O título do formulário que você digitou já existe. Digite um título que "
+"ainda não foi usado."
+
+msgid "The license key is used for access to automatic upgrades and support."
+msgstr ""
+"A chave de licença é utilizada para o acesso às atualizações automáticas e "
+"suporte."
+
+msgid "The reCAPTCHA wasn't entered correctly. Go back and try it again."
+msgstr ""
+"O reCAPTCHA não foi inserido corretamente. Por favor, volte e tente "
+"novamente."
+
+msgid "The uploaded file type is not allowed."
+msgstr "O tipo de arquivo enviado não é permitido."
+
+msgid "The uploaded file type is not allowed. Must be one of the following: %s"
+msgstr "O arquivo selecionado não é permitido. Arquivos permitidos: %s"
+
+msgid "Theme"
+msgstr "Tema"
+
+msgid "There is a new version of Gravity Forms available."
+msgstr "Há uma nova versão do Gravity Forms disponível."
+
+msgid "There is an update available for Gravity Forms. %sView Details%s %s"
+msgstr ""
+"Há uma atualização disponível para o Gravity Forms. %sVer Detalhes%s %s"
+
+msgid "There was a problem with your submission."
+msgstr "Olá, algo deu errado com o envio de seus dados..."
+
+msgid "There was an error while resending the notifications."
+msgstr "Ocorreu um erro durante o reenvio das notificações."
+
+msgid "There was an error while saving your form."
+msgstr "Houve um erro ao salvar seu formulário."
+
+msgid "Third Choice"
+msgstr "Segunda Escolha"
+
+msgid "Third Option"
+msgstr "Terceira Opção"
+
+msgid "This custom choice name is already in use. Please enter another name."
+msgstr "Este nome já está em uso. Por favor, indique outro nome."
+
+msgid "This field is required."
+msgstr "Esse campo é obrigatório."
+
+msgid "This field is required. Please enter a complete address."
+msgstr "Esse campo é requerido. Por favor, digite o seu endereço completo."
+
+msgid "This field is required. Please enter the first and last name."
+msgstr "Esse campo é requerido. Por favor, digite o seu nome e sobrenome."
+
+msgid "This field requires an unique entry and '%s' has already been used"
+msgstr "Este campo requer um valor único e '%s' já foi usado"
+
+msgid "This form does not have any entries in the trash."
+msgstr "Este formulário não tem nenhuma entrada no lixo."
+
+msgid "This form does not have any entries yet."
+msgstr "Esse form ainda não possui registros."
+
+msgid "This form does not have any spam."
+msgstr "Este formulário não tem nenhum spam."
+
+msgid "This form does not have any starred entries."
+msgstr "Este formulário não tem nenhuma entrada com estrela."
+
+msgid "This form does not have any unread entries."
+msgstr "Este formulário não tem nenhuma entrada não lida."
+
+msgid ""
+"This operation deletes ALL Gravity Forms data. If you continue, You will not "
+"be able to retrieve or restore your forms or entries."
+msgstr ""
+"Esta operação apaga TODOS os dados do Gravity Forms. Se você continuar, você "
+"não será capaz de recuperar ou restaurar seus formulários ou entradas."
+
+msgid "Thumbnail - Right Aligned"
+msgstr "Miniatura - Alinhada a direita"
+
+msgid "Thursday"
+msgstr "Quinta-Feira"
+
+msgid "Time"
+msgstr "Hora"
+
+msgid "Time Format"
+msgstr "Formato da Hora"
+
+msgid "Title"
+msgstr "Título"
+
+msgid ""
+"To use conditional logic, please create a drop down, checkbox or radio "
+"button field."
+msgstr ""
+"Para usar uma lógica condicional, por favor crie um drop down, checkbox or "
+"radio button field."
+
+msgid "To use the reCaptcha field you must first do the following:"
+msgstr "Para usar o campo reCaptcha você precisa antes fazer o seguinte:"
+
+msgid "Togo"
+msgstr "Togo"
+
+msgid "Tonga"
+msgstr "Tonga"
+
+msgid "Top aligned"
+msgstr "Alinhado em cima"
+
+msgid "Total"
+msgstr "Total"
+
+msgid "Total:"
+msgstr "Total:"
+
+msgid "Transaction Id"
+msgstr "Id da Transação"
+
+msgid "Transportation/Logistics"
+msgstr "Transporte / Logística"
+
+msgid "Trash"
+msgstr "Lixeira"
+
+msgid "Trinidad and Tobago"
+msgstr "Trinidad e Tobago"
+
+msgid "Tuesday"
+msgstr "Terça-Feira"
+
+msgid "Tunisia"
+msgstr "Tunísia"
+
+msgid "Turkey"
+msgstr "Turquia"
+
+msgid "Turkish"
+msgstr "Turco"
+
+msgid "Turkmenistan"
+msgstr "Turcomenistão"
+
+msgid "Tuvalu"
+msgstr "Tuvalu"
+
+msgid "Type"
+msgstr "Tipo"
+
+msgid "U.S. Dollar"
+msgstr "Dólar dos EUA"
+
+msgid "U.S. States"
+msgstr "Estados Americanos"
+
+msgid "UGANDA"
+msgstr "UGANDA"
+
+msgid "UKRAINE"
+msgstr "UCRÂNIA"
+
+msgid "UNITED ARAB EMIRATES"
+msgstr "EMIRADOS ÁRABES UNIDOS"
+
+msgid "UNITED KINGDOM"
+msgstr "REINO UNIDO"
+
+msgid "UNITED STATES"
+msgstr "ESTADOS UNIDOS"
+
+msgid "URUGUAY"
+msgstr "URUGUAI"
+
+msgid "UZBEKISTAN"
+msgstr "UZBEQUISTÃO"
+
+msgid "Uganda"
+msgstr "Uganda"
+
+msgid "Ukraine"
+msgstr "Ucrânia"
+
+msgid "Under $20,000"
+msgstr "Abaixo de $ 20.000,00"
+
+msgid "Under 18"
+msgstr "Abaixo de 18"
+
+msgid "Uninstall Gravity Forms"
+msgstr "Desinstalar Gravity Form"
+
+msgid "Unit Price"
+msgstr "Preço Unit"
+
+msgid "United Arab Emirates"
+msgstr "Emirados Árabes Unidos"
+
+msgid "United Kingdom"
+msgstr "Reino Unido"
+
+msgid "United States"
+msgstr "Estados Unidos"
+
+msgid "Unread"
+msgstr "não lido"
+
+msgid "Unsatisfied"
+msgstr "Insatisfeito"
+
+msgid "Untitled"
+msgstr "Sem Título"
+
+msgid "Update"
+msgstr "Atualizar"
+
+msgid "Update Form"
+msgstr "Atualizar Formulário"
+
+msgid "Updates"
+msgstr "Atualizações"
+
+msgid "Uruguay"
+msgstr "Uruguai"
+
+msgid "Usage"
+msgstr "Uso"
+
+msgid "Use Current User as Author"
+msgstr "Usar Usuário Atual como Autor"
+
+msgid "Use a <em>'9'</em> to indicate a numerical character."
+msgstr "Use um <em>'9'</em> para indicar um caractere numérico."
+
+msgid "Use a lower case <em>'a'</em> to indicate an alphabetical character."
+msgstr "Use um <em>'a'</em> minúsculo para indicar um caractere alfabético."
+
+msgid ""
+"Use a question mark <em>'?'</em> to indicate optional characters. <em>Note:</"
+"em> All characters after the question mark will be optional."
+msgstr ""
+"Use um ponto de interrogação <em>'?'</em> para indicar caracteres opcionais. "
+"<em>Nota:</em> Todos os caracteres após o ponto de interrogação serão "
+"opcionais."
+
+msgid "Use an asterick <em>'*'</em> to indicate any alphanumeric character."
+msgstr ""
+"Use um asterisco <em>'*'</em> para indicar qualquer caractere alfanumérico."
+
+msgid "Use logged in user as author"
+msgstr "Use o usuário logado como autor "
+
+msgid "User"
+msgstr "Usuário"
+
+msgid "User Defined Price"
+msgstr "Preço Definido pelo Usuário"
+
+msgid "User Display Name"
+msgstr "Nome de Usuário"
+
+msgid "User Email"
+msgstr "E-Mail do Usuário"
+
+msgid "User IP"
+msgstr "IP do usuário"
+
+msgid "User IP Address"
+msgstr "Endereço IP do Usuário"
+
+msgid "User Login"
+msgstr "Login do Usuário"
+
+msgid "User Notification"
+msgstr "Notificação do usuário"
+
+msgid "Using Gravity Forms"
+msgstr "Usando Gravity Forms"
+
+msgid "Utah"
+msgstr "Utah"
+
+msgid "Uzbekistan"
+msgstr "Uzbequistão"
+
+msgid "VANUATU"
+msgstr "VANUATU"
+
+msgid "VATICAN CITY"
+msgstr "CIDADE DO VATICANO"
+
+msgid "VENEZUELA"
+msgstr "VENEZUELA"
+
+msgid "VIETNAM"
+msgstr "VIETNÃ"
+
+msgid "VIRGIN ISLANDS, BRITISH"
+msgstr "Ilhas Virgens Britânicas"
+
+msgid "VIRGIN ISLANDS, U.S."
+msgstr "Ilhas Virgens, EUA"
+
+msgid "Valid Input"
+msgstr "Entrada válida"
+
+msgid "Validation Message"
+msgstr "Mensagem de Validação"
+
+msgid "Value"
+msgstr "Valor"
+
+msgid "Vanuatu"
+msgstr "Vanuatu"
+
+msgid "Vatican City"
+msgstr "Cidade do Vaticano"
+
+msgid "Venezuela"
+msgstr "Venezuela"
+
+msgid "Vermont"
+msgstr "Vermont"
+
+msgid "Very Important"
+msgstr "Muito Importante"
+
+msgid "Very Satisfied"
+msgstr "Muito Satisfeito"
+
+msgid "Very Unsatisfied"
+msgstr "Muito Insatisfeito"
+
+msgid "Vietnam"
+msgstr "Vietnã"
+
+msgid "View"
+msgstr "Ver"
+
+msgid "View All Entries"
+msgstr "Ver todos os registros"
+
+msgid "View All Forms"
+msgstr "Ver Todos os Forms"
+
+msgid "View entries generated by this form"
+msgstr "Ver registros gerados por esse formulário"
+
+msgid "View this entry"
+msgstr "Ver esse registro"
+
+msgid "View user profile"
+msgstr "Ver perfil do usuário"
+
+msgid "View version %s Details"
+msgstr "Ver detalhes da versão %s"
+
+msgid "Views"
+msgstr "Visualizações"
+
+msgid "Virgin Islands, British"
+msgstr "Ilhas Virgens Britânicas"
+
+msgid "Virgin Islands, U.S."
+msgstr "Ilhas Virgens, EUA"
+
+msgid "Virginia"
+msgstr "Virgínia"
+
+msgid "Visibility"
+msgstr "Visibilidade"
+
+msgid ""
+"WARNING: You are about to delete ALL entries associated with the selected "
+"forms. "
+msgstr ""
+"CUIDADO: Você está prestes a excluir TODAS as entradas associadas aos forms "
+"selecionados."
+
+msgid ""
+"WARNING: You are about to delete this form and ALL entries associated with "
+"it. "
+msgstr ""
+"ATENÇÃO: Você está quase apagando esse formulário e TODOS os registros "
+"contidos nele. "
+
+msgid "Warning"
+msgstr "Aviso"
+
+msgid ""
+"Warning! ALL Gravity Forms data, including form entries will be deleted. "
+"This cannot be undone. \\'OK\\' to delete, \\'Cancel\\' to stop"
+msgstr ""
+"Atenção! TODOS os dados do Gravity Forms, incluindo as entradas serão "
+"apagadas. Isso não pode ser desfeito. \\'OK\\' para apagar, \\'Cancelar\\' "
+"para parar"
+
+msgid ""
+"Warning! Deleting this field will also delete all entry data associated with "
+"it. \\'Cancel\\' to stop. \\'OK\\' to delete"
+msgstr ""
+"ATENÇÃO! Apagando esse campo você apagará TODOS os registros associados a "
+"ele.  \\'Cancelar\\' para parar. \\'OK\\' para apagar"
+
+msgid "Washington"
+msgstr "Washington"
+
+msgid "Website"
+msgstr "Website"
+
+msgid "Wednesday"
+msgstr "Quarta-Feira"
+
+msgid "West Virginia"
+msgstr "West Virginia"
+
+msgid ""
+"When enabled, auto-formatting will insert paragraph breaks automatically. "
+"Disable auto-formatting when using HTML to create email notification content."
+msgstr ""
+"Quando ativado, a formatação automática irá inserir quebras de parágrafo "
+"automaticamente. Desabilite a auto-formatação ao usar HTML para criar "
+"conteúdo da notificação."
+
+msgid ""
+"When enabled, auto-formatting will insert paragraph breaks automatically. "
+"Disable auto-formatting when using HTML to create the confirmation content."
+msgstr ""
+"Quando ativado, a formatação automática irá inserir quebras de parágrafo "
+"automaticamente. Desabilite a auto-formatação ao usar HTML para criar o "
+"conteúdo de confirmação."
+
+msgid ""
+"When enabled, margins are added to properly align the HTML content with "
+"other form fields."
+msgstr ""
+"Quando ativado, as margens são adicionadas para alinhar corretamente o "
+"conteúdo HTML com outros campos do formulário."
+
+msgid "White"
+msgstr "Branco"
+
+msgid "Widowed"
+msgstr "Viúvo (a)"
+
+msgid "Wisconsin"
+msgstr "Wisconsin"
+
+msgid "WordPress Version"
+msgstr "Versão do WordPress."
+
+msgid "Would You"
+msgstr "Você"
+
+msgid ""
+"Would you like to delete this form and ALL entries associated with it? "
+"\\'Cancel\\' to stop. \\'OK\\' to delete"
+msgstr ""
+"Você gostaria de apagar esse formulário e TODOS os registros contidos nele? "
+"\\'Cancelar\\' para parar, \\'OK\\' para apagar"
+
+msgid "Wyoming"
+msgstr "Wyoming"
+
+msgid "YEMEN"
+msgstr "IÊMEN"
+
+msgid "YYYY"
+msgstr "AAAA"
+
+msgid "Year"
+msgstr "Ano"
+
+msgid "Yemen"
+msgstr "Iêmen"
+
+msgid "Yes"
+msgstr "Sim"
+
+msgid ""
+"You are about to delete this entry. \\'Cancel\\' to stop, \\'OK\\' to delete."
+msgstr ""
+"Você está quase apagando esse registro.  \\'Cancelar\\' para parar, \\'OK\\' "
+"para apagar."
+
+msgid "You don't have adequate permission to create forms."
+msgstr "Você não tem permissão para criar formulários."
+
+msgid "You don't have adequate permission to delete entries."
+msgstr "Você não tem permissão para apagar os registros."
+
+msgid "You don't have adequate permission to delete forms."
+msgstr "Você não tem permissão para apagar formulários."
+
+msgid "You don't have adequate permission to delete notes."
+msgstr "Você não tem permissão para apagar notas."
+
+msgid "You don't have adequate permission to edit entries."
+msgstr "Você não tem permissão para editar registros."
+
+msgid "You don't have adequate permission to edit settings."
+msgstr "Você não tem permissão para editar as preferências."
+
+msgid "You don't have adequate permission to preview forms."
+msgstr "Você não tem permissão adequada para visualizar formulários."
+
+msgid "You don't have adequate permission to uninstall Gravity Forms."
+msgstr "Você não tem permissão para desinstalar o Gravity Forms."
+
+msgid "You don't have adequate permission to view entries."
+msgstr "Você não tem permissão para ver os registros."
+
+msgid "You don't have any active forms. Let's go %screate one%s"
+msgstr "Você não tem nenhum form ativo. Vamos %scriar un%s"
+
+msgid "You don't have any forms. Let's go %s create one %s!"
+msgstr "Você não tem nenhum form. Vamos %s criar um %s!"
+
+msgid "You don't have any forms. Let's go %screate one%s!"
+msgstr "Você não tem nenhum form. Vamos %scriar um%s!"
+
+msgid "You don't have permissions to view this page"
+msgstr "Você não tem permissão para ver esta página"
+
+msgid "You have successfully saved your form!"
+msgstr "O form foi salvado com sucesso!"
+
+msgid "You must select at least one type of notification to resend."
+msgstr "Você deve selecionar pelo menos um tipo de notificação para reenviar."
+
+msgid ""
+"Your Gravity Forms support license key is used to verify your support "
+"package, enable automatic updates and receive support."
+msgstr ""
+"A sua chave de licença do suporte Gravity Forms é utilizada para verificar o "
+"seu pacote de suporte, ativar atualizações automáticas e receber suporte."
+
+msgid "Your emails do not match."
+msgstr "Seus emails não coincidem."
+
+msgid ""
+"Your form currently has a product field with a blank label. \\\n"
+"Please enter a label for all product fields."
+msgstr ""
+"O seu formulário tem um campo de produto com uma legenda em branco. \\\n"
+"Por favor, insira uma legenda para todos os campos de produto."
+
+msgid ""
+"Your form currently has an option field without a product field.\\\n"
+"You must add a product field to your form."
+msgstr ""
+"Seu formulário tem atualmente um campo de opção, sem um campo de produto.\\\n"
+" Você deve adicionar um campo de produtos para seu formulário."
+
+msgid ""
+"Your form currently has one ore more pages without any fields in it. Blank "
+"pages are a result of Page Breaks that are positioned as the first or last "
+"field in the form or right after to each other. Please adjust your Page "
+"Breaks and try again."
+msgstr ""
+"O seu formulário tem atualmente uma ou mais páginas, sem quaisquer campos na "
+"mesma. Páginas em branco são o resultado de Quebras de Página que são "
+"posicionados como o primeiro ou o último campo no formulário ou logo após um "
+"deles. Por favor ajuste as Quebras de Página e tente novamente."
+
+msgid ""
+"Your password does not meet the required strength. <br/>Hint: To make it "
+"stronger, use upper and lower case letters, numbers and symbols like ! \" ? "
+"$ % ^ & )."
+msgstr ""
+"Sua senha não atende a resistência necessária. <br/> Dica: Para torná-la "
+"mais forte, use letras maiúsculas e minúsculas, números e símbolos como ! "
+"\" ? $ % ^ & )."
+
+msgid "Your passwords do not match."
+msgstr "Suas senhas não correspondem."
+
+msgid "Your version of Gravity Forms is up to date."
+msgstr "Sua versão do Gravity Forms está atualizada"
+
+msgid "Yukon"
+msgstr "Yukon"
+
+msgid "ZAMBIA"
+msgstr "ZÂMBIA"
+
+msgid "ZIMBABWE"
+msgstr "ZIMBÁBUE"
+
+msgid "ZIP / Postal Code"
+msgstr "CEP"
+
+msgid "ZIP Code"
+msgstr "CEP"
+
+msgid "Zambia"
+msgstr "Zâmbia"
+
+msgid "Zimbabwe"
+msgstr "Zimbábue"
+
+msgid "Zip Code"
+msgstr "CEP"
+
+msgid "Zip Code w/ Optional Plus Four"
+msgstr "Zip Code w/ Optional Plus Four"
+
+msgid "\\'Cancel\\' to stop, \\'OK\\' to delete."
+msgstr "\\'Cancelar\\' para parar, \\'OK\\' para apagar."
+
+msgid "\\'Cancel\\' to stop, \\'OK\\' to reset."
+msgstr "\\'Cancelar\\' para parar, \\'OK\\' para resetar."
+
+msgid "add another choice"
+msgstr "adicionar uma outra escolha"
+
+msgid "added on"
+msgstr "criado em"
+
+msgid "advanced options"
+msgstr "Opções avançadas"
+
+msgid "click to delete this field"
+msgstr "clique para deletar este campo"
+
+msgid "click to duplicate this field"
+msgstr "clique para duplicar este campo"
+
+msgid "click to edit this field"
+msgstr "Click para editar este campo"
+
+msgid "close window"
+msgstr "Fechar Janela"
+
+msgid "delete"
+msgstr "excluir"
+
+msgid "enter name"
+msgstr "inserir o nome"
+
+msgid "entries"
+msgstr "entradas"
+
+msgid "entry"
+msgstr "entrada"
+
+msgid "form"
+msgstr "formulário"
+
+msgid "forms"
+msgstr "formulários"
+
+msgid "if"
+msgstr "se"
+
+msgid "include notes"
+msgstr "incluir notas"
+
+msgid "is"
+msgstr "é"
+
+msgid "is not"
+msgstr "não é"
+
+msgid "max characters"
+msgstr "máximo de caracteres"
+
+msgid "of"
+msgstr "de"
+
+msgid "of the following match:"
+msgstr "com essa correspondência:"
+
+msgid "per day"
+msgstr "por dia"
+
+msgid "per month"
+msgstr "por mês"
+
+msgid "per week"
+msgstr "por semana"
+
+msgid "per year"
+msgstr "por ano"
+
+msgid "reCAPTCHA"
+msgstr "reCAPTCHA"
+
+msgid "reCAPTCHA Private Key"
+msgstr "Chave Privada do reCAPTCHA"
+
+msgid "reCAPTCHA Public Key"
+msgstr "Chave Pública do reCAPTCHA"
+
+msgid "reCAPTCHA Settings"
+msgstr "Configurações do reCAPTCHA"
+
+msgid "reCaptcha Language"
+msgstr "Linguagem do reCaptcha"
+
+msgid "reCaptcha Private Key"
+msgstr "Chave Privada do reCAPTCHA"
+
+msgid "reCaptcha Public Key"
+msgstr "Chave Pública do reCAPTCHA"
+
+msgid "remove this choice"
+msgstr "remover esta escolha"
+
+msgid "show empty fields"
+msgstr "mostrar os campos vazios"
+
+msgid "this field if"
+msgstr "este campo se"
+
+msgid "this form button"
+msgstr "este botão de form"
+
+msgid "this page"
+msgstr "esta página"
+
+msgid "total entries"
+msgstr "total de entradas"

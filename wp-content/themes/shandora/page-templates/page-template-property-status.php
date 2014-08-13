@@ -37,9 +37,26 @@ get_header();
                     $order = $_GET['search_order'];
                 }
                 if($orderby == 'price') {
-                    $key = 'shandora_listing_price';
+                    $key = bon_get_prefix() . 'listing_price';
                     $orderby = 'meta_value_num';
                 }
+                $meta_query = array();
+
+                if( $status_val != 'featured' ) {
+                    $meta_query[] = array(
+                        'key' => bon_get_prefix() . 'listing_status',
+                        'value' => $status_val,
+                        'compare' => '='
+                    );
+                } else {
+                    $meta_query[] = array(
+                        'key' => bon_get_prefix() . 'listing_featured',
+                        'value' => true,
+                        'compare' => '=',
+                    );
+                }
+
+
                 $listing_args = array(
                         'post_type' => 'listing',
                         'posts_per_page' => $numberposts,
@@ -47,13 +64,7 @@ get_header();
                         'meta_key' => $key,
                         'orderby' => $orderby,
                         'order' => $order,
-                        'meta_query' => array(
-                            array(
-                                'key' => 'shandora_listing_status',
-                                'value' => $status_val,
-                                'compare' => '='
-                            )
-                        )
+                        'meta_query' => $meta_query
                     );
 
                 $wp_query = new WP_Query($listing_args);

@@ -41,8 +41,9 @@ if (!class_exists('BON_Backup')) {
 		 */
 		
 		function register_admin_screen () {
-				
-			$this->admin_page = add_submenu_page('bon_options', __( 'Import / Export', 'bon' ), __( 'Import / Export', 'bon' ), 'manage_options', $this->token, array( &$this, 'admin_screen' ) );
+			
+			$func = "add_submenu_page";
+			$this->admin_page = $func('bon_options', __( 'Import / Export', 'bon' ), __( 'Import / Export', 'bon' ), 'manage_options', $this->token, array( &$this, 'admin_screen' ) );
 
 			// Admin screen logic.
 			add_action( 'load-' . $this->admin_page, array( &$this, 'admin_screen_logic' ) );

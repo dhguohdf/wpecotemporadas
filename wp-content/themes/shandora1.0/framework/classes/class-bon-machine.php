@@ -335,10 +335,13 @@ if(! class_exists('BON_Machine') ) {
 			switch( $type ) {
 				
 				case 'text':
-				case 'tel':
 				case 'email':
 				default:
-					$output .= '<div id="input_' . esc_attr( $id ) . '"><input type="' . $type . '" name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" value="' . esc_attr( $meta ) . '" class="regular-text bon-input" size="30" /></div>
+					$output .= '<div id="input_' . esc_attr( $id ) . '"><input type="' . $type . '" name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" value="' . esc_attr( $meta ) . '" class="regular-text bon-input" size="30" autocomplete="off"/></div>
+							' . $desc;
+				break;
+				case 'nodropdown':
+					$output .= '<div id="input_' . esc_attr( $id ) . '"><input type="' . $type . '" name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" value="' . esc_attr( $meta ) . '" class="regular-text bon-input" size="30" autocomplete="off" /></div>
 							' . $desc;
 				break;
 				case 'iframe':
@@ -349,12 +352,15 @@ if(! class_exists('BON_Machine') ) {
 				</iframe>';
 				break;
 				case 'url':
-					$output .= '<div id="input_' . esc_attr( $id ) . '"><input type="' . $type . '" name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" value="' . esc_url( $meta ) . '" class="regular-text bon-input" size="30" /></div>
+					$output .= '<div id="input_' . esc_attr( $id ) . '"><input type="' . $type . '" name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" value="' . esc_url( $meta ) . '" class="regular-text bon-input" size="30" autocomplete="off"/></div>
 							' . $desc;
 				break;
 				case 'number':
-					$output .= '<div id="input_' . esc_attr( $id ) . '"><input type="' . $type . '" name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" value="' . intval( $meta ) . '" class="regular-text bon-input" size="30" /></div>
+					$output .= '<div id="input_' . esc_attr( $id ) . '"><input type="' . $type . '" name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" value="' . intval( $meta ) . '" class="regular-text bon-input" size="15" autocomplete="off" /></div>
 							' . $desc;
+				break;
+				case 'atencao':
+					$output .= '<h3 class="metabox-atencao">Informe seus dados para o seu cliente entrar em contato com você! </br></br>Logo em seguida você criará seu anúncio e vinculará seu Perfil ECO. </br></br>Experimente!</h3>';
 				break;
 				// textarea
 				case 'textarea':
@@ -457,20 +463,21 @@ if(! class_exists('BON_Machine') ) {
                         'order' => 'ASC', 
                     ); 
   
-                    if( isset($field['filter_author']) && $field['filter_author'] === true || current_user_can( 'manage_options' )) { 
+                    if( isset($field['filter_author']) && $field['filter_author'] === true ){ 
                         $user_ID = get_current_user_id(); 
   
-                        if($user_ID > 0 ) { 
+                        if($user_ID > 0 || is_admin() ) { 
                             $q['author'] = $user_ID; 
                         } 
                     } 
+
   
                     $posts = get_posts( $q ); 
   
                     foreach ( $posts as $item ) 
                         $output .= '<option value="' . $item->ID . '"' . selected( is_array( $meta ) && in_array( $item->ID, $meta ), true, false ) . '>' . $item->post_title . '</option>'; 
                       
-                    $output .= '</select><br />' . $desc . '<div class="add-peco"><a href="'.admin_url('/post-new.php?post_type=' . $post_type ) .'" class="button button-primary primary">'.__('Criar Perfil ECO','bon').'</a></div>'; 
+                    $output .= '</select><br />' . $desc . '<div class="add-peco"><a href="'.admin_url('/post-new.php?post_type=' . $post_type ) .'" class="button button-primary primary add-perfil" target="_blank">'.__('Criar Perfil ECO','bon').'</a></div>'; 
                 break;
 				// post_checkboxes
 				case 'post_checkboxes':
@@ -579,7 +586,7 @@ if(! class_exists('BON_Machine') ) {
 				break;
 				// date
 				case 'date':
-					$output .= '<input type="text" class="datepicker" name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" value="' . $meta . '" size="30" />
+					$output .= '<input type="text" class="datepicker" name="' . esc_attr( $name ) . '" id="' . esc_attr( $id ) . '" value="' . $meta . '" size="30" autocomplete="off"/>
 							<br />' . $desc;
 				break;
 				// slider
@@ -600,7 +607,7 @@ if(! class_exists('BON_Machine') ) {
 					$output .=	'<input name="' . esc_attr( $name ) . '" type="hidden" class="meta_box_upload_image" value="' . intval( $meta ) . '" />
 								<img src="' . esc_attr( $image ) . '" class="meta_box_preview_image" alt="" />
 									<a href="#" class="meta_box_upload_image_button button" rel="' . get_the_ID() . '">Escolha uma imagem</a>
-									<small>&nbsp;<a href="#" class="meta_box_clear_image_button">Remover uma imagem</a></small></div>
+									<br><small>&nbsp;<a href="#" class="meta_box_clear_image_button">Remover imagem</a></small></div>
 									<br clear="all" />' . $desc;
 				break;
 				// gallery

@@ -2,7 +2,7 @@
 	global $post, $comment;
 ?>
 
-	<li id="comment-<?php comment_ID(); ?>" class="<?php bon_comment_class(); ?>">
+	<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
 
 		<?php do_atomic( 'open_comment' );  ?>
 

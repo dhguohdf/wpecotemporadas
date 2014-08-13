@@ -75,9 +75,9 @@ $args = array(
 $related_query = get_posts($args);
 
 if($related_query) : $compare_page = bon_get_option('compare_page'); ?>
-<h3><?php _e('Related Properties', 'bon'); ?></h3>
+<h3 class="related-property-header"><?php _e('Related Properties', 'bon'); ?></h3>
 <hr />
-<ul class="listings <?php shandora_block_grid_column_class(); ?>" data-compareurl="<?php echo get_permalink($compare_page); ?>">
+<ul class="listings related <?php shandora_block_grid_column_class(); ?>" data-compareurl="<?php echo get_permalink($compare_page); ?>">
 			
 <?php
 	foreach( $related_query as $post ) : 
@@ -90,7 +90,7 @@ if($related_query) : $compare_page = bon_get_option('compare_page'); ?>
 
 ?>
 <li>
-<article id="post-<?php $post->ID; ?>" class="<?php bon_entry_class($status); ?>" itemscope itemtype="http://schema.org/RealEstateAgent">
+<article id="post-<?php $post->ID; ?>" <?php post_class($status); ?> itemscope itemtype="http://schema.org/RealEstateAgent">
 	<header class="entry-header">
 		<div class="listing-hover">
 			<span class="mask"></span>
@@ -119,25 +119,10 @@ if($related_query) : $compare_page = bon_get_option('compare_page'); ?>
 
 		<div class="entry-summary">
 
-			<?php echo apply_atomic_shortcode( 'entry_title', '<h1 class="entry-title" itemprop="name">'.$post->post_title.'</h1>' ); ?>
-			<div class="entry-meta">
+			<?php do_atomic('entry_summary'); ?>
 
-				<div class="icon bed">
-					<i class="sha-bed"></i>
-					<span><?php if(empty($bed)) { echo __('No Bed','bon'); } else { printf( _n('%s Bed','%s Beds', $bed , 'bon'), $bed ); }?></span>
-				</div>
-
-				<div class="icon bath">
-					<i class="sha-bath"></i>
-					<span><?php if(empty($bath)) { echo __('No Bath','bon'); } else { printf(_n('%s Bath','%s Baths', $bath , 'bon'), $bath ); } ?></span>
-				</div>
-				<div class="icon size">
-					<i class="sha-ruler"></i>
-					<span><?php if($lotsize) { echo $lotsize . ' ' . $sizemeasurement; } else { _e('Unspecified','bon'); } ?></span>
-				</div>
-
-			</div>
 		</div><!-- .entry-summary -->
+
 
 		<footer class="entry-footer">
 			<div class="property-price">

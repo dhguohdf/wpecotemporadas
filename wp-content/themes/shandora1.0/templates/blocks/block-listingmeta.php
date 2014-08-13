@@ -38,37 +38,38 @@
 			<?php if($lotsize) { echo 'Metragem:<br>' . $lotsize . ' ' . strtolower($sizemeasurement); } else { _e('&nbsp<br>-','bon'); } ?>
 		</span></div>
 	</li>
-	<li class="garage"><div class="meta-wrap">
-		<i class="awe-ruler awe-eco1-img"></i>
+	<li class="garage eco-reci"><div class="meta-wrap">
+		<div class="awe-ruler awe-eco1-img" data-toggle="tooltip" data-placement="top" title="Quando seu imóvel incentiva a reciclagem e possui um sistema de coleta seletiva separando o lixo reciclável do lixo orgânico." id="tooltip1"></div>
 		<span class="meta-value">
 			<?php if($eco1 == 'naopossui') { 
-				printf('Não<br>possui','bon'); 
-			} else { 
+				echo '<style>li.garage.eco-reci {display:none};</style>'; }
+			else { 
 				_e('Reciclagem <br> de Lixo','bon'); 
 			} ?>
 		</span>
 		</div>
 	</li>
-	<li class="garage"><div class="meta-wrap">
-		<i class="awe-ruler awe-eco2-img"></i>
+	<li class="garage eco-cert"><div class="meta-wrap">
+		<div class="awe-ruler awe-eco2-img" data-toggle="tooltip" data-placement="top" title="Quando seu imóvel possui uma qualidade ecológica ou evita danificar o meio ambiente reaproveitando materiais ou recursos." id="tooltip2"></div>
 		<span class="meta-value">
 			<?php if($eco2 == 'naopossui') { 
-				printf('Não<br>possui','bon'); 
+				echo '<style>li.garage.eco-cert {display:none};</style>'; 
 			} else { 
 				_e('Certificado<br>Ecológico','bon'); 
 			} ?>
 		</span>
 		</div>
 	</li>
-	<li class="garage"><div class="meta-wrap">
-		<i class="awe-ruler awe-eco3-img"></i>
+	<li class="garage eco-ativ"><div class="meta-wrap">
+		<div class="awe-ruler awe-eco3-img" data-toggle="tooltip" data-placement="top" title="Quando o imóvel está dentro ou nas proximidades da natureza: reservas ecológicas, parques, área de proteção ambiental…etc." id="tooltip3"></div>
 		<span class="meta-value">
 			<?php if($eco3 == 'naopossui') { 
-				printf('Não<br>possui','bon'); 
+				echo '<style>li.garage.eco-ativ {display:none};</style>'; 
 			} else { 
-				_e('Atividades<br>Ecológicas','bon'); 
+				_e('Atividades<br>Ecológicas'); 
 			} ?>
 		</span>
 		</div>
 	</li>
 </ul>
+<div id="bookingdatepicker></div>

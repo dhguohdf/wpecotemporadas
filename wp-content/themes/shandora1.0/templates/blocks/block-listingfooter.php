@@ -4,7 +4,7 @@
 	$agent_id = '';
 	$agent_fb = shandora_get_meta($post->ID, 'agentfb');
     $agent_tw = shandora_get_meta($post->ID, 'agentgplus');
-    $agent_li = shandora_get_meta($post->ID,'agentlinkedin');
+    $agent_li = shandora_get_meta($post->ID, 'agentlinkedin');
     if(is_array($agent_ids) && !empty($agent_ids)) {
       $agent_id = $agent_ids[0];
     } 
@@ -64,7 +64,7 @@ if( !empty($agent_id) ) {
 				?>
 			</figure>
 			<div class="column large-12">
-				<strong class="agent-title"><?php _e('Responsável pela temporada','bon'); ?></strong>
+				<strong class="agent-title"><?php _e('Responsável pelo anúncio','bon'); ?></strong>
 				<h3 class="subheader agent-name"><a href="<?php echo get_permalink($agent_id); ?>"><?php echo get_the_title($agent_id); ?></a></h3>
 				<div class="agent-info">
 					<strong><?php _e('Celular:','bon'); ?></strong>
@@ -81,13 +81,14 @@ if( !empty($agent_id) ) {
 				<div class="agent-info">			
 					<strong><?php _e('Email:','bon'); ?></strong>
 					<span><?php echo shandora_get_meta( $agent_id, 'agentemail'); ?></span>
+					
 				</div>
 			</br>
 				<div class="agent-social">
 					<strong><?php _e('Minhas Redes Sociais','bon'); ?></strong></br>
-					<a title="<?php _e('Google Plus','bon'); ?>"href="<?php echo shandora_get_meta( $agent_tw, $prefix . 'agentgplus'); ?>" class="flat button"><i class="awe-google-plus"></i></a>
-						<a title='<?php _e('Facebook','bon'); ?>' href='<?php echo shandora_get_meta( $agent_fb, $prefix . 'agentfb'); ?>' class='flat button'><i class='awe-facebook'></i></a>
-						<a title="<?php _e('LinkedIn','bon'); ?>" href="<?php echo shandora_get_meta( $agent_li, $prefix . 'agentlinkedin'); ?>" class="flat button"><i class="awe-linkedin"></i></a>
+					<a title="<?php _e('Google Plus','bon'); ?>" href="<?php echo shandora_get_meta( $agent_id, 'agentgplus'); ?>" class="flat button"><i class="awe-google-plus"></i></a>
+						<a title='<?php _e('Facebook','bon'); ?>' href='<?php echo shandora_get_meta( $agent_id, 'agentfb'); ?>' class='flat button'><i class='awe-facebook'></i></a>
+						<a title="<?php _e('LinkedIn','bon'); ?>" href="<?php echo shandora_get_meta( $agent_id, 'agentlinkedin'); ?>" class="flat button"><i class="awe-linkedin"></i></a>
 					<?php
 						$o = '<li><a href="'.$agent_tw.'" title="GooglePlus"><i class="awe-google-plus flat button"></i></a></li>';
 						//if(!empty($agent_tw)) {$o .= '<li><a href="'.$agent_tw.'" title="GooglePlus"><i class="awe-google-plus icon"></i></a></li>';}
@@ -102,7 +103,7 @@ if( !empty($agent_id) ) {
 	<div class="column large-12">
 
 		<div class="related-post">
-			<div class="related-header"><strong><a href="<?php echo get_permalink($agent_id); ?>"?><?php printf(__('Outras temporadas<br> de %s','bon'), get_the_title($agent_id)); ?></a></strong><a class="more-related" href="<?php echo get_permalink($agent_id); ?>" title="<?php _e('ver mais','bon'); ?>"><?php _e('ver mais','bon'); ?></a></div>
+			<div class="related-header"><strong><a href="<?php echo get_permalink($agent_id); ?>"?><?php printf(__('Outros anúncios<br> de %s','bon'), get_the_title($agent_id)); ?></a></strong><a class="more-related" href="<?php echo get_permalink($agent_id); ?>" title="<?php _e('ver mais','bon'); ?>"><?php _e('ver mais','bon'); ?></a></div>
 			<ul>
 			<?php 
 			

@@ -26,18 +26,18 @@ if ( ! class_exists( 'WPSEO_Twitter' ) ) {
 		/**
 		 * @var array Images
 		 */
-		var $shown_images;
+		public $shown_images;
 
 		/**
 		 * @var array $options Holds the options for the Twitter Card functionality
 		 */
-		var $options;
+		public $options;
 
 		/**
 		 * Class constructor
 		 */
 		public function __construct() {
-			$this->options = WPSEO_Options::get_all();
+			$this->options      = WPSEO_Options::get_all();
 			$this->shown_images = array(); // Instantiate as empty array
 			$this->twitter();
 		}
@@ -76,7 +76,7 @@ if ( ! class_exists( 'WPSEO_Twitter' ) ) {
 			$metatag_key = apply_filters( 'wpseo_twitter_metatag_key', 'name' );
 
 			// Output meta
-			echo '<meta ' . $metatag_key . '="twitter:' . $name . '" content="' . $value . '"/>' . "\n";
+			echo '<meta ' . esc_attr( $metatag_key ) . '="twitter:' . esc_attr( $name ) . '" content="' . $value . '"/>' . "\n";
 		}
 
 		/**
@@ -130,7 +130,7 @@ if ( ! class_exists( 'WPSEO_Twitter' ) ) {
 				$type = 'summary';
 			}
 
-			$this->output_metatag( 'card',  $type );
+			$this->output_metatag( 'card', $type );
 		}
 
 		/**
@@ -249,6 +249,7 @@ if ( ! class_exists( 'WPSEO_Twitter' ) ) {
 		 * Outputs a Twitter image tag for a given image
 		 *
 		 * @param string $img
+		 * @return bool
 		 */
 		public function image_output( $img ) {
 
@@ -262,14 +263,17 @@ if ( ! class_exists( 'WPSEO_Twitter' ) ) {
 			$escaped_img = esc_url( $img );
 
 			if ( in_array( $escaped_img, $this->shown_images ) ) {
-				return;
+				return false;
 			}
 
 			if ( is_string( $escaped_img ) && $escaped_img !== ''  ) {
 				$this->output_metatag( 'image:src', $escaped_img, true );
 
 				array_push( $this->shown_images, $escaped_img );
+				return true;
 			}
+
+			return false;
 		}
 
 		/**

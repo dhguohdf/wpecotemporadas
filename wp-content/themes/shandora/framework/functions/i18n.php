@@ -65,9 +65,18 @@ function bon_get_parent_textdomain() {
 	global $bon;
 
 	/* If the global textdomain isn't set, define it. Plugin/theme authors may also define a custom textdomain. */
-	if ( empty( $bon->parent_textdomain ) )
-		$bon->parent_textdomain = sanitize_key( apply_filters( bon_get_prefix() . 'parent_textdomain', get_template() ) );
+	if ( empty( $bon->parent_textdomain ) ) {
 
+		$theme = wp_get_theme( get_template() );
+
+		$bon->parent_textdomain = 
+		
+        $textdomain = $theme->get( 'TextDomain' ) ? $theme->get( 'TextDomain' ) : get_template();
+
+        $bon->parent_textdomain = sanitize_key( apply_filters( 'bon_parent_textdomain', $textdomain ) );
+
+	}
+		
 	/* Return the expected textdomain of the parent theme. */
 	return $bon->parent_textdomain;
 }
@@ -93,8 +102,13 @@ function bon_get_child_textdomain() {
 		return '';
 
 	/* If the global textdomain isn't set, define it. Plugin/theme authors may also define a custom textdomain. */
-	if ( empty( $bon->child_textdomain ) )
-		$bon->child_textdomain = sanitize_key( apply_filters( bon_get_prefix() . 'child_textdomain', get_stylesheet() ) );
+	if ( empty( $bon->child_textdomain ) ) {
+		$theme = wp_get_theme();
+
+        $textdomain = $theme->get( 'TextDomain' ) ? $theme->get( 'TextDomain' ) : get_stylesheet();
+
+        $bon->child_textdomain = sanitize_key( apply_filters( 'bon_child_textdomain', $textdomain ) );
+	}
 
 	/* Return the expected textdomain of the child theme. */
 	return $bon->child_textdomain;
@@ -191,4 +205,38 @@ function bon_extensions_gettext( $translated, $text, $domain ) {
 	return $translated;
 }
 
+
+/**
+* Gets the language for the currently-viewed page. It strips the region from the locale if needed
+* and just returns the language code.
+*
+* @since 1.2.0
+* @access public
+* @param string $locale
+* @return string
+*/
+function bon_get_language( $locale = '' ) {
+
+        if ( empty( $locale ) )
+                $locale = get_locale();
+
+        return preg_replace( '/(.*?)_.*?$/i', '$1', $locale );
+}
+
+/**
+* Gets the region for the currently viewed page. It strips the language from the locale if needed. Note that
+* not all locales will have a region, so this might actually return the same thing as `hybrid_get_language()`.
+*
+* @since 1.2.0
+* @access public
+* @param string $locale
+* @return string
+*/
+function bon_get_region( $locale = '' ) {
+
+        if ( empty( $locale ) )
+                $locale = get_locale();
+
+        return preg_replace( '/.*?_(.*?)$/i', '$1', $locale );
+}
 ?>
