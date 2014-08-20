@@ -49,25 +49,28 @@ function reserva_wp_admin_scripts() {
 	wp_register_script( 'rwp_admin', plugins_url( '/js/admin.js?'.mt_rand(), __FILE__ ), array('jquery') );
 	wp_register_script( 'rwp_validation', plugins_url( '/js/jquery.validate.min.js', __FILE__ ), array('jquery') );
 	wp_register_script( 'rwp_datepicker-ptBR', plugins_url( '/js/jquery.ui.datepicker-pt-BR.js', __FILE__ ), array('jquery') );
-	wp_register_script( 'jquery.multidatespicker', plugins_url( '/js/jquery-ui.multidatespicker.js?'.mt_rand(), __FILE__ ), array('jquery') );
+	wp_register_script( 'jquery.multidatespicker', plugins_url( '/js/jquery-ui.multidatespicker.js?', __FILE__ ), array('jquery') );
 
 	wp_register_style( 'jquery-ui-theme', '//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css' );
-
-	// if(is_admin() || is_singular('listing')) {
-		wp_enqueue_script( 'jquery' );
-		wp_enqueue_script( 'jquery-ui-core' );
-		wp_enqueue_script( 'jquery-ui-datepicker' );
-		wp_enqueue_script( 'rwp_datepicker-ptBR' );
-		wp_enqueue_script( 'rwp_validation' );
-		wp_enqueue_script( 'jquery.multidatespicker' );
-		wp_enqueue_script( 'rwp_admin' );
-
-		wp_enqueue_style( 'jquery-ui-theme' );		
-	// }
-
 	wp_localize_script( 'jquery', 'reserva_wp' ,array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 }
+add_action( 'admin_print_scripts-post-new.php', 'listing_scripts', 11 );
+add_action( 'admin_print_scripts-post.php', 'listing_scripts', 11 );
 
+function listing_scripts(){
+    global $post_type;
+    if( 'listing' == $post_type ){
+        wp_enqueue_script( 'jquery' );
+        wp_enqueue_script( 'jquery-ui-core' );
+        //wp_enqueue_script( 'jquery-ui-datepicker' );
+        wp_enqueue_script( 'rwp_datepicker-ptBR' );
+        wp_enqueue_script( 'rwp_validation' );
+        wp_enqueue_script( 'jquery.multidatespicker' );
+        wp_enqueue_script( 'rwp_admin' );
+
+        wp_enqueue_style( 'jquery-ui-theme' );
+    }
+}
 /**
 * Settings option screens
 */
@@ -83,7 +86,7 @@ function reserva_wp_settings() {
 }
 
 /**
-* Create / edit objects function
+* Create / edit objects functions
 * TODO: front-end validation
 */
 function reserva_wp_edit_object($post) {
@@ -381,6 +384,7 @@ function reserva_wp_set_plano() {
 	$transacao_id = $_POST['transacao'];
 
 	if($plano && $transacao_id) {
+
 		update_post_meta( $transacao_id, 'rwp_transaction_plan', $plano );
 
 		$response = array('status' => 'ok');

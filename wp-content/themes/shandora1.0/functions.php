@@ -31,7 +31,6 @@ $includes = array(
 				);
 
 // Allow child themes/plugins to add widgets to be loaded.
-
 $includes = apply_filters( 'shandora_includes', $includes );
 
 
@@ -156,7 +155,7 @@ function test_modify_post_table_row( $column_name, $post_id ) {
 	if (get_post_status ( $ID ) == 'private' or get_post_status ( $ID ) == 'expirando') {
     switch ($column_name) {
         case 'pagamento' :
-		$EmailVendedor = 'pagamentos@ecotemporadas.com';
+		$EmailVendedor = 'contato@matheusgimenez.com.br';
 		$identificacao = get_the_ID();
 		$p = get_post($identificacao);
 		$comprador = $p->post_author;
@@ -169,9 +168,13 @@ function test_modify_post_table_row( $column_name, $post_id ) {
 		}
 
       	echo '<form><spam></spam></form>';
-        echo '<form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post" onsubmit="PagSeguroLightbox(this); return false;">
+        echo '<form action="https://sandbox.pagseguro.uol.com.br/v2/checkout/payment.html" method="post" onsubmit="PagSeguroLightbox(this); return false;">
 
-			<input type="hidden" name="code" value="C5FE5DE6EFEFA1E004943F95F8914B2B" />
+			<input type="hidden" name="code" value="81045E8D0399448E970C11732E435C2D" />
+			<input type="hidden" name="email_cobranca" value="'.$EmailVendedor.'">
+			<input type="hidden" name="tipo" value="CP" />
+			<input type="hidden" name="moeda" value="BRL" />
+			<input type="hidden" name="ref_transacao" value="'.$post_id.'" />
 			<input type="hidden" name="cliente_nome" value="'.$current_user->user_firstname.' '.$current_user->user_lastname.'" />
 			<input type="hidden" name="cliente_end" value="'.$current_user->addr1.'" />
 			<input type="hidden" name="cliente_num" value="'.$current_user->numaddr.'" />
@@ -181,6 +184,12 @@ function test_modify_post_table_row( $column_name, $post_id ) {
 			<input type="hidden" name="cliente_uf" value="'.$current_user->uf.'" />
 			<input type="hidden" name="cliente_pais" value="'.$current_user->country.'" />
 			<input type="hidden" name="cliente_ddd" value="'.$current_user->ddd.'" />
+			<input type="hidden" name="reference" value="'.$post_id.'" />
+			<input type="hidden" name="item_id_1" value="2" />
+			<input type="hidden" name="item_descr_1" value="12 meses" />
+			<input type="hidden" name="item_quant_1" value="1" />
+			<input type="hidden" name="item_valor_1" value="120,00" />
+			<input type="hidden" name="item_frete_1" value="0" />
 
 			<input type="hidden" name="cliente_tel" value="'.$current_user->phone1.'" />
 			<input type="image" src="http://ecotemporadas.com/wp-content/uploads/eco-botao_pagamento1_eax2.png" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />

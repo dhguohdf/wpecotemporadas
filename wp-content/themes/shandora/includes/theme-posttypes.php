@@ -50,7 +50,6 @@ if( !function_exists('shandora_setup_listing_post_type') ) {
 		$settings['rewrite_root'] = bon_get_option( 'rewrite_root' );
 		$settings['realestate_root'] = bon_get_option( 'realestate_root', 'real-estate' );
 
-
 		$settings['realestate_property_type_root'] = bon_get_option( 'realestate_property_type_root', 'manufacturer' );
 		$settings['realestate_property_location_root'] = bon_get_option( 'realestate_property_location_root', 'body-type' );
 		$settings['realestate_property_feature_root'] = bon_get_option( 'realestate_property_feature_root', 'dealer-location' );

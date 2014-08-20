@@ -93,7 +93,7 @@ function reserva_wp_objects() {
 	$types = get_option( 'reserva_wp_objects' );
 
 	if($types) :
-		// Registra os tipos objetos criados pelo usuário
+		// Registra os tipos objetos criados pelo usuárioe
 		foreach ($types as $object) {
 			// Pula os tipos marcados
 			if(isset($object['rwp_create_post_type']) && false == $object['rwp_create_post_type'] )
@@ -520,6 +520,9 @@ function reserva_wp_create_transaction($post_id) {
 		update_post_meta( $tid, 'rwp_transaction_status', 'solicitado' );
 		update_post_meta( $tid, 'rwp_transaction_user', $user );
 		update_post_meta( $tid, 'rwp_transaction_object', $post_id );
+		update_post_meta( $post_id, 'rwp_transaction_id', $tid );
+
+
 	}
 	
 }

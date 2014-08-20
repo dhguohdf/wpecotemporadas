@@ -116,21 +116,21 @@ jQuery(document).ready(function() {
 
      jQuery( "#bookingdatepicker.front" ).multiDatesPicker({
      	  // resetDates: 'disabled',
-     	  // addDates: getDates(),
+     	  addDates: getDates(),
           numberOfMonths: 3,
           disabled: true,
           showButtonPanel: false,
-          minDate: 0, 
+          minDate: 0,
           maxDate: "+12M",
           beforeShowDay: function(date) {
-            
+
           	d = date.toString().substr(0,15);
           	cls = "ui-state-default";
           	classdate = d.replace(' ','_');
 
           	if(jQuery.inArray(d, ofertas) > -1) {
           		cls = 'ui-state-highlight oferta';
-          		
+
           	}
           	if(jQuery.inArray(d, indisponiveis) > -1) {
           		cls = 'ui-state-highlight';
@@ -144,24 +144,24 @@ jQuery(document).ready(function() {
 
      jQuery( "#bookingdatepicker" ).not('.front').multiDatesPicker({
      	  // resetDates: 'disabled',
-     	  addDates: getDates(),
+     	  //addDates: getDates(),
           numberOfMonths: 1,
           showButtonPanel: false,
-          minDate: 0, 
+          minDate: 0,
           maxDate: "+12M",
           beforeShowDay: function(date) {
-            
+
           	d = date.toString().substr(0,15);
           	cls = "ui-state-default";
           	classdate = d.replace(' ','_');
-          	
+
           	if(jQuery.inArray(d, indisponiveis) > -1) {
           		cls = 'ui-state-highlight date-'+classdate;
           	}
           	if(jQuery.inArray(d, ofertas) > -1) {
           		cls = 'ui-state-highlight oferta date-'+classdate;
           	}
-          	
+
           	return [true, cls, 'tip']
           },
           onSelect: function(date,datepicker) {
