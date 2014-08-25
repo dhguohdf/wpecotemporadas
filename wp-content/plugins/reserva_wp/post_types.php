@@ -319,10 +319,10 @@ function reserva_wp_listing_calendar_render_front($post) {
 		#bookingdatepicker .ui-state-disabled{
 			opacity:0.40;
 		}
-		#bookingdatepicker .ui-datepicker-unselectable.ui-state-disabled.ui-state-highlight{
+		#bookingdatepicker .ui-datepicker-unselectable.ui-state-disabled.ui-state-highlight, #bookingdatepicker .ui-datepicker-unselectable .ui-state-disabled{
 			opacity:0.99;
 		}
-		#bookingdatepicker .ui-datepicker-unselectable.ui-state-disabled.ui-state-highlight span{
+		#bookingdatepicker .ui-datepicker-unselectable.ui-state-disabled.ui-state-highlight span, #bookingdatepicker .ui-datepicker-unselectable .ui-state-disabled span{
 			opacity:0.99;
 			background: #ff0;
 			color: #444;
