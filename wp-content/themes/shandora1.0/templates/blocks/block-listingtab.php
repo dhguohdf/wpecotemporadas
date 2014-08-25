@@ -34,6 +34,7 @@
 		<a class="active" href="#tab-target-details"><?php _e('Detalhes','bon'); ?></a>
 		<a class="" href="#tab-target-features"><?php _e('Diferenciais','bon'); ?></a>
 		<a class="" href="#tab-target-spec"><?php _e('Especificações','bon'); ?></a>
+		<a class="" href="#tab-target-data"><?php _e('Datas','bon'); ?></a>
 	</nav>
 	<div class="tab-contents">
 		<div id="tab-target-details" class="tab-content active">
@@ -80,6 +81,13 @@
                 <li><strong><?php _e('Andares:','bon'); ?></strong><span><?php echo (!empty($floor)) ? $floor . ' unidade(s)' : '-'; ?></span></li>
                 <li><strong><?php _e('Total de cômodos:','bon'); ?></strong><span><?php echo (!empty($totalroom)) ? $totalroom . ' unidade(s)' : '-'; ?></span></li>
                 <li><strong><?php _e('Data Disponível:','bon'); ?></strong><span><?php echo (!empty($date)) ? $date : '-'; ?></span></li>
+			</ul>
+		</div>
+		<div id="tab-target-data" class="tab-content">
+			<ul class="property-details">
+				<?php global $post; ?>
+				<?php reserva_wp_listing_calendar_render_front($post); ?>
+				<?php //add_action('dynamic_sidebar_before', reserva_wp_listing_calendar_render($post)); ?>
 			</ul>
 		</div>
 	</div>

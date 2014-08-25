@@ -28,7 +28,7 @@ get_header();
 
         do_atomic('before_loop'); ?>
         <header class="entry-header clear">
-			<h1 class="entry-title"><?php the_title();?></h1>
+			<h1 class="entry-title">TESTE // <?php the_title();?></h1>
 		</header>
 		<?php the_content(); ?>
 
@@ -49,4 +49,4 @@ get_header();
 
 
 
-<?php get_footer(); ?>
+<?php get_footer(); ?>-

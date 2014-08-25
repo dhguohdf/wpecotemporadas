@@ -185,8 +185,8 @@ function reserva_wp_pagseguro_notificacoes() {
 
 			try {
 				$credentials = new PagSeguroAccountCredentials(
-					'contato@matheusgimenez.com.br',
-					'81045E8D0399448E970C11732E435C2D'
+					'pagamentos@ecotemporadas.com',
+					'5C8E151D9D864066A1DA254FA0D66E94'
 				);
 
 				/* Tipo de notificação recebida */

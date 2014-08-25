@@ -155,7 +155,7 @@ function test_modify_post_table_row( $column_name, $post_id ) {
 	if (get_post_status ( $ID ) == 'private' or get_post_status ( $ID ) == 'expirando') {
     switch ($column_name) {
         case 'pagamento' :
-		$EmailVendedor = 'contato@matheusgimenez.com.br';
+		$EmailVendedor = 'pagamentos@ecotemporadas.com';
 		$identificacao = get_the_ID();
 		$p = get_post($identificacao);
 		$comprador = $p->post_author;
@@ -170,7 +170,7 @@ function test_modify_post_table_row( $column_name, $post_id ) {
       	echo '<form><spam></spam></form>';
         echo '<form action="https://sandbox.pagseguro.uol.com.br/v2/checkout/payment.html" method="post" onsubmit="PagSeguroLightbox(this); return false;">
 
-			<input type="hidden" name="code" value="81045E8D0399448E970C11732E435C2D" />
+			<input type="hidden" name="code" value="5C8E151D9D864066A1DA254FA0D66E94" />
 			<input type="hidden" name="email_cobranca" value="'.$EmailVendedor.'">
 			<input type="hidden" name="tipo" value="CP" />
 			<input type="hidden" name="moeda" value="BRL" />
@@ -194,7 +194,7 @@ function test_modify_post_table_row( $column_name, $post_id ) {
 			<input type="hidden" name="cliente_tel" value="'.$current_user->phone1.'" />
 			<input type="image" src="http://ecotemporadas.com/wp-content/uploads/eco-botao_pagamento1_eax2.png" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
 			</form>
-			<script type="text/javascript" src="https://stc.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.lightbox.js"></script>
+			<script type="text/javascript" src="https://stc.sandbox.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.lightbox.js"></script>
 
 ';
 

@@ -9,7 +9,8 @@
     $location = get_the_term_list( $post->ID, 'property-location', '', ', ' );
 					$location = strip_tags( $location );
 					$loca = (!empty($location)) ? $location : '-';
-	$price = shandora_get_meta(get_the_ID(), 'listing_price', true); 
+	$price = shandora_get_meta(get_the_ID(), 'listing_price', true);
+    global $post;
 
 
 	

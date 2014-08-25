@@ -306,4 +306,20 @@ function makeDateForList(date) {
 
 	return new Date(date[0],parseInt(date[1])-1,date[2]).toString().substr(0,15);
 }
+    if(jQuery('#bookingdatepicker').attr('data-front') == 'true'){
+        var dateToday = new Date();
+        jQuery( "#bookingdatepicker td").unbind( "click" );
+        jQuery( "#bookingdatepicker" ).datepicker({
+            minDate: dateToday,
+            onSelect: function( selectedDate ) {
+                //jQuery(this).datepicker('setDate', '');
+            }
+        });
+        jQuery( "#bookingdatepicker td a").each(function(){
+            if(jQuery(this).attr('href') == '#'){
+                jQuery(this).removeAttr('href');
+            }
+        });
+        //jQuery("#bookingdatepicker").datepicker('disable');
+    }
 });
