@@ -102,8 +102,8 @@
       <file leaf-file-name="block-listingtab.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/blocks/block-listingtab.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.606414" vertical-offset="1142" max-vertical-offset="1485">
-              <caret line="90" column="17" selection-start-line="90" selection-start-column="17" selection-end-line="90" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.47521865" vertical-offset="1142" max-vertical-offset="1500">
+              <caret line="87" column="47" selection-start-line="87" selection-start-column="47" selection-end-line="87" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -759,8 +759,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/blocks/block-listingtab.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.606414" vertical-offset="1142" max-vertical-offset="1485">
-          <caret line="90" column="17" selection-start-line="90" selection-start-column="17" selection-end-line="90" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.47521865" vertical-offset="1142" max-vertical-offset="1500">
+          <caret line="87" column="47" selection-start-line="87" selection-start-column="47" selection-end-line="87" selection-end-column="47" />
           <folding />
         </state>
       </provider>

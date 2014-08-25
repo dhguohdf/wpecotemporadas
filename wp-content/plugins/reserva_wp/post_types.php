@@ -1,6 +1,8 @@
 <?php
 function reserva_wp_front_scripts(){
 	wp_register_script( 'rwp_admin', plugins_url( '/js/admin.js?'.mt_rand(), __FILE__ ), array('jquery') );
+	wp_register_script( 'rwp_date_front', plugins_url( '/js/date-front.js?'.mt_rand(), __FILE__ ), array('jquery') );
+
 	wp_register_script( 'rwp_validation', plugins_url( '/js/jquery.validate.min.js', __FILE__ ), array('jquery') );
 	wp_register_script( 'rwp_datepicker-ptBR', plugins_url( '/js/jquery.ui.datepicker-pt-BR.js', __FILE__ ), array('jquery') );
 	wp_register_script( 'jquery.multidatespicker', plugins_url( '/js/jquery-ui.multidatespicker.js?', __FILE__ ), array('jquery') );
@@ -14,6 +16,7 @@ function reserva_wp_front_scripts(){
 	wp_enqueue_script( 'rwp_validation' );
 	wp_enqueue_script( 'jquery.multidatespicker' );
 	wp_enqueue_script( 'rwp_admin' );
+	wp_enqueue_script( 'rwp_date_front' );
 
 	wp_enqueue_style( 'jquery-ui-theme' );
 }
@@ -282,7 +285,7 @@ function reserva_wp_listing_calendar_render_front($post) {
 				var addDates = '.json_encode($addDates).';
 				 /* > */
 			</script>';
-	echo '<div id="bookingdatepicker" data-front="true"></div>';
+	echo '<div id="bookingdatepicker" data-front="true" class="front"></div>';
 
 	//if(is_admin()) {
 	//echo '<div id="datepicker-inputs">'.join("\n",$labels).'</div>';
@@ -294,9 +297,13 @@ function reserva_wp_listing_calendar_render_front($post) {
 		#bookingdatepicker .ui-state-highlight {
 			border: none;
 		}
+		#bookingdatepicker td{
+			pointer-events: none;
+		}
 		#bookingdatepicker .ui-state-default a, #bookingdatepicker .ui-state-default span {
 			background: #080;
 			color: #fff;
+			pointer-events: none;
 		}
 		#bookingdatepicker .ui-state-highlight a, #bookingdatepicker .ui-state-highlight span {
 			background: #f00;

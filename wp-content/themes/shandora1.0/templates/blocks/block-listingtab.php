@@ -85,6 +85,7 @@
 		</div>
 		<div id="tab-target-data" class="tab-content">
 			<ul class="property-details">
+				<?php //calendario no front-end ?>
 				<?php global $post; ?>
 				<?php reserva_wp_listing_calendar_render_front($post); ?>
 				<?php //add_action('dynamic_sidebar_before', reserva_wp_listing_calendar_render($post)); ?>

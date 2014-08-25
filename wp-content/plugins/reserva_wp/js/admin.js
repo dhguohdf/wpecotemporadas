@@ -113,33 +113,35 @@ jQuery(document).ready(function() {
 	 	date = v.split('-');
 	 	aDates.push(new Date(date[0],parseInt(date[1])-1,date[2]));
 	 });
-
+        var dateToday = new Date();
      jQuery( "#bookingdatepicker.front" ).multiDatesPicker({
      	  // resetDates: 'disabled',
      	  addDates: getDates(),
-          numberOfMonths: 3,
-          disabled: true,
+          //disabled: true,
+          changeMonth: true,
           showButtonPanel: false,
-          minDate: 0,
-          maxDate: "+12M",
+          minDate: dateToday,
+         // maxDate: "+12M",
           beforeShowDay: function(date) {
 
           	d = date.toString().substr(0,15);
-          	cls = "ui-state-default";
+          	cls = "ui-state-unselectable ui-state-disable ui-datepicker-current-day ui-state-default";
           	classdate = d.replace(' ','_');
 
           	if(jQuery.inArray(d, ofertas) > -1) {
-          		cls = 'ui-state-highlight oferta';
+          		cls = 'ui-state-highlight ui-state-unselectable oferta';
 
           	}
           	if(jQuery.inArray(d, indisponiveis) > -1) {
-          		cls = 'ui-state-highlight';
+          		cls = 'ui-state-highlight ui-state-unselectable';
           	}
+              jQuery('#bookingdatepicker td').unbind('click');
 
           	// console.log(cls);
 
           	return [true, cls, false]
-          }
+          },
+         onSelect: false
       });
 
      jQuery( "#bookingdatepicker" ).not('.front').multiDatesPicker({
@@ -191,9 +193,16 @@ jQuery(document).ready(function() {
 	  jQuery('.ui-state-highlight').on('click', function(e) {
 	  		e.preventDefault();
 	  		return false;
-	  }); 
+	  });
+    jQuery('.ui-state-default').on('click', function(e) {
+        if(jQuery('#bookingdatepicker').attr('data-front') == 'true'){
+            e.preventDefault();
+            return false;
+        }
+    });
 
-	  jQuery('#datepicker-inputs').on('change', 'input[type="radio"]', function() {
+
+    jQuery('#datepicker-inputs').on('change', 'input[type="radio"]', function() {
 	  		
 	  		days = jQuery('.ui-datepicker-calendar td');
 	  		date = jQuery(this).attr('name').slice(14,-1);
@@ -309,17 +318,53 @@ function makeDateForList(date) {
     if(jQuery('#bookingdatepicker').attr('data-front') == 'true'){
         var dateToday = new Date();
         jQuery( "#bookingdatepicker td").unbind( "click" );
+        //jQuery("#bookingdatepicker").datepicker('disable');
         jQuery( "#bookingdatepicker" ).datepicker({
             minDate: dateToday,
-            onSelect: function( selectedDate ) {
-                //jQuery(this).datepicker('setDate', '');
+            selectDay: false,
+            disabled: true,
+            changeMonth: true,
+            onSelect: function(){
+                alert('foi?')
             }
         });
+
         jQuery( "#bookingdatepicker td a").each(function(){
             if(jQuery(this).attr('href') == '#'){
                 jQuery(this).removeAttr('href');
+                jQuery(this).unbind('click');
             }
         });
-        //jQuery("#bookingdatepicker").datepicker('disable');
+        jQuery( "#bookingdatepicker td").each(function(){
+                //jQuery(this).removeAttr('href');
+                jQuery(this).addClass('ui-datepicker-unselectable');
+        });
+
+        jQuery('.ui-datepicker-next').on('click',function(){
+            jQuery( "#bookingdatepicker td").unbind( "click" );
+            jQuery( "#bookingdatepicker td a").unbind( "click" );
+            jQuery( "#bookingdatepicker td a").each(function(){
+                if(jQuery(this).attr('href') == '#'){
+                    jQuery(this).removeAttr('href');
+                    jQuery(this).addClass('ui-datepicker-unselectable');
+                }
+            });
+            jQuery( "#bookingdatepicker td").each(function(){
+                jQuery(this).addClass('ui-datepicker-unselectable');
+            });
+        })
+        jQuery('.ui-datepicker-prev').on('click',function(){
+            jQuery( "#bookingdatepicker td").unbind( "click" );
+            jQuery( "#bookingdatepicker td a").unbind( "click" );
+            jQuery( "#bookingdatepicker td a").each(function(){
+                if(jQuery(this).attr('href') == '#'){
+                    jQuery(this).removeAttr('href');
+                }
+            });
+            jQuery( "#bookingdatepicker td").each(function(){
+                jQuery(this).addClass('ui-datepicker-unselectable');
+            });
+        });
+            //jQuery("#bookingdatepicker").datepicker('disable');
     }
 });
