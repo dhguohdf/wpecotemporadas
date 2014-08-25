@@ -118,10 +118,10 @@ jQuery(document).ready(function () {
         jQuery("#bookingdatepicker.front").multiDatesPicker({
             // resetDates: 'disabled',
             addDates: getDates(),
-            //disabled: true,
-            changeMonth: true,
+            numberOfMonths: 1,
             showButtonPanel: false,
             minDate: dateToday,
+            maxDate: "+12M",
             // maxDate: "+12M",
             beforeShowDay: function (date) {
                 console.log(ofertas);
