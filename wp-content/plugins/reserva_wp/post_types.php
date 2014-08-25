@@ -16,7 +16,7 @@ function reserva_wp_front_scripts(){
 	wp_enqueue_script( 'rwp_validation' );
 	wp_enqueue_script( 'jquery.multidatespicker' );
 	wp_enqueue_script( 'rwp_admin' );
-	wp_enqueue_script( 'rwp_date_front' );
+	//wp_enqueue_script( 'rwp_date_front' );
 
 	wp_enqueue_style( 'jquery-ui-theme' );
 }
@@ -278,11 +278,11 @@ function reserva_wp_listing_calendar_render_front($post) {
 
 	echo '<script type="text/javascript">
 			/* <![CDATA[ */
-				var indisponiveis = '.json_encode($indisponiveis).';
-				var ofertas  = '.json_encode($ofertas).';
-				var indDates = '.json_encode($ind).';
-				var oftDates = '.json_encode($oft).';
-				var addDates = '.json_encode($addDates).';
+				indisponiveis = '.json_encode($indisponiveis).';
+				ofertas  = '.json_encode($ofertas).';
+				indDates = '.json_encode($ind).';
+				oftDates = '.json_encode($oft).';
+				addDates = '.json_encode($addDates).';
 				 /* > */
 			</script>';
 	echo '<div id="bookingdatepicker" data-front="true" class="front"></div>';
@@ -319,6 +319,15 @@ function reserva_wp_listing_calendar_render_front($post) {
 		#bookingdatepicker .ui-state-disabled{
 			opacity:0.40;
 		}
+		#bookingdatepicker .ui-datepicker-unselectable.ui-state-disabled.ui-state-highlight{
+			opacity:0.99;
+		}
+		#bookingdatepicker .ui-datepicker-unselectable.ui-state-disabled.ui-state-highlight span{
+			opacity:0.99;
+			background: #ff0;
+			color: #444;
+		}
+
 
 	</style>
 <?php
