@@ -46,10 +46,11 @@ function reserva_wp_update_post_cron() {
 
 			//$email = $post_autor_mail;
 			// Return a boolean!
+			//editar email
 			$to = $post_autor_mail;
 			$subject = 'Mudança de status no anuncio "'.$post_autor->post_title.'" ';
 			$message = 'O status do seu anuncio mudou para: vencido/retirado' ;
-			$message .= '<p>Faça o pagamento o mais rápido possivel</p>';
+			$message .= '- Faça o pagamento para reestabelecer seu anuncio';
 			$from = 'no-reply@ecotemporadas.com';
 			$headers = 'From:' . $from.'\n';
 			$headers .= 'Content-type: text/html';
@@ -67,8 +68,8 @@ function reserva_wp_update_post_cron() {
 	echo '<br> Removidos:' . $contador;
 	$contador = 0;
 
-	$date->modify( '-10 days' );
-	$now = (string) $date->format( 'd-m-Y' );
+	//$date->modify( '-7 days' );
+	//$now = (string) $date->format( 'd-m-Y' );
 	echo 'now:' . $now;
 	$transactions_pre = get_posts( array(
 		'post_type' => 'rwp_transaction',
@@ -91,6 +92,7 @@ function reserva_wp_update_post_cron() {
 			$post_autor = get_post($post_id);
 			$post_autor_mail = get_the_author_meta('user_email',$post_autor->post_author);
 
+			//editar email
 			$to = $post_autor_mail;
 			$subject = 'Mudança de status no anuncio "'.$post_autor->post_title.'" ';
 			$message = 'Seu anuncio '. "'.$post_autor->post_title.'".' vence nos proximos 10 dias' ;
@@ -347,7 +349,7 @@ function reserva_wp_pagseguro_notificacoes() {
 			if ( $msg == 'liberado' ) {
 				update_post_meta( $tr_id, 'rwp_transaction_listing_id', $post_id );
 				update_post_meta( $tr_id, 'rwp_transaction_expire_date', $date->format( 'd-m-Y' ) );
-				$date->modify( '-10 days' );
+				$date->modify( '-7 days' );
 				update_post_meta( $tr_id, 'rwp_transaction_pre_expire_date', $date->format( 'd-m-Y' ) );
 				global $wpdb;
 				$wpdb->update($wpdb->posts, array('post_status' => 'publish'), array('id' => $post_id));
@@ -356,12 +358,13 @@ function reserva_wp_pagseguro_notificacoes() {
 
 				//$email = $post_autor_mail;
 				// Return a boolean!
+				//editar email
 				$to = $post_autor_mail;
 				$subject = 'Mudança de status no anuncio "'.$post_autor->post_title.'" ';
 				$message = 'O status do seu anuncio mudou para: liberado' ;
 				$from = 'no-reply@ecotemporadas.com';
-				$headers = 'From:' . $from.'\n';
-				$headers .= 'Content-type: text/html';
+				$headers = 'From: '.get_bloginfo('name').''.' <' . $from.'>';
+				$headers .= '\nContent-type: text/html';
 				if($to && $subject && $message && $headers) {
 					wp_mail($to,$subject,$message,$headers);
 					echo $to.' - '.$subject.' - '.$message.' - '.$headers;
