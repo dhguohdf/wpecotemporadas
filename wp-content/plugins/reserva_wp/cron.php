@@ -52,8 +52,8 @@ function reserva_wp_update_post_cron() {
 			$message = 'O status do seu anuncio mudou para: vencido/retirado' ;
 			$message .= '- Faça o pagamento para reestabelecer seu anuncio';
 			$from = 'no-reply@ecotemporadas.com';
-			$headers = 'From:' . $from.'\n';
-			$headers .= 'Content-type: text/html';
+			$headers = 'From: '.get_bloginfo('name').''.' <' . $from.'>';
+			$headers .= '\nContent-type: text/html';
 
 			if($to && $subject && $message && $headers) {
 				wp_mail($to,$subject,$message,$headers);
@@ -98,8 +98,8 @@ function reserva_wp_update_post_cron() {
 			$message = 'Seu anuncio '. "'.$post_autor->post_title.'".' vence nos proximos 10 dias' ;
 			$message .= '- Faça o pagamento o mais rápido possivel';
 			$from = 'no-reply@ecotemporadas.com';
-			$headers = 'From:' . $from.'';
-			$headers .= 'Content-type: text/html';
+			$headers = 'From: '.get_bloginfo('name').''.' <' . $from.'>';
+			$headers .= '\nContent-type: text/html';
 
 			if($to && $subject && $message && $headers) {
 				wp_mail($to,$subject,$message,$headers);
