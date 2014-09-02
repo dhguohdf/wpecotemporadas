@@ -155,7 +155,8 @@ function test_modify_post_table_row( $column_name, $post_id ) {
 	if (get_post_status ( $ID ) == 'private' or get_post_status ( $ID ) == 'expirando') {
     switch ($column_name) {
         case 'pagamento' :
-		$EmailVendedor = 'contato@matheusgimenez.com.br';
+		//$EmailVendedor = 'contato@matheusgimenez.com.br';
+		$EmailVendedor = 'pagamentos@ecotemporadas.com';
 		$identificacao = get_the_ID();
 		$p = get_post($identificacao);
 		$comprador = $p->post_author;
@@ -194,72 +195,7 @@ function test_modify_post_table_row( $column_name, $post_id ) {
 			<input type="hidden" name="cliente_tel" value="'.$current_user->phone1.'" />
 			<input type="image" src="http://ecotemporadas.com/wp-content/uploads/eco-botao_pagamento1_eax2.png" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
 			</form>
-			<script type="text/javascript" src="https://stc.sandbox.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.lightbox.js"></script>
-
-';
-
-
-?><!--
-		echo '<form target="PagSeguro" action="https://pagseguro.uol.com.br/security/webpagamentos/webpagto.aspx" method="post" name="TestePS" id="TestePS" />
-
-			<input type="hidden" name="email_cobranca" value="'.$EmailVendedor.'">11361326
-
-			<input type="hidden" name="tipo" value="CP" />
-			<input type="hidden" name="moeda" value="BRL" />
-			<input type="hidden" name="ref_transacao" value="ID '.$identificacao.'" />
-
-			<input type="hidden" name="item_id_1" value="2" />
-			<input type="hidden" name="item_descr_1" value="Anuncio ECO - 6 meses" />
-			<input type="hidden" name="item_quant_1" value="1" />
-			<input type="hidden" name="item_valor_1" value="160,00" />
-			<input type="hidden" name="item_frete_1" value="0" />
-
-			<input type="hidden" name="cliente_nome" value="'.$current_user->user_firstname.' '.$current_user->user_lastname.'" />
-			<input type="hidden" name="cliente_end" value="'.$current_user->addr1.'" />
-			<input type="hidden" name="cliente_num" value="'.$current_user->numaddr.'" />
-			<input type="hidden" name="cliente_compl" value="'.$current_user->addr2.'" />
-			<input type="hidden" name="cliente_bairro" value="'.$current_user->bairro.'" />
-			<input type="hidden" name="cliente_cidade" value="'.$current_user->city.'" />
-			<input type="hidden" name="cliente_uf" value="'.$current_user->uf.'" />
-			<input type="hidden" name="cliente_pais" value="'.$current_user->country.'" />
-			<input type="hidden" name="cliente_ddd" value="'.$current_user->ddd.'" />
-
-			<input type="hidden" name="cliente_tel" value="'.$current_user->phone1.'" />
-			<input type="hidden" name="cliente_email" value="'.$current_user->user_email.'" />
-
-			<input class="pgtosemestral" rel="'.$rwp_transacao.'" type="image" src="http://ecotemporadas.com/wp-content/uploads/website-img/botao_semestral.jpg" alt="Plano Semestral">
-			</form>';
-
-		echo '<form target="PagSeguro" action="https://pagseguro.uol.com.br/security/webpagamentos/webpagto.aspx" method="post" name="TestePS" id="TestePS" />
-
-			<input type="hidden" name="email_cobranca" value="'.$EmailVendedor.'">
-			<input type="hidden" name="tipo" value="CP" />
-			<input type="hidden" name="moeda" value="BRL" />
-			<input type="hidden" name="ref_transacao" value="ID '.$identificacao.'" />
-
-			<input type="hidden" name="item_id_1" value="3" />
-			<input type="hidden" name="item_descr_1" value="Anuncio ECO - 12 meses" />
-			<input type="hidden" name="item_quant_1" value="1" />
-			<input type="hidden" name="item_valor_1" value="310,00" />
-			<input type="hidden" name="item_frete_1" value="0" />
-
-			<input type="hidden" name="cliente_nome" value="'.$current_user->user_firstname.' '.$current_user->user_lastname.'" />
-			<input type="hidden" name="cliente_end" value="'.$current_user->addr1.'" />
-			<input type="hidden" name="cliente_num" value="'.$current_user->numaddr.'" />
-			<input type="hidden" name="cliente_compl" value="'.$current_user->addr2.'" />
-			<input type="hidden" name="cliente_bairro" value="'.$current_user->bairro.'" />
-			<input type="hidden" name="cliente_cidade" value="'.$current_user->city.'" />
-			<input type="hidden" name="cliente_uf" value="'.$current_user->uf.'" />
-			<input type="hidden" name="cliente_pais" value="'.$current_user->country.'" />
-			<input type="hidden" name="cliente_ddd" value="'.$current_user->ddd.'" />
-
-			<input type="hidden" name="cliente_tel" value="'.$current_user->phone1.'" />
-			<input type="hidden" name="cliente_email" value="'.$current_user->user_email.'" />
-
-			<input class="pgtoanual" rel="'.$rwp_transacao.'" type="image" src="http://ecotemporadas.com/wp-content/uploads/website-img/botao_anual.jpg" alt="Plano Anual">
-			</form>';
-
-			--><?php 
+			<script type="text/javascript" src="https://stc.sandbox.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.lightbox.js"></script>';
             break;
  
         default:

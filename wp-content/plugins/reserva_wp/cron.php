@@ -196,15 +196,16 @@ function reserva_wp_cron_check_pagamentos() {
 
 	/* Banco Pagseguro */
 	$DB_TYPE = "mysql";
-	//$retorno_host = 'localhost'; // Local da base de dados MySql
-	//$retorno_database = 'ecotempo_main'; // Nome da base de dados MySql
-	//$retorno_usuario = 'ecotempo_admin'; // Usuario com acesso a base de dados MySql
-	//$retorno_senha = 'ZpaK}GN5ni({';  // Senha de acesso a base de dados MySql
+	$retorno_host = 'localhost'; // Local da base de dados MySql
+	$retorno_database = 'ecotempo_main'; // Nome da base de dados MySql
+	$retorno_usuario = 'ecotempo_admin'; // Usuario com acesso a base de dados MySql
+	$retorno_senha = 'ZpaK}GN5ni({';  // Senha de acesso a base de dados MySql
 
-	$retorno_host     = 'localhost'; // Local da base de dados MySql
-	$retorno_database = 'eco'; // Nome da base de dados MySql
-	$retorno_usuario  = 'eco'; // Usuario com acesso a base de dados MySql
-	$retorno_senha    = 'acdc1980bs';  // Senha de acesso a base de dados MySql
+	//DATABASE MATEUS
+	//$retorno_host     = 'localhost';
+	//$retorno_database = 'eco';
+	//$retorno_usuario  = 'eco';
+	//$retorno_senha    = 'acdc1980bs';
 
 	$mysqli = new mysqli( $retorno_host, $retorno_usuario, $retorno_senha, $retorno_database );
 	if ( $mysqli->connect_errno ) {
@@ -213,8 +214,15 @@ function reserva_wp_cron_check_pagamentos() {
 
 	/* Definindo as credenciais  */
 	$credentials = new PagSeguroAccountCredentials(
-		'contato@matheusgimenez.com.br',
-		'81045E8D0399448E970C11732E435C2D'
+		//'contato@matheusgimenez.com.br',
+		//'81045E8D0399448E970C11732E435C2D'
+
+		'pagamentos@ecotemporadas.com',
+		// TOKEN SANDBOX		
+		'5C8E151D9D864066A1DA254FA0D66E94'
+		//TOKEN REAL
+		//'0AFB1A5E29814881857F5FAB7646BD43'
+
 	);
 
 	$transactions = get_posts( array(
@@ -301,8 +309,14 @@ function reserva_wp_pagseguro_notificacoes() {
 
 	try {
 		$credentials = new PagSeguroAccountCredentials(
-			'contato@matheusgimenez.com.br',
-			'81045E8D0399448E970C11732E435C2D'
+			//'contato@matheusgimenez.com.br',
+			//'81045E8D0399448E970C11732E435C2D'
+
+			'pagamentos@ecotemporadas.com',
+			// TOKEN SANDBOX		
+			'5C8E151D9D864066A1DA254FA0D66E94'
+			//TOKEN REAL
+			//'0AFB1A5E29814881857F5FAB7646BD43'
 		);
 
 		/* Tipo de notificação recebida */
