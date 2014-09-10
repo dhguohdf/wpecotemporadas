@@ -552,6 +552,7 @@ function reserva_wp_status_change($transaction_id, $newstatus) {
 
 }
 
+
 /**
 * Cria / Atualiza as datas de disponibilidade dos objetos
 * TODO: anotados
@@ -583,8 +584,15 @@ function reserva_wp_update_object_dates($post_id) {
 		return;
 
 
-	if(isset($_POST['rwp_date_type'])) {
+	if(isset($_POST['rwp_date_type'])){
+		//echo var_dump($_POST['rwp_date_type']);
 		update_post_meta( $post_id, 'rwp_dates_types', $_POST['rwp_date_type'] );
+		//DIE();
+	}
+	if(empty($_POST['rwp_date_type'])){
+		//echo var_dump($_POST['rwp_date_type']);
+		delete_post_meta( $post_id, 'rwp_dates_types');
+		//DIE();
 	}
 	
 }
