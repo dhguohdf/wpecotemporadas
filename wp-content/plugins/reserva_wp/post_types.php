@@ -165,8 +165,16 @@ if(is_singular('listing')) {
 	global $post;
 	add_action('dynamic_sidebar_before', reserva_wp_listing_calendar_render($post));
 }
-
-
+function return_json($var){
+	//$var = json_decode($var,true);
+	//echo var_dump($var);
+	if(empty($var)){
+		return array('Wed Sep 17 3099');
+	}
+	else{
+		return $var;
+	}
+}
 function reserva_wp_listing_calendar_render($post) {
 	
 	
@@ -278,11 +286,11 @@ function reserva_wp_listing_calendar_render_front($post) {
 
 	echo '<script type="text/javascript">
 			/* <![CDATA[ */
-				indisponiveis = '.json_encode($indisponiveis).';
-				ofertas  = '.json_encode($ofertas).';
-				indDates = '.json_encode($ind).';
-				oftDates = '.json_encode($oft).';
-				addDates = '.json_encode($addDates).';
+				indisponiveis = '.json_encode(return_json($indisponiveis)).';
+				ofertas  = '.json_encode(return_json($ofertas)).';
+				indDates = '.json_encode(return_json($ind)).';
+				oftDates = '.json_encode(return_json($oft)).';
+				addDates = '.json_encode(return_json($addDates)).';
 				 /* > */
 			</script>';
 	echo '<div id="bookingdatepicker" data-front="true" class="front"></div>';
