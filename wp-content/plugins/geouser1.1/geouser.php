@@ -138,7 +138,7 @@ function geouser_add_metaboxes() {
     
 }
 
-function geouser_post_metabox() {
+function geouser_post_metabox($post) {
     $location = array( 'lat' => false, 'lng' => false );
     if ( $loc = get_user_meta( $user->ID, 'geouser-location', true ) ) {
         $location['lat'] = $loc[0];
@@ -187,12 +187,15 @@ function geouser_post_metabox() {
     <p class="sbox"><input type="text" id="geouser-search" class="regular-text" placeholder="<?php _e( 'Search address', 'geouser' ); ?>" onkeypress="return event.keyCode != 13;" />
         <span>Use este campo para pesquisar pelo endereço e arraste o marcador para confirmar o endereço completo</span></p>*/ ?>
         <tr>
-            <td colspan="2"><label><b>Digite seu endereço completo:</b>  </label> <input type="text" id="geouser-search" class="regular-text" placeholder="<?php _e( 'Search address', 'geouser' ); ?>" autocomplete="off" onkeypress="return event.keyCode != 13;" /></td>
+	        <?php $meta = get_post_meta($post->ID,'geouser_address'); ?>
+            <td colspan="2"><label><b>Digite seu endereço completo:</b>  </label> <input name="geouser_address" type="text" id="geouser-search" class="regular-text" placeholder="<?php _e( 'Search address', 'geouser' ); ?>" autocomplete="off" onkeypress="return event.keyCode != 13;" value="<?php echo $meta[0]; ?>" /></td>
         </tr>
 
         <tr>
-            <td><b><?php _e( 'Cidade', 'geouser' ); ?>: </b><input type="text" id="geouser-search-administrative_area_level_2" class="regular-text shandora_listing_administrative_area_level_2" autocomplete="off" /></td>
-            <td><b><?php _e( 'Estado', 'geouser' ); ?>: </b><input type="text" id="geouser-search-administrative_area_level_1" class="regular-text shandora_listing_administrative_area_level_1" autocomplete="off" /></td>
+	        <?php $meta = get_post_meta($post->ID,'geouser_city'); ?>
+            <td><b><?php _e( 'Cidade', 'geouser' ); ?>: </b><input name="geouser_city" type="text" id="geouser-search-administrative_area_level_2" class="regular-text shandora_listing_administrative_area_level_2" autocomplete="off" value="<?php echo $meta[0]; ?>" /></td>
+	        <?php $meta = get_post_meta($post->ID,'geouser_state'); ?>
+	        <td><b><?php _e( 'Estado', 'geouser' ); ?>: </b><input name="geouser_state" type="text" id="geouser-search-administrative_area_level_1" class="regular-text shandora_listing_administrative_area_level_1" autocomplete="off" value="<?php echo $meta[0]; ?>" /></td>
         </tr>
 
         <tr>
@@ -230,3 +233,27 @@ function ecotemporadas_register_taxonomy() {
     exit;
 }
 add_action('wp_ajax_ecotemporadas_register_taxonomy', 'ecotemporadas_register_taxonomy');
+
+
+//save google maps field
+function save_google_field($post_id){
+	if($_POST['geouser_address'] || !empty($_POST['geouser_address'])){
+		update_post_meta($post_id,'geouser_address',$_POST['geouser_address']);
+	}
+	else{
+		delete_post_meta($post_id,'geouser_address');
+	}
+	if($_POST['geouser_city'] || !empty($_POST['geouser_city'])){
+		update_post_meta($post_id,'geouser_city',$_POST['geouser_city']);
+	}
+	else{
+		delete_post_meta($post_id,'geouser_city');
+	}
+	if($_POST['geouser_state'] || !empty($_POST['geouser_state'])){
+		update_post_meta($post_id,'geouser_state',$_POST['geouser_state']);
+	}
+	else{
+		delete_post_meta($post_id,'geouser_state');
+	}
+}
+add_action( 'save_post', 'save_google_field' );
