@@ -234,7 +234,6 @@ function ecotemporadas_register_taxonomy() {
 }
 add_action('wp_ajax_ecotemporadas_register_taxonomy', 'ecotemporadas_register_taxonomy');
 
-
 //save google maps field
 function save_google_field($post_id){
 	if($_POST['geouser_address'] || !empty($_POST['geouser_address'])){
