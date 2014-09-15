@@ -85,12 +85,12 @@ jQuery(document).ready(function ($) {
         stext = [];
 
         $.each(fulltext, function (i, v) {
-            console.log($(this).val() + ' ID  '+$(this).attr('id'));
+            //console.log($(this).val() + ' ID  '+$(this).attr('id'));
             stext.push($(this).val());
         });
 
         geouser_geocode(stext.join(' '), 'coord');
-        alert(stext.join(' '));
+        //alert(stext.join(' '));
     });
 
     function geouser_update_latlon(lat, lng) {
