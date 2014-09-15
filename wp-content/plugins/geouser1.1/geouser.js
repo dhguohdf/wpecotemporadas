@@ -79,7 +79,8 @@ jQuery(document).ready(function ($) {
  //       geouser_geocode(stext.join(' '), 'coord');
 
   //  });
-    $('.regular-text').on('change', function () {
+
+    $('.regular-text').on('keyup', function () {
 
         fulltext = $('.only-plugin');
         stext = [];
@@ -94,6 +95,7 @@ jQuery(document).ready(function ($) {
     });
 
     function geouser_update_latlon(lat, lng) {
+        console.log(lat + '  -  '+lng);
         _lat.val(lat);
         _lng.val(lng);
     }
@@ -218,6 +220,9 @@ jQuery(document).ready(function ($) {
                 geouser_update_latlon(location.lat(), location.lng());
                 geouser_addmarker(location.lat(), location.lng());
 
+                $('#property-locationchecklist input').attr('checked', false);
+                props = $('#property-locationchecklist > li > label');
+                geouser_update_uf_city(props);
 
             });
         } else if (type == 'addr') {
