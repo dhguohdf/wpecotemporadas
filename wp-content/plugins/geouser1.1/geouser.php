@@ -188,14 +188,14 @@ function geouser_post_metabox($post) {
         <span>Use este campo para pesquisar pelo endereço e arraste o marcador para confirmar o endereço completo</span></p>*/ ?>
         <tr>
 	        <?php $meta = get_post_meta($post->ID,'geouser_address'); ?>
-            <td colspan="2"><label><b>Digite seu endereço completo:</b>  </label> <input name="geouser_address" type="text" id="geouser-search" class="regular-text" placeholder="<?php _e( 'Search address', 'geouser' ); ?>" autocomplete="off" onkeypress="return event.keyCode != 13;" value="<?php echo $meta[0]; ?>" /></td>
+            <td colspan="2"><label><b>Digite seu endereço completo:</b>  </label> <input name="geouser_address" type="text" id="geouser-search" class="only-plugin regular-text" placeholder="<?php _e( 'Search address', 'geouser' ); ?>" autocomplete="off" onkeypress="return event.keyCode != 13;" value="<?php echo $meta[0]; ?>" /></td>
         </tr>
 
         <tr>
 	        <?php $meta = get_post_meta($post->ID,'geouser_city'); ?>
-            <td><b><?php _e( 'Cidade', 'geouser' ); ?>: </b><input name="geouser_city" type="text" id="geouser-search-administrative_area_level_2" class="regular-text shandora_listing_administrative_area_level_2" autocomplete="off" value="<?php echo $meta[0]; ?>" /></td>
+            <td><b><?php _e( 'Cidade', 'geouser' ); ?>: </b><input name="geouser_city" type="text" id="geouser-search-administrative_area_level_2" class="only-plugin regular-text shandora_listing_administrative_area_level_2" autocomplete="off" value="<?php echo $meta[0]; ?>" /></td>
 	        <?php $meta = get_post_meta($post->ID,'geouser_state'); ?>
-	        <td><b><?php _e( 'Estado', 'geouser' ); ?>: </b><input name="geouser_state" type="text" id="geouser-search-administrative_area_level_1" class="regular-text shandora_listing_administrative_area_level_1" autocomplete="off" value="<?php echo $meta[0]; ?>" /></td>
+	        <td><b><?php _e( 'Estado', 'geouser' ); ?>: </b><input name="geouser_state" type="text" id="geouser-search-administrative_area_level_1" class="only-plugin regular-text shandora_listing_administrative_area_level_1" autocomplete="off" value="<?php echo $meta[0]; ?>" /></td>
         </tr>
 
         <tr>
