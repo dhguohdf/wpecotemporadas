@@ -30,6 +30,7 @@ else{
 
 add_action( 'init', 'reserva_wp_objects' );
 add_action( 'save_post', 'reserva_wp_save_transaction' );
+add_action( 'save_post', 'reserva_wp_save_expire' );
 add_action( 'updated_post_meta', 'reserva_wp_altered_transaction_meta' );
 add_action( 'add_meta_boxes', 'reserva_wp_listing_metabox');
 // TODO: limpar hook abaixo pra funcionar de forma generica
@@ -151,16 +152,42 @@ function reserva_wp_objects() {
 
 	endif;
 
-	
+
 }
 
 function reserva_wp_listing_metabox($post) {
 	// Listing meta boxes
+	if(current_user_can('edit_others_pages')){
+		add_meta_box( 'rwp_listing_expirebox', __('Data de expiração', 'reservawp'), 'reserva_wp_listing_expirebox_render', 'listing', 'side', 'high', array(false) );
+	}
 	add_meta_box( 'rwp_listing_booking', __('Agenda', 'reservawp'), 'reserva_wp_listing_calendar_render', 'listing', 'side', 'core', array(false) );
 	// add_meta_box( $id, $title, $callback, $screen, $context, $priority, $callback_args );
 
 }
 
+function reserva_wp_listing_expirebox_render($post){
+	$object_id = get_post_meta( $post->ID, 'rwp_transaction_id', true );
+	echo '<label>Data de expiração:</label><br><br>';
+	echo '<input type="text" name="rwp_transaction_exp" value="'.get_post_meta($object_id,'rwp_transaction_expire_date',true).'">';
+	echo '<br><br><label>Data de pre-expiração:</label><br><br>';
+	echo '<input type="text" name="rwp_transaction_pre_exp" value="'.get_post_meta($object_id,'rwp_transaction_pre_expire_date',true).'">';
+	echo '--  '.$object_id;
+}
+function reserva_wp_save_expire($post_id){
+	//global $wpdb;
+	$object_id = get_post_meta( $post_id, 'rwp_transaction_id', true );
+	//var_dump($_POST['rwp_transaction_exp']);
+	//die();
+	if(isset($_POST['rwp_transaction_exp'])){
+		//$wpdb->update( $wpdb->postmeta, array('meta_value' => $_POST['rwp_transaction_exp']), array('post_id' => $object_id));
+		//die($_POST['rwp_transaction_exp']);
+		//die();
+		update_post_meta($object_id, 'rwp_transaction_expire_date', $_POST['rwp_transaction_exp']);
+	}
+	if(isset($_POST['rwp_transaction_pre_exp'])){
+		update_post_meta($object_id, 'rwp_transaction_pre_expire_date', $_POST['rwp_transaction_pre_exp']);
+	}
+}
 if(is_singular('listing')) {
 	global $post;
 	add_action('dynamic_sidebar_before', reserva_wp_listing_calendar_render($post));
@@ -507,6 +534,7 @@ function reserva_wp_save_transaction($transaction_id) {
 		
 }
 
+
 /*
 * Distribui as funções e hooks especificos de cada alteração de meta dados da transação
 */ 
@@ -634,6 +662,9 @@ function reserva_wp_create_transaction($post_id) {
 	// Não é tela vazia
 	if ( empty($_POST) )
 		return;
+	$tr_id_meta = get_post_meta($post_id,'rwp_transaction_id',true);
+	if (!empty($tr_id_meta))
+		return;
 
 	$transaction = array(
 		'post_title' => $post_id.'-'.$user.'-'.time(),
@@ -712,5 +743,4 @@ function reserva_wp_objeto_liberado($transaction) {
 		$u = update_post_meta( $transaction[0], 'rwp_transaction_object_published_until', $due );
 		*/
 	}
-
 ?>
