@@ -138,7 +138,7 @@ jQuery(document).ready(function ($) {
                     }
 
                     if (!flag) {
-                        if (confirm(city + '-' + uf + ' não cadastrada em nosso banco de dados. Clique em "OK" para cadastrá-la.')) {
+                        //if (confirm(city + '-' + uf + ' não cadastrada em nosso banco de dados. Clique em "OK" para cadastrá-la.')) {
 
                             $.post(geouser.ajaxurl, {
                                 action: 'ecotemporadas_register_taxonomy',
@@ -153,11 +153,11 @@ jQuery(document).ready(function ($) {
 
                                     ufObj.siblings('.children').append('<label class="selectit"><input checked="checked" value="' + response.term_id + '" type="checkbox" name="tax_input[property-location][]" id="in-property-location-' + response.term_id + '"> ' + response.name + '</label>');
 
-                                    alert(city + '-' + uf + ' adicionada.');
+                                    console.log(city + '-' + uf + ' adicionada.');
                                 }
 
                             });
-                        }
+                        //}
 
                         return false;
                     }
