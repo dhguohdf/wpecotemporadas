@@ -171,7 +171,7 @@ function reserva_wp_listing_expirebox_render($post){
 	echo '<input type="text" name="rwp_transaction_exp" value="'.get_post_meta($object_id,'rwp_transaction_expire_date',true).'">';
 	echo '<br><br><label>Data de pre-expiração:</label><br><br>';
 	echo '<input type="text" name="rwp_transaction_pre_exp" value="'.get_post_meta($object_id,'rwp_transaction_pre_expire_date',true).'">';
-	echo '--  '.$object_id;
+	//echo '--  '.$object_id;
 }
 function reserva_wp_save_expire($post_id){
 	//global $wpdb;
