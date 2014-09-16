@@ -13,8 +13,8 @@ jQuery(document).ready(function ($) {
     var _search = $('#geouser-locatization .regular-text');
     var _lat = $('#shandora_listing_maplatitude');
     var _lng = $('#shandora_listing_maplongitude');
-//    var _cep = $('#shandora_listing_zip');
-//    var _end = $('#shandora_listing_route');
+    var _cep = $('#shandora_listing_zip');
+    var _end = $('#shandora_listing_route');
 
     var _allowedLvl1 = ['ro', 'ac', 'am', 'rr', 'pa', 'ap', 'to', 'ma', 'pi', 'ce', 'rn', 'pb', 'pe', 'al', 'se', 'ba', 'mg', 'es', 'rj', 'sp', 'pr', 'sc', 'rs', 'ms', 'mt', 'go', 'df'];
     var city;
@@ -55,14 +55,19 @@ jQuery(document).ready(function ($) {
             draggable: true,
             position: initial_center
         });
-    });
 
-// Adiciona o listener pra atualizar o mapa e 
+// Adiciona o listener pra atualizar o mapa e
 // as infos quando o usuário clica no mapa
-    google.maps.event.addListener(map, 'click', function (e) {
-        geouser_addmarker(e.latLng.lat(), e.latLng.lng());
-        geouser_update_latlon(e.latLng.lat(), e.latLng.lng());
-        geouser_geocode(e.latLng, 'addr');
+        google.maps.event.addListener(map, 'click', function (e) {
+            geouser_addmarker(e.latLng.lat(), e.latLng.lng());
+            geouser_update_latlon(e.latLng.lat(), e.latLng.lng());
+            geouser_geocode(e.latLng, 'addr');
+        });
+        google.maps.event.addListener(marker, 'dragend', function (e) {
+            geouser_addmarker(e.latLng.lat(), e.latLng.lng());
+            geouser_update_latlon(e.latLng.lat(), e.latLng.lng());
+            geouser_geocode(e.latLng, 'addr');
+        });GIT
     });
 
 // Compila as informações para busca quando 
