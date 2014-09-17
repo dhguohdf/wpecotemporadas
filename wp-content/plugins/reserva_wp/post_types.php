@@ -1,4 +1,22 @@
 <?php
+// Register Custom Status
+function custom_post_status() {
+
+	$args = array(
+		'label'                     => _x( 'removido', 'Status General Name', 'reservawp' ),
+		'label_count'               => _n_noop( 'Removido (%s)',  'Removido (%s)', 'reservawp' ),
+		'public'                    => false,
+		'show_in_admin_all_list'    => true,
+		'show_in_admin_status_list' => false,
+		'exclude_from_search'       => true,
+	);
+	register_post_status( 'removido', $args );
+
+}
+
+// Hook into the 'init' action
+//add_action( 'init', 'custom_post_status', 0 );
+
 function reserva_wp_front_scripts(){
 	wp_register_script( 'rwp_admin', plugins_url( '/js/admin.js?'.mt_rand(), __FILE__ ), array('jquery') );
 	wp_register_script( 'rwp_date_front', plugins_url( '/js/date-front.js?'.mt_rand(), __FILE__ ), array('jquery') );
@@ -36,8 +54,8 @@ add_action( 'add_meta_boxes', 'reserva_wp_listing_metabox');
 // TODO: limpar hook abaixo pra funcionar de forma generica
 add_action( 'save_post_listing', 'reserva_wp_update_object_dates' );
 add_action( 'save_post_listing', 'reserva_wp_create_transaction' );
-add_action( 'rwp_status_changed', 'reserva_wp_email_status_changes' );
-add_action( 'rwp_status_changed_to_liberado', 'reserva_wp_objeto_liberado' );
+//add_action( 'rwp_status_changed', 'reserva_wp_email_status_changes' );
+//add_action( 'rwp_status_changed_to_liberado', 'reserva_wp_objeto_liberado' );
 
 add_filter( 'manage_listing_posts_columns' , 'reserva_wp_modify_post_table_columns' );
 add_action( 'manage_listing_posts_custom_column', 'reserva_wp_modify_post_table_row', 10, 2 );
