@@ -56,8 +56,8 @@ function reserva_wp_update_post_cron() {
 			$from    = 'no-reply@ecotemporadas.com';
 			$opt = get_option( 'rwp_options' );
 			$to      = $post_autor_mail;
-			$subject = $opt['rwp_email_vencido_title'];
-			$message = $opt['rwp_email_vencido'];
+			$subject = shortcode_emails($opt['rwp_email_vencido_title'],$post_id);
+			$message = shortcode_emails($opt['rwp_email_vencido'],$post_id);
 			$headers = 'MIME-Version: 1.0' . "\r\n";
 			$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 			$headers .= 'From: ' . get_bloginfo( 'name' ) . '' . ' <' . $from . '>' . "\r\n";
@@ -103,8 +103,8 @@ function reserva_wp_update_post_cron() {
 			$from    = 'no-reply@ecotemporadas.com';
 			$opt = get_option( 'rwp_options' );
 			$to      = $post_autor_mail;
-			$subject = $opt['rwp_email_pre_vencido_title'];
-			$message = $opt['rwp_email_pre_vencido'];
+			$subject = shortcode_emails($opt['rwp_email_pre_vencido_title'],$post_id);
+			$message = shortcode_emails($opt['rwp_email_pre_vencido'],$post_id);
 			$headers = 'MIME-Version: 1.0' . "\r\n";
 			$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 			$headers .= 'From: ' . get_bloginfo( 'name' ) . '' . ' <' . $from . '>' . "\r\n";
@@ -197,106 +197,6 @@ function reserva_wp_cron_check_removes() {
 }
 
 
-// Chama a API do Pagseguro pra confirmar os pagamentos
-function reserva_wp_cron_check_pagamentos() {
-
-	require_once dirname( __FILE__ ) . '/PagSeguroLibrary/PagSeguroLibrary.php';
-
-	/* Banco Pagseguro */
-	$DB_TYPE = "mysql";
-	//$retorno_host = 'localhost'; // Local da base de dados MySql
-	//$retorno_database = 'ecotempo_main'; // Nome da base de dados MySql
-	//$retorno_usuario = 'ecotempo_admin'; // Usuario com acesso a base de dados MySql
-	//$retorno_senha = 'ZpaK}GN5ni({';  // Senha de acesso a base de dados MySql
-
-	$retorno_host     = 'localhost'; // Local da base de dados MySql
-	$retorno_database = 'eco'; // Nome da base de dados MySql
-	$retorno_usuario  = 'eco'; // Usuario com acesso a base de dados MySql
-	$retorno_senha    = 'acdc1980bs';  // Senha de acesso a base de dados MySql
-
-	$mysqli = new mysqli( $retorno_host, $retorno_usuario, $retorno_senha, $retorno_database );
-	if ( $mysqli->connect_errno ) {
-		die ( 'Nao foi possível conectar ao MySql: ' . $mysqli->connect_errno );
-	}
-
-
-	$transactions = get_posts( array(
-		'post_type'      => 'rwp_transaction',
-		//'meta_key' =>	'rwp_transaction_status',
-		// 'meta_value' => 'aguardando',
-		'posts_per_page' => - 1,
-		'date_query'     => array(
-			array(
-				'column'    => 'post_modified_gmt',
-				'after'     => '30 days ago',
-				'inclusive' => true
-			)
-		)
-	) );
-
-
-	foreach ( $transactions as $t ) {
-		$obj  = get_post_meta( $t->ID, 'rwp_transaction_object', true );
-		$in[] = $obj . '-' . $t->ID;
-	}
-
-	$in = join( ',', $in );
-
-	$sql = "SELECT TransacaoID,Referencia FROM `PagSeguroTransacoes` WHERE Referencia IN (" . $in . ")";
-	$res = $mysqli->query( $sql );
-
-	/* Códigos identificadores da transação  */
-	if ( $res ) {
-		while ( $row = $res->fetch_assoc() ) {
-			$tids[ $row['Referencia'] ] = $row['TransacaoID'];
-		}
-	}
-	//$tids['ID 3207-3210'] = '699C3682-44B8-4110-93A7-4E55A61D58BC'; // teste Andre
-
-	$statuses = array();
-
-	if ( $tids ) :
-		foreach ( $tids as $key => $value ) {
-			/*
-				Realizando uma consulta de transação a partir do código identificador
-				para obter o objeto PagSeguroTransaction
-			*/
-			try {
-				$transaction = PagSeguroTransactionSearchService::searchByCode( $credentials, $value );
-				$status      = $transaction->getStatus()->getValue();
-				$intTrans    = explode( '-', $key );
-
-				if ( $status < 3 ) { // 1 == aguardando / 2 == análise
-
-					$msg = 'aguardando';
-				}
-				if ( 3 == $status || 4 == $status ) { // 3 == pago / 4 == disponivel
-
-					$msg = 'liberado';
-				}
-				if ( $status > 4 ) { // 5 == disputa / 6 == devolvida / 7 == cancelada
-
-					$msg = 'retirado';
-				}
-
-				require_once dirname( __FILE__ ) . '/post_types.php';
-				update_post_meta( $intTrans[1], 'rwp_transaction_status', $msg );
-
-
-			} catch ( PagSeguroServiceException $e ) {
-				echo '<pre>';
-				var_dump( $e );
-				echo '</pre>';
-				$msg = $status = $e->getMessage();
-			}
-
-			$statuses[ $value ] = array( 'status' => $status, 'rwp_transaction' => $intTrans[1], 'msg' => $msg );
-		}
-	endif;
-
-	// var_dump($statuses);
-}
-
 function reserva_wp_pagseguro_notificacoes() {
 	header( "access-control-allow-origin: https://pagseguro.uol.com.br" );
 	$opt = get_option( 'rwp_options' );
@@ -363,8 +263,8 @@ function reserva_wp_pagseguro_notificacoes() {
 				// Return a boolean!
 				//editar email
 				$to      = $post_autor_mail;
-				$subject = $opt['rwp_email_liberado_title'];
-				$message = $opt['rwp_email_liberado'];
+				$subject = shortcode_emails($opt['rwp_email_liberado_title'],$post_id);
+				$message = shortcode_emails($opt['rwp_email_liberado'],$post_id);
 				$from    = 'no-reply@ecotemporadas.com';
 				//$headers = 'From: '.get_bloginfo('name').''.' <' . $from.'>';
 				$headers = 'MIME-Version: 1.0' . "\r\n";
