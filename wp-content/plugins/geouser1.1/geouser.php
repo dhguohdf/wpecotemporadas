@@ -214,8 +214,9 @@ function ecotemporadas_register_taxonomy() {
     $city = $_POST['city'];
 
     if($uf && $city) {
-
-        $termUF = get_term_by( 'name', $uf, 'property-location' );
+	    $city = str_replace($uf,'',$city);
+	    $city = str_replace(strtolower($uf),'',$city);
+	    $termUF = get_term_by( 'name', $uf, 'property-location' );
         $termCity = wp_insert_term( $city, 'property-location', array( 'parent' => $termUF->term_id ) );
 
         if(!is_wp_error( $termCity )) {

@@ -67,7 +67,7 @@ jQuery(document).ready(function ($) {
             geouser_addmarker(e.latLng.lat(), e.latLng.lng());
             geouser_update_latlon(e.latLng.lat(), e.latLng.lng());
             geouser_geocode(e.latLng, 'addr');
-        });GIT
+        });
     });
 
 // Compila as informações para busca quando 
@@ -147,6 +147,8 @@ jQuery(document).ready(function ($) {
                             }, function (response) {
 
                                 if (response.stat == 'ok') {
+                                    console.log('cidade_ajax');
+                                    console.log(city);
                                     children = ufObj.siblings('.children');
                                     if (children.length < 1)
                                         ufObj.after('<ul class="children"></ul>');
