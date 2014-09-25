@@ -252,7 +252,8 @@ function reserva_wp_pagseguro_notificacoes() {
 			if ( $msg == 'liberado' ) {
 				update_post_meta( $tr_id, 'rwp_transaction_listing_id', $post_id );
 				update_post_meta( $tr_id, 'rwp_transaction_expire_date', $date->format( 'd-m-Y' ) );
-				update_post_meta( $post_id, '_expiration-date', $date->format( 'd/m/Y H:i' ) );
+				echo $date->getTimestamp();
+				update_post_meta( $post_id, '_expiration-date', $date->getTimestamp() );
 				$date->modify( '-10 days' );
 				update_post_meta( $tr_id, 'rwp_transaction_pre_expire_date', $date->format( 'd-m-Y' ) );
 				global $wpdb;
