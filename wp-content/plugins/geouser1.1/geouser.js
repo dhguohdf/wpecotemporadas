@@ -128,6 +128,8 @@ jQuery(document).ready(function ($) {
 
                             // a cidade selecionadas já existe na lista?
                             // se sim, marque
+                            city = city.replace(uf,'');
+                            city = city.replace(uf.toLowerCase(),'');
                             if (liliVal == city) {
                                 flag = true;
                                 $(this).find('input').prop('checked', true);
