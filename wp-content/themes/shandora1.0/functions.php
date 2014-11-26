@@ -365,11 +365,16 @@ add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_js' );
 function eco_scripts() {
 	wp_enqueue_script( 'ecotempo-mask-js', get_stylesheet_directory_uri() . '/jquery.mask.min.js', array(), '1.0.0', true );
 	wp_enqueue_script( 'ecotempo-bootstrap-js', get_stylesheet_directory_uri() . '/bootstrap.min.js', array(), '1.0.0', true );
+	wp_register_script( 'googlemaps-v3', 'http://maps.googleapis.com/maps/api/js?sensor=false&amp;language=pt-BR', false, false, false );
+	wp_enqueue_script('googlemaps-v3');
 }
 
 add_action( 'wp_enqueue_scripts', 'eco_scripts' );
 add_action( 'admin_enqueue_scripts', 'eco_scripts' );
-
+function remove_default_gmapjs(){
+	wp_dequeue_script( 'googlemaps3' );
+}
+add_action( 'wp_print_scripts', 'remove_default_gmapjs', 100 );
 function my_plugin_get_comment_list_by_user( $clauses ) {
 	if ( is_admin() ) {
 		global $user_ID, $wpdb;

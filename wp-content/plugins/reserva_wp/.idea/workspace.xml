@@ -28,8 +28,8 @@
       <file leaf-file-name="admin.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-23.916666" vertical-offset="5576" max-vertical-offset="6300">
-              <caret line="410" column="97" selection-start-line="410" selection-start-column="97" selection-end-line="410" selection-end-column="97" />
+            <state vertical-scroll-proportion="-2.27451" vertical-offset="604" max-vertical-offset="6300">
+              <caret line="48" column="43" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -48,8 +48,8 @@
       <file leaf-file-name="reserva_wp.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reserva_wp.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.25" vertical-offset="417" max-vertical-offset="1020">
-              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+            <state vertical-scroll-proportion="-2.3529413" vertical-offset="30" max-vertical-offset="1020">
+              <caret line="18" column="44" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -58,18 +58,18 @@
       <file leaf-file-name="cron.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cron.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.875" vertical-offset="3540" max-vertical-offset="4545">
-              <caret line="255" column="67" selection-start-line="255" selection-start-column="0" selection-end-line="256" selection-end-column="0" />
+            <state vertical-scroll-proportion="-6.5" vertical-offset="3894" max-vertical-offset="4545">
+              <caret line="270" column="47" selection-start-line="270" selection-start-column="46" selection-end-line="270" selection-end-column="47" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="post_types.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="post_types.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/post_types.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8218085" vertical-offset="2706" max-vertical-offset="11550">
-              <caret line="201" column="16" selection-start-line="201" selection-start-column="16" selection-end-line="201" selection-end-column="16" />
+            <state vertical-scroll-proportion="-2.27451" vertical-offset="10264" max-vertical-offset="11550">
+              <caret line="692" column="20" selection-start-line="692" selection-start-column="14" selection-end-line="692" selection-end-column="20" />
               <folding>
                 <marker date="1410973584603" expanded="true" signature="9389:9668" placeholder="..." />
                 <marker date="1410973584603" expanded="true" signature="9394:9409" placeholder="/*...*/" />
@@ -96,10 +96,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="options.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="options.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/options.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="581" max-vertical-offset="1695">
+            <state vertical-scroll-proportion="1.9946809" vertical-offset="0" max-vertical-offset="1695">
               <caret line="50" column="38" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="38" />
               <folding />
             </state>
@@ -165,6 +165,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -351,7 +352,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -379,15 +379,15 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server" server_id="2a5bae02-5ec4-4695-b14f-04ff6c94a191" server_name="matheusgimenez">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
       <pass-parent-env-vars>false</pass-parent-env-vars>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server" server_id="2a5bae02-5ec4-4695-b14f-04ff6c94a191" server_name="matheusgimenez">
       <method />
     </configuration>
     <list size="0" />
@@ -407,20 +407,20 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3338438" sideWeight="0.49960285" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32618684" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32618684" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33518666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3407466" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32771823" sideWeight="0.50039715" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3338438" sideWeight="0.49960285" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -863,14 +863,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/options.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="581" max-vertical-offset="1695">
-          <caret line="50" column="38" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/date_c.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.2578796" vertical-offset="4346" max-vertical-offset="9795">
@@ -881,8 +873,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.916666" vertical-offset="5576" max-vertical-offset="6300">
-          <caret line="410" column="97" selection-start-line="410" selection-start-column="97" selection-end-line="410" selection-end-column="97" />
+        <state vertical-scroll-proportion="-2.27451" vertical-offset="604" max-vertical-offset="6300">
+          <caret line="48" column="43" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -897,24 +889,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/reserva_wp.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.25" vertical-offset="417" max-vertical-offset="1020">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        <state vertical-scroll-proportion="-2.3529413" vertical-offset="30" max-vertical-offset="1020">
+          <caret line="18" column="44" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cron.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.875" vertical-offset="3540" max-vertical-offset="4545">
-          <caret line="255" column="67" selection-start-line="255" selection-start-column="0" selection-end-line="256" selection-end-column="0" />
+        <state vertical-scroll-proportion="-6.5" vertical-offset="3894" max-vertical-offset="4545">
+          <caret line="270" column="47" selection-start-line="270" selection-start-column="46" selection-end-line="270" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/post_types.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8218085" vertical-offset="2706" max-vertical-offset="11550">
-          <caret line="201" column="16" selection-start-line="201" selection-start-column="16" selection-end-line="201" selection-end-column="16" />
+        <state vertical-scroll-proportion="-2.27451" vertical-offset="10264" max-vertical-offset="11550">
+          <caret line="692" column="20" selection-start-line="692" selection-start-column="14" selection-end-line="692" selection-end-column="20" />
           <folding>
             <marker date="1410973584603" expanded="true" signature="9389:9668" placeholder="..." />
             <marker date="1410973584603" expanded="true" signature="9394:9409" placeholder="/*...*/" />
@@ -937,6 +929,14 @@
             <marker date="1410973584603" expanded="true" signature="16357:16427" placeholder="..." />
             <marker date="1410973584603" expanded="true" signature="17998:18304" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/options.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.9946809" vertical-offset="0" max-vertical-offset="1695">
+          <caret line="50" column="38" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>

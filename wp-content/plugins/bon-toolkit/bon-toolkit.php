@@ -300,7 +300,7 @@ if ( ! class_exists( 'BON_Toolkit' ) ) {
 				);
 
 
-				wp_register_script( 'googlemaps3', 'http://maps.googleapis.com/maps/api/js?sensor=false', false, false, false );
+				wp_register_script( 'googlemaps3', 'http://maps.googleapis.com/maps/api/js?sensor=false&amp;language=pt_BR', false, false, false );
 				wp_enqueue_script( 'googlemaps3' );
 
 				wp_register_script( 'bon-toolkit-map', trailingslashit( BON_TOOLKIT_JS ) . 'map.js', array('jquery', 'googlemaps3'), '1.0.0', true );
